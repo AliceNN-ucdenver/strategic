@@ -3,11 +3,12 @@ import './ArchitectureChallenge.css';
 
 const ArchitectureChallenge: React.FC = () => {
   const [activeView, setActiveView] = useState<'traditional' | 'modern'>('traditional');
+  const basename = import.meta.env.BASE_URL.replace(/\/$/, '');
 
   const scrollToFramework = () => {
     // Always go to product page, then scroll to transformation section
     if (window.location.pathname !== '/product') {
-      window.location.href = '/product#transformation';
+      window.location.href = `${basename}/product#transformation`;
     } else {
       const element = document.getElementById('transformation');
       if (element) {
@@ -22,7 +23,7 @@ const ArchitectureChallenge: React.FC = () => {
   const handleStartAssessment = () => {
     // Always go to homepage first, then scroll to assessment section
     if (window.location.pathname !== '/') {
-      window.location.href = '/#assessment';
+      window.location.href = `${basename}/#assessment`;
     } else {
       const element = document.getElementById('assessment');
       if (element) {
