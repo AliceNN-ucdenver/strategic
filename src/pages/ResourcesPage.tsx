@@ -4,6 +4,8 @@ import Footer from '../components/Footer';
 import './ResourcesPage.css';
 
 const ResourcesPage: React.FC = () => {
+  const basename = import.meta.env.BASE_URL.replace(/\/$/, '');
+  
   useEffect(() => {
     // Scroll to top when component mounts
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -156,7 +158,7 @@ const ResourcesPage: React.FC = () => {
         <div className="cta-container fade-in">
           <h2>Ready to Transform Your Architecture?</h2>
           <p>Get personalized insights for your organization's strategic architecture journey</p>
-          <a href="/" className="btn-primary">
+          <a href={`${basename}/`} className="btn-primary">
             Explore Strategic Framework
           </a>
         </div>
