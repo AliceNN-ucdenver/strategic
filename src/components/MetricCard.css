@@ -1,0 +1,240 @@
+/* MetricCard Component Styles */
+.metric-card {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  padding: 2.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  min-width: 0;
+  width: 100%;
+}
+
+.metric-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* Header Section */
+.metric-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.metric-icon {
+  font-size: 2.5rem;
+}
+
+.metric-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 0.25rem;
+}
+
+.metric-subtitle {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1rem;
+}
+
+/* Conversation Starter */
+.conversation-starter {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  padding: 1rem;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  border-left: 4px solid #667eea;
+}
+
+.conversation-starter strong {
+  color: white;
+  font-weight: 700;
+}
+
+/* Pillar Description */
+.pillar-description {
+  color: rgba(255, 255, 255, 0.8);
+  font-style: italic;
+  margin-bottom: 2rem;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+}
+
+/* Metric Items Container */
+.metric-items {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Individual Metric Item */
+.metric-item {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  position: relative;
+}
+
+.metric-item:last-child {
+  margin-bottom: 0;
+}
+
+/* Metric Content Wrapper */
+.metric-content {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 1.5rem;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  margin-bottom: 1rem;
+}
+
+/* Metric Label and Value */
+.metric-label {
+  font-weight: 600;
+  color: white;
+  margin-bottom: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  order: 1;
+}
+
+.metric-label .metric-value {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.metric-label .metric-value.excellent {
+  color: #10b981; /* Green */
+}
+
+.metric-label .metric-value.good {
+  color: #f59e0b; /* Amber */
+}
+
+.metric-label .metric-value.needs-improvement {
+  color: #f59e0b; /* Amber - NOT RED */
+}
+
+.metric-label .metric-value.critical {
+  color: #ef4444; /* Red */
+}
+
+/* Progress Bar */
+.progress-bar {
+  height: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  overflow: hidden;
+  margin: 0.25rem 0;
+  width: 100%;
+  display: block;
+  clear: both;
+  order: 2;
+}
+
+.progress-bar .progress-fill {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 0.5s ease;
+}
+
+.progress-bar .progress-fill.excellent {
+  background: #10b981; /* Solid Green */
+}
+
+.progress-bar .progress-fill.good {
+  background: #f59e0b; /* Solid Amber */
+}
+
+.progress-bar .progress-fill.needs-improvement {
+  background: #f59e0b; /* Solid Amber - NOT RED */
+}
+
+.progress-bar .progress-fill.critical {
+  background: #ef4444; /* Solid Red */
+}
+
+/* Metric Target */
+.metric-target {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.6);
+  font-weight: normal;
+  margin: 0.5rem 0;
+  display: block;
+  width: 100%;
+  clear: both;
+  order: 3;
+  background: transparent;
+  padding: 0.25rem 0;
+  border-radius: 0;
+}
+
+.metric-target.excellent {
+  color: #10b981;
+  font-weight: 600;
+}
+
+.metric-target.good {
+  color: #f59e0b;
+  font-weight: 600;
+}
+
+.metric-target.needs-improvement {
+  color: #f59e0b;
+  font-weight: 600;
+}
+
+.metric-target.critical {
+  color: #ef4444;
+  font-weight: 600;
+}
+
+/* Metric Description */
+.metric-description {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin-top: 0.75rem;
+  line-height: 1.4;
+  display: block;
+  width: 100%;
+  clear: both;
+  position: relative;
+  order: 4;
+}
+
+.metric-description strong {
+  color: white;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .metric-card {
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .metric-card {
+    padding: 1.5rem;
+  }
+  
+  .metric-header {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.5rem;
+  }
+  
+  .metric-icon {
+    font-size: 2rem;
+  }
+  
+  .metric-title {
+    font-size: 1.25rem;
+  }
+}

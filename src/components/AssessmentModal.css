@@ -1,0 +1,159 @@
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  backdrop-filter: blur(5px);
+}
+
+.modal-content {
+  background: white;
+  border-radius: 20px;
+  padding: 2rem;
+  max-width: 600px;
+  width: 90%;
+  max-height: 80vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.close-button {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #64748b;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.close-button:hover {
+  background: #f1f5f9;
+  color: #334155;
+}
+
+.modal-content h2 {
+  color: #667eea;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.modal-subtitle {
+  color: #64748b;
+  margin-bottom: 2rem;
+  text-align: center;
+  font-size: 1.1rem;
+}
+
+.sample-question {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 0.5rem;
+  border-radius: 10px;
+  margin-bottom: 2rem;
+}
+
+.question-content {
+  background: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+}
+
+.question-content h3 {
+  margin-bottom: 1rem;
+  color: #1a202c;
+  font-size: 1.2rem;
+}
+
+.question-content p {
+  margin-bottom: 1.5rem;
+  color: #4a5568;
+  line-height: 1.6;
+}
+
+.rating-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.rating-option {
+  padding: 0.75rem;
+  border: 2px solid #e2e8f0;
+  border-radius: 8px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: white;
+}
+
+.rating-option:hover {
+  border-color: #667eea;
+  background: #f7fafc;
+  transform: translateY(-2px);
+}
+
+.rating-option.selected {
+  border-color: #667eea;
+  background: #f0f4ff;
+}
+
+.rating-value {
+  font-weight: bold;
+  color: #667eea;
+  font-size: 1.1rem;
+  margin-bottom: 0.25rem;
+}
+
+.rating-description {
+  font-size: 0.8rem;
+  color: #64748b;
+}
+
+.modal-footer {
+  text-align: center;
+}
+
+.modal-footer p {
+  color: #64748b;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.modal-footer .cta-button {
+  font-size: 1.1rem;
+  padding: 1rem 3rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .modal-content {
+    padding: 1.5rem;
+    margin: 1rem;
+  }
+  
+  .rating-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+  }
+  
+  .modal-content h2 {
+    font-size: 1.5rem;
+  }
+  
+  .modal-subtitle {
+    font-size: 1rem;
+  }
+}

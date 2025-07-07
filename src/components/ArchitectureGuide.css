@@ -1,0 +1,368 @@
+/* Architecture Constellation Guide Styles */
+.constellation-detail {
+  padding: 2rem 2rem;
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+}
+
+.constellation-detail-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.section-header h2 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.section-header p {
+  font-size: 1.25rem;
+  color: #64748b;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* AI Strategy Section */
+.ai-strategy-section {
+  margin-bottom: 4rem;
+}
+
+.strategy-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+
+.strategy-card {
+  background: white;
+  border-radius: 20px;
+  padding: 3rem;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.strategy-card:hover {
+  transform: translateY(-10px);
+}
+
+.strategy-card.band-aid {
+  border-left: 5px solid #ef4444;
+}
+
+.strategy-card.launchpad {
+  border-left: 5px solid #10b981;
+}
+
+.strategy-icon {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+.strategy-card h3 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  color: #1a1a1a;
+}
+
+.warning-indicators h4,
+.success-indicators h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #4a5568;
+}
+
+.warning-indicators ul,
+.success-indicators ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 2rem;
+}
+
+.warning-indicators li,
+.success-indicators li {
+  padding: 0.5rem 0;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.warning-indicators li::before {
+  content: "⚠️";
+  position: absolute;
+  left: 0;
+  top: 0.5rem;
+}
+
+.success-indicators li::before {
+  content: "✅";
+  position: absolute;
+  left: 0;
+  top: 0.5rem;
+}
+
+.outcome {
+  padding: 1.5rem;
+  background: rgba(102, 126, 234, 0.05);
+  border-radius: 10px;
+  border-left: 4px solid #667eea;
+}
+
+/* Architecture Quote */
+.architecture-quote {
+  margin: 4rem 0;
+  text-align: left;
+}
+
+.architecture-quote blockquote {
+  font-size: 1.2rem;
+  font-style: italic;
+  color: #4a5568;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem;
+  background: rgba(102, 126, 234, 0.1);
+  border-radius: 15px;
+  border-left: 4px solid #667eea;
+  position: relative;
+  line-height: 1.6;
+}
+
+.architecture-quote cite {
+  display: block;
+  margin-top: 1rem;
+  font-size: 1rem;
+  color: #667eea;
+  font-style: normal;
+  font-weight: 600;
+}
+
+/* Constellation Clusters */
+.constellation-clusters {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.cluster-detail {
+  background: white;
+  border-radius: 20px;
+  padding: 3rem;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+}
+
+.cluster-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.cluster-header h3 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #1a1a1a;
+}
+
+.cluster-quote {
+  font-size: 1.2rem;
+  font-style: italic;
+  color: #64748b;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Transformation Framework */
+.transformation-framework {
+  margin-top: 4rem;
+  background: white;
+  border-radius: 20px;
+  padding: 3rem;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+}
+
+.transformation-framework h3 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 2rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.framework-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.framework-header h4 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #1a1a1a;
+}
+
+.framework-header p {
+  color: #64748b;
+  font-size: 1.1rem;
+}
+
+.decision-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+}
+
+.decision-category h5 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: #1a1a1a;
+}
+
+.decision-options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.option {
+  padding: 2rem;
+  border-radius: 15px;
+  border: 2px solid transparent;
+}
+
+.option.transformation {
+  background: linear-gradient(135deg, #d4f4dd 0%, #c7f0db 100%);
+  border-color: #10b981;
+}
+
+.option.bandaid {
+  background: linear-gradient(135deg, #fed7d7 0%, #feb2b2 100%);
+  border-color: #ef4444;
+}
+
+.option strong {
+  display: block;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  color: #1a1a1a;
+}
+
+.option ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.option li {
+  padding: 0.5rem 0;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.option.transformation li::before {
+  content: "🚀";
+  position: absolute;
+  left: 0;
+  top: 0.5rem;
+}
+
+.option.bandaid li::before {
+  content: "⚠️";
+  position: absolute;
+  left: 0;
+  top: 0.5rem;
+}
+
+/* Cluster-specific colors */
+.navigation-detail {
+  border-top: 5px solid #667eea;
+}
+
+.velocity-detail {
+  border-top: 5px solid #f59e0b;
+}
+
+.enablement-detail {
+  border-top: 5px solid #10b981;
+}
+
+.sustainability-detail {
+  border-top: 5px solid #8b5cf6;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .strategy-grid,
+  .decision-options {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .constellation-detail {
+    padding: 4rem 1rem;
+  }
+  
+  .section-header h2 {
+    font-size: 2.5rem;
+  }
+  
+  .cluster-header h3 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .constellation-detail {
+    padding: 3rem 1rem;
+  }
+  
+  .section-header h2 {
+    font-size: 2rem;
+  }
+  
+  .cluster-header h3 {
+    font-size: 1.75rem;
+  }
+  
+  .strategy-card,
+  .cluster-detail,
+  .transformation-framework {
+    padding: 2rem;
+  }
+  
+  .architecture-quote blockquote {
+    font-size: 1.25rem;
+    padding: 2rem;
+  }
+  
+  .architecture-quote blockquote::before {
+    font-size: 4rem;
+    top: -0.5rem;
+    left: 1rem;
+  }
+}
+
+/* Animation classes for scroll reveal */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}

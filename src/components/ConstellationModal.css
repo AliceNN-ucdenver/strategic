@@ -1,0 +1,314 @@
+/* Modal Overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  backdrop-filter: blur(10px);
+  animation: modalFadeIn 0.3s ease;
+}
+
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Modal Content */
+.modal-content {
+  background: white;
+  padding: 3rem;
+  border-radius: 20px;
+  max-width: 600px;
+  max-height: 90vh;
+  margin: 2rem;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  animation: modalSlideIn 0.3s ease;
+  position: relative;
+  overflow-y: auto;
+}
+
+@keyframes modalSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-50px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.star-modal {
+  max-width: 800px;
+}
+
+/* Modal Close Button */
+.modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #64748b;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.modal-close:hover {
+  background: #f1f5f9;
+  color: #1e293b;
+}
+
+/* Cluster Modal */
+.cluster-title {
+  color: #667eea;
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.cluster-description {
+  color: #64748b;
+  margin-bottom: 2rem;
+  font-style: italic;
+  line-height: 1.6;
+}
+
+.cluster-stars {
+  margin-bottom: 2rem;
+}
+
+.star-item {
+  padding: 1rem;
+  background: #f8fafc;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  border-left: 4px solid #667eea;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.star-item:hover {
+  background: #e2e8f0;
+  transform: translateX(5px);
+}
+
+/* Star Modal */
+.star-title {
+  color: #667eea;
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.star-purpose {
+  color: #64748b;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.assessment-question {
+  background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+  padding: 1.5rem;
+  border-radius: 15px;
+  margin-bottom: 2rem;
+  border-left: 4px solid #f59e0b;
+}
+
+.assessment-question h3 {
+  color: #92400e;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+.assessment-question p {
+  color: #78350f;
+  font-weight: 500;
+  font-style: italic;
+}
+
+.strategic-guidance {
+  margin-bottom: 2rem;
+}
+
+.strategic-guidance h3 {
+  color: #1e293b;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+.guidance-comparison {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.strategic-approach {
+  background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+  padding: 1rem;
+  border-radius: 10px;
+  border-left: 4px solid #10b981;
+}
+
+.tactical-approach {
+  background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%);
+  padding: 1rem;
+  border-radius: 10px;
+  border-left: 4px solid #ef4444;
+}
+
+.strategic-approach strong {
+  color: #059669;
+}
+
+.tactical-approach strong {
+  color: #dc2626;
+}
+
+.what-goes-wrong {
+  background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%);
+  padding: 1.5rem;
+  border-radius: 15px;
+  margin-bottom: 2rem;
+  border-left: 4px solid #ef4444;
+}
+
+.what-goes-wrong h3 {
+  color: #dc2626;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+.what-goes-wrong p {
+  color: #991b1b;
+  line-height: 1.6;
+}
+
+.what-goes-right {
+  background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+  padding: 1.5rem;
+  border-radius: 15px;
+  margin-bottom: 2rem;
+  border-left: 4px solid #10b981;
+}
+
+.what-goes-right h3 {
+  color: #059669;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+.what-goes-right p {
+  color: #047857;
+  line-height: 1.6;
+}
+
+.implementation-guide {
+  background: #f8fafc;
+  padding: 1.5rem;
+  border-radius: 15px;
+  margin-bottom: 2rem;
+  border-left: 4px solid #667eea;
+}
+
+.implementation-guide h3 {
+  color: #4338ca;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+.implementation-guide ol {
+  color: #475569;
+  line-height: 1.6;
+  padding-left: 1.2rem;
+}
+
+.implementation-guide li {
+  margin-bottom: 0.5rem;
+}
+
+.value-metrics {
+  background: linear-gradient(135deg, #ede9fe 0%, #ddd6fe 100%);
+  padding: 1.5rem;
+  border-radius: 15px;
+  margin-bottom: 2rem;
+  border-left: 4px solid #8b5cf6;
+}
+
+.value-metrics h3 {
+  color: #7c3aed;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+.value-metrics p {
+  color: #6d28d9;
+  line-height: 1.6;
+  font-weight: 500;
+}
+
+/* Modal Actions */
+.modal-actions {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.assess-button {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 50px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+}
+
+.assess-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .modal-content {
+    padding: 2rem;
+    margin: 1rem;
+    max-height: 95vh;
+  }
+  
+  .guidance-comparison {
+    grid-template-columns: 1fr;
+  }
+  
+  .star-title,
+  .cluster-title {
+    font-size: 1.5rem;
+  }
+  
+  .assessment-question,
+  .what-goes-wrong,
+  .what-goes-right,
+  .implementation-guide,
+  .value-metrics {
+    padding: 1rem;
+  }
+}

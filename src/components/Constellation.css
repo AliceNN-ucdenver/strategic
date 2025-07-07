@@ -1,0 +1,193 @@
+/* Constellation Container */
+.constellation-container {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.constellation {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  margin: 0 auto;
+}
+
+/* Star Clusters */
+.star-cluster {
+  position: absolute;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.star-cluster:hover {
+  transform: scale(1.1);
+}
+
+.star {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, #ffd700 0%, #ffeb3b 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+  animation: pulse 2s infinite;
+  position: relative;
+}
+
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 0 20px rgba(255, 215, 0, 0.5); }
+  50% { box-shadow: 0 0 30px rgba(255, 215, 0, 0.8); }
+}
+
+.star::before {
+  content: '⭐';
+  font-size: 2rem;
+}
+
+.cluster-label {
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-align: center;
+  white-space: nowrap;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.cluster-label:hover {
+  color: #fbbf24;
+  cursor: pointer;
+}
+
+/* Connection Lines */
+.constellation::before,
+.constellation::after {
+  content: '';
+  position: absolute;
+  background: rgba(255, 255, 255, 0.3);
+  height: 2px;
+}
+
+.constellation::before {
+  top: 50%;
+  left: 15%;
+  right: 15%;
+  transform: translateY(-50%);
+}
+
+.constellation::after {
+  left: 50%;
+  top: 15%;
+  bottom: 15%;
+  width: 2px;
+  transform: translateX(-50%);
+}
+
+/* Particles */
+.particle {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 50%;
+  pointer-events: none;
+  animation: particleFloat 15s linear infinite;
+}
+
+@keyframes particleFloat {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* Cluster Positioning */
+.navigation-cluster { top: 50px; left: 50px; }
+.velocity-cluster { top: 50px; right: 50px; }
+.enablement-cluster { bottom: 50px; left: 50px; }
+.sustainability-cluster { bottom: 50px; right: 50px; }
+
+/* Interactive States */
+.star-cluster.interactive {
+  cursor: pointer;
+}
+
+.star-cluster.interactive:hover .star {
+  background: linear-gradient(135deg, #ffeb3b 0%, #ffc107 100%);
+  transform: scale(1.1);
+}
+
+.star-cluster.interactive:active .star {
+  transform: scale(0.95);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .constellation {
+    width: 300px;
+    height: 300px;
+  }
+  
+  .star {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .star::before {
+    font-size: 1.5rem;
+  }
+  
+  .cluster-label {
+    font-size: 0.8rem;
+  }
+  
+  .navigation-cluster,
+  .velocity-cluster,
+  .enablement-cluster,
+  .sustainability-cluster {
+    top: auto;
+    left: auto;
+    right: auto;
+    bottom: auto;
+  }
+  
+  .navigation-cluster { 
+    top: 30px; 
+    left: 30px; 
+  }
+  
+  .velocity-cluster { 
+    top: 30px; 
+    right: 30px; 
+  }
+  
+  .enablement-cluster { 
+    bottom: 30px; 
+    left: 30px; 
+  }
+  
+  .sustainability-cluster { 
+    bottom: 30px; 
+    right: 30px; 
+  }
+}
