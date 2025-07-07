@@ -20,7 +20,7 @@ const Header = () => {
     // Framework section is now on product page
     if (sectionId === 'framework') {
       if (window.location.pathname !== '/') {
-        window.location.href = '/#framework';
+        window.location.href = basename + '/#framework';
       } else {
         const element = document.getElementById('framework');
         if (element) {
