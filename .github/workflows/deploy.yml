@@ -36,6 +36,10 @@ jobs:
       
     - name: Build
       run: npm run build
+
+    # Add this step for SPA support
+    - name: Create SPA fallback
+      run: cp ./dist/index.html ./dist/404.html
       
     - name: Setup Pages
       uses: actions/configure-pages@v4
