@@ -5,14 +5,21 @@ import './Footer.css';
 const Footer: React.FC = () => {
   const location = useLocation();
   const isHomePage = location.pathname === '/';
+  const basename = import.meta.env.BASE_URL.replace(/\/$/, '');
   
   // Helper function to create proper links
   const createLink = (anchor: string) => {
     if (isHomePage) {
       return `#${anchor}`;
     } else {
-      return `/#${anchor}`;
+      return `${basename}/#${anchor}`;
     }
+  };
+
+  // Helper function for regular page links
+  const createPageLink = (path: string, anchor?: string) => {
+    const fullPath = `${basename}${path}`;
+    return anchor ? `${fullPath}#${anchor}` : fullPath;
   };
 
   return (
@@ -32,17 +39,18 @@ const Footer: React.FC = () => {
               <ul>
                 <li><a href={createLink('constellation')}>Architecture Guide</a></li>
                 <li><a href={createLink('assessment')}>Assessment</a></li>
-                <li><a href="/product">Strategic Thinking</a></li>
-                <li><a href="/product#transformation">AI Transformation</a></li>
+                <li><a href={createPageLink('/product')}>Strategic Thinking</a></li>
+                <li><a href={createPageLink('/product', 'transformation')}>AI Transformation</a></li>
               </ul>
             </div>
             
             <div className="footer-section">
               <h4>Resources</h4>
               <ul>
-                <li><a href="/product#implementation">Implementation</a></li>
-                <li><a href="/product#dashboard">Portfolio Health</a></li>
-                <li><a href="/product#case-studies">Case Studies</a></li>
+                <li><a href={createPageLink('/product', 'implementation')}>Implementation</a></li>
+                <li><a href={createPageLink('/product', 'dashboard')}>Portfolio Health</a></li>
+                <li><a href={createPageLink('/product', 'case-studies')}>Case Studies</a></li>
+                <li><a href={createPageLink('/resources')}>Articles</a></li>
               </ul>
             </div>
             

@@ -4,6 +4,7 @@ import './Header.css'
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false)
+  const basename = import.meta.env.BASE_URL.replace(/\/$/, '')
 
   useEffect(() => {
     const handleScroll = () => {
@@ -32,7 +33,7 @@ const Header = () => {
     } else {
       // Assessment and other sections are on homepage
       if (window.location.pathname !== '/') {
-        window.location.href = `/#${sectionId}`;
+        window.location.href = basename +`/#${sectionId}`;
       } else {
         const element = document.getElementById(sectionId);
         if (element) {
@@ -49,7 +50,7 @@ const Header = () => {
 
   const goToProduct = () => {
     // Go to product page and scroll to top
-    window.location.href = '/product';
+    window.location.href = basename + '/product';
   };
 
   return (
