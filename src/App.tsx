@@ -5,8 +5,10 @@ import ResourcesPage from './pages/ResourcesPage'
 import './App.css'
 
 function App() {
+  const basename = import.meta.env.BASE_URL.replace(/\/$/, '')
+  
   return (
-    <Router>
+    <Router basename={basename}>
       <div className="App">
         <Routes>
           <Route path="/" element={<HomePage />} />
