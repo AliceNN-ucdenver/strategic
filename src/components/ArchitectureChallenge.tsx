@@ -21,9 +21,9 @@ const ArchitectureChallenge: React.FC = () => {
   };
 
   const handleStartAssessment = () => {
-    // Always go to homepage first, then scroll to assessment section
-    if (window.location.pathname !== '/') {
-      window.location.href = `${basename}/#assessment`;
+    // Always go to framework page first, then scroll to assessment section
+    if (window.location.pathname !== '/framework') {
+      window.location.href = `${basename}/framework#assessment`;
     } else {
       const element = document.getElementById('assessment');
       if (element) {

@@ -4,15 +4,15 @@ import './Footer.css';
 
 const Footer: React.FC = () => {
   const location = useLocation();
-  const isHomePage = location.pathname === '/';
+  const isFrameworkPage = location.pathname === '/framework';
   const basename = import.meta.env.BASE_URL.replace(/\/$/, '');
   
   // Helper function to create proper links
   const createLink = (anchor: string) => {
-    if (isHomePage) {
+    if (isFrameworkPage) {
       return `#${anchor}`;
     } else {
-      return `${basename}/#${anchor}`;
+      return `${basename}/framework#${anchor}`;
     }
   };
 
@@ -27,7 +27,7 @@ const Footer: React.FC = () => {
       <div className="footer-container">
         <div className="footer-content">
           <div className="footer-brand">
-            <div className="footer-logo">StrategicArchitecture.io</div>
+            <div className="footer-logo">ChiefArcheologist.com</div>
             <p className="footer-tagline">
               From Technical Compliance to Strategic Advantage
             </p>
@@ -57,7 +57,7 @@ const Footer: React.FC = () => {
             <div className="footer-section">
               <h4>Connect</h4>
               <ul>
-                <li><a href="mailto:hello@strategicarchitecture.io">Contact</a></li>
+                <li><a href="mailto:hello@chiefarcheologist.com">Contact</a></li>
                 <li><a href="#newsletter">Newsletter</a></li>
                 <li><a href="#community">Community</a></li>
                 <li><a href="#linkedin">LinkedIn</a></li>
@@ -68,7 +68,7 @@ const Footer: React.FC = () => {
         
         <div className="footer-bottom">
           <div className="footer-copyright">
-            <p>&copy; 2025 StrategicArchitecture.io. Empowering technology leaders to drive strategic transformation.</p>
+            <p>&copy; 2025 ChiefArcheologist.com. Empowering technology leaders to drive strategic transformation.</p>
           </div>
           <div className="footer-meta">
             <a href="#privacy">Privacy Policy</a>

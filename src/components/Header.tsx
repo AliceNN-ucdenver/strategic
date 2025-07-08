@@ -17,10 +17,10 @@ const Header = () => {
   }, [])
 
   const scrollToSection = (sectionId: string) => {
-    // Framework section is now on product page
+    // Framework section is now on framework page
     if (sectionId === 'framework') {
-      if (window.location.pathname !== '/') {
-        window.location.href = basename + '/#framework';
+      if (window.location.pathname !== '/framework') {
+        window.location.href = basename + '/framework#framework';
       } else {
         const element = document.getElementById('framework');
         if (element) {
@@ -31,9 +31,9 @@ const Header = () => {
         }
       }
     } else {
-      // Assessment and other sections are on homepage
-      if (window.location.pathname !== '/') {
-        window.location.href = basename +`/#${sectionId}`;
+      // Assessment and other sections are on framework page
+      if (window.location.pathname !== '/framework') {
+        window.location.href = basename +`/framework#${sectionId}`;
       } else {
         const element = document.getElementById(sectionId);
         if (element) {
@@ -57,7 +57,7 @@ const Header = () => {
     <header className={`header ${isScrolled ? 'scrolled' : ''}`}>
       <nav className="nav">
         <Link to="/" className="logo">
-          StrategicArchitecture.io
+          ChiefArcheologist.com
         </Link>
         <ul className="nav-links">
           <li><button onClick={() => scrollToSection('framework')} className="nav-link-btn">Framework</button></li>

@@ -158,7 +158,7 @@ const ResourcesPage: React.FC = () => {
         <div className="cta-container fade-in">
           <h2>Ready to Transform Your Architecture?</h2>
           <p>Get personalized insights for your organization's strategic architecture journey</p>
-          <a href={`${basename}/`} className="btn-primary">
+          <a href={`${basename}/framework`} className="btn-primary">
             Explore Strategic Framework
           </a>
         </div>

@@ -1,68 +1,11 @@
-import Header from '../components/Header'
-import Constellation from '../components/Constellation'
-import AssessmentModal from '../components/AssessmentModal'
-import ArchitectureGuide from '../components/ArchitectureGuide'
-import AssessmentSection from '../components/AssessmentSection'
-import Footer from '../components/Footer'
-import { useState, useEffect } from 'react'
-import { useScrollAnimations } from '../hooks/useScrollAnimations'
-import './HomePage.css'
+import React from 'react';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
+import chiefArchitectImage from '../assets/chief_architect.png';
+import './HomePage.css';
 
-const HomePage = () => {
-  const [isAssessmentModalOpen, setIsAssessmentModalOpen] = useState(false)
-  useScrollAnimations()
-
-  const openAssessmentModal = (e: React.MouseEvent) => {
-    e.preventDefault()
-    setIsAssessmentModalOpen(true)
-  }
-
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      const headerHeight = 80; // Account for header height
-      const titleOffset = 100; // Extra offset to ensure title is visible
-      const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
-      const offsetPosition = elementPosition - headerHeight - titleOffset;
-
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth'
-      });
-    }
-  }
-
-  const handleDiscoverMaturity = (e: React.MouseEvent) => {
-    e.preventDefault()
-    scrollToSection('assessment')
-  }
-
-  const handleExploreConstellation = (e: React.MouseEvent) => {
-    e.preventDefault()
-    scrollToSection('constellation')
-  }
-
-  // Handle URL hash navigation
-  useEffect(() => {
-    const hash = window.location.hash.substring(1); // Remove the #
-    if (hash) {
-      // Small delay to ensure the page has rendered
-      setTimeout(() => {
-        const element = document.getElementById(hash);
-        if (element) {
-          const headerHeight = 80; // Account for header height
-          const titleOffset = 100; // Extra offset to ensure title is visible
-          const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
-          const offsetPosition = elementPosition - headerHeight - titleOffset;
-
-          window.scrollTo({
-            top: offsetPosition,
-            behavior: 'smooth'
-          });
-        }
-      }, 100);
-    }
-  }, []);
+const HomePage: React.FC = () => {
+  const basename = import.meta.env.BASE_URL.replace(/\/$/, '');
 
   return (
     <div className="home-page">
@@ -71,79 +14,101 @@ const HomePage = () => {
       {/* Hero Section */}
       <section className="hero" id="home">
         <div className="hero-content">
+          <div className="hero-image">
+            <img src={chiefArchitectImage} alt="Chief Architect" className="architect-photo" />
+            <div className="image-accent"></div>
+            
+            <div className="story-text">
+              <p className="story-paragraph">
+                While others see technical debt, I see architectural artifacts that tell the story of business evolution. 
+                Each system migration is an expedition into uncharted territory, where strategic architecture becomes 
+                the compass guiding organizations through their most ambitious modernization journeys.
+              </p>
+            </div>
+            
+            <div className="cta-section">
+              <div className="cta-text">
+                <h3>Ready to Modernize Your Architecture?</h3>
+                <p>Discover how strategic architecture can transform your technology landscape</p>
+              </div>
+              <div className="cta-buttons">
+                <a href={`${basename}/framework`} className="btn-primary">Explore Framework</a>
+                <a href={`${basename}/product`} className="btn-secondary">View Methodology</a>
+              </div>
+            </div>
+          </div>
           <div className="hero-text">
-            <h1>From Technical Compliance to Strategic Advantage</h1>
-            <p className="subtitle">
-              Transform your enterprise with the Strategic Architecture Constellation - guiding AI transformation, 
-              product thinking, and security-left integration through curious exploration rather than authoritarian control
-            </p>
-            <div className="hero-buttons">
-              <a href="#assessment" className="btn-primary" onClick={handleDiscoverMaturity}>Discover Your Architecture Maturity</a>
-              <a href="#constellation" className="btn-secondary" onClick={handleExploreConstellation}>Explore the Constellation</a>
+            <div className="title-section">
+              <h1>I am the Chief Archeologist</h1>
+              <p className="subtitle">
+                Unearthing Legacy Systems, Architecting Tomorrow
+              </p>
+            </div>
+            
+            <div className="bio-content">
+              <p className="intro-paragraph">
+                For over two decades, I've been the enterprise equivalent of an archeologist—carefully excavating 
+                layers of legacy technology, carbon dating mainframe systems from the digital Jurassic period, 
+                and translating ancient COBOL hieroglyphics into modern business value. <br /><br />
+
+                Now, as we stand at the precipice of the next industrial revolution, I'm leveraging cutting-edge 
+                acceleration capabilities like AI to transform how enterprises think about technology. No longer 
+                just building inspector or order-taker, but strategic business enabler—turning architecture 
+                into competitive advantage.
+              </p>
+              
+              <div className="experience-highlights">
+                <div className="highlight-item">
+                  <span className="highlight-icon">🏛️</span>
+                  <div className="highlight-content">
+                    <h3>20+ Years</h3>
+                    <p>Modernizing enterprise architecture across Fortune 500 companies</p>
+                  </div>
+                </div>
+                <div className="highlight-item">
+                  <span className="highlight-icon">🚀</span>
+                  <div className="highlight-content">
+                    <h3>AI Transformation</h3>
+                    <p>Leading strategic AI implementations that drive measurable business outcomes</p>
+                  </div>
+                </div>
+                <div className="highlight-item">
+                  <span className="highlight-icon">📚</span>
+                  <div className="highlight-content">
+                    <h3>Thought Leadership</h3>
+                    <p>Published in InfoWorld, CIO, and industry publications on strategic architecture</p>
+                  </div>
+                </div>
+                <div className="highlight-item">
+                  <span className="highlight-icon">🏛️</span>
+                  <div className="highlight-content">
+                    <h3>Chief Architect Forum</h3>
+                    <p>Board member contributing to strategic architecture community and industry standards</p>
+                  </div>
+                </div>
+                <div className="highlight-item">
+                  <span className="highlight-icon">🎓</span>
+                  <div className="highlight-content">
+                    <h3>PhD Researcher</h3>
+                    <p>Researching global events' impact on market sentiment, building on prior work in financial market prediction using emotion analysis and news co-occurrence networks</p>
+                  </div>
+                </div>
+                <div className="highlight-item">
+                  <span className="highlight-icon">🧠</span>
+                  <div className="highlight-content">
+                    <h3>Nvidia Deep Learning Instructor</h3>
+                    <p>Graduate instructor specializing in AI/ML applications for enterprise architecture</p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-          <Constellation />
         </div>
       </section>
 
-      {/* Features Section */}
-      <section className="features" id="framework">
-        <div className="features-container">
-          <div className="section-header fade-in">
-            <h2>The Strategic Architecture Framework</h2>
-            <p>Transform your architecture practice with our comprehensive framework spanning AI transformation, product thinking, and security integration</p>
-          </div>
-          <div className="features-grid">
-            <div className="feature-card fade-in">
-              <div className="feature-icon">🌟</div>
-              <h3>Architecture Constellation</h3>
-              <p>12 strategic stars organized in 4 clusters: Navigation, Velocity, Enablement, and Sustainability. Navigate AI as transformation enabler vs. band-aid solution with measurable business outcomes.</p>
-            </div>
-            <div className="feature-card fade-in">
-              <div className="feature-icon">🏙️</div>
-              <h3>Product Transformation</h3>
-              <p>Urban planning approach to enterprise architecture, moving from project-centric to product-oriented delivery with comprehensive portfolio health metrics.</p>
-            </div>
-            <div className="feature-card fade-in">
-              <div className="feature-icon">🛡️</div>
-              <h3>Security-Left Integration</h3>
-              <p>Transform from Queen of Hearts compliance to Cheshire Cat guidance, embedding security throughout the development lifecycle with automated guardrails.</p>
-            </div>
-            <div className="feature-card fade-in">
-              <div className="feature-icon">🎯</div>
-              <h3>Business Value Focus</h3>
-              <p>Move beyond technical metrics to track AI revenue attribution ({'>'}15%), innovation velocity ({'<'}90 days), and architectural leverage (10:1 ROI).</p>
-            </div>
-            <div className="feature-card fade-in">
-              <div className="feature-icon">🚀</div>
-              <h3>Strategic Enablement</h3>
-              <p>Escape the order-taking trap and become the strategic business enabler your organization needs for competitive advantage in the AI era.</p>
-            </div>
-            <div className="feature-card fade-in">
-              <div className="feature-icon">🌐</div>
-              <h3>Community Learning</h3>
-              <p>Join a thriving community of strategic architects sharing patterns, success stories, and implementation guidance across global enterprises.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Architecture Constellation Guide */}
-      <ArchitectureGuide />
-
-      {/* Assessment Section */}
-      <AssessmentSection onOpenModal={openAssessmentModal} />
-
-      {/* Footer */}
       <Footer />
-
-      {/* Assessment Modal */}
-      <AssessmentModal 
-        isOpen={isAssessmentModalOpen} 
-        onClose={() => setIsAssessmentModalOpen(false)} 
-      />
     </div>
-  )
-}
+  );
+};
 
-export default HomePage
+export default HomePage;

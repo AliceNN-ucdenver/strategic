@@ -6,7 +6,7 @@ A modern React TypeScript application showcasing the Strategic Architecture Cons
 
 ## 🌟 Live Site
 
-Visit the live application at [strategicarchitecture.io](https://strategicarchitecture.io)
+Visit the live application at [chiefarcheologist.com](https://chiefarcheologist.com)
 
 ## 🏗️ Project Overview
 
@@ -99,7 +99,7 @@ npm run dev
 The application is automatically deployed to GitHub Pages using GitHub Actions:
 
 1. **Automatic Deployment**: Triggers on pushes to `main` branch
-2. **Custom Domain**: Configured for strategicarchitecture.io
+2. **Custom Domain**: Configured for chiefarcheologist.com
 3. **HTTPS**: SSL/TLS certificates automatically provisioned
 4. **Optimized Build**: Code splitting and performance optimization
 
@@ -129,7 +129,7 @@ No environment variables required for basic operation.
 
 ### Custom Domain Setup
 
-The application is configured for the custom domain `strategicarchitecture.io`:
+The application is configured for the custom domain `chiefarcheologist.com`:
 
 1. CNAME file in `public/CNAME`
 2. DNS configuration pointing to GitHub Pages
@@ -166,14 +166,14 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 🔗 Links
 
-- **Live Site**: [strategicarchitecture.io](https://strategicarchitecture.io)
+- **Live Site**: [chiefarcheologist.com](https://chiefarcheologist.com)
 - **Repository**: [github.com/AliceNN-ucdenver/strategic](https://github.com/AliceNN-ucdenver/strategic)
 - **Issues**: [GitHub Issues](https://github.com/AliceNN-ucdenver/strategic/issues)
 
 ## 📧 Contact
 
 For questions or collaboration opportunities:
-- Email: hello@strategicarchitecture.io
+- Email: hello@chiefarcheologist.com
 - GitHub: [@AliceNN-ucdenver](https://github.com/AliceNN-ucdenver)
 
 ---
