@@ -555,16 +555,36 @@
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .hero-content {
     grid-template-columns: 1fr;
     gap: 2rem;
   }
   
+  .hero-text {
+    order: 1;
+    text-align: center;
+  }
+  
+  .hero-right {
+    order: 2;
+  }
+  
+  .hero-text h1 {
+    font-size: 3rem;
+  }
+  
+  .urban-container {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
   .hero-text h1 {
     font-size: 2.5rem;
   }
   
+  .city-grid,
   .urban-grid {
     width: 250px;
     height: 250px;

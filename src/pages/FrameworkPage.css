@@ -349,12 +349,27 @@ body {
 }
 
 /* Responsive design */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .hero-content {
     grid-template-columns: 1fr;
     gap: 2rem;
   }
   
+  .hero-text {
+    order: 1;
+    text-align: center;
+  }
+  
+  .constellation-container {
+    order: 2;
+  }
+  
+  .hero-text h1 {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 768px) {
   .hero-text h1 {
     font-size: 2.5rem;
   }

@@ -133,9 +133,9 @@
 }
 
 .business-insights .insights-grid {
-  display: grid !important;
-  grid-template-columns: 1fr 1fr 1fr !important;
-  grid-template-rows: 1fr !important;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
   gap: 2rem;
   margin-top: 1.5rem;
   align-items: start;
@@ -250,12 +250,28 @@
     font-size: 2rem;
   }
   
-  .insights-grid {
-    grid-template-columns: 1fr;
+  .business-insights .insights-grid {
+    grid-template-columns: 1fr !important;
     gap: 1rem;
   }
   
   .insight-column {
     padding: 1rem;
+  }
+}
+
+/* Additional mobile breakpoint for smaller screens */
+@media (max-width: 480px) {
+  .business-insights .insights-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1rem;
+  }
+  
+  .overview-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .stat-number {
+    font-size: 1.8rem;
   }
 }

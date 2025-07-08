@@ -72,7 +72,7 @@ const Header = () => {
         {/* Desktop Navigation */}
         <ul className="nav-links desktop-nav">
           <li><Link to="/" className="nav-link-btn" onClick={closeMobileMenu}>Home</Link></li>
-          <li><button onClick={() => scrollToSection('framework')} className="nav-link-btn">Framework</button></li>
+          <li><Link to="/framework" className="nav-link-btn">Framework</Link></li>
           <li><button onClick={() => scrollToSection('assessment')} className="nav-link-btn">Assessment</button></li>
           <li><button onClick={goToProduct} className="nav-link-btn">Product</button></li>
           <li><Link to="/blog" className="nav-link-btn">Blog</Link></li>
