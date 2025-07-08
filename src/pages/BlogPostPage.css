@@ -39,6 +39,22 @@
   color: #667eea;
 }
 
+.post-header-image {
+  margin: 2rem 0;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: center;
+}
+
+.post-header-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  max-width: 100%;
+  object-fit: contain;
+}
+
 .post-meta {
   display: flex;
   gap: 1rem;
@@ -244,6 +260,53 @@
   display: block;
 }
 
+/* Blog Table Styles */
+.blog-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 2rem 0;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.blog-table-header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 1rem;
+  text-align: left;
+  font-weight: 600;
+  font-size: 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.blog-table-cell {
+  padding: 0.875rem 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.9);
+  vertical-align: top;
+}
+
+.blog-table-row:nth-child(even) .blog-table-cell {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.blog-table-row:hover .blog-table-cell {
+  background: rgba(102, 126, 234, 0.1);
+  transition: background-color 0.3s ease;
+}
+
+.blog-table-cell strong {
+  color: #667eea;
+  font-weight: 600;
+}
+
+.blog-table-cell em {
+  color: rgba(255, 255, 255, 0.8);
+  font-style: italic;
+}
+
 /* Post Footer */
 .blog-post-footer {
   margin-top: 3rem;
@@ -314,6 +377,10 @@
     padding: 2rem;
   }
 
+  .post-header-image {
+    margin: 1.5rem 0;
+  }
+
   .post-title {
     font-size: 2rem;
   }
@@ -341,6 +408,20 @@
   .nav-button {
     text-align: center;
   }
+
+  /* Responsive table styling */
+  .blog-table {
+    font-size: 0.875rem;
+  }
+
+  .blog-table-header,
+  .blog-table-cell {
+    padding: 0.75rem 0.5rem;
+  }
+
+  .blog-table-header {
+    font-size: 0.875rem;
+  }
 }
 
 @media (max-width: 480px) {
@@ -359,5 +440,16 @@
   .blog-code-block {
     padding: 1rem;
     font-size: 0.8rem;
+  }
+
+  /* Very small screen table styling */
+  .blog-table {
+    font-size: 0.8rem;
+    margin: 1.5rem 0;
+  }
+
+  .blog-table-header,
+  .blog-table-cell {
+    padding: 0.5rem 0.25rem;
   }
 }

@@ -7,6 +7,7 @@ export interface BlogPost {
   tags: string[]
   featured: boolean
   readTime: string
+  image?: string
   content?: string
 }
 
@@ -18,4 +19,5 @@ export interface BlogPostMatter {
   tags: string[]
   featured: boolean
   readTime: string
+  image?: string
 }

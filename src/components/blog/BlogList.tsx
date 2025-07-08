@@ -8,6 +8,7 @@ const BlogList: React.FC = () => {
   const [searchParams, setSearchParams] = useSearchParams()
   const [selectedTag, setSelectedTag] = useState<string>('')
   const [searchTerm, setSearchTerm] = useState<string>('')
+  const [showFeaturedOnly, setShowFeaturedOnly] = useState<boolean>(false)
   
   const allPosts = getAllPosts()
   const allTags = getAllTags()
@@ -21,12 +22,19 @@ const BlogList: React.FC = () => {
       setSelectedTag(tagParam)
     }
     if (featuredParam === 'true') {
-      // Handle featured filter if needed
+      setShowFeaturedOnly(true)
+    } else {
+      setShowFeaturedOnly(false)
     }
   }, [searchParams])
 
   const filteredPosts = useMemo(() => {
     let posts = allPosts
+
+    // Filter by featured status first
+    if (showFeaturedOnly) {
+      posts = posts.filter(post => post.featured)
+    }
 
     // Filter by tag
     if (selectedTag) {
@@ -44,7 +52,7 @@ const BlogList: React.FC = () => {
     }
 
     return posts
-  }, [allPosts, selectedTag, searchTerm])
+  }, [allPosts, selectedTag, searchTerm, showFeaturedOnly])
 
   const featuredPosts = filteredPosts.filter(post => post.featured)
   const regularPosts = filteredPosts.filter(post => !post.featured)
@@ -52,6 +60,7 @@ const BlogList: React.FC = () => {
   // Handle tag selection
   const handleTagChange = (tag: string) => {
     setSelectedTag(tag)
+    setShowFeaturedOnly(false) // Clear featured filter when selecting a tag
     if (tag) {
       setSearchParams({ tag })
     } else {
@@ -101,7 +110,7 @@ const BlogList: React.FC = () => {
       </div>
 
       {/* Featured Posts */}
-      {featuredPosts.length > 0 && !selectedTag && !searchTerm && (
+      {featuredPosts.length > 0 && !selectedTag && !searchTerm && !showFeaturedOnly && (
         <section className="featured-section">
           <h2 className="section-title">Featured Discoveries</h2>
           <div className="featured-grid">
@@ -116,7 +125,12 @@ const BlogList: React.FC = () => {
       <section className="posts-section">
         <div className="section-header">
           <h2 className="section-title">
-            {selectedTag ? `${selectedTag.replace('-', ' ').replace(/\b\w/g, l => l.toUpperCase())} Articles` : 'All Articles'}
+            {showFeaturedOnly 
+              ? 'Featured Discoveries' 
+              : selectedTag 
+                ? `${selectedTag.replace('-', ' ').replace(/\b\w/g, l => l.toUpperCase())} Articles` 
+                : 'All Articles'
+            }
           </h2>
           <span className="posts-count">
             {filteredPosts.length} {filteredPosts.length === 1 ? 'article' : 'articles'}
@@ -125,7 +139,7 @@ const BlogList: React.FC = () => {
 
         {filteredPosts.length > 0 ? (
           <div className="posts-grid">
-            {(selectedTag || searchTerm ? filteredPosts : regularPosts).map(post => (
+            {(selectedTag || searchTerm || showFeaturedOnly ? filteredPosts : regularPosts).map(post => (
               <BlogCard key={post.slug} post={post} />
             ))}
           </div>

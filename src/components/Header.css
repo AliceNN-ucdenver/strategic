@@ -221,6 +221,18 @@
   justify-self: stretch;
 }
 
+/* Mobile-first: Hide desktop elements by default on smaller screens */
+@media (max-width: 1024px) {
+  .desktop-nav,
+  .desktop-cta {
+    display: none !important;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
   .nav {
@@ -229,15 +241,6 @@
   
   .header.scrolled .nav {
     padding: 0.75rem 1rem;
-  }
-
-  .desktop-nav,
-  .desktop-cta {
-    display: none;
-  }
-
-  .hamburger {
-    display: flex;
   }
 
   .logo {

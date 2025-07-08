@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useParams, Link, Navigate } from 'react-router-dom'
 import { MDXProvider } from '@mdx-js/react'
 import Header from '../components/Header'
@@ -24,10 +24,21 @@ const mdxComponents = {
   li: (props: any) => <li className="blog-content-list-item" {...props} />,
   img: (props: any) => <img className="blog-image" {...props} />,
   strong: (props: any) => <strong style={{ color: '#667eea', fontWeight: 600 }} {...props} />,
+  table: (props: any) => <table className="blog-table" {...props} />,
+  thead: (props: any) => <thead className="blog-table-head" {...props} />,
+  tbody: (props: any) => <tbody className="blog-table-body" {...props} />,
+  tr: (props: any) => <tr className="blog-table-row" {...props} />,
+  th: (props: any) => <th className="blog-table-header" {...props} />,
+  td: (props: any) => <td className="blog-table-cell" {...props} />,
 }
 
 const BlogPostPage: React.FC = () => {
   const { slug } = useParams<{ slug: string }>()
+  
+  // Scroll to top when component mounts or slug changes
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }, [slug])
   
   if (!slug) {
     return <Navigate to="/blog" replace />
@@ -87,6 +98,13 @@ const BlogPostPage: React.FC = () => {
             <Link to="/blog" className="back-to-blog">
               ← Back to Digital Excavations
             </Link>
+            
+            {/* Header Image */}
+            {post.image && (
+              <div className="post-header-image">
+                <img src={post.image} alt={post.title} />
+              </div>
+            )}
             
             <div className="post-meta">
               <time className="post-date">{formatDate(post.date)}</time>

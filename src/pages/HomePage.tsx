@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import chiefArchitectImage from '../assets/chief_architect.png';
@@ -6,6 +6,11 @@ import './HomePage.css';
 
 const HomePage: React.FC = () => {
   const basename = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+  // Scroll to top when component mounts
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }, [])
 
   return (
     <div className="home-page">
