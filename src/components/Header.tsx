@@ -97,7 +97,7 @@ const Header = () => {
         <div className={`mobile-nav ${isMobileMenuOpen ? 'active' : ''}`}>
           <ul className="mobile-nav-links">
             <li><Link to="/" className="nav-link-btn" onClick={closeMobileMenu}>Home</Link></li>
-            <li><button onClick={() => { scrollToSection('framework'); closeMobileMenu(); }} className="nav-link-btn">Framework</button></li>
+            <li><Link to="/framework" className="nav-link-btn" onClick={closeMobileMenu}>Framework</Link></li>
             <li><button onClick={() => { scrollToSection('assessment'); closeMobileMenu(); }} className="nav-link-btn">Assessment</button></li>
             <li><button onClick={() => { goToProduct(); closeMobileMenu(); }} className="nav-link-btn">Product</button></li>
             <li><Link to="/blog" className="nav-link-btn" onClick={closeMobileMenu}>Blog</Link></li>
