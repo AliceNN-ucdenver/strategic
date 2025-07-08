@@ -19,7 +19,8 @@ const ContactPage: React.FC = () => {
                 className="contact-avatar"
               />
               <div className="contact-intro">
-                <h1 className="contact-title">Connect with the Chief Archeologist</h1>
+                <h1 className="contact-title">Connect with Shawn McCarthy</h1>
+                <h2 className="contact-role">Chief Archeologist & Strategic Architecture Leader</h2>
                 <p className="contact-subtitle">
                   From excavating digital archaeology to navigating the stars of enterprise transformation,
                   let's explore how strategic architecture can unlock your organization's potential.
