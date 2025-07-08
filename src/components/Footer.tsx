@@ -57,10 +57,10 @@ const Footer: React.FC = () => {
             <div className="footer-section">
               <h4>Connect</h4>
               <ul>
-                <li><a href="mailto:hello@chiefarcheologist.com">Contact</a></li>
+                <li><a href={createPageLink('/contact')}>Contact</a></li>
                 <li><a href="#newsletter">Newsletter</a></li>
                 <li><a href="#community">Community</a></li>
-                <li><a href="#linkedin">LinkedIn</a></li>
+                <li><a href="https://www.linkedin.com/in/shawnemccarthy/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
               </ul>
             </div>
           </div>
