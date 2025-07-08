@@ -47,14 +47,16 @@ const HomePage: React.FC = () => {
             
             <div className="bio-content">
               <p className="intro-paragraph">
-                For over two decades, I've been the enterprise equivalent of an archeologist—carefully excavating 
-                layers of legacy technology, carbon dating mainframe systems from the digital Jurassic period, 
-                and translating ancient COBOL hieroglyphics into modern business value. <br /><br />
+                For over two decades, I've been on a quest through the digital ruins of enterprise technology. 
+                Like an archeologist uncovering ancient civilizations, I excavate layers of legacy systems, 
+                carbon-date mainframe fossils from the computing Jurassic era, and decode the mysterious 
+                COBOL hieroglyphics that still power our modern world. <br /><br />
 
-                Now, as we stand at the precipice of the next industrial revolution, I'm leveraging cutting-edge 
-                acceleration capabilities like AI to transform how enterprises think about technology. No longer 
-                just building inspector or order-taker, but strategic business enabler—turning architecture 
-                into competitive advantage.
+                But this isn't just about preserving the past. As we stand at the dawn of the AI revolution, 
+                I'm pioneering the future of enterprise architecture. Gone are the days of being a mere 
+                compliance officer or technical gatekeeper. Today's architects are strategic catalysts, 
+                transforming technology debt into competitive gold and turning architectural vision into 
+                measurable business triumph.
               </p>
               
               <div className="experience-highlights">
