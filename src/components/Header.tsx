@@ -4,6 +4,7 @@ import './Header.css'
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false)
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const basename = import.meta.env.BASE_URL.replace(/\/$/, '')
 
   useEffect(() => {
@@ -53,19 +54,55 @@ const Header = () => {
     window.location.href = basename + '/product';
   };
 
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
+  const closeMobileMenu = () => {
+    setIsMobileMenuOpen(false);
+  };
+
   return (
     <header className={`header ${isScrolled ? 'scrolled' : ''}`}>
       <nav className="nav">
         <Link to="/" className="logo">
           ChiefArcheologist.com
         </Link>
-        <ul className="nav-links">
+        
+        {/* Desktop Navigation */}
+        <ul className="nav-links desktop-nav">
+          <li><Link to="/" className="nav-link-btn" onClick={closeMobileMenu}>Home</Link></li>
           <li><button onClick={() => scrollToSection('framework')} className="nav-link-btn">Framework</button></li>
           <li><button onClick={() => scrollToSection('assessment')} className="nav-link-btn">Assessment</button></li>
           <li><button onClick={goToProduct} className="nav-link-btn">Product</button></li>
           <li><Link to="/resources" className="nav-link-btn">Resources</Link></li>
         </ul>
-        <button onClick={() => scrollToSection('assessment')} className="cta-button">Get Started</button>
+
+        {/* Desktop CTA Button */}
+        <button onClick={() => scrollToSection('assessment')} className="cta-button desktop-cta">Get Started</button>
+
+        {/* Mobile Hamburger Button */}
+        <button 
+          className={`hamburger ${isMobileMenuOpen ? 'active' : ''}`}
+          onClick={toggleMobileMenu}
+          aria-label="Toggle mobile menu"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        {/* Mobile Navigation */}
+        <div className={`mobile-nav ${isMobileMenuOpen ? 'active' : ''}`}>
+          <ul className="mobile-nav-links">
+            <li><Link to="/" className="nav-link-btn" onClick={closeMobileMenu}>Home</Link></li>
+            <li><button onClick={() => { scrollToSection('framework'); closeMobileMenu(); }} className="nav-link-btn">Framework</button></li>
+            <li><button onClick={() => { scrollToSection('assessment'); closeMobileMenu(); }} className="nav-link-btn">Assessment</button></li>
+            <li><button onClick={() => { goToProduct(); closeMobileMenu(); }} className="nav-link-btn">Product</button></li>
+            <li><Link to="/resources" className="nav-link-btn" onClick={closeMobileMenu}>Resources</Link></li>
+            <li><button onClick={() => { scrollToSection('assessment'); closeMobileMenu(); }} className="cta-button mobile-cta">Get Started</button></li>
+          </ul>
+        </div>
       </nav>
     </header>
   )
