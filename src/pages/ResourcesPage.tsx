@@ -102,7 +102,7 @@ const ResourcesPage: React.FC = () => {
                 <span className="stat-label">Articles</span>
               </div>
               <div className="stat-item">
-                <span className="stat-number">{articles.length}</span>
+                <span className="stat-number">3</span>
                 <span className="stat-label">Major Publications</span>
               </div>
               <div className="stat-item">
