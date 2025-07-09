@@ -56,7 +56,31 @@ const ResourcesPage: React.FC = () => {
       url: "https://www.cio.com/article/3846774/security-is-dead-long-live-risk-management.html",
       image: "🛡️",
       tags: ["Risk Management", "Security Architecture", "Enterprise Resilience"]
-    }
+    },
+    {
+      title: "Enhancing Financial Market Analysis and Prediction with Emotion Corpora and News Co-Occurrence Network",
+      publication: "MDPI - Journal of Risk and Financial Management",
+      excerpt: "Research employing improved natural language processing algorithms to analyze over 500,000 financial news articles, developing emotion corpora and co-occurrence networks to identify shifting economic activity and relationships between companies across sectors.",
+      url: "https://www.mdpi.com/1911-8074/16/4/226",
+      image: "📊",
+      tags: ["Financial Analysis", "NLP", "Market Prediction", "Research"]
+    },
+    {
+      title: "The Emotion Magnitude Effect: Navigating Market Dynamics Amidst Supply Chain Events",
+      publication: "MDPI - Journal of Risk and Financial Management",
+      excerpt: "Research introducing the novel 'emotion magnitude' metric to capture emotional undercurrents in financial markets during 2019-2021. Creates multidimensional data science framework connecting supply chain disruptions, countries, commodities, and corporations through knowledge graphs.",
+      url: "https://www.mdpi.com/1911-8074/16/12/490",
+      image: "📈",
+      tags: ["Supply Chain Analysis", "Market Dynamics", "Knowledge Graphs", "Research"]
+    },
+    {
+      title: "Fin-ALICE: Artificial Linguistic Intelligence Causal Econometrics",
+      publication: "MDPI - Journal of Risk and Financial Management",
+      excerpt: "Introduction of Fin-ALICE framework for financial time series forecasting, integrating emotional sentiment analysis, supply chain dynamics, and advanced machine learning techniques using Temporal Convolutional Networks to outperform traditional models.",
+      url: "https://www.mdpi.com/1911-8074/17/12/537",
+      image: "🤖",
+      tags: ["Machine Learning", "Financial Forecasting", "AI", "Research"]
+    },
   ];
 
   return (
@@ -74,11 +98,11 @@ const ResourcesPage: React.FC = () => {
             </p>
             <div className="hero-stats">
               <div className="stat-item">
-                <span className="stat-number">3</span>
-                <span className="stat-label">Featured Articles</span>
+                <span className="stat-number">{articles.length}</span>
+                <span className="stat-label">Articles</span>
               </div>
               <div className="stat-item">
-                <span className="stat-number">2</span>
+                <span className="stat-number">{articles.length}</span>
                 <span className="stat-label">Major Publications</span>
               </div>
               <div className="stat-item">

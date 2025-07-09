@@ -76,7 +76,7 @@ const Header = () => {
           <li><button onClick={() => scrollToSection('assessment')} className="nav-link-btn">Assessment</button></li>
           <li><button onClick={goToProduct} className="nav-link-btn">Product</button></li>
           <li><Link to="/blog" className="nav-link-btn">Blog</Link></li>
-          <li><Link to="/resources" className="nav-link-btn">Resources</Link></li>
+          <li><Link to="/resources" className="nav-link-btn">Articles</Link></li>
         </ul>
 
         {/* Desktop CTA Button */}
@@ -101,7 +101,7 @@ const Header = () => {
             <li><button onClick={() => { scrollToSection('assessment'); closeMobileMenu(); }} className="nav-link-btn">Assessment</button></li>
             <li><button onClick={() => { goToProduct(); closeMobileMenu(); }} className="nav-link-btn">Product</button></li>
             <li><Link to="/blog" className="nav-link-btn" onClick={closeMobileMenu}>Blog</Link></li>
-            <li><Link to="/resources" className="nav-link-btn" onClick={closeMobileMenu}>Resources</Link></li>
+            <li><Link to="/resources" className="nav-link-btn" onClick={closeMobileMenu}>Articles</Link></li>
             <li><button onClick={() => { scrollToSection('assessment'); closeMobileMenu(); }} className="cta-button mobile-cta">Get Started</button></li>
           </ul>
         </div>
