@@ -1,0 +1,12 @@
+export { default as ResumeHeader } from './ResumeHeader';
+export { default as ResumeSummary } from './ResumeSummary';
+export { default as ResumeLeadershipImpact } from './ResumeLeadershipImpact';
+export { default as ResumeCoreCompetencies } from './ResumeCoreCompetencies';
+export { default as ResumeProfessionalExperience } from './ResumeProfessionalExperience';
+export { default as ResumeEducation } from './ResumeEducation';
+export { default as ResumeCertifications } from './ResumeCertifications';
+export { default as ResumePublications } from './ResumePublications';
+export { default as ResumeLeadershipBoard } from './ResumeLeadershipBoard';
+export { default as ResumeInclusionLeadership } from './ResumeInclusionLeadership';
+export { default as ResumeKeyAchievements } from './ResumeKeyAchievements';
+export { default as ResumeFooter } from './ResumeFooter';
