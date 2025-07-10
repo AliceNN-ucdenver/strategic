@@ -6,6 +6,7 @@ import ResourcesPage from './pages/ResourcesPage'
 import BlogPage from './pages/BlogPage'
 import BlogPostPage from './pages/BlogPostPage'
 import ContactPage from './pages/ContactPage'
+import ResumeOnlyPage from './pages/ResumeOnlyPage'
 import './App.css'
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
           <Route path="/blog/:slug" element={<BlogPostPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/resources" element={<ResourcesPage />} />
+          <Route path="/resume-print" element={<ResumeOnlyPage />} />
         </Routes>
       </div>
     </Router>
