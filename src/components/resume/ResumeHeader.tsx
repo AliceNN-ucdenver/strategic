@@ -15,7 +15,7 @@ const ResumeHeader: React.FC = () => {
         </div>
       </div>
       <div className="resume-contact-info">
-        <span>📧 shawn@mccarthysoftware.com</span>
+        <span>📧 smccarthy@iasaoffice.org</span>
         <span>🔗 <a href="https://linkedin.com/in/shawnemccarthy">linkedin.com/in/shawnemccarthy</a></span>
         <span>🌐 <a href="https://chiefarcheologist.com">chiefarcheologist.com</a></span>
         <span>📍 Denver, Colorado</span>

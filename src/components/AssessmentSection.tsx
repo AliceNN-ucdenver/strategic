@@ -10,7 +10,7 @@ const AssessmentSection: React.FC<AssessmentSectionProps> = ({ onOpenModal }) =>
     <section className="assessment" id="assessment">
       <div className="assessment-container">
         <h2>The Strategic Architecture Constellation Assessment</h2>
-        <p>Discover your organization's maturity across AI architecture, product transformation, and security integration</p>
+        <p>Discover your organization's maturity across architecture, product transformation, and security integration</p>
         
         <div className="assessment-preview">
           <div className="sample-question">

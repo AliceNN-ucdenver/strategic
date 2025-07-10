@@ -73,7 +73,6 @@ const Header = () => {
         <ul className="nav-links desktop-nav">
           <li><Link to="/" className="nav-link-btn" onClick={closeMobileMenu}>Home</Link></li>
           <li><Link to="/framework" className="nav-link-btn">Framework</Link></li>
-          <li><button onClick={() => scrollToSection('assessment')} className="nav-link-btn">Assessment</button></li>
           <li><button onClick={goToProduct} className="nav-link-btn">Product</button></li>
           <li><Link to="/blog" className="nav-link-btn">Blog</Link></li>
           <li><Link to="/resources" className="nav-link-btn">Articles</Link></li>
@@ -98,7 +97,6 @@ const Header = () => {
           <ul className="mobile-nav-links">
             <li><Link to="/" className="nav-link-btn" onClick={closeMobileMenu}>Home</Link></li>
             <li><Link to="/framework" className="nav-link-btn" onClick={closeMobileMenu}>Framework</Link></li>
-            <li><button onClick={() => { scrollToSection('assessment'); closeMobileMenu(); }} className="nav-link-btn">Assessment</button></li>
             <li><button onClick={() => { goToProduct(); closeMobileMenu(); }} className="nav-link-btn">Product</button></li>
             <li><Link to="/blog" className="nav-link-btn" onClick={closeMobileMenu}>Blog</Link></li>
             <li><Link to="/resources" className="nav-link-btn" onClick={closeMobileMenu}>Articles</Link></li>
