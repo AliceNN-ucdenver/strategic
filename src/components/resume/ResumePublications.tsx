@@ -7,7 +7,7 @@ const ResumePublications: React.FC = () => {
       
       <div className="resume-publication-item">
         <div className="resume-publication-title">From Fixed Frameworks to Strategic Enablers: Architecting AI Transformation</div>
-        <div className="resume-publication-details">CIO.com | July 2025 (forthcoming) | IASA Chief Architect Forum Partnership</div>
+        <div className="resume-publication-details">CIO.com | July 2025 | <a href="https://www.cio.com/article/4020233/from-fixed-frameworks-to-strategic-enablers-architecting-ai-transformation.html">Read Full Article</a></div>
         <div className="resume-publication-description">
           Explores how traditional architectural approaches have become unsustainable for AI-driven enterprises. Argues for strategic enablement throughout the AI transformation lifecycle.
         </div>
