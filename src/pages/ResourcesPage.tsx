@@ -34,6 +34,14 @@ const ResourcesPage: React.FC = () => {
 
   const articles = [
     {
+      title: "From Fixed Frameworks to Strategic Enablers: Architecting AI Transformation",
+      publication: "CIO",
+      excerpt: "Discover how to evolve from rigid architectural frameworks to dynamic, AI-enabled strategic capabilities that drive continuous innovation and competitive advantage in the modern enterprise.",
+      url: "https://www.cio.com/article/4020233/from-fixed-frameworks-to-strategic-enablers-architecting-ai-transformation.html",
+      image: "🤖",
+      tags: ["AI Transformation", "Strategic Architecture", "Digital Innovation"]
+    },
+    {
       title: "How to Leverage APIs for IT-Enabled Information Capability",
       publication: "InfoWorld",
       excerpt: "Explore how APIs can transform your organization's information architecture into a strategic business capability, enabling real-time data access and seamless integration across enterprise systems.",
