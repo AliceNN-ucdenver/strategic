@@ -42,7 +42,7 @@ const SubscriptionModal: React.FC<SubscriptionModalProps> = ({ isOpen, onClose }
           <div data-style="full" style={{'--bg-border-radius': '5px'} as React.CSSProperties}>
             <div data-element="column" className="formkit-column">
               <div className="formkit-header" data-element="header" style={{color: 'rgb(61, 61, 61)', fontWeight: 700}}>
-                <h2>Learn how to guide curious exploration</h2>
+                <h2>Subscribe to The Rabbit Hole</h2>
               </div>
               <div className="formkit-content" data-element="content" style={{color: 'rgb(110, 110, 110)'}}>
                 <p>Each month, I'll guide you through a different Strategic Architecture Constellation with Wonderland characters as your mentors.</p>
