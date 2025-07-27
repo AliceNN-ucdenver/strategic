@@ -1,11 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useLocation } from 'react-router-dom';
+import SubscriptionModal from './SubscriptionModal';
 import './Footer.css';
 
 const Footer: React.FC = () => {
   const location = useLocation();
   const isFrameworkPage = location.pathname === '/framework';
   const basename = import.meta.env.BASE_URL.replace(/\/$/, '');
+  const [isSubscriptionModalOpen, setIsSubscriptionModalOpen] = useState(false);
   
   // Helper function to create proper links
   const createLink = (anchor: string) => {
@@ -20,6 +22,11 @@ const Footer: React.FC = () => {
   const createPageLink = (path: string, anchor?: string) => {
     const fullPath = `${basename}${path}`;
     return anchor ? `${fullPath}#${anchor}` : fullPath;
+  };
+
+  const openSubscriptionForm = (e: React.MouseEvent) => {
+    e.preventDefault();
+    setIsSubscriptionModalOpen(true);
   };
 
   return (
@@ -60,8 +67,7 @@ const Footer: React.FC = () => {
               <ul>
                 <li><a href={createPageLink('/contact')}>Contact</a></li>
                 <li><a href={createPageLink('/resume-print')} target="_blank" rel="noopener noreferrer">Resume</a></li>
-                <li><a href="#newsletter">Newsletter</a></li>
-                <li><a href="#community">Community</a></li>
+                <li><a href="#newsletter" onClick={openSubscriptionForm}>Newsletter</a></li>
                 <li><a href="https://www.linkedin.com/in/shawnemccarthy/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
               </ul>
             </div>
@@ -79,6 +85,11 @@ const Footer: React.FC = () => {
           </div>
         </div>
       </div>
+      
+      <SubscriptionModal 
+        isOpen={isSubscriptionModalOpen} 
+        onClose={() => setIsSubscriptionModalOpen(false)} 
+      />
     </footer>
   );
 };

@@ -1,10 +1,12 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import SubscriptionModal from './SubscriptionModal'
 import './Header.css'
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const [isSubscriptionModalOpen, setIsSubscriptionModalOpen] = useState(false)
   const basename = import.meta.env.BASE_URL.replace(/\/$/, '')
 
   useEffect(() => {
@@ -17,41 +19,13 @@ const Header = () => {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  const scrollToSection = (sectionId: string) => {
-    // Framework section is now on framework page
-    if (sectionId === 'framework') {
-      if (window.location.pathname !== '/framework') {
-        window.location.href = basename + '/framework#framework';
-      } else {
-        const element = document.getElementById('framework');
-        if (element) {
-          element.scrollIntoView({ 
-            behavior: 'smooth',
-            block: 'start'
-          });
-        }
-      }
-    } else {
-      // Assessment and other sections are on framework page
-      if (window.location.pathname !== '/framework') {
-        window.location.href = basename +`/framework#${sectionId}`;
-      } else {
-        const element = document.getElementById(sectionId);
-        if (element) {
-          element.scrollIntoView({ 
-            behavior: 'smooth',
-            block: 'start'
-          });
-        } else {
-          console.log(`Element with ID "${sectionId}" not found`);
-        }
-      }
-    }
-  };
-
   const goToProduct = () => {
     // Go to product page and scroll to top
     window.location.href = basename + '/product';
+  };
+
+  const openSubscriptionForm = () => {
+    setIsSubscriptionModalOpen(true);
   };
 
   const toggleMobileMenu = () => {
@@ -79,7 +53,7 @@ const Header = () => {
         </ul>
 
         {/* Desktop CTA Button */}
-        <button onClick={() => scrollToSection('assessment')} className="cta-button desktop-cta">Get Started</button>
+        <button onClick={openSubscriptionForm} className="cta-button desktop-cta">Subscribe</button>
 
         {/* Mobile Hamburger Button */}
         <button 
@@ -100,10 +74,15 @@ const Header = () => {
             <li><button onClick={() => { goToProduct(); closeMobileMenu(); }} className="nav-link-btn">Product</button></li>
             <li><Link to="/blog" className="nav-link-btn" onClick={closeMobileMenu}>Blog</Link></li>
             <li><Link to="/resources" className="nav-link-btn" onClick={closeMobileMenu}>Articles</Link></li>
-            <li><button onClick={() => { scrollToSection('assessment'); closeMobileMenu(); }} className="cta-button mobile-cta">Get Started</button></li>
+            <li><button onClick={() => { openSubscriptionForm(); closeMobileMenu(); }} className="cta-button mobile-cta">Subscribe</button></li>
           </ul>
         </div>
       </nav>
+      
+      <SubscriptionModal 
+        isOpen={isSubscriptionModalOpen} 
+        onClose={() => setIsSubscriptionModalOpen(false)} 
+      />
     </header>
   )
 }
