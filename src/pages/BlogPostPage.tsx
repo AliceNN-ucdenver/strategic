@@ -23,7 +23,7 @@ const mdxComponents = {
   ol: (props: any) => <ol className="blog-content-list" {...props} />,
   li: (props: any) => <li className="blog-content-list-item" {...props} />,
   img: (props: any) => <img className="blog-image" {...props} />,
-  strong: (props: any) => <strong style={{ color: '#667eea', fontWeight: 600 }} {...props} />,
+  strong: (props: any) => <strong style={{ color: '#f8bbd9', fontWeight: 700 }} {...props} />,
   table: (props: any) => <table className="blog-table" {...props} />,
   thead: (props: any) => <thead className="blog-table-head" {...props} />,
   tbody: (props: any) => <tbody className="blog-table-body" {...props} />,

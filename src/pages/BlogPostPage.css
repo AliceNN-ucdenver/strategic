@@ -200,14 +200,19 @@
 }
 
 .blog-link {
-  color: #667eea;
+  color: #4fc3f7;
   text-decoration: none;
-  border-bottom: 1px solid transparent;
+  border-bottom: 1px solid rgba(79, 195, 247, 0.3);
   transition: all 0.3s ease;
+  font-weight: 500;
 }
 
 .blog-link:hover {
-  border-bottom-color: #667eea;
+  color: #29b6f6;
+  border-bottom-color: #29b6f6;
+  background: rgba(79, 195, 247, 0.1);
+  padding: 0.125rem 0.25rem;
+  border-radius: 4px;
 }
 
 .blog-content-list {
@@ -228,8 +233,8 @@
 }
 
 .blog-content-list-item strong {
-  color: #667eea;
-  font-weight: 600;
+  color: #f8bbd9;
+  font-weight: 700;
 }
 
 /* Content Section Controls */
@@ -298,8 +303,8 @@
 }
 
 .blog-table-cell strong {
-  color: #667eea;
-  font-weight: 600;
+  color: #f8bbd9;
+  font-weight: 700;
 }
 
 .blog-table-cell em {
