@@ -24,21 +24,34 @@ export function getAllPosts(): BlogPost[] {
   return posts.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
 }
 
+export function getPublishedPosts(): BlogPost[] {
+  const today = new Date()
+  today.setHours(23, 59, 59, 999) // Set to end of day to include today's posts
+  
+  return getAllPosts().filter(post => {
+    const postDate = new Date(post.date)
+    postDate.setHours(0, 0, 0, 0) // Set to start of day for accurate comparison
+    
+    // Only include posts with dates <= today (exclude future-dated posts)
+    return postDate <= today
+  })
+}
+
 export function getPostBySlug(slug: string): BlogPost | null {
-  const posts = getAllPosts()
+  const posts = getAllPosts() // Use getAllPosts to allow access to future posts
   return posts.find(post => post.slug === slug) || null
 }
 
 export function getFeaturedPosts(): BlogPost[] {
-  return getAllPosts().filter(post => post.featured)
+  return getPublishedPosts().filter(post => post.featured) // Use published posts for listings
 }
 
 export function getPostsByTag(tag: string): BlogPost[] {
-  return getAllPosts().filter(post => post.tags.includes(tag))
+  return getPublishedPosts().filter(post => post.tags.includes(tag)) // Use published posts for listings
 }
 
 export function getAllTags(): string[] {
-  const posts = getAllPosts()
+  const posts = getPublishedPosts() // Use published posts for tag listings
   const tags = new Set<string>()
   
   posts.forEach(post => {

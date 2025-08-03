@@ -1,6 +1,6 @@
 import React, { useState, useMemo, useEffect } from 'react'
 import { useSearchParams } from 'react-router-dom'
-import { getAllPosts, getAllTags } from '../../utils/blog'
+import { getPublishedPosts, getAllTags } from '../../utils/blog'
 import BlogCard from './BlogCard'
 import './BlogList.css'
 
@@ -10,7 +10,7 @@ const BlogList: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState<string>('')
   const [showFeaturedOnly, setShowFeaturedOnly] = useState<boolean>(false)
   
-  const allPosts = getAllPosts()
+  const allPosts = getPublishedPosts() // Use published posts for blog list
   const allTags = getAllTags()
 
   // Initialize state from URL parameters
