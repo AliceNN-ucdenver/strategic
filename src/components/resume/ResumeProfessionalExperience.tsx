@@ -40,10 +40,11 @@ const ResumeProfessionalExperience: React.FC = () => {
         </div>
         <div className="resume-job-description">
           <div className="resume-key-achievement">
-            <strong>AI Education Pioneer:</strong> Developed and deliver cutting-edge curriculum in Generative AI and Web API Technologies to undergraduate students.
+            <strong>AI Education Pioneer:</strong> State-approved continuing education provider specializing in AI ethics for professional development in the financial services industry.
           </div>
           <ul>
             <li>Designed and delivered <strong>Generative AI course</strong> covering LLMs, transformer architectures, and AI ethics</li>
+            <li><strong>Colorado State-Approved CE Educator:</strong> "Generative AI Deep Learning Ethics" presentation approved for 1 CE credit for licensed insurance producers - official recognition for specialized expertise in AI + Ethics + Insurance</li>
             <li>Instructor for <strong>Web API Technologies</strong> with focus on cloud deployment, DevSecOps, and test automation</li>
             <li>Faculty advisor for <strong>AI Student Association</strong> - fostering next-generation AI talent</li>
             <li>Advisory board leadership: expand community presence, develop industry partnerships</li>
