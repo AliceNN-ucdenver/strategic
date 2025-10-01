@@ -18,6 +18,7 @@ const ResumeCertifications: React.FC = () => {
         <div className="resume-cert-item"><span className="resume-nvidia-highlight">NVIDIA DLI</span> Efficient Large Language Model (LLM) Customization</div>
         <div className="resume-cert-item"><span className="resume-nvidia-highlight">NVIDIA DLI</span> Generative AI with Diffusion Models</div>
         <div className="resume-cert-item"><span className="resume-nvidia-highlight">NVIDIA DLI</span> Building RAG Agents with LLMs</div>
+        <div className="resume-cert-item"><span className="resume-nvidia-highlight">NVIDIA DLI</span> Deploying RAG Pipelines for Production at Scale</div>
       </div>
     </section>
   );
