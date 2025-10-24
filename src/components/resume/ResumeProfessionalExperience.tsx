@@ -20,6 +20,7 @@ const ResumeProfessionalExperience: React.FC = () => {
           </div>
           <ul>
             <li>Transformed fragmented architecture function into <strong>federated, outcome-driven capability</strong> deeply embedded in business strategy</li>
+            <li><strong>Forrester 2025 EA Awards Finalist (North America):</strong> Recognized for pioneering Project Atlas—an industry-leading program transforming architect development and practice maturity</li>
             <li>Evolved from <strong>Disposition-based Application Roadmaps to Strategic Business Blueprints</strong> across Global Retail, Global Retirement, and Institutional lines of business</li>
             <li>Lead team of <strong>20 enterprise architects, 12 application security professionals, and 40 information risk specialists</strong></li>
             <li>Manage technology strategy for world's 28th largest fund manager with strong presence in Canada, Asia, and United States</li>

@@ -5,7 +5,7 @@ const ResumeKeyAchievements: React.FC = () => {
     <section className="resume-section">
       <h3 className="resume-section-title">🎯 Key Achievements</h3>
       <div className="resume-key-achievement">
-        <strong>Enterprise Transformation:</strong> Led comprehensive transformation across Architecture, Information Risk, and Application Security domains, achieving measurable outcomes including 300 apps modernized, 95% Risk KRI achievement, and zero medium+ vulnerabilities enterprise-wide
+        <strong>Enterprise Architecture Transformation:</strong> Recognized as Forrester 2025 EA Awards Finalist (North America) for leading comprehensive modernization program transforming fragmented practice into federated, outcome-driven capability—delivering 300 apps modernized, 95% Risk KRI achievement, and industry-leading architect development through Project Atlas
       </div>
       <div className="resume-key-achievement">
         <strong>Thought Leadership:</strong> Published enterprise architecture expert with major articles in InfoWorld and CIO.com, advancing industry best practices through innovative product-centric architecture approaches
