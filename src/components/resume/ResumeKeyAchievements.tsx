@@ -8,6 +8,9 @@ const ResumeKeyAchievements: React.FC = () => {
         <strong>Enterprise Architecture Transformation:</strong> Recognized as Forrester 2025 EA Awards Finalist (North America) for leading comprehensive modernization program transforming fragmented practice into federated, outcome-driven capability—delivering 300 apps modernized, 95% Risk KRI achievement, and industry-leading architect development through Project Atlas
       </div>
       <div className="resume-key-achievement">
+        <strong>Organizational Transformation Leadership:</strong> Led enterprise-wide transformations across three major organizations—domain-driven SAFe adoption at Vantiv establishing foundation for enterprise train structure; digital transformation at Schwab creating Digital Architect role embedded with product teams; information risk and security transformation at Manulife achieving 95% Risk KRI and zero medium+ vulnerabilities
+      </div>
+      <div className="resume-key-achievement">
         <strong>Thought Leadership:</strong> Published enterprise architecture expert with major articles in InfoWorld and CIO.com, advancing industry best practices through innovative product-centric architecture approaches
       </div>
       <div className="resume-key-achievement">
