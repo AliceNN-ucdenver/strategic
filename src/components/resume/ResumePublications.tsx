@@ -4,7 +4,15 @@ const ResumePublications: React.FC = () => {
   return (
     <section className="resume-section">
       <h3 className="resume-section-title">📚 Research Publications & Patents</h3>
-      
+
+      <div className="resume-publication-item">
+        <div className="resume-publication-title">The Engineering Imperative: Why AI Won't Replace Your Best Developers</div>
+        <div className="resume-publication-details">CIO.com | October 2025 | <a href="https://www.cio.com/article/4080210/the-engineering-imperative-why-ai-wont-replace-your-best-developers.html">Read Full Article</a></div>
+        <div className="resume-publication-description">
+          Examines why AI will elevate rather than replace skilled engineers, introducing the 70/30 rule for AI-generated code and exploring the evolution from reactive maintenance to strategic architectural design.
+        </div>
+      </div>
+
       <div className="resume-publication-item">
         <div className="resume-publication-title">From Fixed Frameworks to Strategic Enablers: Architecting AI Transformation</div>
         <div className="resume-publication-details">CIO.com | July 2025 | <a href="https://www.cio.com/article/4020233/from-fixed-frameworks-to-strategic-enablers-architecting-ai-transformation.html">Read Full Article</a></div>

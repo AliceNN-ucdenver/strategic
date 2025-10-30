@@ -34,6 +34,14 @@ const ResourcesPage: React.FC = () => {
 
   const articles = [
     {
+      title: "The Engineering Imperative: Why AI Won't Replace Your Best Developers",
+      publication: "CIO",
+      excerpt: "Explore why AI will elevate rather than replace skilled engineers, and discover how the 70/30 rule defines the future of human-AI collaboration in software development. Learn how engineering roles are evolving from reactive maintenance to strategic architectural design.",
+      url: "https://www.cio.com/article/4080210/the-engineering-imperative-why-ai-wont-replace-your-best-developers.html",
+      image: "👨‍💻",
+      tags: ["AI & Engineering", "Future of Work", "Software Architecture"]
+    },
+    {
       title: "From Fixed Frameworks to Strategic Enablers: Architecting AI Transformation",
       publication: "CIO",
       excerpt: "Discover how to evolve from rigid architectural frameworks to dynamic, AI-enabled strategic capabilities that drive continuous innovation and competitive advantage in the modern enterprise.",
