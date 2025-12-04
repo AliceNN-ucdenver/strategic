@@ -11,6 +11,7 @@ const ResumeCertifications: React.FC = () => {
         <div className="resume-cert-item"><span className="resume-nvidia-highlight">NVIDIA NCP</span> Agentic AI - Subject Matter Expert</div>
         <div className="resume-cert-item"><span className="resume-nvidia-highlight">NVIDIA NCP-AAI</span> Nvidia Certified Professional: Agentic AI</div>
         <div className="resume-cert-item"><span className="resume-nvidia-highlight">NVIDIA DLI</span> Building Agentic AI Applications with Large Language Models</div>
+        <div className="resume-cert-item"><span className="resume-nvidia-highlight">NVIDIA DLI</span> Building AI Agents with Multimodal Models</div>
         <div className="resume-cert-item"><span className="resume-nvidia-highlight">NVIDIA DLI</span> Specialization - LLM Level 1</div>
         <div className="resume-cert-item"><span className="resume-nvidia-highlight">NVIDIA DLI</span> Applications of AI for Anomaly Detection</div>
         <div className="resume-cert-item"><span className="resume-nvidia-highlight">NVIDIA DLI</span> Building Transformer-Based Natural Language Processing Applications</div>
