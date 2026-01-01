@@ -6,6 +6,14 @@ const ResumePublications: React.FC = () => {
       <h3 className="resume-section-title">📚 Research Publications & Patents</h3>
 
       <div className="resume-publication-item">
+        <div className="resume-publication-title">A Momentum-Based Normalization Framework for Generating Profitable Analyst Sentiment Signals</div>
+        <div className="resume-publication-details">International Journal of Financial Studies (IJFS) | 2026 | <a href="https://www.mdpi.com/2227-7072/14/1/4">Read Full Article</a></div>
+        <div className="resume-publication-description">
+          Momentum-based normalization framework for standardizing diverse analyst recommendations into profitable investment signals using firm-relative ECDF and expanding global quantile classification.
+        </div>
+      </div>
+
+      <div className="resume-publication-item">
         <div className="resume-publication-title">The Engineering Imperative: Why AI Won't Replace Your Best Developers</div>
         <div className="resume-publication-details">CIO.com | October 2025 | <a href="https://www.cio.com/article/4080210/the-engineering-imperative-why-ai-wont-replace-your-best-developers.html">Read Full Article</a></div>
         <div className="resume-publication-description">

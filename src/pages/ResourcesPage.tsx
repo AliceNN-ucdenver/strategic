@@ -97,6 +97,14 @@ const ResourcesPage: React.FC = () => {
       image: "🤖",
       tags: ["Machine Learning", "Financial Forecasting", "AI", "Research"]
     },
+    {
+      title: "A Momentum-Based Normalization Framework for Generating Profitable Analyst Sentiment Signals",
+      publication: "MDPI - International Journal of Financial Studies",
+      excerpt: "Development of a momentum-based normalization framework that transforms diverse analyst rating scales into standardized sentiment signals using firm-relative ECDF normalization. Analyzes 68,660 rating events from 270 brokerage firms, achieving statistically significant Buy-Sell spreads and 13.6% annualized alpha validated through Fama-French six-factor analysis.",
+      url: "https://www.mdpi.com/2227-7072/14/1/4",
+      image: "📊",
+      tags: ["Analyst Sentiment", "Momentum Strategies", "Quantitative Finance", "Research"]
+    },
   ];
 
   return (
