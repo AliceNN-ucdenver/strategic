@@ -12,7 +12,10 @@ const ResumeCertifications: React.FC = () => {
         <div className="resume-cert-item"><span className="resume-nvidia-highlight">NVIDIA NCP-AAI</span> Nvidia Certified Professional: Agentic AI</div>
         <div className="resume-cert-item"><span className="resume-nvidia-highlight">NVIDIA DLI</span> Building Agentic AI Applications with Large Language Models</div>
         <div className="resume-cert-item"><span className="resume-nvidia-highlight">NVIDIA DLI</span> Building AI Agents with Multimodal Models</div>
-        <div className="resume-cert-item"><span className="resume-nvidia-highlight">NVIDIA DLI</span> Specialization - LLM Level 1</div>
+        <div className="resume-cert-item"><span className="resume-nvidia-highlight">NVIDIA DLI</span> Specialization - Large Language Model (LLM) Applications</div>
+        <div className="resume-cert-item"><span className="resume-nvidia-highlight">NVIDIA DLI</span> Specialization - Large Language Model (LLM) Agents</div>
+        <div className="resume-cert-item"><span className="resume-nvidia-highlight">NVIDIA DLI</span> Specialization - Sovereign AI</div>
+        <div className="resume-cert-item"><span className="resume-nvidia-highlight">NVIDIA DLI</span> Specialization - Multimodal Generative AI</div>
         <div className="resume-cert-item"><span className="resume-nvidia-highlight">NVIDIA DLI</span> Applications of AI for Anomaly Detection</div>
         <div className="resume-cert-item"><span className="resume-nvidia-highlight">NVIDIA DLI</span> Building Transformer-Based Natural Language Processing Applications</div>
         <div className="resume-cert-item"><span className="resume-nvidia-highlight">NVIDIA DLI</span> Building LLM Applications With Prompt Engineering</div>
@@ -21,6 +24,7 @@ const ResumeCertifications: React.FC = () => {
         <div className="resume-cert-item"><span className="resume-nvidia-highlight">NVIDIA DLI</span> Generative AI with Diffusion Models</div>
         <div className="resume-cert-item"><span className="resume-nvidia-highlight">NVIDIA DLI</span> Building RAG Agents with LLMs</div>
         <div className="resume-cert-item"><span className="resume-nvidia-highlight">NVIDIA DLI</span> Deploying RAG Pipelines for Production at Scale</div>
+        <div className="resume-cert-item"><span className="resume-nvidia-highlight">NVIDIA DLI</span> Adding New Knowledge to LLMs</div>
       </div>
     </section>
   );
