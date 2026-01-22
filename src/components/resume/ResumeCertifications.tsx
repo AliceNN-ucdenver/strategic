@@ -26,7 +26,7 @@ const ResumeCertifications: React.FC = () => {
       </div>
 
       <div className="resume-cert-category">
-        <h4 className="resume-cert-category-title">Completed Courses</h4>
+        <h4 className="resume-cert-category-title">Instructor-Certified Courses</h4>
         <div className="resume-certifications-grid">
           <div className="resume-cert-item"><span className="resume-nvidia-highlight">NVIDIA DLI</span> Building Agentic AI Applications with LLMs</div>
           <div className="resume-cert-item"><span className="resume-nvidia-highlight">NVIDIA DLI</span> Building AI Agents with Multimodal Models</div>
