@@ -363,6 +363,23 @@
   font-size: 9pt;
 }
 
+.resume-cert-category {
+  margin-bottom: 15px;
+}
+
+.resume-cert-category .resume-certifications-grid {
+  margin-top: 8px;
+}
+
+.resume-cert-category-title {
+  font-size: 11pt;
+  font-weight: 600;
+  color: #1e3d6f;
+  margin-bottom: 8px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid #dbeafe;
+}
+
 @media print {
   .resume-container { 
     max-width: none; 
