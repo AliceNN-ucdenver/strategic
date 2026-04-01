@@ -6,6 +6,14 @@ const ResumePublications: React.FC = () => {
       <h3 className="resume-section-title">📚 Research Publications & Patents</h3>
 
       <div className="resume-publication-item">
+        <div className="resume-publication-title">Cross-Document Emotion Consistency (CDEC): A Feature Family Framework for Financial Disclosure Risk Screening</div>
+        <div className="resume-publication-details">Journal of Risk and Financial Management (JRFM) | 2026 | <a href="https://www.mdpi.com/1911-8074/19/4/251">Read Full Article</a></div>
+        <div className="resume-publication-description">
+          Framework measuring emotional alignment between SEC filings and earnings call Q&A using 28-dimensional emotion classification, achieving twice the risk separation of standard sentiment baselines for financial disclosure screening.
+        </div>
+      </div>
+
+      <div className="resume-publication-item">
         <div className="resume-publication-title">A Momentum-Based Normalization Framework for Generating Profitable Analyst Sentiment Signals</div>
         <div className="resume-publication-details">International Journal of Financial Studies (IJFS) | 2026 | <a href="https://www.mdpi.com/2227-7072/14/1/4">Read Full Article</a></div>
         <div className="resume-publication-description">

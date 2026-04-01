@@ -74,6 +74,14 @@ const ResourcesPage: React.FC = () => {
       tags: ["Risk Management", "Security Architecture", "Enterprise Resilience"]
     },
     {
+      title: "Cross-Document Emotion Consistency (CDEC): A Feature Family Framework for Financial Disclosure Risk Screening",
+      publication: "MDPI - Journal of Risk and Financial Management",
+      excerpt: "Presents CDEC, a framework measuring emotional alignment between SEC filings and earnings call Q&A using 28-dimensional emotion classification. The integrated framework achieves approximately twice the risk separation of the strongest sentiment baseline, identifying firms warranting scrutiny for due diligence, internal audit, and regulatory oversight.",
+      url: "https://www.mdpi.com/1911-8074/19/4/251",
+      image: "📊",
+      tags: ["Financial Disclosure", "Emotion Analysis", "Risk Screening", "Research"]
+    },
+    {
       title: "Enhancing Financial Market Analysis and Prediction with Emotion Corpora and News Co-Occurrence Network",
       publication: "MDPI - Journal of Risk and Financial Management",
       excerpt: "Research employing improved natural language processing algorithms to analyze over 500,000 financial news articles, developing emotion corpora and co-occurrence networks to identify shifting economic activity and relationships between companies across sectors.",
