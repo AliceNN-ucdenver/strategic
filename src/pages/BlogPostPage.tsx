@@ -4,6 +4,7 @@ import { MDXProvider } from '@mdx-js/react'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import { getPostBySlug, formatDate } from '../utils/blog'
+import ImageZoom from '../components/ImageZoom'
 import './BlogPostPage.css'
 
 // Import all MDX files dynamically
@@ -22,7 +23,7 @@ const mdxComponents = {
   ul: (props: any) => <ul className="blog-content-list" {...props} />,
   ol: (props: any) => <ol className="blog-content-list" {...props} />,
   li: (props: any) => <li className="blog-content-list-item" {...props} />,
-  img: (props: any) => <img className="blog-image" {...props} />,
+  img: (props: any) => <ImageZoom {...props} />,
   strong: (props: any) => <strong style={{ color: '#f8bbd9', fontWeight: 700 }} {...props} />,
   table: (props: any) => <table className="blog-table" {...props} />,
   thead: (props: any) => <thead className="blog-table-head" {...props} />,
