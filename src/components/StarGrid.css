@@ -183,96 +183,188 @@
   font-weight: 500;
 }
 
-/* Strategic Guidance */
-.strategic-guidance {
-  margin-bottom: 1rem;
+/* ─────────────────────────────────────────────────────────
+   The Two Paths — unified Tactical vs Strategic comparison.
+   Each column = one path with its approach above and its
+   consequence below, separated by a labeled divider.
+   ───────────────────────────────────────────────────────── */
+.two-paths {
+  margin: 1.5rem 0;
 }
 
-.strategic-guidance h5 {
-  font-size: 1.1rem;
-  font-weight: 600;
-  margin-bottom: 1rem;
-  color: #2d3748;
+.two-paths-header {
+  text-align: center;
+  margin-bottom: 1.25rem;
 }
 
-.guidance-comparison {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1.5rem;
-  margin-top: 1rem;
+.two-paths-label {
+  display: block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #94a3b8;
+  margin-bottom: 0.4rem;
 }
 
-.strategic-approach,
-.tactical-approach {
-  padding: 1.5rem;
-  border-radius: 12px;
-  transition: all 0.3s ease;
-}
-
-.strategic-approach {
-  background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);
-  border-left: 4px solid #10b981;
-}
-
-.strategic-approach:hover {
-  background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%);
-}
-
-.tactical-approach {
-  background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
-  border-left: 4px solid #f59e0b;
-}
-
-.tactical-approach:hover {
-  background: linear-gradient(135deg, #fde68a 0%, #fcd34d 100%);
-}
-
-/* Outcomes Section - Side by side layout */
-.outcomes-section {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1.5rem;
-  margin-bottom: 1rem;
-}
-
-.what-goes-wrong,
-.what-goes-right {
-  padding: 1.5rem;
-  border-radius: 12px;
-  transition: all 0.3s ease;
-}
-
-.what-goes-wrong {
-  background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%);
-  border-left: 4px solid #ef4444;
-}
-
-.what-goes-wrong:hover {
-  background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%);
-}
-
-.what-goes-right {
-  background: linear-gradient(135deg, #f0f9ff 0%, #dbeafe 100%);
-  border-left: 4px solid #3b82f6;
-}
-
-.what-goes-right:hover {
-  background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
-}
-
-.what-goes-wrong h5,
-.what-goes-right h5 {
-  font-size: 1rem;
-  font-weight: 600;
-  margin-bottom: 0.75rem;
-  color: #2d3748;
-}
-
-.what-goes-wrong p,
-.what-goes-right p {
+.two-paths-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #1a202c;
   margin: 0;
+  line-height: 1.4;
+}
+
+.two-paths-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  /* 4 row tracks: header · approach · divider · leads-to. Each row sizes
+     to the max content across both columns, so the divider arrows and the
+     bottom edges stay aligned even when the prose lengths differ. */
+  grid-template-rows: auto auto auto auto;
+  gap: 1.25rem;
+}
+
+.path-card {
+  background: white;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 14px;
+  overflow: hidden;
+  display: grid;
+  grid-template-rows: subgrid;
+  grid-row: span 4;
+  position: relative;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.path-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+}
+
+.path-tactical::before {
+  background: linear-gradient(135deg, #ef4444 0%, #f87171 100%);
+}
+
+.path-strategic::before {
+  background: linear-gradient(135deg, #10b981 0%, #34d399 100%);
+}
+
+.path-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+}
+
+.path-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 1.25rem 0.5rem;
   font-size: 0.95rem;
-  line-height: 1.6;
+  font-weight: 700;
+}
+
+.path-tactical .path-header {
+  color: #b91c1c;
+}
+
+.path-strategic .path-header {
+  color: #047857;
+}
+
+.path-icon {
+  font-size: 1rem;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.path-tactical .path-icon {
+  background: rgba(239, 68, 68, 0.12);
+}
+
+.path-strategic .path-icon {
+  background: rgba(16, 185, 129, 0.12);
+}
+
+.path-section {
+  padding: 0.6rem 1.25rem 1rem;
+  flex: 1;
+}
+
+.path-section:first-of-type {
+  padding-top: 0.5rem;
+}
+
+.path-section-label {
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  color: #94a3b8;
+  margin-bottom: 0.4rem;
+}
+
+.path-section p {
+  font-size: 0.9rem;
+  color: #475569;
+  line-height: 1.55;
+  margin: 0;
+}
+
+/* Divider with arrow showing approach → consequence */
+.path-divider {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.4rem 0;
+  position: relative;
+}
+
+.path-divider::before {
+  content: '';
+  position: absolute;
+  left: 1.25rem;
+  right: 1.25rem;
+  top: 50%;
+  height: 1px;
+  background: rgba(0, 0, 0, 0.08);
+}
+
+.path-divider-arrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: white;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  font-size: 0.9rem;
+  font-weight: 700;
+  position: relative;
+  z-index: 1;
+  line-height: 1;
+}
+
+.path-tactical .path-divider-arrow {
+  color: #ef4444;
+  border-color: rgba(239, 68, 68, 0.25);
+}
+
+.path-strategic .path-divider-arrow {
+  color: #10b981;
+  border-color: rgba(16, 185, 129, 0.25);
 }
 
 /* Implementation Guide - Tighter spacing */
@@ -324,53 +416,75 @@
   font-weight: 600;
 }
 
-/* Business Impact */
-.business-impact {
-  margin-bottom: 1rem;
-  padding: 1rem;
-  background: linear-gradient(135deg, #fef7e0 0%, #fed7aa 100%);
-  border-radius: 12px;
-  border-left: 4px solid #f59e0b;
+/* Outcomes line surfaced inside the Strategic Path's "This Leads To" */
+.path-outcomes {
+  margin-top: 0.75rem !important;
+  padding-top: 0.6rem;
+  border-top: 1px dashed rgba(16, 185, 129, 0.25);
+  font-size: 0.85rem !important;
+  color: #047857 !important;
+  line-height: 1.5 !important;
 }
 
-.business-impact h5 {
-  font-size: 1.1rem;
+.path-outcomes-label {
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  color: #059669;
+  margin-right: 0.35rem;
+}
+
+/* Wonderland Guide chip embedded in the star tab — shows which character
+   maps to which star at a glance, before the user even expands the card. */
+.star-tab-character {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.25rem 0.7rem;
+  margin-right: 0.75rem;
+  background: rgba(102, 126, 234, 0.1);
+  border: 1px solid rgba(102, 126, 234, 0.2);
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: #475569;
+  white-space: nowrap;
+  transition: all 0.3s ease;
+}
+
+.star-tab-emoji {
+  font-size: 0.95rem;
+  line-height: 1;
+}
+
+.star-tab-charname {
   font-weight: 600;
-  margin-bottom: 0.75rem;
-  color: #92400e;
+  color: #334155;
 }
 
-.business-impact p {
-  margin: 0;
-  color: #78350f;
+.star-tab.active .star-tab-character {
+  background: rgba(255, 255, 255, 0.18);
+  border-color: rgba(255, 255, 255, 0.35);
+  color: rgba(255, 255, 255, 0.95);
 }
 
-/* Value Metrics */
-.value-metrics {
-  padding: 1.5rem;
-  background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
-  border-radius: 12px;
-  border-left: 4px solid #10b981;
-}
-
-.value-metrics strong {
-  color: #065f46;
-  font-size: 1rem;
+.star-tab.active .star-tab-charname {
+  color: #ffffff;
 }
 
 /* Responsive Design */
 @media (max-width: 1024px) {
-  .guidance-comparison,
-  .outcomes-section {
+  .two-paths-grid {
     grid-template-columns: 1fr;
     gap: 1rem;
   }
-  
+
   .star-tab {
     padding: 0.5rem 1.25rem;
     min-height: 38px;
   }
-  
+
   .star-tab .star-title {
     font-size: 0.95rem;
   }
@@ -380,29 +494,34 @@
   .star-detail.expanded {
     padding: 2rem;
   }
-  
+
   .star-tab {
     padding: 0.5rem 1rem;
     min-height: 36px;
   }
-  
+
   .star-tab .star-title {
     font-size: 0.9rem;
   }
-  
+
   .star-tab .star-icon {
     font-size: 1.1rem;
     margin-right: 0.5rem;
   }
+
+  /* On narrow tabs, drop the character name text and keep just the emoji
+     so the tab title still has room to breathe. */
+  .star-tab-charname {
+    display: none;
+  }
+
+  .star-tab-character {
+    padding: 0.2rem 0.5rem;
+    margin-right: 0.5rem;
+  }
   
   .assessment-question,
-  .implementation-guide,
-  .business-impact,
-  .value-metrics,
-  .what-goes-wrong,
-  .what-goes-right,
-  .strategic-approach,
-  .tactical-approach {
+  .implementation-guide {
     padding: 0.875rem;
   }
   
@@ -430,3 +549,4 @@
     font-size: 0.9rem;
   }
 }
+

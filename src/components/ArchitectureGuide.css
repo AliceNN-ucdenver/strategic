@@ -1,6 +1,17 @@
+/* The Strategic Choice section: AI band-aid vs launchpad framing */
+.strategic-choice {
+  padding: 5rem 2rem 3rem;
+  background: #ffffff;
+}
+
+.strategic-choice-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
 /* Architecture Constellation Guide Styles */
 .constellation-detail {
-  padding: 2rem 2rem;
+  padding: 2rem 2rem 5rem;
   background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
 }
 
@@ -31,120 +42,404 @@
   margin: 0 auto;
 }
 
-/* AI Strategy Section */
-.ai-strategy-section {
-  margin-bottom: 4rem;
+/* ─────────────────────────────────────────────────────────
+   The Strategic Choice — Transformation Arc
+   Vertical narrative: Band-Aid (the trap)
+                        ↓
+                       Four Pillars (the bridge)
+                        ↓
+                       Launchpad (the answer)
+                        ↓
+                       Metis quote (the closing thought)
+   A continuous gradient line connects all four stages.
+   ───────────────────────────────────────────────────────── */
+
+.transformation-arc {
+  max-width: 880px;
+  margin: 4rem auto 0;
+  position: relative;
+  padding: 0 1rem;
 }
 
-.strategy-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 3rem;
-  margin-bottom: 3rem;
+/* The gradient connector line — starts below the opening quote, ends at the launchpad */
+.transformation-arc::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  /* Start below the opening quote (~7rem of quote + label space) and end at last stage */
+  top: 9rem;
+  bottom: 4rem;
+  width: 3px;
+  transform: translateX(-50%);
+  background: linear-gradient(
+    to bottom,
+    #ef4444 0%,
+    #f59e0b 25%,
+    #667eea 50%,
+    #8b5cf6 70%,
+    #10b981 100%
+  );
+  z-index: 0;
+  border-radius: 2px;
+  opacity: 0.55;
 }
 
-.strategy-card {
+/* Each major block sits relative so it overlaps the line */
+.transformation-stage,
+.transformation-bridge,
+.transformation-quote {
+  position: relative;
+  z-index: 1;
+  margin-bottom: 2.5rem;
+}
+
+/* Generic stage label chip ("The Trap" / "The Answer") */
+.stage-label {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0.35rem 1rem;
+  font-size: 0.7rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: white;
+  border-radius: 999px;
+  white-space: nowrap;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 2;
+}
+
+.stage-label-trap {
+  background: linear-gradient(135deg, #ef4444 0%, #f87171 100%);
+}
+
+.stage-label-answer {
+  background: linear-gradient(135deg, #10b981 0%, #34d399 100%);
+}
+
+/* ── Stage card (band-aid + launchpad share most styling) ── */
+.transformation-stage {
   background: white;
-  border-radius: 20px;
-  padding: 3rem;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
+  border-radius: 22px;
+  padding: 2.5rem 2.75rem 2rem;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.strategy-card:hover {
-  transform: translateY(-10px);
+.transformation-stage:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.1);
 }
 
-.strategy-card.band-aid {
-  border-left: 5px solid #ef4444;
+/* Top accent band */
+.transformation-stage {
+  border-top: 5px solid transparent;
 }
 
-.strategy-card.launchpad {
-  border-left: 5px solid #10b981;
+.stage-band-aid {
+  border-top-color: #ef4444;
 }
 
-.strategy-icon {
-  font-size: 3rem;
-  margin-bottom: 1.5rem;
+.stage-launchpad {
+  border-top-color: #10b981;
 }
 
-.strategy-card h3 {
-  font-size: 1.75rem;
+.stage-header {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+.stage-icon {
+  font-size: 2.4rem;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.stage-titles {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.stage-titles h3 {
+  font-size: 1.6rem;
   font-weight: 700;
-  margin-bottom: 2rem;
-  color: #1a1a1a;
+  color: #1a202c;
+  margin: 0;
+  line-height: 1.2;
 }
 
-.warning-indicators h4,
-.success-indicators h4 {
-  font-size: 1.1rem;
+.stage-subtitle {
+  font-size: 0.92rem;
+  color: #94a3b8;
+  margin: 0;
+  font-style: italic;
+}
+
+.stage-thesis {
+  font-size: 1.15rem;
   font-weight: 600;
-  margin-bottom: 1rem;
-  color: #4a5568;
+  font-style: italic;
+  margin: 0 0 1.25rem 0;
+  padding-left: 1rem;
+  line-height: 1.5;
 }
 
-.warning-indicators ul,
-.success-indicators ul {
+.stage-band-aid .stage-thesis {
+  color: #b91c1c;
+  border-left: 3px solid #ef4444;
+}
+
+.stage-launchpad .stage-thesis {
+  color: #047857;
+  border-left: 3px solid #10b981;
+}
+
+.stage-points {
   list-style: none;
   padding: 0;
-  margin-bottom: 2rem;
+  margin: 0 0 1.5rem 0;
 }
 
-.warning-indicators li,
-.success-indicators li {
-  padding: 0.5rem 0;
-  padding-left: 1.5rem;
+.stage-points li {
+  padding: 0.4rem 0 0.4rem 1.75rem;
   position: relative;
+  color: #475569;
+  line-height: 1.55;
+  font-size: 0.95rem;
 }
 
-.warning-indicators li::before {
-  content: "⚠️";
+.stage-band-aid .stage-points li::before {
+  content: '⚠';
   position: absolute;
   left: 0;
-  top: 0.5rem;
+  top: 0.4rem;
+  color: #ef4444;
+  font-weight: 700;
 }
 
-.success-indicators li::before {
-  content: "✅";
+.stage-launchpad .stage-points li::before {
+  content: '✓';
   position: absolute;
   left: 0;
-  top: 0.5rem;
+  top: 0.4rem;
+  color: #10b981;
+  font-weight: 700;
 }
 
-.outcome {
-  padding: 1.5rem;
-  background: rgba(102, 126, 234, 0.05);
+.stage-outcome {
+  padding: 1rem 1.25rem;
   border-radius: 10px;
-  border-left: 4px solid #667eea;
+  font-size: 0.92rem;
+  line-height: 1.55;
 }
 
-/* Architecture Quote */
-.architecture-quote {
-  margin: 4rem 0;
+.stage-band-aid .stage-outcome {
+  background: rgba(239, 68, 68, 0.06);
+  border-left: 3px solid #ef4444;
+  color: #7f1d1d;
+}
+
+.stage-launchpad .stage-outcome {
+  background: rgba(16, 185, 129, 0.07);
+  border-left: 3px solid #10b981;
+  color: #064e3b;
+}
+
+.stage-outcome strong {
+  font-weight: 700;
+}
+
+/* ── The Bridge: the four pillars wrapped in a brand-purple frame ── */
+/* Fully opaque background so the connector line is hidden behind the bridge */
+.transformation-bridge {
+  background: linear-gradient(135deg, #f0f3ff 0%, #f3eeff 100%);
+  border: 1px dashed rgba(102, 126, 234, 0.4);
+  border-radius: 22px;
+  padding: 2.5rem 2.5rem 2.25rem;
+}
+
+.bridge-label {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 0.35rem 1.25rem;
+  font-size: 0.7rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border-radius: 999px;
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.35);
+  z-index: 2;
+  white-space: nowrap;
+}
+
+.bridge-header {
+  text-align: center;
+  margin-bottom: 1.75rem;
+}
+
+.bridge-header h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #4338ca;
+  margin: 0 0 0.35rem 0;
+}
+
+.bridge-header p {
+  font-size: 0.95rem;
+  color: #64748b;
+  margin: 0;
+  font-style: italic;
+}
+
+.bridge-pillars {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.pillar-card {
+  background: white;
+  border: 1px solid rgba(102, 126, 234, 0.12);
+  border-radius: 12px;
+  padding: 1.1rem 1rem;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.pillar-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  border-radius: 12px 12px 0 0;
+}
+
+.pillar-architecture::before { background: linear-gradient(135deg, #60a5fa 0%, #3b82f6 100%); }
+.pillar-risk::before { background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%); }
+.pillar-operations::before { background: linear-gradient(135deg, #a78bfa 0%, #8b5cf6 100%); }
+.pillar-security::before { background: linear-gradient(135deg, #34d399 0%, #10b981 100%); }
+
+.pillar-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 22px rgba(102, 126, 234, 0.14);
+}
+
+.pillar-icon {
+  font-size: 1.6rem;
+  margin-bottom: 0.4rem;
+  line-height: 1;
+}
+
+.pillar-card h4 {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: #1a202c;
+  margin: 0 0 0.45rem 0;
+  line-height: 1.3;
+}
+
+.pillar-card p {
+  font-size: 0.78rem;
+  color: #64748b;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* ── Opening quote: sets up the section's thesis ── */
+.transformation-quote {
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.transformation-quote blockquote {
+  font-size: 1.15rem;
+  font-style: italic;
+  color: #334155;
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 1.5rem 2rem;
+  background: white;
+  border-radius: 14px;
+  border-left: 4px solid #667eea;
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.08);
+  line-height: 1.55;
+  position: relative;
   text-align: left;
 }
 
-.architecture-quote blockquote {
-  font-size: 1.2rem;
-  font-style: italic;
-  color: #4a5568;
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 2rem;
-  background: rgba(102, 126, 234, 0.1);
-  border-radius: 15px;
-  border-left: 4px solid #667eea;
-  position: relative;
-  line-height: 1.6;
+.transformation-quote blockquote p {
+  margin: 0 0 0.85rem 0;
 }
 
-.architecture-quote cite {
+.transformation-quote cite {
   display: block;
-  margin-top: 1rem;
-  font-size: 1rem;
+  font-size: 0.84rem;
   color: #667eea;
   font-style: normal;
   font-weight: 600;
+  line-height: 1.5;
+}
+
+.quote-link {
+  color: #4338ca;
+  font-weight: 700;
+  text-decoration: none;
+  margin-left: 0.25rem;
+}
+
+.quote-link:hover {
+  text-decoration: underline;
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .bridge-pillars {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .transformation-arc {
+    padding: 0 0.5rem;
+  }
+
+  .transformation-arc::before {
+    left: 1.5rem;
+    transform: none;
+  }
+
+  .stage-label,
+  .bridge-label {
+    left: 1.5rem;
+    transform: translateX(-50%);
+  }
+
+  .transformation-stage,
+  .transformation-bridge {
+    padding: 2rem 1.5rem;
+  }
+
+  .stage-titles h3 {
+    font-size: 1.3rem;
+  }
+
+  .bridge-pillars {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* Constellation Clusters */
@@ -159,6 +454,32 @@
   border-radius: 20px;
   padding: 3rem;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Per-cluster top accent stripe — gives each cluster its own visual identity */
+.cluster-detail::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.cluster-detail.navigation-detail::before {
+  background: linear-gradient(135deg, #60a5fa 0%, #3b82f6 100%);
+}
+.cluster-detail.velocity-detail::before {
+  background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+}
+.cluster-detail.enablement-detail::before {
+  background: linear-gradient(135deg, #a78bfa 0%, #8b5cf6 100%);
+}
+.cluster-detail.sustainability-detail::before {
+  background: linear-gradient(135deg, #34d399 0%, #10b981 100%);
 }
 
 .cluster-header {
@@ -173,6 +494,12 @@
   color: #1a1a1a;
 }
 
+/* Cluster title color matches its accent on the deep dive */
+.navigation-detail .cluster-header h3 { color: #1e3a8a; }
+.velocity-detail .cluster-header h3 { color: #92400e; }
+.enablement-detail .cluster-header h3 { color: #5b21b6; }
+.sustainability-detail .cluster-header h3 { color: #065f46; }
+
 .cluster-quote {
   font-size: 1.2rem;
   font-style: italic;
@@ -181,144 +508,16 @@
   margin: 0 auto;
 }
 
-/* Transformation Framework */
-.transformation-framework {
-  margin-top: 4rem;
-  background: white;
-  border-radius: 20px;
-  padding: 3rem;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
-}
-
-.transformation-framework h3 {
-  font-size: 2.5rem;
-  font-weight: 700;
-  text-align: center;
-  margin-bottom: 2rem;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.framework-header {
-  text-align: center;
-  margin-bottom: 3rem;
-}
-
-.framework-header h4 {
-  font-size: 1.5rem;
-  font-weight: 600;
-  margin-bottom: 1rem;
-  color: #1a1a1a;
-}
-
-.framework-header p {
-  color: #64748b;
-  font-size: 1.1rem;
-}
-
-.decision-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 3rem;
-}
-
-.decision-category h5 {
-  font-size: 1.3rem;
-  font-weight: 700;
-  margin-bottom: 1.5rem;
-  color: #1a1a1a;
-}
-
-.decision-options {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2rem;
-}
-
-.option {
-  padding: 2rem;
-  border-radius: 15px;
-  border: 2px solid transparent;
-}
-
-.option.transformation {
-  background: linear-gradient(135deg, #d4f4dd 0%, #c7f0db 100%);
-  border-color: #10b981;
-}
-
-.option.bandaid {
-  background: linear-gradient(135deg, #fed7d7 0%, #feb2b2 100%);
-  border-color: #ef4444;
-}
-
-.option strong {
-  display: block;
-  margin-bottom: 1rem;
-  font-size: 1.1rem;
-  color: #1a1a1a;
-}
-
-.option ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.option li {
-  padding: 0.5rem 0;
-  padding-left: 1.5rem;
-  position: relative;
-}
-
-.option.transformation li::before {
-  content: "🚀";
-  position: absolute;
-  left: 0;
-  top: 0.5rem;
-}
-
-.option.bandaid li::before {
-  content: "⚠️";
-  position: absolute;
-  left: 0;
-  top: 0.5rem;
-}
-
-/* Cluster-specific colors */
-.navigation-detail {
-  border-top: 5px solid #667eea;
-}
-
-.velocity-detail {
-  border-top: 5px solid #f59e0b;
-}
-
-.enablement-detail {
-  border-top: 5px solid #10b981;
-}
-
-.sustainability-detail {
-  border-top: 5px solid #8b5cf6;
-}
-
 /* Responsive Design */
 @media (max-width: 1024px) {
-  .strategy-grid,
-  .decision-options {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
-  
   .constellation-detail {
     padding: 4rem 1rem;
   }
-  
+
   .section-header h2 {
     font-size: 2.5rem;
   }
-  
+
   .cluster-header h3 {
     font-size: 2rem;
   }
@@ -328,30 +527,17 @@
   .constellation-detail {
     padding: 3rem 1rem;
   }
-  
+
   .section-header h2 {
     font-size: 2rem;
   }
-  
+
   .cluster-header h3 {
     font-size: 1.75rem;
   }
-  
-  .strategy-card,
-  .cluster-detail,
-  .transformation-framework {
+
+  .cluster-detail {
     padding: 2rem;
-  }
-  
-  .architecture-quote blockquote {
-    font-size: 1.25rem;
-    padding: 2rem;
-  }
-  
-  .architecture-quote blockquote::before {
-    font-size: 4rem;
-    top: -0.5rem;
-    left: 1rem;
   }
 }
 

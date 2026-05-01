@@ -74,6 +74,14 @@ const ResourcesPage: React.FC = () => {
       tags: ["Risk Management", "Security Architecture", "Enterprise Resilience"]
     },
     {
+      title: "From Gatekeepers to Launchpads: How Autonomous Governance Transforms Enterprise Architecture",
+      publication: "Metis (IASA Global)",
+      excerpt: "The decision rate has outrun any process that inspects decisions individually. This piece argues that autonomous governance — Architecture as Code, Risk as Code, Operations as Code, Security as Code — is the only governance pattern that survives at AI velocity. A target state tells teams where they should end up; a platform launchpad gives them the vehicle to get there, and beyond.",
+      url: "https://education.iasaglobal.org/whatsnew/articles/699d47860003304f932d",
+      image: "🚀",
+      tags: ["Autonomous Governance", "Strategic Architecture", "Policy as Code", "Peer Reviewed"]
+    },
+    {
       title: "Cross-Document Emotion Consistency (CDEC): A Feature Family Framework for Financial Disclosure Risk Screening",
       publication: "MDPI - Journal of Risk and Financial Management",
       excerpt: "Presents CDEC, a framework measuring emotional alignment between SEC filings and earnings call Q&A using 28-dimensional emotion classification. The integrated framework achieves approximately twice the risk separation of the strongest sentiment baseline, identifying firms warranting scrutiny for due diligence, internal audit, and regulatory oversight.",

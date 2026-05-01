@@ -22,6 +22,14 @@ const ResumePublications: React.FC = () => {
       </div>
 
       <div className="resume-publication-item">
+        <div className="resume-publication-title">From Gatekeepers to Launchpads: How Autonomous Governance Transforms Enterprise Architecture</div>
+        <div className="resume-publication-details">Metis (IASA Global) | April 2026 | <a href="https://education.iasaglobal.org/whatsnew/articles/699d47860003304f932d">Read Full Article</a></div>
+        <div className="resume-publication-description">
+          Argues that the decision rate of AI-driven development has outrun any process that inspects decisions individually. Frames Architecture as Code, Risk as Code, Operations as Code, and Security as Code as the four-pillar convergence that turns architectural governance into a launchpad rather than a gate.
+        </div>
+      </div>
+
+      <div className="resume-publication-item">
         <div className="resume-publication-title">The Engineering Imperative: Why AI Won't Replace Your Best Developers</div>
         <div className="resume-publication-details">CIO.com | October 2025 | <a href="https://www.cio.com/article/4080210/the-engineering-imperative-why-ai-wont-replace-your-best-developers.html">Read Full Article</a></div>
         <div className="resume-publication-description">

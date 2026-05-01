@@ -1,193 +1,270 @@
-/* Constellation Container */
+/* ── Constellation Container ── */
 .constellation-container {
   position: relative;
   width: 100%;
-  height: 500px;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
 }
 
+/* The four cards arranged as a 2x2 constellation */
 .constellation {
   position: relative;
-  width: 400px;
-  height: 400px;
-  margin: 0 auto;
+  width: 100%;
+  max-width: 600px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.75rem 1.75rem;
+  padding: 1rem;
 }
 
-/* Star Clusters */
-.star-cluster {
-  position: absolute;
+/* ── Cluster Node (button wrapper for whole card + tagline) ── */
+.cluster-node {
+  background: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+  font-family: inherit;
+  color: inherit;
   cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  transition: transform 0.3s ease;
+  position: relative;
+  z-index: 2;
+}
+
+.cluster-node:hover {
+  transform: translateY(-4px);
+}
+
+/* ── Cluster Card (the rounded box itself) ── */
+.cluster-node-card {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 22px;
+  padding: 1.4rem 1.2rem 1.2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.7rem;
   transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
 }
 
-.star-cluster:hover {
-  transform: scale(1.1);
+/* Starfield backdrop — small twinkling stars scattered across the card */
+.cluster-node-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 22px;
+  pointer-events: none;
+  opacity: 0.55;
+  background-image:
+    radial-gradient(circle at 12% 22%, rgba(255, 255, 255, 0.85) 0.7px, transparent 1.4px),
+    radial-gradient(circle at 86% 18%, rgba(255, 255, 255, 0.7) 0.6px, transparent 1.2px),
+    radial-gradient(circle at 38% 38%, rgba(255, 255, 255, 0.55) 0.5px, transparent 1px),
+    radial-gradient(circle at 72% 55%, rgba(255, 255, 255, 0.8) 0.7px, transparent 1.4px),
+    radial-gradient(circle at 22% 70%, rgba(255, 255, 255, 0.6) 0.6px, transparent 1.2px),
+    radial-gradient(circle at 92% 82%, rgba(255, 255, 255, 0.7) 0.55px, transparent 1.1px),
+    radial-gradient(circle at 50% 92%, rgba(255, 255, 255, 0.5) 0.5px, transparent 1px);
+  animation: starfieldTwinkle 6s ease-in-out infinite;
+  transition: opacity 0.4s ease;
 }
 
-.star {
-  width: 80px;
-  height: 80px;
-  background: linear-gradient(135deg, #ffd700 0%, #ffeb3b 100%);
-  border-radius: 50%;
+@keyframes starfieldTwinkle {
+  0%, 100% { opacity: 0.45; }
+  50% { opacity: 0.75; }
+}
+
+/* Hover glow overlay — uses ::before (above the starfield) */
+.cluster-node-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 22px;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.cluster-node:hover .cluster-node-card {
+  background: rgba(255, 255, 255, 0.13);
+  border-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.18);
+}
+
+.cluster-node:hover .cluster-node-card::after {
+  opacity: 0.85;
+}
+
+.cluster-node:hover .cluster-node-card::before {
+  opacity: 1;
+}
+
+/* Make sure card content sits above the starfield */
+.cluster-node-emoji,
+.cluster-node-stars,
+.cluster-node-name {
+  position: relative;
+  z-index: 2;
+}
+
+/* Per-cluster theme glow on hover */
+.cluster-node-navigation .cluster-node-card::before {
+  background: radial-gradient(circle at top, rgba(96, 165, 250, 0.18), transparent 60%);
+}
+.cluster-node-velocity .cluster-node-card::before {
+  background: radial-gradient(circle at top, rgba(251, 191, 36, 0.18), transparent 60%);
+}
+.cluster-node-enablement .cluster-node-card::before {
+  background: radial-gradient(circle at top, rgba(167, 139, 250, 0.22), transparent 60%);
+}
+.cluster-node-sustainability .cluster-node-card::before {
+  background: radial-gradient(circle at top, rgba(52, 211, 153, 0.18), transparent 60%);
+}
+
+/* Per-cluster top accent stripe */
+.cluster-node-card {
+  border-top-width: 3px;
+  border-top-style: solid;
+}
+.cluster-node-navigation .cluster-node-card { border-top-color: rgba(96, 165, 250, 0.6); }
+.cluster-node-velocity .cluster-node-card { border-top-color: rgba(251, 191, 36, 0.6); }
+.cluster-node-enablement .cluster-node-card { border-top-color: rgba(167, 139, 250, 0.7); }
+.cluster-node-sustainability .cluster-node-card { border-top-color: rgba(52, 211, 153, 0.6); }
+
+/* ── Cluster emoji (large, centered top) ── */
+.cluster-node-emoji {
+  font-size: 2.2rem;
+  line-height: 1;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.25));
+}
+
+/* ── Mini constellation: the 3 character emojis ── */
+.cluster-node-stars {
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
-  animation: pulse 2s infinite;
-  position: relative;
+  gap: 0.55rem;
+  padding: 0.35rem 0.6rem;
+  background: rgba(0, 0, 0, 0.18);
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-@keyframes pulse {
-  0%, 100% { box-shadow: 0 0 20px rgba(255, 215, 0, 0.5); }
-  50% { box-shadow: 0 0 30px rgba(255, 215, 0, 0.8); }
+.cluster-node-star {
+  font-size: 1.05rem;
+  line-height: 1;
+  animation: twinkle 3s ease-in-out infinite;
+  cursor: help;
+  transition: transform 0.3s ease;
 }
 
-.star::before {
-  content: '⭐';
-  font-size: 2rem;
+.cluster-node:hover .cluster-node-star {
+  transform: scale(1.15);
 }
 
-.cluster-label {
-  position: absolute;
-  bottom: -30px;
-  left: 50%;
-  transform: translateX(-50%);
+@keyframes twinkle {
+  0%, 100% {
+    opacity: 0.7;
+    filter: drop-shadow(0 0 0 rgba(255, 255, 255, 0));
+  }
+  50% {
+    opacity: 1;
+    filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.5));
+  }
+}
+
+/* ── Cluster name ── */
+.cluster-node-name {
   color: white;
-  font-weight: 600;
-  font-size: 0.9rem;
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 0.4px;
+}
+
+/* ── Hero tagline below the card ── */
+.cluster-node-tagline {
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 0.82rem;
+  font-style: italic;
+  letter-spacing: 0.3px;
   text-align: center;
-  white-space: nowrap;
-  text-decoration: none;
   transition: color 0.3s ease;
 }
 
-.cluster-label:hover {
-  color: #fbbf24;
-  cursor: pointer;
+.cluster-node:hover .cluster-node-tagline {
+  color: rgba(255, 255, 255, 1);
 }
 
-/* Connection Lines */
-.constellation::before,
-.constellation::after {
-  content: '';
-  position: absolute;
-  background: rgba(255, 255, 255, 0.3);
-  height: 2px;
-}
-
-.constellation::before {
-  top: 50%;
-  left: 15%;
-  right: 15%;
-  transform: translateY(-50%);
-}
-
-.constellation::after {
-  left: 50%;
-  top: 15%;
-  bottom: 15%;
-  width: 2px;
-  transform: translateX(-50%);
-}
-
-/* Particles */
+/* ── Particles ── */
 .particle {
   position: absolute;
   width: 2px;
   height: 2px;
-  background: rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.5);
   border-radius: 50%;
   pointer-events: none;
-  animation: particleFloat 15s linear infinite;
 }
 
-@keyframes particleFloat {
-  0% {
-    transform: translateY(0) rotate(0deg);
-    opacity: 0;
+/* ── Responsive ── */
+@media (max-width: 1024px) {
+  .constellation-container {
+    min-height: auto;
+    padding: 1rem 0;
   }
-  10% {
-    opacity: 1;
-  }
-  90% {
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(-100vh) rotate(360deg);
-    opacity: 0;
-  }
-}
 
-/* Cluster Positioning */
-.navigation-cluster { top: 50px; left: 50px; }
-.velocity-cluster { top: 50px; right: 50px; }
-.enablement-cluster { bottom: 50px; left: 50px; }
-.sustainability-cluster { bottom: 50px; right: 50px; }
-
-/* Interactive States */
-.star-cluster.interactive {
-  cursor: pointer;
-}
-
-.star-cluster.interactive:hover .star {
-  background: linear-gradient(135deg, #ffeb3b 0%, #ffc107 100%);
-  transform: scale(1.1);
-}
-
-.star-cluster.interactive:active .star {
-  transform: scale(0.95);
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
   .constellation {
-    width: 300px;
-    height: 300px;
+    max-width: 540px;
+    gap: 1.25rem 1.25rem;
   }
-  
-  .star {
-    width: 60px;
-    height: 60px;
+}
+
+@media (max-width: 600px) {
+  .constellation {
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem 0.75rem;
+    padding: 1rem;
   }
-  
-  .star::before {
-    font-size: 1.5rem;
+
+  .cluster-node-card {
+    padding: 1rem 0.75rem;
+    gap: 0.55rem;
   }
-  
-  .cluster-label {
-    font-size: 0.8rem;
+
+  .cluster-node-emoji {
+    font-size: 1.8rem;
   }
-  
-  .navigation-cluster,
-  .velocity-cluster,
-  .enablement-cluster,
-  .sustainability-cluster {
-    top: auto;
-    left: auto;
-    right: auto;
-    bottom: auto;
+
+  .cluster-node-stars {
+    gap: 0.4rem;
+    padding: 0.25rem 0.5rem;
   }
-  
-  .navigation-cluster { 
-    top: 30px; 
-    left: 30px; 
+
+  .cluster-node-star {
+    font-size: 0.9rem;
   }
-  
-  .velocity-cluster { 
-    top: 30px; 
-    right: 30px; 
+
+  .cluster-node-name {
+    font-size: 0.9rem;
   }
-  
-  .enablement-cluster { 
-    bottom: 30px; 
-    left: 30px; 
+
+  .cluster-node-tagline {
+    font-size: 0.75rem;
   }
-  
-  .sustainability-cluster { 
-    bottom: 30px; 
-    right: 30px; 
+
+  /* Hide connection lines on small screens — they get cluttered */
+  .constellation::before,
+  .constellation::after {
+    display: none;
   }
 }

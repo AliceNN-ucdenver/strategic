@@ -1,24 +1,9 @@
 import React, { useState } from 'react';
+import type { Star } from '../data/clusters';
 import './StarGrid.css';
 
-interface StarDetail {
-  title: string;
-  purpose: string;
-  assessmentQuestion: string;
-  strategicGuidance: {
-    title: string;
-    strategicApproach: string;
-    tacticalApproach: string;
-  };
-  whatGoesWrong: string;
-  whatGoesRight: string;
-  implementationSteps: string[];
-  valueMetrics: string;
-  businessImpact?: string;
-}
-
 interface StarGridProps {
-  stars: StarDetail[];
+  stars: Star[];
 }
 
 const StarGrid: React.FC<StarGridProps> = ({ stars }) => {
@@ -40,6 +25,12 @@ const StarGrid: React.FC<StarGridProps> = ({ stars }) => {
           >
             <span className="star-icon">⭐</span>
             <span className="star-title">{star.title.replace('⭐ ', '')}</span>
+            {star.character && (
+              <span className="star-tab-character">
+                <span className="star-tab-emoji">{star.characterEmoji}</span>
+                <span className="star-tab-charname">{star.character}</span>
+              </span>
+            )}
             <span className="expand-indicator">
               {expandedStar === index ? '−' : '+'}
             </span>
@@ -52,42 +43,65 @@ const StarGrid: React.FC<StarGridProps> = ({ stars }) => {
         <div className="star-detail expanded">
           <div className="star-header">
             <h4>{stars[expandedStar].title}</h4>
-            <button 
+            <button
               className="close-button"
               onClick={() => setExpandedStar(null)}
             >
               ✕
             </button>
           </div>
-          
-          <p><strong>Purpose:</strong> {stars[expandedStar].purpose}</p>
-          
+
           <div className="assessment-question">
             <h5>🎯 Key Assessment Question</h5>
             <p>"{stars[expandedStar].assessmentQuestion}"</p>
           </div>
 
-          <div className="strategic-guidance">
-            <h5>{stars[expandedStar].strategicGuidance.title}</h5>
-            <div className="guidance-comparison">
-              <div className="strategic-approach">
-                <strong>Strategic Approach:</strong> {stars[expandedStar].strategicGuidance.strategicApproach}
-              </div>
-              <div className="tactical-approach">
-                <strong>Tactical Approach:</strong> {stars[expandedStar].strategicGuidance.tacticalApproach}
-              </div>
+          {/* The Two Paths — unified comparison: approach + its consequence per column */}
+          <div className="two-paths">
+            <div className="two-paths-header">
+              <span className="two-paths-label">The Two Paths</span>
+              <h5 className="two-paths-title">{stars[expandedStar].strategicGuidance.title}</h5>
             </div>
-          </div>
+            <div className="two-paths-grid">
+              <div className="path-card path-tactical">
+                <div className="path-header">
+                  <span className="path-icon">⚠</span>
+                  <span className="path-name">Tactical Path</span>
+                </div>
+                <div className="path-section">
+                  <div className="path-section-label">The Approach</div>
+                  <p>{stars[expandedStar].strategicGuidance.tacticalApproach}</p>
+                </div>
+                <div className="path-divider">
+                  <span className="path-divider-arrow">↓</span>
+                </div>
+                <div className="path-section">
+                  <div className="path-section-label">This Leads To</div>
+                  <p>{stars[expandedStar].whatGoesWrong}</p>
+                </div>
+              </div>
 
-          <div className="outcomes-section">
-            <div className="what-goes-wrong">
-              <h5>⚠️ What Goes Wrong Without This</h5>
-              <p>{stars[expandedStar].whatGoesWrong}</p>
-            </div>
-
-            <div className="what-goes-right">
-              <h5>✅ What Goes Right When Implemented</h5>
-              <p>{stars[expandedStar].whatGoesRight}</p>
+              <div className="path-card path-strategic">
+                <div className="path-header">
+                  <span className="path-icon">✓</span>
+                  <span className="path-name">Strategic Path</span>
+                </div>
+                <div className="path-section">
+                  <div className="path-section-label">The Approach</div>
+                  <p>{stars[expandedStar].strategicGuidance.strategicApproach}</p>
+                </div>
+                <div className="path-divider">
+                  <span className="path-divider-arrow">↓</span>
+                </div>
+                <div className="path-section">
+                  <div className="path-section-label">This Leads To</div>
+                  <p>{stars[expandedStar].whatGoesRight}</p>
+                  <p className="path-outcomes">
+                    <span className="path-outcomes-label">Outcomes:</span>{' '}
+                    {stars[expandedStar].valueMetrics}
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -98,17 +112,6 @@ const StarGrid: React.FC<StarGridProps> = ({ stars }) => {
                 <li key={stepIndex}>{step}</li>
               ))}
             </ol>
-          </div>
-
-          {stars[expandedStar].businessImpact && (
-            <div className="business-impact">
-              <h5>💰 Business Impact</h5>
-              <p>{stars[expandedStar].businessImpact}</p>
-            </div>
-          )}
-
-          <div className="value-metrics">
-            <strong>Business Outcomes:</strong> {stars[expandedStar].valueMetrics}
           </div>
         </div>
       )}

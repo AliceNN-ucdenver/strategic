@@ -11,6 +11,18 @@ interface BlogCardProps {
 const BlogCard: React.FC<BlogCardProps> = ({ post }) => {
   return (
     <article className="blog-card">
+      {post.image && (
+        <Link to={`/blog/${post.slug}`} className="blog-card-image-link">
+          <div className="blog-card-image-wrapper">
+            <img
+              src={post.image}
+              alt={post.title}
+              className="blog-card-image"
+              loading="lazy"
+            />
+          </div>
+        </Link>
+      )}
       <div className="blog-card-content">
         <div className="blog-card-header">
           <div className="blog-card-meta">
@@ -21,7 +33,7 @@ const BlogCard: React.FC<BlogCardProps> = ({ post }) => {
             <span className="blog-card-featured">Featured</span>
           )}
         </div>
-        
+
         <h2 className="blog-card-title">
           <Link to={`/blog/${post.slug}`} className="blog-card-link">
             {post.title}

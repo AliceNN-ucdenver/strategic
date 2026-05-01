@@ -23,12 +23,13 @@
   }
 }
 
-/* Modal Content */
+/* Modal Content
+   Each modal variant (.cluster-modal, .star-modal) sets its own width and
+   max-width, so the base intentionally leaves both unset. */
 .modal-content {
   background: white;
   padding: 3rem;
   border-radius: 20px;
-  max-width: 600px;
   max-height: 90vh;
   margin: 2rem;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
@@ -118,10 +119,29 @@
   font-weight: 700;
 }
 
-.star-purpose {
-  color: #64748b;
+/* Wonderland Guide byline — small character credit under the title */
+.star-byline {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
   margin-bottom: 1.5rem;
-  line-height: 1.6;
+  padding: 0.35rem 0.85rem;
+  background: rgba(102, 126, 234, 0.08);
+  border: 1px solid rgba(102, 126, 234, 0.18);
+  border-radius: 999px;
+  font-size: 0.85rem;
+  color: #475569;
+}
+
+.star-byline-emoji {
+  font-size: 1.05rem;
+  line-height: 1;
+}
+
+.star-byline-text strong {
+  color: #1e293b;
+  font-weight: 700;
+  margin-left: 0.15rem;
 }
 
 .assessment-question {
@@ -144,80 +164,184 @@
   font-style: italic;
 }
 
-.strategic-guidance {
-  margin-bottom: 2rem;
+/* ─────────────────────────────────────────────────────────
+   The Two Paths — unified Tactical vs Strategic comparison
+   (shared design with StarGrid; lives here so the cluster
+   modal star view looks identical to the framework page
+   star detail).
+   ───────────────────────────────────────────────────────── */
+.two-paths {
+  margin: 1.5rem 0 2rem;
 }
 
-.strategic-guidance h3 {
-  color: #1e293b;
-  margin-bottom: 1rem;
-  font-size: 1.1rem;
+.two-paths-header {
+  text-align: center;
+  margin-bottom: 1.25rem;
 }
 
-.guidance-comparison {
+.two-paths-label {
+  display: block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #94a3b8;
+  margin-bottom: 0.4rem;
+}
+
+.two-paths-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #1a202c;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.two-paths-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 1rem;
+  /* 4 row tracks: header · approach · divider · leads-to. Each row sizes
+     to the max content across both columns, so the divider arrows and the
+     bottom edges stay aligned even when the prose lengths differ. */
+  grid-template-rows: auto auto auto auto;
+  gap: 1.25rem;
 }
 
-.strategic-approach {
-  background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
-  padding: 1rem;
-  border-radius: 10px;
-  border-left: 4px solid #10b981;
+.path-card {
+  background: white;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 14px;
+  overflow: hidden;
+  display: grid;
+  grid-template-rows: subgrid;
+  grid-row: span 4;
+  position: relative;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.tactical-approach {
-  background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%);
-  padding: 1rem;
-  border-radius: 10px;
-  border-left: 4px solid #ef4444;
+.path-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
 }
 
-.strategic-approach strong {
-  color: #059669;
+.path-tactical::before {
+  background: linear-gradient(135deg, #ef4444 0%, #f87171 100%);
 }
 
-.tactical-approach strong {
-  color: #dc2626;
+.path-strategic::before {
+  background: linear-gradient(135deg, #10b981 0%, #34d399 100%);
 }
 
-.what-goes-wrong {
-  background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%);
-  padding: 1.5rem;
-  border-radius: 15px;
-  margin-bottom: 2rem;
-  border-left: 4px solid #ef4444;
+.path-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
 }
 
-.what-goes-wrong h3 {
-  color: #dc2626;
-  margin-bottom: 1rem;
-  font-size: 1.1rem;
+.path-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 1.25rem 0.5rem;
+  font-size: 0.95rem;
+  font-weight: 700;
 }
 
-.what-goes-wrong p {
-  color: #991b1b;
-  line-height: 1.6;
+.path-tactical .path-header {
+  color: #b91c1c;
 }
 
-.what-goes-right {
-  background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
-  padding: 1.5rem;
-  border-radius: 15px;
-  margin-bottom: 2rem;
-  border-left: 4px solid #10b981;
-}
-
-.what-goes-right h3 {
-  color: #059669;
-  margin-bottom: 1rem;
-  font-size: 1.1rem;
-}
-
-.what-goes-right p {
+.path-strategic .path-header {
   color: #047857;
-  line-height: 1.6;
+}
+
+.path-icon {
+  font-size: 1rem;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.path-tactical .path-icon {
+  background: rgba(239, 68, 68, 0.12);
+}
+
+.path-strategic .path-icon {
+  background: rgba(16, 185, 129, 0.12);
+}
+
+.path-section {
+  padding: 0.6rem 1.25rem 1rem;
+  flex: 1;
+}
+
+.path-section-label {
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  color: #94a3b8;
+  margin-bottom: 0.4rem;
+}
+
+.path-section p {
+  font-size: 0.9rem;
+  color: #475569;
+  line-height: 1.55;
+  margin: 0;
+}
+
+.path-divider {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.4rem 0;
+  position: relative;
+}
+
+.path-divider::before {
+  content: '';
+  position: absolute;
+  left: 1.25rem;
+  right: 1.25rem;
+  top: 50%;
+  height: 1px;
+  background: rgba(0, 0, 0, 0.08);
+}
+
+.path-divider-arrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: white;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  font-size: 0.9rem;
+  font-weight: 700;
+  position: relative;
+  z-index: 1;
+  line-height: 1;
+}
+
+.path-tactical .path-divider-arrow {
+  color: #ef4444;
+  border-color: rgba(239, 68, 68, 0.25);
+}
+
+.path-strategic .path-divider-arrow {
+  color: #10b981;
+  border-color: rgba(16, 185, 129, 0.25);
 }
 
 .implementation-guide {
@@ -244,24 +368,23 @@
   margin-bottom: 0.5rem;
 }
 
-.value-metrics {
-  background: linear-gradient(135deg, #ede9fe 0%, #ddd6fe 100%);
-  padding: 1.5rem;
-  border-radius: 15px;
-  margin-bottom: 2rem;
-  border-left: 4px solid #8b5cf6;
+/* Outcomes line surfaced inside the Strategic Path's "This Leads To" */
+.path-outcomes {
+  margin-top: 0.85rem !important;
+  padding-top: 0.7rem;
+  border-top: 1px dashed rgba(16, 185, 129, 0.25);
+  font-size: 0.9rem !important;
+  color: #047857 !important;
+  line-height: 1.55 !important;
 }
 
-.value-metrics h3 {
-  color: #7c3aed;
-  margin-bottom: 1rem;
-  font-size: 1.1rem;
-}
-
-.value-metrics p {
-  color: #6d28d9;
-  line-height: 1.6;
-  font-weight: 500;
+.path-outcomes-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  color: #059669;
+  margin-right: 0.4rem;
 }
 
 /* Modal Actions */
@@ -287,28 +410,203 @@
   box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
 }
 
+/* ── Cluster modal: quote + orientation ── */
+.cluster-quote {
+  color: #475569;
+  font-style: italic;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  padding-left: 1rem;
+  border-left: 3px solid rgba(102, 126, 234, 0.4);
+}
+
+.cluster-orientation {
+  color: #334155;
+  line-height: 1.7;
+  margin-bottom: 2rem;
+  font-size: 1rem;
+}
+
+/* ── Cluster modal: star cards grid ── */
+/* The cluster modal hosts a 3-column star grid, so it needs to be
+   substantially wider than the default 600px modal. We override the
+   base .modal-content sizing wholesale: border-box so width counts
+   padding, fluid 94vw for medium screens, capped at 1280px on big
+   monitors, and a thinner 1rem margin so the modal can actually fill
+   the viewport instead of being squeezed by the base 2rem margin. */
+.cluster-modal {
+  box-sizing: border-box;
+  width: min(94vw, 1280px);
+  max-width: 1280px;
+  padding: 2.5rem;
+  margin: 1rem;
+}
+
+.cluster-stars-heading {
+  color: #1e293b;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 1rem;
+}
+
+.cluster-stars-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.cluster-star-card {
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  border: 1px solid rgba(102, 126, 234, 0.15);
+  border-radius: 12px;
+  padding: 1.1rem 1.15rem;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  display: flex;
+  flex-direction: column;
+  min-height: 170px;
+}
+
+.cluster-star-card:hover {
+  background: linear-gradient(135deg, #ede9fe 0%, #ddd6fe 100%);
+  border-color: rgba(102, 126, 234, 0.4);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(102, 126, 234, 0.15);
+}
+
+.cluster-star-card.is-upcoming {
+  opacity: 0.7;
+}
+
+.cluster-star-character {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: rgba(102, 126, 234, 0.1);
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #4338ca;
+  margin-bottom: 0.7rem;
+  align-self: flex-start;
+  white-space: nowrap;
+  max-width: 100%;
+}
+
+.cluster-star-emoji {
+  font-size: 0.85rem;
+  line-height: 1;
+}
+
+.cluster-star-title {
+  color: #1e293b;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.3;
+  margin: 0 0 0.6rem 0;
+}
+
+.cluster-star-hook {
+  color: #475569;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  font-style: italic;
+  margin: 0 0 0.75rem 0;
+  flex: 1;
+}
+
+.cluster-star-cta {
+  color: #667eea;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-top: auto;
+}
+
+.cluster-star-cta.is-upcoming {
+  color: #94a3b8;
+  font-style: italic;
+}
+
+/* ── Cluster modal: action buttons ── */
+.modal-actions {
+  text-align: center;
+  margin-top: 1.5rem;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.cluster-action-primary {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 0.875rem 1.75rem;
+  border: none;
+  border-radius: 50px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.95rem;
+}
+
+.cluster-action-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+}
+
+.cluster-action-secondary {
+  background: white;
+  color: #667eea;
+  padding: 0.875rem 1.75rem;
+  border: 2px solid #667eea;
+  border-radius: 50px;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  transition: all 0.3s ease;
+  font-size: 0.95rem;
+}
+
+.cluster-action-secondary:hover {
+  background: #667eea;
+  color: white;
+  transform: translateY(-2px);
+}
+
 /* Responsive Design */
+@media (max-width: 900px) {
+  .cluster-stars-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 @media (max-width: 768px) {
   .modal-content {
     padding: 2rem;
     margin: 1rem;
     max-height: 95vh;
   }
-  
-  .guidance-comparison {
+
+  .two-paths-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .star-title,
   .cluster-title {
     font-size: 1.5rem;
   }
-  
+
   .assessment-question,
-  .what-goes-wrong,
-  .what-goes-right,
-  .implementation-guide,
-  .value-metrics {
+  .implementation-guide {
     padding: 1rem;
+  }
+
+  .modal-actions {
+    flex-direction: column;
   }
 }

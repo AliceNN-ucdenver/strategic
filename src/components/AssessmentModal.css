@@ -1,4 +1,4 @@
-.modal-overlay {
+.assessment-modal-overlay {
   position: fixed;
   top: 0;
   left: 0;
@@ -12,7 +12,7 @@
   backdrop-filter: blur(5px);
 }
 
-.modal-content {
+.assessment-modal-panel {
   background: white;
   border-radius: 20px;
   padding: 2rem;
@@ -24,7 +24,7 @@
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
 }
 
-.close-button {
+.assessment-close-button {
   position: absolute;
   top: 1rem;
   right: 1rem;
@@ -38,19 +38,19 @@
   transition: all 0.3s ease;
 }
 
-.close-button:hover {
+.assessment-close-button:hover {
   background: #f1f5f9;
   color: #334155;
 }
 
-.modal-content h2 {
+.assessment-modal-panel h2 {
   color: #667eea;
   margin-bottom: 1rem;
   font-size: 2rem;
   text-align: center;
 }
 
-.modal-subtitle {
+.assessment-modal-subtitle {
   color: #64748b;
   margin-bottom: 2rem;
   text-align: center;
@@ -122,24 +122,24 @@
   color: #64748b;
 }
 
-.modal-footer {
+.assessment-modal-footer {
   text-align: center;
 }
 
-.modal-footer p {
+.assessment-modal-footer p {
   color: #64748b;
   margin-bottom: 2rem;
   line-height: 1.6;
 }
 
-.modal-footer .cta-button {
+.assessment-modal-footer .cta-button {
   font-size: 1.1rem;
   padding: 1rem 3rem;
 }
 
 /* Responsive */
 @media (max-width: 768px) {
-  .modal-content {
+  .assessment-modal-panel {
     padding: 1.5rem;
     margin: 1rem;
   }
@@ -149,11 +149,11 @@
     gap: 0.75rem;
   }
   
-  .modal-content h2 {
+  .assessment-modal-panel h2 {
     font-size: 1.5rem;
   }
   
-  .modal-subtitle {
+  .assessment-modal-subtitle {
     font-size: 1rem;
   }
 }

@@ -25,12 +25,12 @@ const AssessmentModal = ({ isOpen, onClose }: AssessmentModalProps) => {
   }
 
   return (
-    <div className="modal-overlay" onClick={onClose}>
-      <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-        <button className="close-button" onClick={onClose}>×</button>
-        
+    <div className="assessment-modal-overlay" onClick={onClose}>
+      <div className="assessment-modal-panel" onClick={(e) => e.stopPropagation()}>
+        <button className="assessment-close-button" onClick={onClose}>×</button>
+
         <h2>Strategic Architecture Assessment</h2>
-        <p className="modal-subtitle">
+        <p className="assessment-modal-subtitle">
           Discover your organization's maturity across the 12 Stars Constellation
         </p>
         
@@ -56,9 +56,9 @@ const AssessmentModal = ({ isOpen, onClose }: AssessmentModalProps) => {
           </div>
         </div>
         
-        <div className="modal-footer">
+        <div className="assessment-modal-footer">
           <p>
-            The full assessment includes 60+ questions across all 12 stars, providing 
+            The full assessment includes 60+ questions across all 12 stars, providing
             personalized transformation roadmaps and implementation guidance.
           </p>
           <button className="cta-button" onClick={handleStartAssessment}>
