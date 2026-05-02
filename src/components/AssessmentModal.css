@@ -57,26 +57,26 @@
   font-size: 1.1rem;
 }
 
-.sample-question {
+.assessment-modal-panel .sample-question {
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   padding: 0.5rem;
   border-radius: 10px;
   margin-bottom: 2rem;
 }
 
-.question-content {
+.assessment-modal-panel .question-content {
   background: white;
   border-radius: 8px;
   padding: 1.5rem;
 }
 
-.question-content h3 {
+.assessment-modal-panel .question-content h3 {
   margin-bottom: 1rem;
   color: #1a202c;
   font-size: 1.2rem;
 }
 
-.question-content p {
+.assessment-modal-panel .question-content p {
   margin-bottom: 1.5rem;
   color: #4a5568;
   line-height: 1.6;
@@ -126,6 +126,22 @@
   text-align: center;
 }
 
+.assessment-coming-soon {
+  display: inline-flex;
+  justify-content: center;
+  width: fit-content;
+  margin: 0 auto 0.75rem;
+  padding: 0.35rem 0.75rem;
+  color: #667eea !important;
+  background: #f0f4ff;
+  border: 1px solid rgba(102, 126, 234, 0.22);
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.9px;
+  text-transform: uppercase;
+}
+
 .assessment-modal-footer p {
   color: #64748b;
   margin-bottom: 2rem;
@@ -133,8 +149,23 @@
 }
 
 .assessment-modal-footer .cta-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   font-size: 1.1rem;
   padding: 1rem 3rem;
+  border-radius: 12px;
+  color: white;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  text-decoration: none;
+  font-weight: 800;
+  box-shadow: 0 10px 24px rgba(102, 126, 234, 0.24);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.assessment-modal-footer .cta-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 28px rgba(102, 126, 234, 0.3);
 }
 
 /* Responsive */

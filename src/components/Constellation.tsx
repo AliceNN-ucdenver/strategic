@@ -55,6 +55,12 @@ const Constellation: React.FC = () => {
     }
   }
 
+  const constellationPoints = [
+    { x: 32, y: 42 },
+    { x: 78, y: 24 },
+    { x: 126, y: 50 }
+  ]
+
   return (
     <div className="constellation-container">
       {/* Particle background */}
@@ -82,20 +88,23 @@ const Constellation: React.FC = () => {
             aria-label={`Open ${cluster.shortName} cluster`}
           >
             <div className="cluster-node-card">
-              <div className="cluster-node-emoji" aria-hidden="true">
-                {cluster.emoji}
+              <div className="cluster-node-map" aria-hidden="true">
+                <svg viewBox="0 0 160 84" focusable="false">
+                  <polyline
+                    points={constellationPoints.map(point => `${point.x},${point.y}`).join(' ')}
+                    className="constellation-line"
+                  />
+                  {constellationPoints.map((point, idx) => (
+                    <g key={idx}>
+                      <circle className="constellation-star-halo" cx={point.x} cy={point.y} r="10" />
+                      <circle className="constellation-star-core" cx={point.x} cy={point.y} r="4" />
+                    </g>
+                  ))}
+                </svg>
               </div>
-              <div className="cluster-node-stars" aria-hidden="true">
-                {cluster.stars.map((star, idx) => (
-                  <span
-                    key={idx}
-                    className="cluster-node-star"
-                    style={{ animationDelay: `${idx * 0.6}s` }}
-                    title={star.character}
-                  >
-                    {star.characterEmoji}
-                  </span>
-                ))}
+              <div className="cluster-node-meta" aria-hidden="true">
+                <span>{cluster.stars.length} stars</span>
+                <span>{cluster.cast}</span>
               </div>
               <div className="cluster-node-name">{cluster.shortName}</div>
             </div>

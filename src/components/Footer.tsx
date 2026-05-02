@@ -44,7 +44,7 @@ const Footer: React.FC = () => {
             <div className="footer-section">
               <h4>Framework</h4>
               <ul>
-                <li><a href={createLink('constellation')}>Architecture Guide</a></li>
+                <li><a href={createLink('strategic-choice')}>Architecture Guide</a></li>
                 <li><a href={createLink('assessment')}>Assessment</a></li>
                 <li><a href={createPageLink('/product')}>Strategic Thinking</a></li>
                 <li><a href={createPageLink('/product', 'transformation')}>AI Transformation</a></li>

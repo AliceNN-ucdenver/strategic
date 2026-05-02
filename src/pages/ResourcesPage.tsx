@@ -123,14 +123,22 @@ const ResourcesPage: React.FC = () => {
     },
   ];
 
+  const publicationMark = (publication: string) => {
+    if (publication.includes('Metis')) return 'IASA';
+    if (publication.includes('InfoWorld')) return 'IW';
+    if (publication.includes('MDPI')) return 'MDPI';
+    return publication;
+  };
+
   return (
     <div className="resources-page">
       <Header />
 
       {/* Hero Section */}
       <section className="resources-hero">
-        <div className="hero-content">
-          <div className="hero-text fade-in">
+        <div className="resources-hero-content">
+          <div className="resources-hero-text fade-in">
+            <span className="resources-kicker">Published Thinking</span>
             <h1>Strategic Architecture Resources</h1>
             <p className="subtitle">
               Insights and expertise from the frontlines of enterprise transformation. 
@@ -142,8 +150,8 @@ const ResourcesPage: React.FC = () => {
                 <span className="stat-label">Articles</span>
               </div>
               <div className="stat-item">
-                <span className="stat-number">3</span>
-                <span className="stat-label">Major Publications</span>
+                <span className="stat-number">4</span>
+                <span className="stat-label">Publication Families</span>
               </div>
               <div className="stat-item">
                 <span className="stat-number">∞</span>
@@ -151,27 +159,29 @@ const ResourcesPage: React.FC = () => {
               </div>
             </div>
           </div>
-          <div className="hero-visual fade-in">
-            <div className="resource-constellation">
-              <div className="resource-node main">
-                <span className="node-icon">📚</span>
-                <div className="resource-pulse"></div>
+          <div className="resources-index-panel fade-in" aria-label="Resource themes">
+            <span className="panel-label">Resource Map</span>
+            <div className="resource-signal-list">
+              <div className="resource-signal">
+                <span>01</span>
+                <strong>AI Transformation</strong>
               </div>
-              <div className="resource-node satellite-1">
-                <span className="node-icon">🔗</span>
+              <div className="resource-signal">
+                <span>02</span>
+                <strong>Product Architecture</strong>
               </div>
-              <div className="resource-node satellite-2">
-                <span className="node-icon">🚀</span>
+              <div className="resource-signal">
+                <span>03</span>
+                <strong>Autonomous Governance</strong>
               </div>
-              <div className="resource-node satellite-3">
-                <span className="node-icon">🛡️</span>
-              </div>
-              <div className="resource-connections">
-                <div className="resource-connection resource-line-1"></div>
-                <div className="resource-connection resource-line-2"></div>
-                <div className="resource-connection resource-line-3"></div>
+              <div className="resource-signal">
+                <span>04</span>
+                <strong>Risk & Research</strong>
               </div>
             </div>
+            <p>
+              External publications, peer-reviewed research, and field-tested architecture thinking gathered into one index.
+            </p>
           </div>
         </div>
       </section>
@@ -188,7 +198,7 @@ const ResourcesPage: React.FC = () => {
             {articles.map((article, index) => (
               <article key={index} className="article-card fade-in">
                 <div className="article-header">
-                  <div className="article-icon">{article.image}</div>
+                  <div className="article-icon">{publicationMark(article.publication)}</div>
                   <div className="article-meta">
                     <span className="publication">{article.publication}</span>
                     <div className="article-tags">

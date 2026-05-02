@@ -79,17 +79,17 @@ const ImplementationGuide: React.FC = () => {
           <h3>Guiding Principles</h3>
           <div className="principles-grid">
             <div className="principle-card">
-              <div className="principle-icon">🎯</div>
+              <div className="principle-icon">01</div>
               <h4>Good Enough is Acceptable</h4>
               <p>Focus on progress over perfection. Start with viable solutions and iterate based on learning and feedback.</p>
             </div>
             <div className="principle-card">
-              <div className="principle-icon">🔄</div>
+              <div className="principle-icon">02</div>
               <h4>Continuous Improvement</h4>
               <p>Embrace an evolutionary approach where frameworks and processes improve through practical application and team insights.</p>
             </div>
             <div className="principle-card">
-              <div className="principle-icon">💡</div>
+              <div className="principle-icon">03</div>
               <h4>Information-Based Decisions</h4>
               <p>Make the best recommendations and decisions based on available information, acknowledging uncertainty while maintaining forward momentum.</p>
             </div>

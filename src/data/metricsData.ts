@@ -22,11 +22,11 @@ export interface MetricCard {
 export const metricsData: MetricCard[] = [
   {
     id: 'business-value',
-    title: 'Business Value Delivery',
-    subtitle: 'Features that matter to customers',
-    icon: '🎯',
-    conversationStarter: '"How quickly and reliably can we deliver features that matter to our customers?"',
-    pillarDescription: 'Think of this as building vibrant city districts that attract residents and businesses.',
+    title: 'Product Value Flow',
+    subtitle: 'Business outcomes moving through the city',
+    icon: 'BV',
+    conversationStarter: '"Are our product investments becoming measurable business capability, or just completed work?"',
+    pillarDescription: 'The vibrant district layer: product teams, customer outcomes, and executive OKRs connected to architecture decisions.',
     metrics: [
       {
         id: 'release-quality',
@@ -48,15 +48,15 @@ export const metricsData: MetricCard[] = [
       },
       {
         id: 'deployment-frequency',
-        label: 'Deployment Frequency',
-        value: '1,180/month',
-        target: 'Target: 1,250',
-        percentage: 94,
+        label: 'Value Throughput',
+        value: '67 days',
+        target: 'Target: <60 days',
+        percentage: 78,
         status: 'needs-improvement',
         description: [
-          'Delivery pipeline efficiency',
-          'Team capability',
-          'Automation maturity'
+          'Concept-to-production cycle time',
+          'Product discovery to launch',
+          'Value realization speed'
         ],
         businessImpact: [
           'Market responsiveness',
@@ -66,7 +66,7 @@ export const metricsData: MetricCard[] = [
       },
       {
         id: 'quarterly-commitments',
-        label: 'Quarterly Commitments',
+        label: 'Commitment Confidence',
         value: '72%',
         target: 'Target: 80%',
         percentage: 72,
@@ -86,59 +86,59 @@ export const metricsData: MetricCard[] = [
   },
   {
     id: 'technical-foundation',
-    title: 'Technical Foundation',
-    subtitle: 'Reliable infrastructure & services',
-    icon: '🏗️',
-    conversationStarter: '"Are we maintaining reliable roads and utilities, or are we risking gridlock?"',
-    pillarDescription: 'Like a city\'s need for reliable infrastructure and well-maintained services.',
+    title: 'Governance Mesh',
+    subtitle: 'Architecture, risk, security, and operations as code',
+    icon: 'GM',
+    conversationStarter: '"Can teams prove architecture, security, risk, and operations readiness without waiting on a committee?"',
+    pillarDescription: 'The zoning and building-code layer: BARs, CALM models, ADRs, threat models, and policy-as-code artifacts that make governance executable.',
     metrics: [
       {
         id: 'mean-time-recovery',
-        label: 'Mean Time to Recovery',
-        value: '3.2 hrs',
-        target: 'Target: <4 hrs',
-        percentage: 85,
-        status: 'excellent',
+        label: 'BAR Coverage',
+        value: '74%',
+        target: 'Target: 90%',
+        percentage: 74,
+        status: 'needs-improvement',
         description: [
-          'System observability',
-          'Response capability',
-          'Resolution efficiency'
+          'Business Application Repository adoption',
+          'Architecture artifact completeness',
+          'Governance source-of-truth coverage'
         ],
         businessImpact: [
-          'Business continuity',
-          'Customer trust',
-          'Service reliability'
+          'Audit readiness',
+          'Portfolio visibility',
+          'Faster architecture review'
         ]
       },
       {
         id: 'incident-reduction',
-        label: 'Incident Reduction',
-        value: '8% YoY',
-        target: 'Target: 10%',
-        percentage: 80,
+        label: 'Architecture Drift',
+        value: '8 open',
+        target: 'Target: <5',
+        percentage: 68,
         status: 'needs-improvement',
         description: [
-          'System stability',
-          'Prevention effectiveness',
-          'Maturity growth'
+          'CALM-to-code divergence',
+          'Unapproved dependency paths',
+          'Interface contract misalignment'
         ],
         businessImpact: [
-          'Operational excellence',
-          'Cost reduction',
-          'Risk management'
+          'Reduced rework',
+          'Lower hidden risk',
+          'Cleaner modernization paths'
         ]
       },
       {
         id: 'security-posture',
-        label: 'Security Posture',
+        label: 'Threat Model Completeness',
         value: '92%',
-        target: 'Target: 90%',
+        target: 'Target: 95%',
         percentage: 92,
         status: 'excellent',
         description: [
-          'Active scanning',
-          'Rapid remediation',
-          'Prevention measures'
+          'STRIDE coverage',
+          'OWASP mapping',
+          'NIST control traceability'
         ],
         businessImpact: [
           'Risk mitigation',
@@ -150,59 +150,59 @@ export const metricsData: MetricCard[] = [
   },
   {
     id: 'devsecops-maturity',
-    title: 'DevSecOps Maturity',
-    subtitle: 'Modernizing operations efficiently',
-    icon: '⚡',
-    conversationStarter: '"Are our daily operations stuck in manual processes that slow us down or expose us to risks?"',
-    pillarDescription: 'Similar to modernizing city services while maintaining daily operations.',
+    title: 'Agentic SDLC Readiness',
+    subtitle: 'Secure AI-assisted delivery without losing control',
+    icon: 'AI',
+    conversationStarter: '"Can AI agents move fast inside real guardrails, or are prompts doing work that policy should enforce?"',
+    pillarDescription: 'The launchpad layer: secure prompts, RCTRO issues, fitness functions, automated reviews, and enforcement paths that let teams ship faster safely.',
     metrics: [
       {
         id: 'cap-slippage-rate',
-        label: 'CAP Slippage Rate',
-        value: '3%',
-        target: 'Target: <5%',
-        percentage: 97,
+        label: 'Policy-as-Code Pass Rate',
+        value: '91%',
+        target: 'Target: 95%',
+        percentage: 91,
         status: 'excellent',
         description: [
-          'Change management effectiveness',
-          'Planning accuracy',
-          'Delivery predictability'
+          'Automated governance checks',
+          'CI policy validation',
+          'Rule-based compliance'
         ],
         businessImpact: [
-          'Stakeholder trust',
-          'Resource efficiency',
-          'Operational reliability'
+          'Less waiting',
+          'Higher confidence',
+          'Continuous assurance'
         ]
       },
       {
         id: 'app-modernization',
-        label: 'App Modernization',
-        value: '67%',
-        target: 'Target: 80%',
-        percentage: 67,
+        label: 'Agent Autonomy Tier',
+        value: 'Supervised',
+        target: 'Target: Autonomous',
+        percentage: 62,
         status: 'needs-improvement',
         description: [
-          'Legacy system transformation',
-          'Cloud-native adoption',
-          'Architecture evolution'
+          'Governance-score based autonomy',
+          'Trust battery health',
+          'Human checkpoint frequency'
         ],
         businessImpact: [
-          'Agility improvement',
-          'Cost reduction',
-          'Innovation enablement'
+          'Controlled acceleration',
+          'Reduced agent risk',
+          'Better developer experience'
         ]
       },
       {
         id: 'automation-coverage',
-        label: 'Automation Coverage',
+        label: 'Fitness Function Coverage',
         value: '87%',
-        target: 'Target: 85%',
+        target: 'Target: 90%',
         percentage: 87,
         status: 'excellent',
         description: [
-          'Pipeline automation',
-          'Testing coverage',
-          'Deployment automation'
+          'Architecture quality gates',
+          'Security scorecards',
+          'Complexity and debt controls'
         ],
         businessImpact: [
           'Delivery speed',
@@ -215,10 +215,10 @@ export const metricsData: MetricCard[] = [
   {
     id: 'engineering-community',
     title: 'Engineering Community',
-    subtitle: 'Team health and learning culture',
-    icon: '👥',
-    conversationStarter: '"How engaged and capable is our engineering community?"',
-    pillarDescription: 'The citizens who make the city vibrant - their skills, satisfaction, and growth.',
+    subtitle: 'Talent magnetism and product operating model',
+    icon: 'DX',
+    conversationStarter: '"Are architects and engineers spending their judgment on the 30% that matters, or drowning in repeatable review work?"',
+    pillarDescription: 'The citizens of the technology city: engineers, architects, product owners, and security partners working from shared maps instead of tribal memory.',
     metrics: [
       {
         id: 'staff-engagement',
@@ -240,7 +240,7 @@ export const metricsData: MetricCard[] = [
       },
       {
         id: 'team-satisfaction',
-        label: 'Team Satisfaction',
+        label: 'Developer Experience',
         value: '87%',
         target: 'Target: >85%',
         percentage: 87,
@@ -258,7 +258,7 @@ export const metricsData: MetricCard[] = [
       },
       {
         id: 'learning-development',
-        label: 'Learning & Development',
+        label: 'Governance Enablement',
         value: '78%',
         target: 'Target: 80%',
         percentage: 78,
@@ -281,27 +281,27 @@ export const metricsData: MetricCard[] = [
 
 export const portfolioOverview = {
   stats: [
-    { number: '83%', label: 'Overall Health Score', status: 'good' },
-    { number: '98%', label: 'Business Value Delivery', status: 'excellent' },
-    { number: '92%', label: 'Technical Foundation', status: 'excellent' },
-    { number: '87%', label: 'DevSecOps Maturity', status: 'good' },
-    { number: '85%', label: 'Engineering Community', status: 'good' }
+    { number: '83%', label: 'Governance Health', status: 'good' },
+    { number: '74%', label: 'BAR Coverage', status: 'needs-improvement' },
+    { number: '92%', label: 'Threat Model Coverage', status: 'excellent' },
+    { number: '67d', label: 'Concept to Value', status: 'good' },
+    { number: '62%', label: 'Agent Autonomy Readiness', status: 'needs-improvement' }
   ],
   insights: {
     strengths: [
-      'Excellent release quality and security posture',
-      'Strong learning culture and team satisfaction',
-      'Good incident response capabilities'
+      'Strong release quality and threat-model discipline',
+      'Clear product-to-architecture measurement paths',
+      'Good foundation for policy-as-code expansion'
     ],
     focusAreas: [
-      'Improve quarterly commitment delivery',
-      'Accelerate cloud migration progress',
-      'Enhance staff engagement programs'
+      'Increase BAR adoption across critical applications',
+      'Close architecture drift before agent autonomy expands',
+      'Turn routine review work into automated fitness functions'
     ],
     strategicImpact: [
-      '15% revenue attributed to AI initiatives',
-      '67-day concept-to-production cycle',
-      'Strong foundation for scaling innovation'
+      'Portfolio health visible from business capability to code',
+      'Architecture governance becomes a launchpad instead of a queue',
+      'AI-assisted delivery can scale without surrendering control'
     ]
   }
 };

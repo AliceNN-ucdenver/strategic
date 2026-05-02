@@ -1,6 +1,8 @@
 /* Footer Component */
 .footer {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background:
+    linear-gradient(135deg, rgba(15, 118, 110, 0.86) 0%, rgba(31, 41, 84, 0.95) 46%, rgba(15, 23, 42, 1) 100%),
+    #172033;
   color: white;
   padding: 4rem 2rem 2rem 2rem;
   margin-top: auto;
@@ -15,7 +17,11 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.1);
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.045) 1px, transparent 1px);
+  background-size: 42px 42px;
+  mask-image: linear-gradient(90deg, transparent, black 16%, black 84%, transparent);
   pointer-events: none;
 }
 
@@ -39,13 +45,15 @@
 
 .footer-logo {
   font-size: 1.75rem;
-  font-weight: 700;
-  background: white;
+  font-weight: 800;
+  color: white;
+  background: none;
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  -webkit-text-fill-color: currentColor;
   background-clip: text;
   margin-bottom: 1rem;
-  text-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+  letter-spacing: -0.02em;
+  text-shadow: none;
 }
 
 .footer-tagline {
@@ -53,7 +61,7 @@
   color: rgba(255, 255, 255, 0.95);
   line-height: 1.6;
   margin: 0;
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  text-shadow: none;
 }
 
 .footer-links {
@@ -63,13 +71,13 @@
 }
 
 .footer-section h4 {
-  font-size: 1.1rem;
-  font-weight: 600;
+  font-size: 0.78rem;
+  font-weight: 900;
   margin-bottom: 1rem;
-  color: white;
+  color: #bbf7d0;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  letter-spacing: 1.4px;
+  text-shadow: none;
 }
 
 .footer-section ul {
@@ -83,22 +91,22 @@
 }
 
 .footer-section a {
-  color: rgba(255, 255, 255, 0.9);
+  color: rgba(255, 255, 255, 0.82);
   text-decoration: none;
   transition: all 0.3s ease;
   font-size: 0.95rem;
   line-height: 1.5;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  text-shadow: none;
 }
 
 .footer-section a:hover {
   color: white;
   transform: translateX(3px);
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  text-shadow: none;
 }
 
 .footer-bottom {
-  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
   padding-top: 2rem;
   display: flex;
   justify-content: space-between;
@@ -111,7 +119,7 @@
   color: rgba(255, 255, 255, 0.8);
   margin: 0;
   font-size: 0.9rem;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  text-shadow: none;
 }
 
 .footer-meta {
@@ -124,7 +132,7 @@
   text-decoration: none;
   font-size: 0.9rem;
   transition: color 0.3s ease;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  text-shadow: none;
 }
 
 .footer-meta a:hover {

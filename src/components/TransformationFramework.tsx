@@ -9,7 +9,7 @@ const TransformationFramework: React.FC = () => {
   const frameworkData = {
     mindset: {
       title: "From Order-Taker to Strategic Partner",
-      icon: "🔄",
+      icon: "01",
       sections: [
         {
           title: "Current State: Feature Factory",
@@ -37,7 +37,7 @@ const TransformationFramework: React.FC = () => {
     },
     pathway: {
       title: "Strategic AI Design Pathway",
-      icon: "🛤️",
+      icon: "02",
       stages: [
         {
           stage: "Strategy & Vision",
@@ -67,7 +67,7 @@ const TransformationFramework: React.FC = () => {
     },
     metrics: {
       title: "Revolutionary Success Metrics",
-      icon: "📊",
+      icon: "03",
       categories: [
         {
           name: "Strategic Value Creation",
@@ -101,9 +101,9 @@ const TransformationFramework: React.FC = () => {
   };
 
   const tabs = [
-    { id: 'mindset', label: 'Transformation Mindset', icon: '🔄' },
-    { id: 'pathway', label: 'Design Pathway', icon: '🛤️' },
-    { id: 'metrics', label: 'Success Metrics', icon: '📊' }
+    { id: 'mindset', label: 'Transformation Mindset', icon: '01' },
+    { id: 'pathway', label: 'Design Pathway', icon: '02' },
+    { id: 'metrics', label: 'Success Metrics', icon: '03' }
   ];
 
   return (
@@ -146,7 +146,7 @@ const TransformationFramework: React.FC = () => {
                 ))}
               </div>
               <div className="transformation-actions">
-                <h3>🎯 Key Transformation Actions</h3>
+                <h3>Key Transformation Actions</h3>
                 <div className="actions-grid">
                   <div className="action-item">
                     <strong>Embed in Strategy:</strong> Place architects in business strategy sessions from day one

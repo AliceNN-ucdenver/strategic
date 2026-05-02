@@ -37,29 +37,29 @@ const ArchitectureChallenge: React.FC = () => {
 
   const traditionalApproachData = {
     title: "Traditional Approach Is Failing",
-    icon: "⚠️",
+    icon: "01",
     description: "Organizations approach technology like overeager developers—focusing on individual projects without considering the broader ecosystem",
     costs: [
-      { icon: "💸", label: "Mounting Technical Debt", impact: "High" },
-      { icon: "🔗", label: "Increasing System Complexity", impact: "High" },
-      { icon: "📈", label: "Rising Operational Costs", impact: "Medium" },
-      { icon: "🎯", label: "Difficulty Attracting Talent", impact: "High" },
-      { icon: "⏱️", label: "Slower Time to Market", impact: "Critical" },
-      { icon: "📉", label: "Reduced Competitive Advantage", impact: "Critical" }
+      { icon: "TD", label: "Mounting Technical Debt", impact: "High" },
+      { icon: "CX", label: "Increasing System Complexity", impact: "High" },
+      { icon: "OC", label: "Rising Operational Costs", impact: "Medium" },
+      { icon: "TM", label: "Difficulty Attracting Talent", impact: "High" },
+      { icon: "TM", label: "Slower Time to Market", impact: "Critical" },
+      { icon: "CA", label: "Reduced Competitive Advantage", impact: "Critical" }
     ]
   };
 
   const modernApproachData = {
     title: "Modern Urban Planning Approach",
-    icon: "🏙️",
+    icon: "02",
     description: "Thoughtful city planners establish comprehensive plans considering infrastructure, sustainability, and community needs",
     benefits: [
-      { icon: "🚀", label: "Accelerated Innovation", impact: "High" },
-      { icon: "🔄", label: "Sustainable Architecture", impact: "High" },
-      { icon: "💰", label: "Optimized Resource Allocation", impact: "Medium" },
-      { icon: "⭐", label: "Enhanced Talent Attraction", impact: "High" },
-      { icon: "⚡", label: "Rapid Market Response", impact: "Critical" },
-      { icon: "🏆", label: "Sustained Competitive Edge", impact: "Critical" }
+      { icon: "AI", label: "Accelerated Innovation", impact: "High" },
+      { icon: "SA", label: "Sustainable Architecture", impact: "High" },
+      { icon: "RA", label: "Optimized Resource Allocation", impact: "Medium" },
+      { icon: "TA", label: "Enhanced Talent Attraction", impact: "High" },
+      { icon: "MR", label: "Rapid Market Response", impact: "Critical" },
+      { icon: "CE", label: "Sustained Competitive Edge", impact: "Critical" }
     ]
   };
 
@@ -78,14 +78,14 @@ const ArchitectureChallenge: React.FC = () => {
           className={`toggle-btn ${activeView === 'traditional' ? 'active' : ''}`}
           onClick={() => setActiveView('traditional')}
         >
-          <span className="toggle-icon">⚠️</span>
+          <span className="toggle-icon">01</span>
           Traditional Approach
         </button>
         <button 
           className={`toggle-btn ${activeView === 'modern' ? 'active' : ''}`}
           onClick={() => setActiveView('modern')}
         >
-          <span className="toggle-icon">🏙️</span>
+          <span className="toggle-icon">02</span>
           Modern Approach
         </button>
       </div>

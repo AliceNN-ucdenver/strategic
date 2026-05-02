@@ -1,7 +1,11 @@
 /* The Strategic Choice section: AI band-aid vs launchpad framing */
 .strategic-choice {
-  padding: 5rem 2rem 3rem;
-  background: #ffffff;
+  padding: 4.5rem 2rem 3.5rem;
+  background:
+    linear-gradient(rgba(15, 23, 42, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(15, 23, 42, 0.025) 1px, transparent 1px),
+    #f8fafc;
+  background-size: 44px 44px;
 }
 
 .strategic-choice-container {
@@ -11,8 +15,9 @@
 
 /* Architecture Constellation Guide Styles */
 .constellation-detail {
-  padding: 2rem 2rem 5rem;
-  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  padding: 3rem 2rem 5rem;
+  background:
+    linear-gradient(180deg, #f8fafc 0%, #eef4f8 100%);
 }
 
 .constellation-detail-container {
@@ -27,12 +32,14 @@
 
 .section-header h2 {
   font-size: 3rem;
-  font-weight: 700;
+  font-weight: 800;
   margin-bottom: 1.5rem;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: none;
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  -webkit-text-fill-color: currentColor;
   background-clip: text;
+  color: #172033;
+  line-height: 1.1;
 }
 
 .section-header p {
@@ -66,9 +73,8 @@
   content: '';
   position: absolute;
   left: 50%;
-  /* Start below the opening quote (~7rem of quote + label space) and end at last stage */
-  top: 9rem;
-  bottom: 4rem;
+  top: 2rem;
+  bottom: 10rem;
   width: 3px;
   transform: translateX(-50%);
   background: linear-gradient(
@@ -122,7 +128,7 @@
 /* ── Stage card (band-aid + launchpad share most styling) ── */
 .transformation-stage {
   background: white;
-  border-radius: 22px;
+  border-radius: 16px;
   padding: 2.5rem 2.75rem 2rem;
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
   border: 1px solid rgba(0, 0, 0, 0.04);
@@ -260,7 +266,7 @@
 .transformation-bridge {
   background: linear-gradient(135deg, #f0f3ff 0%, #f3eeff 100%);
   border: 1px dashed rgba(102, 126, 234, 0.4);
-  border-radius: 22px;
+  border-radius: 16px;
   padding: 2.5rem 2.5rem 2.25rem;
 }
 
@@ -361,7 +367,7 @@
 
 /* ── Opening quote: sets up the section's thesis ── */
 .transformation-quote {
-  margin-bottom: 3rem;
+  margin: 0 0 3rem;
   text-align: center;
 }
 
@@ -373,7 +379,7 @@
   margin: 0 auto;
   padding: 1.5rem 2rem;
   background: white;
-  border-radius: 14px;
+  border-radius: 12px;
   border-left: 4px solid #667eea;
   box-shadow: 0 6px 20px rgba(102, 126, 234, 0.08);
   line-height: 1.55;
@@ -405,10 +411,180 @@
   text-decoration: underline;
 }
 
+/* Executive Strategic Choice refresh */
+.executive-choice {
+  max-width: 1160px;
+}
+
+.executive-choice::before {
+  display: none;
+}
+
+.choice-comparison {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem;
+  align-items: stretch;
+}
+
+.executive-choice .transformation-stage,
+.executive-choice .transformation-bridge,
+.executive-choice .transformation-quote blockquote {
+  box-shadow: 0 18px 44px rgba(15, 23, 42, 0.07);
+  border: 1px solid #dbe4ef;
+}
+
+.executive-choice .transformation-stage {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  margin-bottom: 0;
+  border-top: none;
+  overflow: hidden;
+  min-height: 100%;
+}
+
+.executive-choice .stage-band-aid {
+  border-left: 4px solid #ef4444;
+}
+
+.executive-choice .stage-launchpad {
+  border-left: 4px solid #10b981;
+}
+
+.executive-choice .stage-label,
+.executive-choice .bridge-label {
+  position: static;
+  transform: none;
+  align-self: flex-start;
+  display: inline-flex;
+  width: fit-content;
+  margin-bottom: 1.1rem;
+  box-shadow: none;
+  border-radius: 999px;
+  letter-spacing: 1.4px;
+}
+
+.executive-choice .stage-label-trap {
+  color: #991b1b;
+  background: #fef2f2;
+  border: 1px solid rgba(239, 68, 68, 0.2);
+}
+
+.executive-choice .stage-label-answer {
+  color: #047857;
+  background: #ecfdf5;
+  border: 1px solid rgba(16, 185, 129, 0.2);
+}
+
+.stage-marker {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.stage-band-aid .stage-marker {
+  color: #991b1b;
+  background: #fef2f2;
+  border: 1px solid rgba(239, 68, 68, 0.22);
+}
+
+.stage-launchpad .stage-marker {
+  color: #047857;
+  background: #ecfdf5;
+  border: 1px solid rgba(16, 185, 129, 0.22);
+}
+
+.executive-choice .stage-points {
+  flex: 1;
+}
+
+.executive-choice .transformation-bridge {
+  margin: 1.25rem 0;
+  padding: 1.6rem;
+  background: #ffffff;
+  border-style: solid;
+}
+
+.executive-choice .bridge-header {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.35rem 1rem;
+  align-items: center;
+  text-align: left;
+  margin-bottom: 1.25rem;
+}
+
+.executive-choice .bridge-label {
+  grid-row: span 2;
+  margin: 0;
+  color: #0f766e;
+  background: #ecfdf5;
+  border: 1px solid rgba(15, 118, 110, 0.24);
+  padding: 0.45rem 0.8rem;
+}
+
+.executive-choice .bridge-header h3 {
+  color: #172033;
+}
+
+.executive-choice .bridge-header h3,
+.executive-choice .bridge-header p {
+  margin: 0;
+}
+
+.executive-choice .bridge-pillars {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.executive-choice .pillar-card {
+  text-align: left;
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: none;
+  min-height: 100%;
+  background: #f8fafc;
+  border-color: #e2e8f0;
+}
+
+.pillar-token {
+  display: inline-flex;
+  margin-bottom: 0.7rem;
+  color: #0f766e;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 1.4px;
+}
+
+.executive-choice .transformation-quote {
+  margin-top: 1.25rem;
+}
+
+.executive-choice .transformation-quote blockquote {
+  max-width: none;
+  border-left: none;
+  border-top: 3px solid #0f766e;
+}
+
 /* ── Responsive ── */
 @media (max-width: 900px) {
   .bridge-pillars {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .choice-comparison {
+    grid-template-columns: 1fr;
+  }
+
+  .executive-choice .bridge-pillars {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
@@ -433,6 +609,14 @@
     padding: 2rem 1.5rem;
   }
 
+  .executive-choice .bridge-header {
+    grid-template-columns: 1fr;
+  }
+
+  .executive-choice .bridge-pillars {
+    grid-template-columns: 1fr;
+  }
+
   .stage-titles h3 {
     font-size: 1.3rem;
   }
@@ -446,14 +630,15 @@
 .constellation-clusters {
   display: flex;
   flex-direction: column;
-  gap: 4rem;
+  gap: 2rem;
 }
 
 .cluster-detail {
   background: white;
-  border-radius: 20px;
+  border-radius: 14px;
   padding: 3rem;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 18px 44px rgba(15, 23, 42, 0.07);
+  border: 1px solid #dbe4ef;
   position: relative;
   overflow: hidden;
 }
@@ -485,6 +670,62 @@
 .cluster-header {
   text-align: center;
   margin-bottom: 3rem;
+}
+
+.cluster-header-mark {
+  display: inline-block;
+  width: 74px;
+  height: 42px;
+  margin-bottom: 0.85rem;
+  border-radius: 999px;
+  background:
+    radial-gradient(circle at 18% 58%, #ffffff 0 3px, transparent 4px),
+    radial-gradient(circle at 52% 28%, #ffffff 0 3px, transparent 4px),
+    radial-gradient(circle at 82% 62%, #ffffff 0 3px, transparent 4px),
+    linear-gradient(28deg, transparent 46%, rgba(255, 255, 255, 0.55) 47% 49%, transparent 50%),
+    linear-gradient(-24deg, transparent 48%, rgba(255, 255, 255, 0.45) 49% 51%, transparent 52%),
+    linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  box-shadow: 0 8px 22px rgba(102, 126, 234, 0.18);
+}
+
+.cluster-header-mark-navigation {
+  background:
+    radial-gradient(circle at 18% 58%, #ffffff 0 3px, transparent 4px),
+    radial-gradient(circle at 52% 28%, #ffffff 0 3px, transparent 4px),
+    radial-gradient(circle at 82% 62%, #ffffff 0 3px, transparent 4px),
+    linear-gradient(28deg, transparent 46%, rgba(255, 255, 255, 0.55) 47% 49%, transparent 50%),
+    linear-gradient(-24deg, transparent 48%, rgba(255, 255, 255, 0.45) 49% 51%, transparent 52%),
+    linear-gradient(135deg, #60a5fa 0%, #3b82f6 100%);
+}
+
+.cluster-header-mark-velocity {
+  background:
+    radial-gradient(circle at 18% 58%, #ffffff 0 3px, transparent 4px),
+    radial-gradient(circle at 52% 28%, #ffffff 0 3px, transparent 4px),
+    radial-gradient(circle at 82% 62%, #ffffff 0 3px, transparent 4px),
+    linear-gradient(28deg, transparent 46%, rgba(255, 255, 255, 0.55) 47% 49%, transparent 50%),
+    linear-gradient(-24deg, transparent 48%, rgba(255, 255, 255, 0.45) 49% 51%, transparent 52%),
+    linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+}
+
+.cluster-header-mark-enablement {
+  background:
+    radial-gradient(circle at 18% 58%, #ffffff 0 3px, transparent 4px),
+    radial-gradient(circle at 52% 28%, #ffffff 0 3px, transparent 4px),
+    radial-gradient(circle at 82% 62%, #ffffff 0 3px, transparent 4px),
+    linear-gradient(28deg, transparent 46%, rgba(255, 255, 255, 0.55) 47% 49%, transparent 50%),
+    linear-gradient(-24deg, transparent 48%, rgba(255, 255, 255, 0.45) 49% 51%, transparent 52%),
+    linear-gradient(135deg, #a78bfa 0%, #8b5cf6 100%);
+}
+
+.cluster-header-mark-sustainability {
+  background:
+    radial-gradient(circle at 18% 58%, #ffffff 0 3px, transparent 4px),
+    radial-gradient(circle at 52% 28%, #ffffff 0 3px, transparent 4px),
+    radial-gradient(circle at 82% 62%, #ffffff 0 3px, transparent 4px),
+    linear-gradient(28deg, transparent 46%, rgba(255, 255, 255, 0.55) 47% 49%, transparent 50%),
+    linear-gradient(-24deg, transparent 48%, rgba(255, 255, 255, 0.45) 49% 51%, transparent 52%),
+    linear-gradient(135deg, #34d399 0%, #10b981 100%);
 }
 
 .cluster-header h3 {

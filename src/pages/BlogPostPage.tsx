@@ -24,7 +24,7 @@ const mdxComponents = {
   ol: (props: any) => <ol className="blog-content-list" {...props} />,
   li: (props: any) => <li className="blog-content-list-item" {...props} />,
   img: (props: any) => <ImageZoom {...props} />,
-  strong: (props: any) => <strong style={{ color: '#f8bbd9', fontWeight: 700 }} {...props} />,
+  strong: (props: any) => <strong className="blog-strong" {...props} />,
   table: (props: any) => <table className="blog-table" {...props} />,
   thead: (props: any) => <thead className="blog-table-head" {...props} />,
   tbody: (props: any) => <tbody className="blog-table-body" {...props} />,
@@ -93,53 +93,89 @@ const BlogPostPage: React.FC = () => {
       <Header />
       
       <article className="blog-post-container">
-        <div className="blog-post-content">
-          {/* Post Header */}
-          <header className="blog-post-header">
+        <header className="blog-post-header">
+          <div className="blog-post-header-inner">
             <Link to="/blog" className="back-to-blog">
               ← Back to Digital Excavations
             </Link>
-            
-            {/* Header Image */}
-            {post.image && (
-              <div className="post-header-image">
-                <img src={post.image} alt={post.title} />
+
+            <div className={`post-hero-split ${post.image ? 'has-image' : 'no-image'}`}>
+              {post.image && (
+                <div className="post-header-image">
+                  <img src={post.image} alt={post.title} />
+                </div>
+              )}
+
+              <div className="post-hero-copy">
+                <div className="post-meta">
+                  <time className="post-date">{formatDate(post.date)}</time>
+                  <span className="post-read-time">{post.readTime}</span>
+                </div>
+                
+                <h1 className="post-title">{post.title}</h1>
+                
+                <p className="post-excerpt">{post.excerpt}</p>
+                
+                <div className="post-tags">
+                  {post.tags.slice(0, 6).map(tag => (
+                    <Link 
+                      key={tag} 
+                      to={`/blog?tag=${tag}`} 
+                      className="post-tag"
+                    >
+                      {tag}
+                    </Link>
+                  ))}
+                  {post.tags.length > 6 && (
+                    <span className="post-tag post-tag-more">+{post.tags.length - 6} more</span>
+                  )}
+                </div>
+                
+                <div className="post-divider"></div>
               </div>
-            )}
-            
-            <div className="post-meta">
-              <time className="post-date">{formatDate(post.date)}</time>
-              <span className="post-read-time">{post.readTime}</span>
             </div>
-            
-            <h1 className="post-title">{post.title}</h1>
-            
-            <p className="post-excerpt">{post.excerpt}</p>
-            
-            <div className="post-tags">
-              {post.tags.map(tag => (
-                <Link 
-                  key={tag} 
-                  to={`/blog?tag=${tag}`} 
-                  className="post-tag"
-                >
-                  {tag}
-                </Link>
-              ))}
-            </div>
-            
-            <div className="post-divider"></div>
-          </header>
-
-          {/* Post Content */}
-          <div className="blog-post-body">
-            <MDXProvider components={mdxComponents}>
-              <PostComponent />
-            </MDXProvider>
           </div>
+        </header>
 
-          {/* Post Footer */}
-          <footer className="blog-post-footer">
+        <div className="blog-post-layout">
+          <aside className="blog-post-rail" aria-label="Article details">
+            <div className="rail-panel">
+              <span className="rail-kicker">Field Notes</span>
+              <dl className="rail-meta">
+                <div>
+                  <dt>Published</dt>
+                  <dd>{formatDate(post.date)}</dd>
+                </div>
+                <div>
+                  <dt>Reading Time</dt>
+                  <dd>{post.readTime}</dd>
+                </div>
+                <div>
+                  <dt>Author</dt>
+                  <dd>{post.author}</dd>
+                </div>
+              </dl>
+              <div className="rail-tags">
+                {post.tags.slice(0, 5).map(tag => (
+                  <Link key={tag} to={`/blog?tag=${tag}`}>
+                    {tag.replace('-', ' ').replace(/\b\w/g, l => l.toUpperCase())}
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </aside>
+
+          <div className="blog-post-content">
+            <div className="blog-post-body">
+              <MDXProvider components={mdxComponents}>
+                <PostComponent />
+              </MDXProvider>
+            </div>
+          </div>
+        </div>
+
+        <footer className="blog-post-footer">
+          <div className="blog-post-footer-inner">
             <div className="post-divider"></div>
             
             <div className="post-author">
@@ -161,8 +197,8 @@ const BlogPostPage: React.FC = () => {
                 View Featured Posts →
               </Link>
             </div>
-          </footer>
-        </div>
+          </div>
+        </footer>
       </article>
 
       <Footer />

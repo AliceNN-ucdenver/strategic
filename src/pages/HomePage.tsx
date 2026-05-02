@@ -4,6 +4,31 @@ import Footer from '../components/Footer';
 import chiefArchitectImage from '../assets/chief_architect.png';
 import './HomePage.css';
 
+const implementationVideos = [
+  {
+    id: 'looking-glass',
+    label: 'Looking Glass',
+    eyebrow: 'Governance & Architecture',
+    title: 'Governance at the speed of AI',
+    description:
+      'The Looking Glass is the mirror behind the metaphor: portfolio, platform, BAR, CALM, ADRs, scoring evidence, and AI-assisted drift analysis brought into one governed architecture surface.',
+    proof: ['Governance mesh scoring', 'CALM architecture evidence', 'AI-assisted drift analysis'],
+    videoUrl: 'https://www.youtube.com/embed/Ua_4Msx2DYQ',
+    watchUrl: 'https://youtu.be/Ua_4Msx2DYQ',
+  },
+  {
+    id: 'cheshire-cat',
+    label: 'Cheshire Cat',
+    eyebrow: 'Code & Security',
+    title: 'Repository guardrails that stay behind',
+    description:
+      "The Cheshire Cat turns the Chief Archeologist's guidance into repo-level constraints: scaffolding, OWASP prompt packs, structured issues, scorecards, and fitness functions that make secure AI delivery repeatable after the conversation ends.",
+    proof: ['Security-first scaffolding', 'RCTRO issue generation', 'Fitness-function scorecards'],
+    videoUrl: 'https://www.youtube.com/embed/WtSRfwKrcFU',
+    watchUrl: 'https://youtu.be/WtSRfwKrcFU?si=eapuXusdWhIa8Mor',
+  },
+];
+
 const HomePage: React.FC = () => {
   const basename = import.meta.env.BASE_URL.replace(/\/$/, '');
 
@@ -109,6 +134,53 @@ const HomePage: React.FC = () => {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="implementation-proof" aria-labelledby="implementation-proof-heading">
+        <div className="implementation-proof-container">
+          <div className="implementation-proof-header">
+            <div>
+              <span className="implementation-proof-kicker">Maintainability.ai in Practice</span>
+              <h2 id="implementation-proof-heading">Wonderland is the map. The machinery is real.</h2>
+            </div>
+            <p>
+              These are not fairy-tale decorations. They are named instruments for operating architecture
+              at AI speed: the Looking Glass reveals the portfolio truth, while the Cheshire Cat leaves
+              deterministic guardrails in the repository so agents can move quickly without drifting from
+              security, architecture, and delivery intent.
+            </p>
+          </div>
+
+          <div className="video-feature-grid">
+            {implementationVideos.map((video) => (
+              <article className={`video-feature-card ${video.id}`} key={video.id}>
+                <div className="video-frame">
+                  <iframe
+                    src={video.videoUrl}
+                    title={`${video.label} demo video`}
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowFullScreen
+                  />
+                </div>
+                <div className="video-feature-content">
+                  <span className="video-eyebrow">{video.eyebrow}</span>
+                  <h3>
+                    {video.label}: {video.title}
+                  </h3>
+                  <p>{video.description}</p>
+                  <ul>
+                    {video.proof.map((item) => (
+                      <li key={item}>{item}</li>
+                    ))}
+                  </ul>
+                  <a href={video.watchUrl} target="_blank" rel="noreferrer" className="video-link">
+                    Watch the demo
+                  </a>
+                </div>
+              </article>
+            ))}
           </div>
         </div>
       </section>

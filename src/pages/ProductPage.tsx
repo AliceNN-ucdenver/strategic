@@ -27,8 +27,17 @@ const ProductPage: React.FC = () => {
 
           window.scrollTo({
             top: offsetPosition,
-            behavior: 'smooth'
+            behavior: 'auto'
           });
+          const hashElements = [
+            ...(element.classList.contains('fade-in') ? [element] : []),
+            ...Array.from(element.querySelectorAll<HTMLElement>('.fade-in'))
+          ];
+          hashElements.forEach((hashElement) => {
+            hashElement.style.opacity = '1';
+            hashElement.style.transform = 'translateY(0)';
+          });
+          requestAnimationFrame(animateOnScroll);
         }
       }, 100);
     }
@@ -70,6 +79,11 @@ const ProductPage: React.FC = () => {
     }
   };
 
+  const handleHeroScroll = (e: React.MouseEvent<HTMLAnchorElement>, sectionId: string) => {
+    e.preventDefault();
+    scrollToSection(sectionId);
+  };
+
   return (
     <div className="product-page">
       <Header />
@@ -78,36 +92,86 @@ const ProductPage: React.FC = () => {
       <section className="hero" id="home">
         <div className="hero-content">
           <div className="hero-text">
-            <h1>From Project to Product: Urban Planning for Enterprise</h1>
+            <div className="product-eyebrow">Chief Archeologist Product Studio</div>
+            <h1>From Project to Product to Governed Agentic Delivery</h1>
             <p className="subtitle">
-              Transform your enterprise architecture from building inspector to urban planner - creating sustainable 
-              technology ecosystems that enable continuous innovation and business growth
+              Keep the city-planning discipline of product architecture, then make the roads, zoning laws,
+              security checks, and AI agents visible in one architecture-first operating cockpit.
             </p>
+            <div className="hero-proof-points" aria-label="Product proof points">
+              <span>Product thinking</span>
+              <span>Autonomous governance</span>
+              <span>Maintainability.ai implementation</span>
+            </div>
             <div className="hero-buttons">
-              <a href="#dashboard" className="btn-primary">View Portfolio Health</a>
-              <a href="#transformation" className="btn-secondary">Explore Framework</a>
+              <a href="#dashboard" className="btn-primary" onClick={(e) => handleHeroScroll(e, 'dashboard')}>View Governance Cockpit</a>
+              <a href="#transformation" className="btn-secondary" onClick={(e) => handleHeroScroll(e, 'transformation')}>Explore Operating Model</a>
             </div>
           </div>
           <div className="hero-right">
-            <div className="urban-container">
-              <div className="city-grid">
-                <div className="city-district" onClick={() => scrollToSection('business-value')}>
-                  <span className="district-icon">🎯</span>
-                  <div className="district-label">Business Value</div>
+            <div className="urban-container" aria-label="Architecture operating stack">
+              <div className="product-stack-visual">
+                <div className="stack-header">
+                  <span>Operating Map</span>
+                  <strong>Architecture as the control plane</strong>
                 </div>
-                <div className="city-district" onClick={() => scrollToSection('technical-foundation')}>
-                  <span className="district-icon">🏗️</span>
-                  <div className="district-label">Technical Foundation</div>
-                </div>
-                <div className="city-district" onClick={() => scrollToSection('devsecops-maturity')}>
-                  <span className="district-icon">⚡</span>
-                  <div className="district-label">DevSecOps Maturity</div>
-                </div>
-                <div className="city-district" onClick={() => scrollToSection('engineering-community')}>
-                  <span className="district-icon">👥</span>
-                  <div className="district-label">Engineering Community</div>
-                </div>
+                <button className="stack-layer product-layer" onClick={() => scrollToSection('business-value')}>
+                  <span className="layer-code">01</span>
+                  <span>
+                    <strong>Product Value Flow</strong>
+                    <small>OKRs, capabilities, and customer outcomes</small>
+                  </span>
+                </button>
+                <button className="stack-layer governance-layer" onClick={() => scrollToSection('technical-foundation')}>
+                  <span className="layer-code">02</span>
+                  <span>
+                    <strong>Governance Mesh</strong>
+                    <small>BARs, CALM, ADRs, STRIDE, risk evidence</small>
+                  </span>
+                </button>
+                <button className="stack-layer agent-layer" onClick={() => scrollToSection('devsecops-maturity')}>
+                  <span className="layer-code">03</span>
+                  <span>
+                    <strong>Agentic SDLC</strong>
+                    <small>Prompt packs, reviews, fitness functions</small>
+                  </span>
+                </button>
+                <button className="stack-layer community-layer" onClick={() => scrollToSection('engineering-community')}>
+                  <span className="layer-code">04</span>
+                  <span>
+                    <strong>Engineering Community</strong>
+                    <small>Enablement, autonomy, and talent magnetism</small>
+                  </span>
+                </button>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="product-thesis" aria-label="Product narrative">
+        <div className="product-thesis-container">
+          <div>
+            <span className="product-section-kicker">The Through-Line</span>
+            <h2>The Chief Archeologist lens still matters.</h2>
+            <p>
+              The product story starts by excavating the real system: business capability, architecture
+              artifacts, risk evidence, operational dependencies, and the human workflows that hold it all
+              together. Maintainability.ai turns that excavation into an executable map for modern AI delivery.
+            </p>
+          </div>
+          <div className="thesis-points">
+            <div>
+              <span>Old world</span>
+              <strong>Projects, review boards, and static diagrams</strong>
+            </div>
+            <div>
+              <span>Product world</span>
+              <strong>Value streams, reusable platforms, and portfolio health</strong>
+            </div>
+            <div>
+              <span>Agentic world</span>
+              <strong>Architecture-aware agents governed by executable constraints</strong>
             </div>
           </div>
         </div>

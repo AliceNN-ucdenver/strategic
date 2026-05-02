@@ -1,8 +1,72 @@
 import React, { useState, useMemo, useEffect } from 'react'
 import { useSearchParams } from 'react-router-dom'
-import { getPublishedPosts, getAllTags } from '../../utils/blog'
+import { getPublishedPosts } from '../../utils/blog'
 import BlogCard from './BlogCard'
 import './BlogList.css'
+
+const topicFilters = [
+  { id: '', label: 'All Articles', tags: [] },
+  { id: 'wonderland-series', label: 'Wonderland Series', tags: ['wonderland-series'] },
+  {
+    id: 'architecture',
+    label: 'Architecture',
+    tags: [
+      'strategic-architecture',
+      'Software Architecture',
+      'architecture-leadership',
+      'architecture-standards',
+      'business-architecture',
+      'architecture-patterns',
+      'evolutionary-architecture',
+      'btabok',
+    ],
+  },
+  {
+    id: 'ai',
+    label: 'AI',
+    tags: [
+      'ai-engineering',
+      'ai-architecture',
+      'nvidia',
+      'nemotron',
+      'multi-agent',
+      'document-intelligence',
+      'dgx-spark',
+      'nemo-agent-toolkit',
+    ],
+  },
+  {
+    id: 'career',
+    label: 'Career',
+    tags: [
+      'Career Development',
+      'Professional Growth',
+      'professional-development',
+      'architecture-education',
+      'talent-magnetism',
+      'Leadership',
+    ],
+  },
+  {
+    id: 'transformation',
+    label: 'Transformation',
+    tags: [
+      'transformation',
+      'Transformation',
+      'business-strategy',
+      'Business Value',
+      'innovation-acceleration',
+      'innovation-incubation',
+      'platform-engineering',
+      'business-technology-synthesis',
+      'ecosystem-intelligence',
+    ],
+  },
+]
+
+const normalizeTag = (tag: string) => tag.toLowerCase()
+const formatTopicLabel = (tag: string) =>
+  tag.replace('-', ' ').replace(/\b\w/g, l => l.toUpperCase())
 
 const BlogList: React.FC = () => {
   const [searchParams, setSearchParams] = useSearchParams()
@@ -11,7 +75,6 @@ const BlogList: React.FC = () => {
   const [showFeaturedOnly, setShowFeaturedOnly] = useState<boolean>(false)
   
   const allPosts = getPublishedPosts() // Use published posts for blog list
-  const allTags = getAllTags()
 
   // Initialize state from URL parameters
   useEffect(() => {
@@ -38,7 +101,18 @@ const BlogList: React.FC = () => {
 
     // Filter by tag
     if (selectedTag) {
-      posts = posts.filter(post => post.tags && post.tags.includes(selectedTag))
+      const selectedTopic = topicFilters.find(topic => topic.id === selectedTag)
+      const selectedTopicTags = selectedTopic?.tags.map(normalizeTag)
+
+      posts = posts.filter(post => {
+        const postTags = (post.tags || []).map(normalizeTag)
+
+        if (selectedTopicTags && selectedTopicTags.length > 0) {
+          return selectedTopicTags.some(tag => postTags.includes(tag))
+        }
+
+        return postTags.includes(normalizeTag(selectedTag))
+      })
     }
 
     // Filter by search term
@@ -58,7 +132,7 @@ const BlogList: React.FC = () => {
   const regularPosts = filteredPosts.filter(post => !post.featured)
 
   // Handle tag selection
-  const handleTagChange = (tag: string) => {
+  const handleTopicChange = (tag: string) => {
     setSelectedTag(tag)
     setShowFeaturedOnly(false) // Clear featured filter when selecting a tag
     if (tag) {
@@ -67,6 +141,27 @@ const BlogList: React.FC = () => {
       setSearchParams({})
     }
   }
+
+  const handleFeaturedChange = () => {
+    setSelectedTag('')
+    setShowFeaturedOnly(true)
+    setSearchParams({ featured: 'true' })
+  }
+
+  const selectedTopic = topicFilters.find(topic => topic.id === selectedTag)
+  const sectionLabel = showFeaturedOnly
+    ? 'Featured Discoveries'
+    : selectedTopic
+      ? selectedTopic.label
+      : selectedTag
+        ? formatTopicLabel(selectedTag)
+        : 'All Articles'
+  const sectionTitle = showFeaturedOnly
+    ? sectionLabel
+    : selectedTag
+      ? `${sectionLabel} Articles`
+      : 'More Articles'
+  const displayedPosts = selectedTag || searchTerm || showFeaturedOnly ? filteredPosts : regularPosts
 
   return (
     <div className="blog-list-page">
@@ -92,19 +187,26 @@ const BlogList: React.FC = () => {
             />
           </div>
 
-          <div className="filter-container">
-            <select
-              value={selectedTag}
-              onChange={(e) => handleTagChange(e.target.value)}
-              className="tag-filter"
+          <div className="topic-filter-group" aria-label="Article topics">
+            {topicFilters.map(topic => (
+              <button
+                key={topic.id || 'all'}
+                type="button"
+                className={`topic-filter-button ${selectedTag === topic.id && !showFeaturedOnly ? 'active' : ''}`}
+                onClick={() => handleTopicChange(topic.id)}
+                aria-pressed={selectedTag === topic.id && !showFeaturedOnly}
+              >
+                {topic.label}
+              </button>
+            ))}
+            <button
+              type="button"
+              className={`topic-filter-button ${showFeaturedOnly ? 'active' : ''}`}
+              onClick={handleFeaturedChange}
+              aria-pressed={showFeaturedOnly}
             >
-              <option value="">All Topics</option>
-              {allTags.map(tag => (
-                <option key={tag} value={tag}>
-                  {tag.replace('-', ' ').replace(/\b\w/g, l => l.toUpperCase())}
-                </option>
-              ))}
-            </select>
+              Featured
+            </button>
           </div>
         </div>
       </div>
@@ -125,21 +227,16 @@ const BlogList: React.FC = () => {
       <section className="posts-section">
         <div className="section-header">
           <h2 className="section-title">
-            {showFeaturedOnly 
-              ? 'Featured Discoveries' 
-              : selectedTag 
-                ? `${selectedTag.replace('-', ' ').replace(/\b\w/g, l => l.toUpperCase())} Articles` 
-                : 'All Articles'
-            }
+            {sectionTitle}
           </h2>
           <span className="posts-count">
-            {filteredPosts.length} {filteredPosts.length === 1 ? 'article' : 'articles'}
+            {displayedPosts.length} {displayedPosts.length === 1 ? 'article' : 'articles'}
           </span>
         </div>
 
-        {filteredPosts.length > 0 ? (
+        {displayedPosts.length > 0 ? (
           <div className="posts-grid">
-            {(selectedTag || searchTerm || showFeaturedOnly ? filteredPosts : regularPosts).map(post => (
+            {displayedPosts.map(post => (
               <BlogCard key={post.slug} post={post} />
             ))}
           </div>

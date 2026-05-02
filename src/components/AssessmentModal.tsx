@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import './AssessmentModal.css'
 
 interface AssessmentModalProps {
@@ -18,11 +19,6 @@ const AssessmentModal = ({ isOpen, onClose }: AssessmentModalProps) => {
     { value: 7, label: '7-8', description: 'Clear revenue attribution' },
     { value: 9, label: '9-10', description: 'Strategic business driver' }
   ]
-
-  const handleStartAssessment = () => {
-    alert('Assessment coming soon! Sign up for early access.')
-    onClose()
-  }
 
   return (
     <div className="assessment-modal-overlay" onClick={onClose}>
@@ -57,13 +53,16 @@ const AssessmentModal = ({ isOpen, onClose }: AssessmentModalProps) => {
         </div>
         
         <div className="assessment-modal-footer">
+          <p className="assessment-coming-soon">
+            Full assessment coming soon.
+          </p>
           <p>
             The full assessment includes 60+ questions across all 12 stars, providing
             personalized transformation roadmaps and implementation guidance.
           </p>
-          <button className="cta-button" onClick={handleStartAssessment}>
-            Start Full Assessment
-          </button>
+          <Link className="cta-button" to="/contact" onClick={onClose}>
+            Contact Us for a Guided Review
+          </Link>
         </div>
       </div>
     </div>

@@ -1,23 +1,29 @@
-/* Hero Section */
-.hero {
-  min-height: 80vh;
+.product-page .hero {
+  min-height: 76vh;
   display: flex;
   align-items: center;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background:
+    linear-gradient(135deg, rgba(17, 94, 89, 0.88) 0%, rgba(79, 70, 145, 0.9) 52%, rgba(15, 23, 42, 0.94) 100%),
+    radial-gradient(circle at 82% 18%, rgba(16, 185, 129, 0.35), transparent 28%),
+    #172033;
   position: relative;
   overflow: hidden;
   padding-top: 80px;
 }
 
-.hero::before {
+.product-page .hero::before {
   content: '';
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="20" cy="20" r="0.5" fill="white" opacity="0.1"/><circle cx="80" cy="80" r="0.3" fill="white" opacity="0.08"/><circle cx="60" cy="30" r="0.4" fill="white" opacity="0.06"/><circle cx="30" cy="70" r="0.2" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
-  animation: float 20s ease-in-out infinite;
+  background:
+    linear-gradient(rgba(255,255,255,0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.045) 1px, transparent 1px);
+  background-size: 42px 42px;
+  mask-image: linear-gradient(90deg, transparent, black 18%, black 82%, transparent);
+  pointer-events: none;
 }
 
 @keyframes float {
@@ -27,8 +33,14 @@
 
 /* Challenge Section */
 .challenge-section {
-  background: #f8fafc;
-  padding: 4rem 0;
+  background:
+    linear-gradient(180deg, #f8fafc 0%, #eef4f8 100%);
+  padding: 5rem 2rem;
+}
+
+.challenge-section > .architecture-challenge {
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 /* Product Hero Section */
@@ -60,7 +72,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 4rem;
-  align-items: flex-start;
+  align-items: center;
   position: relative;
   z-index: 2;
 }
@@ -75,8 +87,23 @@
   color: white;
 }
 
+.product-eyebrow {
+  display: inline-flex;
+  width: fit-content;
+  margin-bottom: 1rem;
+  padding: 0.35rem 0.75rem;
+  color: #bbf7d0;
+  background: rgba(20, 184, 166, 0.15);
+  border: 1px solid rgba(187, 247, 208, 0.32);
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 1.3px;
+  text-transform: uppercase;
+}
+
 .hero-text h1 {
-  font-size: 3.5rem;
+  font-size: 3.45rem;
   font-weight: 800;
   line-height: 1.1;
   margin-bottom: 1.5rem;
@@ -88,9 +115,28 @@
 
 .hero-text .subtitle {
   font-size: 1.25rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1.35rem;
   opacity: 0.9;
   font-weight: 400;
+}
+
+.hero-proof-points {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin: 0 0 2rem;
+}
+
+.hero-proof-points span {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.42rem 0.7rem;
+  border-radius: 999px;
+  color: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  font-size: 0.84rem;
+  font-weight: 700;
 }
 
 .hero-buttons {
@@ -187,6 +233,176 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.product-stack-visual {
+  width: min(100%, 520px);
+  padding: 1rem;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 24px 70px rgba(15, 23, 42, 0.3);
+  backdrop-filter: blur(16px);
+}
+
+.stack-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+  padding: 0.25rem 0.25rem 0.75rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.stack-header span {
+  color: #bbf7d0;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+}
+
+.stack-header strong {
+  color: #ffffff;
+  font-size: 0.9rem;
+  text-align: right;
+}
+
+.stack-layer {
+  width: 100%;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.85rem;
+  align-items: center;
+  margin-top: 0.65rem;
+  padding: 0.9rem;
+  color: #f8fafc;
+  background: rgba(255, 255, 255, 0.09);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  cursor: pointer;
+  font-family: inherit;
+  text-align: left;
+  transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+}
+
+.stack-layer:hover,
+.stack-layer:focus-visible {
+  transform: translateX(4px);
+  background: rgba(255, 255, 255, 0.14);
+  border-color: rgba(255, 255, 255, 0.3);
+  outline: none;
+}
+
+.layer-code {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  color: #0f172a;
+  background: #bbf7d0;
+  font-size: 0.78rem;
+  font-weight: 900;
+}
+
+.stack-layer strong {
+  display: block;
+  margin-bottom: 0.2rem;
+  font-size: 1rem;
+}
+
+.stack-layer small {
+  display: block;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 0.82rem;
+  line-height: 1.35;
+}
+
+.governance-layer .layer-code {
+  background: #bfdbfe;
+}
+
+.agent-layer .layer-code {
+  background: #fde68a;
+}
+
+.community-layer .layer-code {
+  background: #fecaca;
+}
+
+.product-thesis {
+  padding: 4rem 2rem;
+  background: #f8fafc;
+}
+
+.product-page .implementation-steps .fade-in {
+  opacity: 1;
+  transform: none;
+}
+
+.product-thesis-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 0.8fr);
+  gap: 3rem;
+  align-items: center;
+}
+
+.product-section-kicker {
+  display: block;
+  margin-bottom: 0.65rem;
+  color: #0f766e;
+  font-size: 0.75rem;
+  font-weight: 900;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+}
+
+.product-thesis h2 {
+  margin: 0 0 1rem;
+  color: #162033;
+  font-size: 2.35rem;
+  line-height: 1.15;
+}
+
+.product-thesis p {
+  margin: 0;
+  color: #475569;
+  font-size: 1.05rem;
+  line-height: 1.75;
+}
+
+.thesis-points {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.thesis-points div {
+  padding: 1rem;
+  background: #ffffff;
+  border: 1px solid #dbe4ef;
+  border-radius: 10px;
+  box-shadow: 0 10px 28px rgba(15, 23, 42, 0.06);
+}
+
+.thesis-points span {
+  display: block;
+  margin-bottom: 0.25rem;
+  color: #64748b;
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+}
+
+.thesis-points strong {
+  color: #1e293b;
+  font-size: 0.98rem;
+  line-height: 1.45;
 }
 
 .city-grid {
@@ -430,26 +646,29 @@
 }
 
 /* Section Header Reuse */
-.section-header {
+.product-page .section-header {
   text-align: center;
   margin-bottom: 4rem;
 }
 
-.section-header h2 {
+.product-page .section-header h2 {
   font-size: 3rem;
-  font-weight: 700;
+  font-weight: 800;
   margin-bottom: 1rem;
-  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  background: none;
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  -webkit-text-fill-color: currentColor;
   background-clip: text;
+  color: #172033;
+  line-height: 1.1;
 }
 
-.section-header p {
+.product-page .section-header p {
   font-size: 1.25rem;
   color: #64748b;
-  max-width: 600px;
+  max-width: 800px;
   margin: 0 auto;
+  line-height: 1.7;
 }
 
 /* Strategy Section */
@@ -577,11 +796,38 @@
   .urban-container {
     justify-content: center;
   }
+
+  .product-thesis-container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
 }
 
 @media (max-width: 768px) {
   .hero-text h1 {
     font-size: 2.5rem;
+  }
+
+  .product-page .hero {
+    min-height: auto;
+    padding-bottom: 3rem;
+  }
+
+  .hero-proof-points,
+  .hero-buttons {
+    justify-content: center;
+  }
+
+  .product-stack-visual {
+    padding: 0.75rem;
+  }
+
+  .stack-header {
+    flex-direction: column;
+  }
+
+  .stack-header strong {
+    text-align: left;
   }
   
   .city-grid,
@@ -599,7 +845,16 @@
     grid-template-columns: 1fr;
   }
   
-  .product-cta h2 {
+  .product-cta h2,
+  .product-page .section-header h2 {
     font-size: 2rem;
+  }
+
+  .product-thesis {
+    padding: 3rem 1rem;
+  }
+
+  .product-thesis h2 {
+    font-size: 1.9rem;
   }
 }

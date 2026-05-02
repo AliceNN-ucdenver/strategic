@@ -2,41 +2,37 @@ import { useEffect } from 'react'
 
 export const useScrollAnimations = () => {
   useEffect(() => {
-    const animateOnScroll = () => {
-      const elements = document.querySelectorAll('.fade-in, .feature-card, .stat-item')
-      elements.forEach((element, index) => {
-        const htmlElement = element as HTMLElement
-        const elementTop = htmlElement.getBoundingClientRect().top
-        const elementVisible = 150
-        
-        if (elementTop < window.innerHeight - elementVisible) {
-          setTimeout(() => {
-            htmlElement.style.opacity = '1'
-            htmlElement.style.transform = 'translateY(0)'
-          }, index * 100)
+    const elements = Array.from(document.querySelectorAll<HTMLElement>('.fade-in, .feature-card, .stat-item'))
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+
+    if (prefersReducedMotion) {
+      elements.forEach(element => element.classList.add('visible'))
+      return
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible')
+          observer.unobserve(entry.target)
         }
       })
-    }
+    }, {
+      rootMargin: '0px 0px -10% 0px',
+      threshold: 0.05
+    })
 
-    // Set initial state for animated elements
-    const setInitialState = () => {
-      document.querySelectorAll('.fade-in, .feature-card, .stat-item').forEach(element => {
-        const htmlElement = element as HTMLElement
-        htmlElement.style.opacity = '0'
-        htmlElement.style.transform = 'translateY(30px)'
-        htmlElement.style.transition = 'all 0.6s ease'
-      })
-    }
+    elements.forEach((element) => {
+      const rect = element.getBoundingClientRect()
+      if (rect.top < window.innerHeight - 80) {
+        element.classList.add('visible')
+      } else {
+        observer.observe(element)
+      }
+    })
 
-    setInitialState()
-    
-    // Trigger initial animation check
-    setTimeout(animateOnScroll, 100)
-    
-    window.addEventListener('scroll', animateOnScroll)
-    
     return () => {
-      window.removeEventListener('scroll', animateOnScroll)
+      observer.disconnect()
     }
   }, [])
 }

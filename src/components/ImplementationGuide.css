@@ -1,7 +1,8 @@
 /* Implementation Steps */
 .implementation-steps {
-  padding: 2rem 2rem;
-  background: #f8fafc;
+  padding: 5rem 2rem;
+  background:
+    linear-gradient(180deg, #f8fafc 0%, #eef4f8 100%);
 }
 
 .guide-container {
@@ -16,13 +17,14 @@
 
 .section-header h2 {
   font-size: 3rem;
-  font-weight: 700;
+  font-weight: 800;
   margin-bottom: 1rem;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: none;
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  -webkit-text-fill-color: currentColor;
   background-clip: text;
-  color: #1a202c;
+  color: #172033;
+  line-height: 1.1;
 }
 
 .section-header p {
@@ -37,19 +39,21 @@
 .implementation-phases {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-  gap: 3rem;
+  gap: 1.5rem;
   margin-bottom: 4rem;
+  align-items: stretch;
 }
 
 .phase-card {
   background: white;
-  border-radius: 20px;
-  padding: 2.5rem;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
-  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: 14px;
+  padding: 2rem;
+  box-shadow: 0 18px 44px rgba(15, 23, 42, 0.07);
+  border: 1px solid #dbe4ef;
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
+  min-height: 100%;
 }
 
 .phase-card::before {
@@ -59,12 +63,11 @@
   left: 0;
   right: 0;
   height: 4px;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(90deg, #0f766e 0%, #4f46e5 100%);
 }
 
 .phase-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 22px 50px rgba(15, 23, 42, 0.09);
 }
 
 .phase-header {
@@ -75,17 +78,25 @@
 }
 
 .phase-number {
-  font-size: 3rem;
+  font-size: 0.82rem;
   font-weight: 800;
-  color: #667eea;
+  color: #0f766e;
   line-height: 1;
-  min-width: 60px;
+  min-width: 44px;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #ecfdf5;
+  border: 1px solid rgba(15, 118, 110, 0.2);
+  border-radius: 12px;
+  letter-spacing: 1px;
 }
 
 .phase-info h3 {
   font-size: 1.5rem;
-  font-weight: 700;
-  color: #1a202c;
+  font-weight: 800;
+  color: #172033;
   margin-bottom: 0.5rem;
 }
 
@@ -97,7 +108,7 @@
 }
 
 .phase-content {
-  margin-left: 4.5rem;
+  margin-left: 0;
 }
 
 .phase-items {
@@ -120,29 +131,30 @@
 }
 
 .phase-items li::before {
-  content: '✓';
+  content: '';
   position: absolute;
   left: 0;
-  top: 0.75rem;
-  color: #10b981;
-  font-weight: bold;
-  font-size: 1.1rem;
+  top: 1.2rem;
+  width: 0.45rem;
+  height: 0.45rem;
+  background: #10b981;
+  border-radius: 50%;
 }
 
 /* Guiding Principles */
 .guiding-principles {
   background: white;
-  border-radius: 20px;
+  border-radius: 14px;
   padding: 3rem;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
-  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 18px 44px rgba(15, 23, 42, 0.07);
+  border: 1px solid #dbe4ef;
 }
 
 .guiding-principles h3 {
   text-align: center;
   font-size: 2rem;
-  font-weight: 700;
-  color: #1a202c;
+  font-weight: 800;
+  color: #172033;
   margin-bottom: 2rem;
 }
 
@@ -155,17 +167,15 @@
 .principle-card {
   text-align: center;
   padding: 2rem;
-  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
-  border-radius: 15px;
+  background: #f8fafc;
+  border-radius: 12px;
   border: 1px solid #e2e8f0;
   transition: all 0.3s ease;
 }
 
 .principle-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.08);
+  background: #ffffff;
 }
 
 .principle-card:hover .principle-icon {
@@ -174,20 +184,29 @@
 
 .principle-card:hover h4,
 .principle-card:hover p {
-  color: white;
+  color: inherit;
 }
 
 .principle-icon {
-  font-size: 3rem;
+  width: 44px;
+  height: 44px;
   margin-bottom: 1rem;
-  display: block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #0f766e;
+  background: #ecfdf5;
+  border-radius: 12px;
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: 1px;
   transition: all 0.3s ease;
 }
 
 .principle-card h4 {
   font-size: 1.25rem;
-  font-weight: 700;
-  color: #1a202c;
+  font-weight: 800;
+  color: #172033;
   margin-bottom: 1rem;
   transition: color 0.3s ease;
 }

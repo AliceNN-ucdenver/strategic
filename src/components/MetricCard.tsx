@@ -26,16 +26,17 @@ const MetricCard: React.FC<MetricCardProps> = ({ data }) => {
       </div>
       
       <div className="metric-items">
-        {data.metrics.map((metric, index) => (
+        {data.metrics.map((metric) => (
           <div 
             key={metric.id} 
             className={`metric-item ${metric.status}`}
-            style={index > 0 ? { marginTop: '1.5rem' } : {}}
           >
             <div className="metric-content">
               <div className="metric-label">
                 <span>{metric.label}</span>
-                <span className={`metric-value ${metric.status}`}>{metric.value}</span>
+                <span className={`metric-value ${metric.status}`}>
+                  {metric.value}
+                </span>
               </div>
               <div className="progress-bar">
                 <div 
@@ -43,7 +44,12 @@ const MetricCard: React.FC<MetricCardProps> = ({ data }) => {
                   style={{ width: `${metric.percentage}%` }}
                 ></div>
               </div>
-              <div className={`metric-target ${metric.status}`}>{metric.target}</div>
+              <div className="metric-meta-row">
+                <span className={`metric-target ${metric.status}`}>{metric.target}</span>
+                <span className={`metric-status-pill ${metric.status}`}>
+                  {metric.status === 'excellent' ? 'On track' : metric.status === 'good' ? 'Watch' : 'Focus'}
+                </span>
+              </div>
             </div>
             <div className="metric-description">
               {metric.description.join(' • ')}
