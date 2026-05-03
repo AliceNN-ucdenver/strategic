@@ -5,12 +5,12 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(15, 23, 42, 0.78);
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 10000;
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(12px);
   animation: modalFadeIn 0.3s ease;
 }
 
@@ -27,12 +27,13 @@
    Each modal variant (.cluster-modal, .star-modal) sets its own width and
    max-width, so the base intentionally leaves both unset. */
 .modal-content {
-  background: white;
-  padding: 3rem;
-  border-radius: 20px;
+  background: #ffffff;
+  padding: 2.5rem;
+  border: 1px solid rgba(15, 23, 42, 0.12);
+  border-radius: 16px;
   max-height: 90vh;
   margin: 2rem;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 28px 80px rgba(15, 23, 42, 0.36);
   animation: modalSlideIn 0.3s ease;
   position: relative;
   overflow-y: auto;
@@ -58,31 +59,33 @@
   position: absolute;
   top: 1rem;
   right: 1rem;
-  background: none;
-  border: none;
+  background: #f8fafc;
+  border: 1px solid #dbe4ef;
   font-size: 1.5rem;
-  color: #64748b;
+  color: #334155;
   cursor: pointer;
   width: 30px;
   height: 30px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 50%;
+  border-radius: 10px;
   transition: all 0.3s ease;
 }
 
 .modal-close:hover {
-  background: #f1f5f9;
-  color: #1e293b;
+  background: #172033;
+  border-color: #172033;
+  color: #ffffff;
 }
 
 /* Cluster Modal */
 .cluster-title {
-  color: #667eea;
+  color: #172033;
   margin-bottom: 1rem;
   font-size: 1.8rem;
-  font-weight: 700;
+  font-weight: 850;
+  line-height: 1.05;
 }
 
 .cluster-description {
@@ -101,7 +104,7 @@
   background: #f8fafc;
   border-radius: 10px;
   margin-bottom: 1rem;
-  border-left: 4px solid #667eea;
+  border-left: 4px solid #0f766e;
   cursor: pointer;
   transition: all 0.3s ease;
 }
@@ -113,10 +116,11 @@
 
 /* Star Modal */
 .star-title {
-  color: #667eea;
+  color: #172033;
   margin-bottom: 1rem;
   font-size: 1.8rem;
-  font-weight: 700;
+  font-weight: 850;
+  line-height: 1.05;
 }
 
 /* Wonderland Guide byline — small character credit under the title */
@@ -126,8 +130,8 @@
   gap: 0.4rem;
   margin-bottom: 1.5rem;
   padding: 0.35rem 0.85rem;
-  background: rgba(102, 126, 234, 0.08);
-  border: 1px solid rgba(102, 126, 234, 0.18);
+  background: #e6fffb;
+  border: 1px solid rgba(13, 148, 136, 0.18);
   border-radius: 999px;
   font-size: 0.85rem;
   color: #475569;
@@ -145,21 +149,22 @@
 }
 
 .assessment-question {
-  background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+  background: linear-gradient(135deg, #f8fafc 0%, #eef7f6 100%);
   padding: 1.5rem;
   border-radius: 15px;
   margin-bottom: 2rem;
-  border-left: 4px solid #f59e0b;
+  border: 1px solid #dbe4ef;
+  border-left: 4px solid #0f766e;
 }
 
 .assessment-question h3 {
-  color: #92400e;
+  color: #0f4f49;
   margin-bottom: 1rem;
   font-size: 1.1rem;
 }
 
 .assessment-question p {
-  color: #78350f;
+  color: #334155;
   font-weight: 500;
   font-style: italic;
 }
@@ -349,11 +354,12 @@
   padding: 1.5rem;
   border-radius: 15px;
   margin-bottom: 2rem;
-  border-left: 4px solid #667eea;
+  border: 1px solid #dbe4ef;
+  border-left: 4px solid #0f766e;
 }
 
 .implementation-guide h3 {
-  color: #4338ca;
+  color: #0f4f49;
   margin-bottom: 1rem;
   font-size: 1.1rem;
 }
@@ -394,11 +400,11 @@
 }
 
 .assess-button {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: #172033;
   color: white;
   padding: 1rem 2rem;
   border: none;
-  border-radius: 50px;
+  border-radius: 10px;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -407,7 +413,8 @@
 
 .assess-button:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+  background: #0f766e;
+  box-shadow: 0 8px 25px rgba(15, 118, 110, 0.22);
 }
 
 /* ── Cluster modal: quote + orientation ── */
@@ -417,7 +424,7 @@
   line-height: 1.6;
   margin-bottom: 1.5rem;
   padding-left: 1rem;
-  border-left: 3px solid rgba(102, 126, 234, 0.4);
+  border-left: 3px solid rgba(15, 118, 110, 0.38);
 }
 
 .cluster-orientation {
@@ -440,10 +447,15 @@
   max-width: 1280px;
   padding: 2.5rem;
   margin: 1rem;
+  background:
+    linear-gradient(rgba(15, 23, 42, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(15, 23, 42, 0.025) 1px, transparent 1px),
+    #ffffff;
+  background-size: 44px 44px;
 }
 
 .cluster-stars-heading {
-  color: #1e293b;
+  color: #172033;
   font-size: 0.85rem;
   font-weight: 700;
   text-transform: uppercase;
@@ -459,22 +471,23 @@
 }
 
 .cluster-star-card {
-  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
-  border: 1px solid rgba(102, 126, 234, 0.15);
+  background: #ffffff;
+  border: 1px solid #dbe4ef;
   border-radius: 12px;
   padding: 1.1rem 1.15rem;
   cursor: pointer;
   transition: all 0.25s ease;
   display: flex;
   flex-direction: column;
-  min-height: 170px;
+  min-height: 178px;
+  box-shadow: 0 14px 36px rgba(15, 23, 42, 0.06);
 }
 
 .cluster-star-card:hover {
-  background: linear-gradient(135deg, #ede9fe 0%, #ddd6fe 100%);
-  border-color: rgba(102, 126, 234, 0.4);
+  background: #f8fafc;
+  border-color: rgba(13, 148, 136, 0.36);
   transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(102, 126, 234, 0.15);
+  box-shadow: 0 18px 42px rgba(15, 23, 42, 0.1);
 }
 
 .cluster-star-card.is-upcoming {
@@ -485,12 +498,13 @@
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
-  background: rgba(102, 126, 234, 0.1);
+  background: #e6fffb;
+  border: 1px solid rgba(13, 148, 136, 0.18);
   padding: 0.25rem 0.6rem;
   border-radius: 999px;
   font-size: 0.72rem;
   font-weight: 600;
-  color: #4338ca;
+  color: #0f766e;
   margin-bottom: 0.7rem;
   align-self: flex-start;
   white-space: nowrap;
@@ -520,7 +534,7 @@
 }
 
 .cluster-star-cta {
-  color: #667eea;
+  color: #0f766e;
   font-size: 0.85rem;
   font-weight: 600;
   margin-top: auto;
@@ -542,11 +556,11 @@
 }
 
 .cluster-action-primary {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: #172033;
   color: white;
   padding: 0.875rem 1.75rem;
   border: none;
-  border-radius: 50px;
+  border-radius: 10px;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -555,15 +569,16 @@
 
 .cluster-action-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+  background: #0f766e;
+  box-shadow: 0 8px 25px rgba(15, 118, 110, 0.22);
 }
 
 .cluster-action-secondary {
   background: white;
-  color: #667eea;
+  color: #0f766e;
   padding: 0.875rem 1.75rem;
-  border: 2px solid #667eea;
-  border-radius: 50px;
+  border: 1px solid rgba(13, 148, 136, 0.38);
+  border-radius: 10px;
   font-weight: 600;
   text-decoration: none;
   display: inline-flex;
@@ -573,8 +588,9 @@
 }
 
 .cluster-action-secondary:hover {
-  background: #667eea;
-  color: white;
+  background: #e6fffb;
+  border-color: rgba(13, 148, 136, 0.55);
+  color: #0f4f49;
   transform: translateY(-2px);
 }
 

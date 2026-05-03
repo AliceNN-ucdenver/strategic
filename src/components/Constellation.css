@@ -152,7 +152,7 @@
   background: radial-gradient(circle at top, rgba(251, 191, 36, 0.18), transparent 60%);
 }
 .cluster-node-enablement .cluster-node-card::before {
-  background: radial-gradient(circle at top, rgba(167, 139, 250, 0.22), transparent 60%);
+  background: radial-gradient(circle at top, rgba(59, 130, 246, 0.2), transparent 60%);
 }
 .cluster-node-sustainability .cluster-node-card::before {
   background: radial-gradient(circle at top, rgba(52, 211, 153, 0.18), transparent 60%);
@@ -165,7 +165,7 @@
 }
 .cluster-node-navigation .cluster-node-card { border-top-color: rgba(96, 165, 250, 0.6); }
 .cluster-node-velocity .cluster-node-card { border-top-color: rgba(251, 191, 36, 0.6); }
-.cluster-node-enablement .cluster-node-card { border-top-color: rgba(167, 139, 250, 0.7); }
+.cluster-node-enablement .cluster-node-card { border-top-color: rgba(59, 130, 246, 0.65); }
 .cluster-node-sustainability .cluster-node-card { border-top-color: rgba(52, 211, 153, 0.6); }
 
 .cluster-node-map {

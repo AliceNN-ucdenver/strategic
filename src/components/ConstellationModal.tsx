@@ -1,4 +1,5 @@
 import React from 'react'
+import { createPortal } from 'react-dom'
 import { Link, useNavigate } from 'react-router-dom'
 import type { Cluster, Star } from '../data/clusters'
 import './ConstellationModal.css'
@@ -17,6 +18,8 @@ const ConstellationModal: React.FC<ConstellationModalProps> = ({
   onStarClick
 }) => {
   const navigate = useNavigate()
+
+  const renderModal = (content: React.ReactNode) => createPortal(content, document.body)
 
   const handleBackdropClick = (e: React.MouseEvent) => {
     if (e.target === e.currentTarget) {
@@ -43,7 +46,7 @@ const ConstellationModal: React.FC<ConstellationModalProps> = ({
 
   // Star detail view (when a star card is clicked)
   if (star) {
-    return (
+    return renderModal(
       <div className="modal-overlay" onClick={handleBackdropClick}>
         <div className="modal-content star-modal">
           <button className="modal-close" onClick={onClose}>×</button>
@@ -51,7 +54,7 @@ const ConstellationModal: React.FC<ConstellationModalProps> = ({
           <h2 className="star-title">{star.title}</h2>
 
           <div className="assessment-question">
-            <h3>🎯 Key Assessment Question</h3>
+            <h3>Key Assessment Question</h3>
             <p>"{star.assessmentQuestion}"</p>
           </div>
 
@@ -105,7 +108,7 @@ const ConstellationModal: React.FC<ConstellationModalProps> = ({
           </div>
 
           <div className="implementation-guide">
-            <h3>📋 Implementation Steps</h3>
+            <h3>Implementation Steps</h3>
             <ol>
               {star.implementationSteps.map((step, index) => (
                 <li key={index}>{step}</li>
@@ -119,7 +122,7 @@ const ConstellationModal: React.FC<ConstellationModalProps> = ({
 
   // Cluster orientation/preview view
   if (cluster) {
-    return (
+    return renderModal(
       <div className="modal-overlay" onClick={handleBackdropClick}>
         <div className="modal-content cluster-modal">
           <button className="modal-close" onClick={onClose}>×</button>

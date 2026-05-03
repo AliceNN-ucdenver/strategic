@@ -65,7 +65,7 @@
   left: 0;
   right: 0;
   height: 4px;
-  background: linear-gradient(90deg, #0f766e 0%, #4f46e5 100%);
+  background: linear-gradient(90deg, #0f766e 0%, #172033 100%);
 }
 
 .assessment-sample-question {
@@ -136,7 +136,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(135deg, #0f766e 0%, #4f46e5 100%);
+  background: linear-gradient(135deg, #0f766e 0%, #172033 100%);
   opacity: 0;
   transition: opacity 0.3s ease;
   z-index: 0;
@@ -237,6 +237,7 @@
 .framework-page .assessment .btn-primary:hover,
 .assessment .btn-primary:hover {
   transform: translateY(-3px);
+  background: #0f766e;
   box-shadow: 0 15px 35px rgba(15, 23, 42, 0.18);
   color: #ffffff;
 }
