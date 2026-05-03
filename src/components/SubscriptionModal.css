@@ -5,7 +5,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.75);
+  background-color: rgba(15, 23, 42, 0.74);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -21,7 +21,8 @@
   max-height: 90vh;
   overflow-y: auto;
   border-radius: 10px;
-  box-shadow: 0px 4px 8px rgba(105, 113, 119, 0.2);
+  box-shadow: 0 24px 70px rgba(15, 23, 42, 0.28);
+  border: 1px solid rgba(148, 163, 184, 0.24);
 }
 
 /* Close button */
@@ -32,7 +33,7 @@
   background: none;
   border: none;
   font-size: 30px;
-  color: rgb(110, 110, 110);
+  color: #64748b;
   cursor: pointer;
   z-index: 10;
   width: 30px;
@@ -45,8 +46,8 @@
 }
 
 .subscription-modal-close:hover {
-  background-color: rgba(0, 0, 0, 0.1);
-  color: rgb(61, 61, 61);
+  background-color: rgba(15, 118, 110, 0.1);
+  color: #0f4f49;
 }
 
 /* Kit form styles - copied from the original embed */
@@ -193,7 +194,7 @@
 
 .formkit-form[data-uid="7ddfaac40b"] .formkit-input:focus {
   outline: none;
-  border-color: #1677be;
+  border-color: #0f766e;
   -webkit-transition: border-color ease 300ms;
   transition: border-color ease 300ms;
 }
@@ -240,6 +241,11 @@
   background: #d3fbeb;
   border-color: #10bf7a;
   color: #0c905c;
+}
+
+.formkit-form[data-uid="7ddfaac40b"] .formkit-submit:hover > span,
+.formkit-form[data-uid="7ddfaac40b"] .formkit-submit:focus > span {
+  background-color: rgba(15, 79, 73, 0.18);
 }
 
 .formkit-form[data-uid="7ddfaac40b"] .formkit-alert-error {
@@ -406,7 +412,7 @@
 }
 
 .formkit-form[data-uid="7ddfaac40b"] {
-  box-shadow: 0px 4px 8px rgba(105, 113, 119, 0.2);
+  box-shadow: none;
   max-width: 740px !important;
   overflow: hidden;
 }
@@ -442,12 +448,12 @@
   margin-top: 0;
   margin-bottom: 24px;
   font-weight: 700;
-  font-size: calc(30px + (36 - 30) * ((100vw - 400px) / (600 - 400)));
+  font-size: 2rem;
 }
 
 @media all and (min-width: 800px) {
   .formkit-form[data-uid="7ddfaac40b"] .formkit-header {
-    font-size: 36px;
+    font-size: 2.25rem;
   }
 }
 

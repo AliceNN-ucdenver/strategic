@@ -1,4 +1,17 @@
 :root {
+  --color-ink: #172033;
+  --color-muted: #5f6f85;
+  --color-line: #dbe4ef;
+  --color-page: #f8fafc;
+  --color-page-soft: #eef4f8;
+  --color-teal: #0f766e;
+  --color-teal-dark: #0f4f49;
+  --color-teal-soft: #e6fffb;
+  --color-blue: #2563eb;
+  --color-slate: #102033;
+  --shadow-soft: 0 14px 36px rgba(15, 23, 42, 0.07);
+  --shadow-lifted: 0 24px 60px rgba(15, 23, 42, 0.16);
+
   font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
@@ -20,7 +33,7 @@ body {
   min-height: 100vh;
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   line-height: 1.6;
-  color: #1a1a1a;
+  color: var(--color-ink);
   background-color: #ffffff;
   overflow-x: hidden;
   scroll-behavior: smooth;

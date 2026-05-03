@@ -86,15 +86,15 @@ const SubscriptionModal: React.FC<SubscriptionModalProps> = ({ isOpen, onClose }
           data-version="5" 
           data-options='{"settings":{"after_subscribe":{"action":"message","success_message":"Welcome to the Rabbit Hole! 🐰 Check your email to confirm your subscription. Your journey through the Strategic Architecture Constellations begins soon - the Cheshire Cat has some strategic vision insights waiting for you.","redirect_url":""},"analytics":{"google":null,"fathom":null,"facebook":null,"segment":null,"pinterest":null,"sparkloop":null,"googletagmanager":null},"modal":{"trigger":"timer","scroll_percentage":null,"timer":5,"devices":"all","show_once_every":15},"powered_by":{"show":true,"url":"https://kit.com/features/forms?utm_campaign=poweredby&utm_content=form&utm_medium=referral&utm_source=dynamic"},"recaptcha":{"enabled":false},"return_visitor":{"action":"show","custom_content":""},"slide_in":{"display_in":"bottom_right","trigger":"timer","scroll_percentage":null,"timer":5,"devices":"all","show_once_every":15},"sticky_bar":{"display_in":"top","trigger":"timer","scroll_percentage":null,"timer":5,"devices":"all","show_once_every":15}},"version":"5"}' 
           min-width="400 500 600 700 800"
-          style={{backgroundColor: 'rgb(255, 255, 255)', borderRadius: '10px'}}
+          style={{backgroundColor: '#ffffff', borderRadius: '10px'}}
           onSubmit={handleFormSubmit}
         >
           <div data-style="full" style={{'--bg-border-radius': '5px'} as React.CSSProperties}>
             <div data-element="column" className="formkit-column">
-              <div className="formkit-header" data-element="header" style={{color: 'rgb(61, 61, 61)', fontWeight: 700}}>
+              <div className="formkit-header" data-element="header" style={{color: '#172033', fontWeight: 700}}>
                 <h2>Subscribe to The Rabbit Hole</h2>
               </div>
-              <div className="formkit-content" data-element="content" style={{color: 'rgb(110, 110, 110)'}}>
+              <div className="formkit-content" data-element="content" style={{color: '#475569'}}>
                 <p>Each month, I'll guide you through a different Strategic Architecture Constellation with Wonderland characters as your mentors.</p>
                 <p>​</p>
                 <p>Learn how the Cheshire Cat's strategic vision, the Mad Hatter's innovation labs, and 10 other character guides can transform you from technical architect to strategic business enabler.</p>
@@ -109,14 +109,14 @@ const SubscriptionModal: React.FC<SubscriptionModalProps> = ({ isOpen, onClose }
                     placeholder="Email Address" 
                     required 
                     type="email" 
-                    style={{color: 'rgb(110, 110, 110)', backgroundColor: 'rgb(247, 247, 247)', borderRadius: '5px', fontWeight: 400}}
+                    style={{color: '#334155', backgroundColor: '#f8fafc', borderRadius: '5px', fontWeight: 400}}
                   />
                 </div>
                 <button 
                   data-element="submit" 
                   className="formkit-submit formkit-submit" 
                   type="submit"
-                  style={{color: 'rgb(255, 255, 255)', backgroundColor: 'rgb(120, 94, 223)', borderRadius: '5px', fontWeight: 700}}
+                  style={{color: '#ffffff', backgroundColor: '#0f766e', borderRadius: '5px', fontWeight: 700}}
                 >
                   <div className="formkit-spinner">
                     <div></div>
@@ -126,7 +126,7 @@ const SubscriptionModal: React.FC<SubscriptionModalProps> = ({ isOpen, onClose }
                   <span>Subscribe</span>
                 </button>
               </div>
-              <div className="formkit-disclaimer" data-element="disclaimer" style={{color: 'rgb(110, 110, 110)'}}>
+              <div className="formkit-disclaimer" data-element="disclaimer" style={{color: '#64748b'}}>
                 We respect your privacy. Unsubscribe at any time.
               </div>
               <div className="formkit-powered-by-convertkit-container">

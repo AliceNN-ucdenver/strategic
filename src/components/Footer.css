@@ -33,7 +33,7 @@
   color: #ffffff;
   font-size: clamp(1.55rem, 3vw, 2.35rem);
   font-weight: 850;
-  letter-spacing: -0.02em;
+  letter-spacing: 0;
 }
 
 .footer-tagline {

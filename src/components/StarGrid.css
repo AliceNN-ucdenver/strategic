@@ -32,7 +32,7 @@
 
 .star-tab:hover {
   background: linear-gradient(135deg, #e2e8f0 0%, #cbd5e1 100%);
-  border-color: #667eea;
+  border-color: #0f766e;
   transform: translateX(5px);
 }
 
@@ -41,22 +41,22 @@
 .close-button:focus-visible,
 .guide-link:focus-visible {
   outline: none;
-  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.18);
+  box-shadow: 0 0 0 3px rgba(15, 118, 110, 0.18);
 }
 
 .star-tab.active {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  border-color: #667eea;
+  background: linear-gradient(135deg, #0f766e 0%, #172033 100%);
+  border-color: #0f766e;
   color: white;
   font-weight: 700;
   transform: translateX(10px);
-  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+  box-shadow: 0 8px 25px rgba(15, 118, 110, 0.3);
 }
 
 .star-tab.active:focus-visible {
   box-shadow:
-    0 8px 25px rgba(102, 126, 234, 0.3),
-    0 0 0 3px rgba(102, 126, 234, 0.18);
+    0 8px 25px rgba(15, 118, 110, 0.3),
+    0 0 0 3px rgba(15, 118, 110, 0.18);
 }
 
 .star-tab .star-icon {
@@ -117,7 +117,7 @@
   background: #ffffff;
   border-radius: 16px;
   padding: 1.5rem;
-  border: 1px solid rgba(102, 126, 234, 0.28);
+  border: 1px solid rgba(15, 118, 110, 0.28);
   box-shadow: 0 24px 50px rgba(15, 23, 42, 0.1);
   animation: expandIn 0.3s ease-out;
   margin-top: 1rem;
@@ -192,7 +192,7 @@
 .star-summary span {
   display: block;
   margin-bottom: 0.35rem;
-  color: #667eea;
+  color: #0f766e;
   font-size: 0.7rem;
   font-weight: 800;
   letter-spacing: 1.3px;
@@ -252,9 +252,9 @@
 .article-thesis {
   padding: 1.25rem;
   background:
-    linear-gradient(135deg, rgba(102, 126, 234, 0.08), rgba(118, 75, 162, 0.06)),
+    linear-gradient(135deg, rgba(15, 118, 110, 0.08), rgba(23, 32, 51, 0.06)),
     #ffffff;
-  border-color: rgba(102, 126, 234, 0.18);
+  border-color: rgba(15, 118, 110, 0.18);
 }
 
 .article-thesis span,
@@ -264,7 +264,7 @@
 .action-plan-grid span {
   display: block;
   margin-bottom: 0.45rem;
-  color: #667eea;
+  color: #0f766e;
   font-size: 0.68rem;
   font-weight: 800;
   letter-spacing: 1.4px;
@@ -294,14 +294,14 @@
 .overview-card.assessment-question {
   margin-bottom: 1rem;
   padding: 1rem;
-  background: linear-gradient(135deg, #e0e7ff 0%, #c7d2fe 100%);
+  background: linear-gradient(135deg, #ecfdf5 0%, #eff6ff 100%);
   border-radius: 12px;
-  border-left: 4px solid #3b82f6;
+  border-left: 4px solid #0f766e;
 }
 
 .overview-card.assessment-question p {
   font-style: italic;
-  color: #1e3a8a;
+  color: #0f4f49;
   font-weight: 500;
 }
 
@@ -341,8 +341,8 @@
   padding: 0.8rem 1.1rem;
   border-radius: 12px;
   color: white;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  box-shadow: 0 10px 22px rgba(102, 126, 234, 0.2);
+  background: linear-gradient(135deg, #0f766e 0%, #172033 100%);
+  box-shadow: 0 10px 22px rgba(15, 118, 110, 0.2);
   text-decoration: none;
   font-size: 0.9rem;
   font-weight: 800;
@@ -380,13 +380,13 @@
 
 .star-detail-tabs button.active {
   color: white;
-  background: #667eea;
-  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.25);
+  background: #0f766e;
+  box-shadow: 0 4px 12px rgba(15, 118, 110, 0.25);
 }
 
 .star-detail-tabs button.active:focus-visible {
   box-shadow:
-    0 4px 12px rgba(102, 126, 234, 0.25),
+    0 4px 12px rgba(15, 118, 110, 0.25),
     inset 0 0 0 2px rgba(255, 255, 255, 0.5);
 }
 
@@ -433,8 +433,8 @@
   width: 0.65rem;
   height: 0.65rem;
   border-radius: 50%;
-  background: #667eea;
-  box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.12);
+  background: #0f766e;
+  box-shadow: 0 0 0 4px rgba(15, 118, 110, 0.12);
 }
 
 .action-plan {
@@ -687,7 +687,7 @@
   position: absolute;
   left: 0;
   top: 0.1rem;
-  background: #667eea;
+  background: #0f766e;
   color: white;
   width: 1.5rem;
   height: 1.5rem;
@@ -726,8 +726,8 @@
   gap: 0.4rem;
   padding: 0.25rem 0.7rem;
   margin-right: 0.75rem;
-  background: rgba(102, 126, 234, 0.1);
-  border: 1px solid rgba(102, 126, 234, 0.2);
+  background: rgba(15, 118, 110, 0.1);
+  border: 1px solid rgba(15, 118, 110, 0.2);
   border-radius: 999px;
   font-size: 0.78rem;
   font-weight: 500;
@@ -741,10 +741,10 @@
   height: 12px;
   flex: 0 0 auto;
   background:
-    radial-gradient(circle at 20% 58%, #667eea 0 3px, transparent 3.5px),
-    radial-gradient(circle at 54% 28%, rgba(102, 126, 234, 0.68) 0 3px, transparent 3.5px),
-    radial-gradient(circle at 82% 65%, rgba(102, 126, 234, 0.42) 0 3px, transparent 3.5px),
-    linear-gradient(25deg, transparent 46%, rgba(102, 126, 234, 0.4) 47% 53%, transparent 54%);
+    radial-gradient(circle at 20% 58%, #0f766e 0 3px, transparent 3.5px),
+    radial-gradient(circle at 54% 28%, rgba(15, 118, 110, 0.68) 0 3px, transparent 3.5px),
+    radial-gradient(circle at 82% 65%, rgba(15, 118, 110, 0.42) 0 3px, transparent 3.5px),
+    linear-gradient(25deg, transparent 46%, rgba(15, 118, 110, 0.4) 47% 53%, transparent 54%);
 }
 
 .star-tab-charname {

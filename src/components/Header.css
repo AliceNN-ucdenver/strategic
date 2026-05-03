@@ -32,12 +32,12 @@
 .logo {
   font-size: 1.5rem;
   font-weight: 800;
-  background: linear-gradient(135deg, #0f766e 0%, #4f46e5 100%);
+  background: linear-gradient(135deg, #0f766e 0%, #2563eb 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   text-decoration: none;
-  letter-spacing: -0.02em;
+  letter-spacing: 0;
 }
 
 .nav-links {

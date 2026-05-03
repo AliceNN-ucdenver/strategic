@@ -84,8 +84,8 @@
     to bottom,
     #ef4444 0%,
     #f59e0b 25%,
-    #667eea 50%,
-    #8b5cf6 70%,
+    #0f766e 50%,
+    #2563eb 70%,
     #10b981 100%
   );
   z-index: 0;
@@ -264,11 +264,11 @@
   font-weight: 700;
 }
 
-/* ── The Bridge: the four pillars wrapped in a brand-purple frame ── */
+/* ── The Bridge: the four pillars wrapped in a brand-slate frame ── */
 /* Fully opaque background so the connector line is hidden behind the bridge */
 .transformation-bridge {
-  background: linear-gradient(135deg, #f0f3ff 0%, #f3eeff 100%);
-  border: 1px dashed rgba(102, 126, 234, 0.4);
+  background: linear-gradient(135deg, #f8fafc 0%, #eef7f6 100%);
+  border: 1px dashed rgba(15, 118, 110, 0.4);
   border-radius: 16px;
   padding: 2.5rem 2.5rem 2.25rem;
 }
@@ -278,7 +278,7 @@
   top: -14px;
   left: 50%;
   transform: translateX(-50%);
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #0f766e 0%, #172033 100%);
   color: white;
   padding: 0.35rem 1.25rem;
   font-size: 0.7rem;
@@ -286,7 +286,7 @@
   text-transform: uppercase;
   letter-spacing: 2px;
   border-radius: 999px;
-  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.35);
+  box-shadow: 0 4px 12px rgba(15, 118, 110, 0.35);
   z-index: 2;
   white-space: nowrap;
 }
@@ -299,7 +299,7 @@
 .bridge-header h3 {
   font-size: 1.3rem;
   font-weight: 700;
-  color: #4338ca;
+  color: #0f4f49;
   margin: 0 0 0.35rem 0;
 }
 
@@ -318,7 +318,7 @@
 
 .pillar-card {
   background: white;
-  border: 1px solid rgba(102, 126, 234, 0.12);
+  border: 1px solid rgba(15, 118, 110, 0.12);
   border-radius: 12px;
   padding: 1.1rem 1rem;
   text-align: center;
@@ -339,12 +339,12 @@
 
 .pillar-architecture::before { background: linear-gradient(135deg, #60a5fa 0%, #3b82f6 100%); }
 .pillar-risk::before { background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%); }
-.pillar-operations::before { background: linear-gradient(135deg, #a78bfa 0%, #8b5cf6 100%); }
+.pillar-operations::before { background: linear-gradient(135deg, #60a5fa 0%, #2563eb 100%); }
 .pillar-security::before { background: linear-gradient(135deg, #34d399 0%, #10b981 100%); }
 
 .pillar-card:hover {
   transform: translateY(-3px);
-  box-shadow: 0 10px 22px rgba(102, 126, 234, 0.14);
+  box-shadow: 0 10px 22px rgba(15, 118, 110, 0.14);
 }
 
 .pillar-icon {
@@ -383,8 +383,8 @@
   padding: 1.5rem 2rem;
   background: white;
   border-radius: 12px;
-  border-left: 4px solid #667eea;
-  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.08);
+  border-left: 4px solid #0f766e;
+  box-shadow: 0 6px 20px rgba(15, 118, 110, 0.08);
   line-height: 1.55;
   position: relative;
   text-align: left;
@@ -397,14 +397,14 @@
 .transformation-quote cite {
   display: block;
   font-size: 0.84rem;
-  color: #667eea;
+  color: #0f766e;
   font-style: normal;
   font-weight: 600;
   line-height: 1.5;
 }
 
 .quote-link {
-  color: #4338ca;
+  color: #0f4f49;
   font-weight: 700;
   text-decoration: none;
   margin-left: 0.25rem;
@@ -654,7 +654,7 @@
   left: 0;
   right: 0;
   height: 5px;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #0f766e 0%, #172033 100%);
 }
 
 .cluster-detail.navigation-detail::before {
@@ -664,7 +664,7 @@
   background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
 }
 .cluster-detail.enablement-detail::before {
-  background: linear-gradient(135deg, #a78bfa 0%, #8b5cf6 100%);
+  background: linear-gradient(135deg, #60a5fa 0%, #2563eb 100%);
 }
 .cluster-detail.sustainability-detail::before {
   background: linear-gradient(135deg, #34d399 0%, #10b981 100%);
@@ -687,8 +687,8 @@
     radial-gradient(circle at 82% 62%, #ffffff 0 3px, transparent 4px),
     linear-gradient(28deg, transparent 46%, rgba(255, 255, 255, 0.55) 47% 49%, transparent 50%),
     linear-gradient(-24deg, transparent 48%, rgba(255, 255, 255, 0.45) 49% 51%, transparent 52%),
-    linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  box-shadow: 0 8px 22px rgba(102, 126, 234, 0.18);
+    linear-gradient(135deg, #0f766e 0%, #172033 100%);
+  box-shadow: 0 8px 22px rgba(15, 118, 110, 0.18);
 }
 
 .cluster-header-mark-navigation {
@@ -718,7 +718,7 @@
     radial-gradient(circle at 82% 62%, #ffffff 0 3px, transparent 4px),
     linear-gradient(28deg, transparent 46%, rgba(255, 255, 255, 0.55) 47% 49%, transparent 50%),
     linear-gradient(-24deg, transparent 48%, rgba(255, 255, 255, 0.45) 49% 51%, transparent 52%),
-    linear-gradient(135deg, #a78bfa 0%, #8b5cf6 100%);
+    linear-gradient(135deg, #60a5fa 0%, #2563eb 100%);
 }
 
 .cluster-header-mark-sustainability {
@@ -741,7 +741,7 @@
 /* Cluster title color matches its accent on the deep dive */
 .navigation-detail .cluster-header h3 { color: #1e3a8a; }
 .velocity-detail .cluster-header h3 { color: #92400e; }
-.enablement-detail .cluster-header h3 { color: #5b21b6; }
+.enablement-detail .cluster-header h3 { color: #1d4ed8; }
 .sustainability-detail .cluster-header h3 { color: #065f46; }
 
 .cluster-quote {

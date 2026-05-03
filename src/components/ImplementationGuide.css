@@ -63,7 +63,7 @@
   left: 0;
   right: 0;
   height: 4px;
-  background: linear-gradient(90deg, #0f766e 0%, #4f46e5 100%);
+  background: linear-gradient(90deg, #0f766e 0%, #2563eb 100%);
 }
 
 .phase-card:hover {

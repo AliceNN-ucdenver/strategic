@@ -89,7 +89,7 @@ const TransformationFramework: React.FC = () => {
         },
         {
           name: "Future Readiness",
-          color: "purple", 
+          color: "blue", 
           metrics: [
             { name: "Technical Debt Decay Rate", desc: "Speed of legacy modernization via AI", target: "-25% annually" },
             { name: "Capability Half-Life", desc: "Time before patterns need updates", target: ">18 months" },

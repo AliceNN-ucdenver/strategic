@@ -5,7 +5,7 @@
 
 .blog-image-zoomable:hover {
   transform: scale(1.01);
-  box-shadow: 0 8px 30px rgba(102, 126, 234, 0.2);
+  box-shadow: 0 8px 30px rgba(15, 118, 110, 0.2);
 }
 
 .image-zoom-overlay {
