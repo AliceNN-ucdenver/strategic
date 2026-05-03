@@ -3,7 +3,7 @@ import React from 'react';
 const ResumeCertifications: React.FC = () => {
   return (
     <section className="resume-section">
-      <h3 className="resume-section-title">🏅 NVIDIA & AI Certifications</h3>
+      <h3 className="resume-section-title">NVIDIA & AI Certifications</h3>
       <div className="resume-ambassador-description">
         <p><strong><a href="https://www.nvidia.com/en-us/training/instructor-directory/bio/?instructorId=0038Z000036WJjcQAG" target="_blank" rel="noopener noreferrer">NVIDIA Deep Learning Institute University Ambassador</a>:</strong> Certified to deliver free instructor-led workshops in cutting-edge AI, accelerated computing, and data science technologies to academic communities, enriching curriculum and providing students with industry-relevant skills for career advancement.</p>
       </div>

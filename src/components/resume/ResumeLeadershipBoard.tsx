@@ -3,7 +3,7 @@ import React from 'react';
 const ResumeLeadershipBoard: React.FC = () => {
   return (
     <section className="resume-section">
-      <h3 className="resume-section-title">🌟 Leadership & Board Positions</h3>
+      <h3 className="resume-section-title">Leadership & Board Positions</h3>
       <div className="resume-two-column">
         <div>
           <div className="resume-experience-item">

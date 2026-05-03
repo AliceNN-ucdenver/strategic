@@ -24,11 +24,12 @@ const ContactPage: React.FC = () => {
                 className="contact-avatar"
               />
               <div className="contact-intro">
+                <span className="contact-kicker">Strategic Architecture Advisory</span>
                 <h1 className="contact-title">Connect with Shawn McCarthy</h1>
                 <h2 className="contact-role">Chief Archeologist & Strategic Architecture Leader</h2>
                 <p className="contact-subtitle">
-                  From excavating digital archaeology to navigating the stars of enterprise transformation,
-                  let's explore how strategic architecture can unlock your organization's potential.
+                  Bring the map, the artifacts, and the messy questions. We can excavate what your systems
+                  are really telling you, then turn that evidence into a practical architecture path for AI-era change.
                 </p>
               </div>
             </div>
@@ -70,7 +71,10 @@ const ContactPage: React.FC = () => {
               <div className="contact-card">
                 <div className="contact-icon">
                   <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M20.317 4.37A19.791 19.791 0 0 0 15.478 3C15.214 3.568 14.907 4.308 14.687 4.9A18.297 18.297 0 0 0 8.956 4.9C8.736 4.308 8.423 3.568 8.156 3A19.734 19.734 0 0 0 3.317 4.37C.533 8.845.061 13.219.387 17.535A19.874 19.874 0 0 0 6.36 20.98C7.743 19.265 8.944 17.425 9.926 15.49A12.82 12.82 0 0 1 7.64 14.49C8.053 14.2 8.454 13.893 8.84 13.571C12.535 15.3 16.565 15.3 20.217 13.571C20.603 13.893 21.004 14.2 21.417 14.49A12.77 12.77 0 0 1 19.131 15.49C20.113 17.425 21.314 19.265 22.697 20.98A19.841 19.841 0 0 0 28.67 17.535C29.062 12.668 27.993 8.328 24.374 4.37ZM8.695 15.058C7.414 15.058 6.36 13.9 6.36 12.498S7.389 9.938 8.695 9.938C10.001 9.938 11.055 11.098 11.03 12.498C11.03 13.9 10.001 15.058 8.695 15.058ZM19.36 15.058C18.079 15.058 17.025 13.9 17.025 12.498S18.054 9.938 19.36 9.938C20.666 9.938 21.72 11.098 21.695 12.498C21.695 13.9 20.666 15.058 19.36 15.058Z" fill="currentColor"/>
+                    <path d="M8.7 8.9C9.7 8.45 10.8 8.22 12 8.22C13.2 8.22 14.3 8.45 15.3 8.9" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"/>
+                    <path d="M7.75 15.2C6.65 14.85 5.7 14.35 4.9 13.7C4.75 10.9 5.35 8.4 6.7 6.2C7.75 5.72 8.83 5.38 9.95 5.18L10.45 6.15C11.47 6 12.53 6 13.55 6.15L14.05 5.18C15.17 5.38 16.25 5.72 17.3 6.2C18.65 8.4 19.25 10.9 19.1 13.7C18.3 14.35 17.35 14.85 16.25 15.2L15.4 13.75C13.2 14.45 10.8 14.45 8.6 13.75L7.75 15.2Z" stroke="currentColor" strokeWidth="1.8" strokeLinejoin="round"/>
+                    <circle cx="9.5" cy="11.25" r="1" fill="currentColor"/>
+                    <circle cx="14.5" cy="11.25" r="1" fill="currentColor"/>
                   </svg>
                 </div>
                 <div className="contact-info">
@@ -86,17 +90,18 @@ const ContactPage: React.FC = () => {
 
           <div className="contact-cta">
             <div className="cta-content">
-              <h2>Ready to Navigate Your Architecture Journey?</h2>
+              <span className="cta-kicker">Start with the evidence</span>
+              <h2>Ready to make the architecture visible?</h2>
               <p>
-                Whether you're excavating legacy systems or charting new digital territories, 
-                strategic architecture illuminates the path forward. Let's explore how the 
-                constellation of possibilities can transform your organization's future.
+                Whether you are modernizing legacy systems, defining AI governance, or building the
+                maintainability signals leadership has been missing, the work starts by reading the
+                terrain with discipline and imagination.
               </p>
               <div className="cta-actions">
-                <a href="mailto:smccarthy@iasaoffice.org" className="cta-button primary">
+                <a href="mailto:smccarthy@iasaoffice.org" className="contact-action-button primary">
                   Start the Conversation
                 </a>
-                <a href="tel:+13039008613" className="cta-button secondary">
+                <a href="tel:+13039008613" className="contact-action-button secondary">
                   Schedule a Call
                 </a>
               </div>
@@ -106,19 +111,23 @@ const ContactPage: React.FC = () => {
           <div className="contact-expertise">
             <div className="expertise-grid">
               <div className="expertise-item">
-                <h4>🏛️ Digital Archeology</h4>
+                <span className="expertise-mark">01</span>
+                <h4>Digital Archeology</h4>
                 <p>Excavating value from legacy systems and enterprise technology landscapes</p>
               </div>
               <div className="expertise-item">
-                <h4>⭐ Strategic Navigation</h4>
+                <span className="expertise-mark">02</span>
+                <h4>Strategic Navigation</h4>
                 <p>Guiding organizations through AI transformation and architectural evolution</p>
               </div>
               <div className="expertise-item">
-                <h4>🎯 ATLAS Program</h4>
+                <span className="expertise-mark">03</span>
+                <h4>ATLAS Program</h4>
                 <p>Revolutionary architect development through teaching hospital methodologies</p>
               </div>
               <div className="expertise-item">
-                <h4>🔬 IASA Leadership</h4>
+                <span className="expertise-mark">04</span>
+                <h4>IASA Leadership</h4>
                 <p>Advancing the architecture profession through global education initiatives</p>
               </div>
             </div>

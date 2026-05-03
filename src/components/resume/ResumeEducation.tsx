@@ -3,7 +3,7 @@ import React from 'react';
 const ResumeEducation: React.FC = () => {
   return (
     <section className="resume-section">
-      <h3 className="resume-section-title">🎓 Education & Credentials</h3>
+      <h3 className="resume-section-title">Education & Credentials</h3>
       <div className="resume-education-item">
         <div className="resume-education-content">
           <h4>PhD Candidate, Computer Science and Information Systems</h4>

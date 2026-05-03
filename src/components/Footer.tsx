@@ -1,24 +1,11 @@
 import React, { useState } from 'react';
-import { useLocation } from 'react-router-dom';
 import SubscriptionModal from './SubscriptionModal';
 import './Footer.css';
 
 const Footer: React.FC = () => {
-  const location = useLocation();
-  const isFrameworkPage = location.pathname === '/framework';
   const basename = import.meta.env.BASE_URL.replace(/\/$/, '');
   const [isSubscriptionModalOpen, setIsSubscriptionModalOpen] = useState(false);
-  
-  // Helper function to create proper links
-  const createLink = (anchor: string) => {
-    if (isFrameworkPage) {
-      return `#${anchor}`;
-    } else {
-      return `${basename}/framework#${anchor}`;
-    }
-  };
 
-  // Helper function for regular page links
   const createPageLink = (path: string, anchor?: string) => {
     const fullPath = `${basename}${path}`;
     return anchor ? `${fullPath}#${anchor}` : fullPath;
@@ -36,29 +23,21 @@ const Footer: React.FC = () => {
           <div className="footer-brand">
             <div className="footer-logo">ChiefArcheologist.com</div>
             <p className="footer-tagline">
-              From Technical Compliance to Strategic Advantage
+              Evidence-led architecture for AI-era transformation.
+            </p>
+            <p className="footer-note">
+              Excavating what systems reveal, then turning that evidence into strategy, governance, and durable change.
             </p>
           </div>
           
           <div className="footer-links">
             <div className="footer-section">
-              <h4>Framework</h4>
+              <h4>Explore</h4>
               <ul>
-                <li><a href={createLink('strategic-choice')}>Architecture Guide</a></li>
-                <li><a href={createLink('assessment')}>Assessment</a></li>
-                <li><a href={createPageLink('/product')}>Strategic Thinking</a></li>
-                <li><a href={createPageLink('/product', 'transformation')}>AI Transformation</a></li>
-              </ul>
-            </div>
-            
-            <div className="footer-section">
-              <h4>Resources</h4>
-              <ul>
-                <li><a href={createPageLink('/blog')}>Digital Excavations</a></li>
-                <li><a href={createPageLink('/product', 'implementation')}>Implementation</a></li>
-                <li><a href={createPageLink('/product', 'dashboard')}>Portfolio Health</a></li>
-                <li><a href={createPageLink('/product', 'case-studies')}>Case Studies</a></li>
-                <li><a href={createPageLink('/resources')}>Articles</a></li>
+                <li><a href={createPageLink('/framework')}>Framework</a></li>
+                <li><a href={createPageLink('/product')}>Product Thinking</a></li>
+                <li><a href={createPageLink('/blog')}>Blog</a></li>
+                <li><a href={createPageLink('/resources')}>Articles & Research</a></li>
               </ul>
             </div>
             
@@ -76,12 +55,7 @@ const Footer: React.FC = () => {
         
         <div className="footer-bottom">
           <div className="footer-copyright">
-            <p>&copy; 2025 ChiefArcheologist.com. Empowering technology leaders to drive strategic transformation.</p>
-          </div>
-          <div className="footer-meta">
-            <a href="#privacy">Privacy Policy</a>
-            <a href="#terms">Terms of Service</a>
-            <a href="#accessibility">Accessibility</a>
+            <p>&copy; {new Date().getFullYear()} ChiefArcheologist.com. Architecture as map, evidence, and strategic advantage.</p>
           </div>
         </div>
       </div>

@@ -10,12 +10,12 @@
   margin: 0 auto;
 }
 
-.section-header {
+.implementation-steps .section-header {
   text-align: center;
   margin-bottom: 4rem;
 }
 
-.section-header h2 {
+.implementation-steps .section-header h2 {
   font-size: 3rem;
   font-weight: 800;
   margin-bottom: 1rem;
@@ -27,7 +27,7 @@
   line-height: 1.1;
 }
 
-.section-header p {
+.implementation-steps .section-header p {
   font-size: 1.25rem;
   color: #64748b;
   max-width: 800px;
@@ -220,7 +220,7 @@
 
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
-  .section-header h2 {
+  .implementation-steps .section-header h2 {
     font-size: 2rem;
   }
   

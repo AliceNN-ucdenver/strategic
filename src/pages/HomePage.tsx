@@ -13,7 +13,7 @@ const implementationVideos = [
     description:
       'The Looking Glass is the mirror behind the metaphor: portfolio, platform, BAR, CALM, ADRs, scoring evidence, and AI-assisted drift analysis brought into one governed architecture surface.',
     proof: ['Governance mesh scoring', 'CALM architecture evidence', 'AI-assisted drift analysis'],
-    videoUrl: 'https://www.youtube.com/embed/Ua_4Msx2DYQ',
+    thumbnailUrl: 'https://img.youtube.com/vi/Ua_4Msx2DYQ/maxresdefault.jpg',
     watchUrl: 'https://youtu.be/Ua_4Msx2DYQ',
   },
   {
@@ -24,7 +24,7 @@ const implementationVideos = [
     description:
       "The Cheshire Cat turns the Chief Archeologist's guidance into repo-level constraints: scaffolding, OWASP prompt packs, structured issues, scorecards, and fitness functions that make secure AI delivery repeatable after the conversation ends.",
     proof: ['Security-first scaffolding', 'RCTRO issue generation', 'Fitness-function scorecards'],
-    videoUrl: 'https://www.youtube.com/embed/WtSRfwKrcFU',
+    thumbnailUrl: 'https://img.youtube.com/vi/WtSRfwKrcFU/maxresdefault.jpg',
     watchUrl: 'https://youtu.be/WtSRfwKrcFU?si=eapuXusdWhIa8Mor',
   },
 ];
@@ -156,14 +156,18 @@ const HomePage: React.FC = () => {
           <div className="video-feature-grid">
             {implementationVideos.map((video) => (
               <article className={`video-feature-card ${video.id}`} key={video.id}>
-                <div className="video-frame">
-                  <iframe
-                    src={video.videoUrl}
-                    title={`${video.label} demo video`}
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowFullScreen
-                  />
-                </div>
+                <a
+                  className="video-frame"
+                  href={video.watchUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label={`Watch the ${video.label} demo on YouTube`}
+                >
+                  <img src={video.thumbnailUrl} alt={`${video.label} video preview`} loading="lazy" />
+                  <span className="video-play-button" aria-hidden="true">
+                    <span></span>
+                  </span>
+                </a>
                 <div className="video-feature-content">
                   <span className="video-eyebrow">{video.eyebrow}</span>
                   <h3>

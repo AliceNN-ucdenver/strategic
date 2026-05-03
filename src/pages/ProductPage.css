@@ -65,7 +65,7 @@
   animation: float 20s ease-in-out infinite;
 }
 
-.hero-content {
+.product-page .hero-content {
   max-width: 1400px;
   margin: 0 auto;
   padding: 2rem;
@@ -77,13 +77,13 @@
   z-index: 2;
 }
 
-.hero-right {
+.product-page .hero-right {
   display: flex;
   flex-direction: column;
   gap: 3rem;
 }
 
-.hero-text {
+.product-page .hero-text {
   color: white;
 }
 
@@ -102,7 +102,7 @@
   text-transform: uppercase;
 }
 
-.hero-text h1 {
+.product-page .hero-text h1 {
   font-size: 3.45rem;
   font-weight: 800;
   line-height: 1.1;
@@ -113,21 +113,21 @@
   background-clip: text;
 }
 
-.hero-text .subtitle {
+.product-page .hero-text .subtitle {
   font-size: 1.25rem;
   margin-bottom: 1.35rem;
   opacity: 0.9;
   font-weight: 400;
 }
 
-.hero-proof-points {
+.product-page .hero-proof-points {
   display: flex;
   flex-wrap: wrap;
   gap: 0.55rem;
   margin: 0 0 2rem;
 }
 
-.hero-proof-points span {
+.product-page .hero-proof-points span {
   display: inline-flex;
   align-items: center;
   padding: 0.42rem 0.7rem;
@@ -139,13 +139,13 @@
   font-weight: 700;
 }
 
-.hero-buttons {
+.product-page .hero-buttons {
   display: flex;
   gap: 1rem;
   flex-wrap: wrap;
 }
 
-.btn-primary {
+.product-page .btn-primary {
   background: white;
   color: #667eea;
   padding: 1rem 2rem;
@@ -156,12 +156,12 @@
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
 }
 
-.btn-primary:hover {
+.product-page .btn-primary:hover {
   transform: translateY(-3px);
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
 }
 
-.btn-secondary {
+.product-page .btn-secondary {
   background: rgba(255, 255, 255, 0.1);
   color: white;
   padding: 1rem 2rem;
@@ -173,7 +173,7 @@
   backdrop-filter: blur(10px);
 }
 
-.btn-secondary:hover {
+.product-page .btn-secondary:hover {
   background: rgba(255, 255, 255, 0.2);
   border-color: rgba(255, 255, 255, 0.5);
   transform: translateY(-2px);
@@ -775,21 +775,21 @@
 
 /* Responsive Design */
 @media (max-width: 1024px) {
-  .hero-content {
+  .product-page .hero-content {
     grid-template-columns: 1fr;
     gap: 2rem;
   }
   
-  .hero-text {
+  .product-page .hero-text {
     order: 1;
     text-align: center;
   }
   
-  .hero-right {
+  .product-page .hero-right {
     order: 2;
   }
   
-  .hero-text h1 {
+  .product-page .hero-text h1 {
     font-size: 3rem;
   }
   
@@ -804,7 +804,7 @@
 }
 
 @media (max-width: 768px) {
-  .hero-text h1 {
+  .product-page .hero-text h1 {
     font-size: 2.5rem;
   }
 
@@ -813,8 +813,8 @@
     padding-bottom: 3rem;
   }
 
-  .hero-proof-points,
-  .hero-buttons {
+  .product-page .hero-proof-points,
+  .product-page .hero-buttons {
     justify-content: center;
   }
 

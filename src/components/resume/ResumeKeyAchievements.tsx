@@ -3,7 +3,7 @@ import React from 'react';
 const ResumeKeyAchievements: React.FC = () => {
   return (
     <section className="resume-section">
-      <h3 className="resume-section-title">🎯 Key Achievements</h3>
+      <h3 className="resume-section-title">Key Achievements</h3>
       <div className="resume-key-achievement">
         <strong>Enterprise Architecture Transformation:</strong> Recognized as Forrester 2025 EA Awards Finalist (North America) for leading comprehensive modernization program transforming fragmented practice into federated, outcome-driven capability—delivering 300 apps modernized and industry-leading architect development through Project Atlas
       </div>

@@ -24,7 +24,7 @@ const ResumeOnlyPage: React.FC = () => {
     <div className="resume-only-page">
       <div className="print-controls">
         <button onClick={handlePrint} className="print-button">
-          🖨️ Print / Save as PDF
+          Print / Save as PDF
         </button>
       </div>
       

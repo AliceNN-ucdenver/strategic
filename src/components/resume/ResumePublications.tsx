@@ -3,7 +3,7 @@ import React from 'react';
 const ResumePublications: React.FC = () => {
   return (
     <section className="resume-section">
-      <h3 className="resume-section-title">📚 Research Publications & Patents</h3>
+      <h3 className="resume-section-title">Research Publications & Patents</h3>
 
       <div className="resume-publication-item">
         <div className="resume-publication-title">Cross-Document Emotion Consistency (CDEC): A Feature Family Framework for Financial Disclosure Risk Screening</div>

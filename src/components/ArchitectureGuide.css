@@ -25,12 +25,14 @@
   margin: 0 auto;
 }
 
-.section-header {
+.strategic-choice .section-header,
+.constellation-detail .section-header {
   text-align: center;
   margin-bottom: 4rem;
 }
 
-.section-header h2 {
+.strategic-choice .section-header h2,
+.constellation-detail .section-header h2 {
   font-size: 3rem;
   font-weight: 800;
   margin-bottom: 1.5rem;
@@ -42,7 +44,8 @@
   line-height: 1.1;
 }
 
-.section-header p {
+.strategic-choice .section-header p,
+.constellation-detail .section-header p {
   font-size: 1.25rem;
   color: #64748b;
   max-width: 800px;
@@ -755,7 +758,8 @@
     padding: 4rem 1rem;
   }
 
-  .section-header h2 {
+  .strategic-choice .section-header h2,
+  .constellation-detail .section-header h2 {
     font-size: 2.5rem;
   }
 
@@ -769,7 +773,8 @@
     padding: 3rem 1rem;
   }
 
-  .section-header h2 {
+  .strategic-choice .section-header h2,
+  .constellation-detail .section-header h2 {
     font-size: 2rem;
   }
 
