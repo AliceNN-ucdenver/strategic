@@ -1,23 +1,27 @@
 import type { BlogPost } from '../types/blog'
 
-// Import all MDX files from content/posts
-const postModules = import.meta.glob('../content/posts/*.mdx', { eager: true })
+type BlogPostModule = {
+  frontmatter: Omit<BlogPost, 'slug'>
+}
+
+const postModules = import.meta.glob<BlogPostModule['frontmatter']>('../content/posts/*.mdx', {
+  eager: true,
+  import: 'frontmatter',
+})
 
 export function getAllPosts(): BlogPost[] {
   const posts: BlogPost[] = []
 
   for (const path in postModules) {
-    const mod = postModules[path] as any
+    const frontmatter = postModules[path]
     const slug = path
       .replace('../content/posts/', '')
       .replace('.mdx', '')
     
-    if (mod.frontmatter) {
-      posts.push({
-        slug,
-        ...mod.frontmatter,
-      })
-    }
+    posts.push({
+      slug,
+      ...frontmatter,
+    })
   }
 
   // Sort posts by date (newest first)

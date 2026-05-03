@@ -1,0 +1,70 @@
+.resume-page {
+  background: #eef4f8;
+}
+
+.resume-web-hero {
+  padding: 6.5rem 2rem 2.25rem;
+  background:
+    linear-gradient(rgba(15, 23, 42, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(15, 23, 42, 0.035) 1px, transparent 1px),
+    #eef4f8;
+  background-size: 44px 44px;
+}
+
+.resume-web-hero__inner {
+  width: min(9in, 100%);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 2rem;
+  align-items: end;
+  margin: 0 auto;
+}
+
+.resume-web-hero h1 {
+  max-width: 760px;
+  margin: 0.55rem 0 0;
+  color: #172033;
+  font-size: clamp(2rem, 4vw, 3.4rem);
+  line-height: 1.04;
+  letter-spacing: 0;
+}
+
+.resume-web-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: flex-end;
+}
+
+.resume-web-actions .button-primary,
+.resume-web-actions .button-secondary {
+  min-height: 44px;
+  padding: 0.75rem 1rem;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  font-weight: 850;
+}
+
+.button-secondary--light {
+  color: #172033;
+  border-color: rgba(15, 23, 42, 0.18);
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.resume-web-body {
+  padding: 0 0 4rem;
+}
+
+@media (max-width: 820px) {
+  .resume-web-hero {
+    padding: 5rem 1rem 1.5rem;
+  }
+
+  .resume-web-hero__inner {
+    grid-template-columns: 1fr;
+  }
+
+  .resume-web-actions {
+    justify-content: flex-start;
+  }
+}

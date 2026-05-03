@@ -1,11 +1,10 @@
 import React from 'react';
-import chiefArchitectImage from '../../assets/chief_architect.png';
 
 const ResumeHeader: React.FC = () => {
   return (
     <header className="resume-header">
       <div className="resume-profile-section">
-        <img src={chiefArchitectImage} alt="Shawn McCarthy" className="resume-profile-photo" />
+        <img src="/images/Engineering_Crop.jpg" alt="Shawn McCarthy" className="resume-profile-photo" />
         <div className="resume-header-content">
           <div className="resume-eyebrow">Chief Archeologist</div>
           <h1>Shawn McCarthy</h1>

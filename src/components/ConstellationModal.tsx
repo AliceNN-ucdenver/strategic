@@ -2,6 +2,7 @@ import React from 'react'
 import { createPortal } from 'react-dom'
 import { Link, useNavigate } from 'react-router-dom'
 import type { Cluster, Star } from '../data/clusters'
+import { scrollToElementId } from '../hooks/usePageLifecycle'
 import './ConstellationModal.css'
 
 interface ConstellationModalProps {
@@ -29,18 +30,11 @@ const ConstellationModal: React.FC<ConstellationModalProps> = ({
 
   const handleExploreInDetail = (clusterId: string) => {
     onClose()
-    // Allow modal close animation, then scroll
-    setTimeout(() => {
-      const element = document.getElementById(clusterId)
-      if (element) {
-        const headerHeight = 80
-        const titleOffset = 40
-        const elementPosition = element.getBoundingClientRect().top + window.pageYOffset
-        window.scrollTo({
-          top: elementPosition - headerHeight - titleOffset,
-          behavior: 'smooth'
-        })
-      }
+    window.setTimeout(() => {
+      scrollToElementId(clusterId, {
+        behavior: 'smooth',
+        headerOffset: 120,
+      })
     }, 100)
   }
 

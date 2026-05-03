@@ -93,6 +93,30 @@ const ResumeProfessionalExperience: React.FC = () => {
           </ul>
         </div>
       </div>
+
+      <div className="resume-experience-item">
+        <div className="resume-company-header">
+          <div className="resume-company-logo">V</div>
+          <div>
+            <div className="resume-job-title">Head of Portals and APIs / Director, Application Development</div>
+            <div className="resume-company-name">Vantiv</div>
+          </div>
+          <div className="resume-date-location">November 2011 - September 2016</div>
+        </div>
+        <div className="resume-job-description">
+          <div className="resume-key-achievement">
+            <strong>Engineering Scale & API Product Leadership:</strong> Led a 200-person engineering organization
+            across API solutions, developer portals, prepaid platforms, secure delivery, and PCI/SOX control
+            environments.
+          </div>
+          <ul>
+            <li>Owned engineering delivery and architecture for <strong>API-as-a-product</strong>, developer experience, SOA, ESB, and modern .NET platform patterns</li>
+            <li>Directed portal and prepaid platform modernization across transaction processing, secure code development, UX, performance, and maintainability improvements</li>
+            <li>Led platform foundations including deployment automation, test automation, monitoring, logging, encryption libraries, security frameworks, data warehousing, reporting, and responsive web strategy</li>
+            <li>Served on application security, agile change, intern development, and organizational transformation teams while supporting PCI and SOX audits</li>
+          </ul>
+        </div>
+      </div>
     </section>
   );
 };

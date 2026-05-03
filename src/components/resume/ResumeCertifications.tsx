@@ -5,18 +5,19 @@ const ResumeCertifications: React.FC = () => {
     <section className="resume-section">
       <h3 className="resume-section-title">NVIDIA & AI Certifications</h3>
       <div className="resume-ambassador-description">
-        <p><strong><a href="https://www.nvidia.com/en-us/training/instructor-directory/bio/?instructorId=0038Z000036WJjcQAG" target="_blank" rel="noopener noreferrer">NVIDIA Deep Learning Institute University Ambassador</a>:</strong> Certified to deliver free instructor-led workshops in cutting-edge AI, accelerated computing, and data science technologies to academic communities, enriching curriculum and providing students with industry-relevant skills for career advancement.</p>
+        <p><strong><a href="https://www.nvidia.com/en-us/training/instructor-directory/bio/?instructorId=0038Z000036WJjcQAG" target="_blank" rel="noopener noreferrer">Platinum NVIDIA Deep Learning Institute Instructor</a>:</strong> NVIDIA Certified Professional in Agentic AI and certified across the generative deep learning suite, including LLM applications, LLM agents, multimodal generative AI, RAG pipelines, prompt engineering, model customization, diffusion models, and AI anomaly detection.</p>
       </div>
       <div className="resume-cert-category">
         <h4 className="resume-cert-category-title">Professional Certifications</h4>
         <div className="resume-certifications-grid">
           <div className="resume-cert-item"><span className="resume-nvidia-highlight">NVIDIA NCP</span> Agentic AI - Subject Matter Expert</div>
-          <div className="resume-cert-item"><span className="resume-nvidia-highlight">NVIDIA NCP-AAI</span> Nvidia Certified Professional: Agentic AI</div>
+          <div className="resume-cert-item"><span className="resume-nvidia-highlight">NVIDIA NCP-AAI</span> NVIDIA Certified Professional: Agentic AI</div>
+          <div className="resume-cert-item"><span className="resume-nvidia-highlight">NVIDIA DLI</span> Platinum Deep Learning Institute Instructor</div>
         </div>
       </div>
 
       <div className="resume-cert-category">
-        <h4 className="resume-cert-category-title">Specializations Earned</h4>
+        <h4 className="resume-cert-category-title">Generative Deep Learning Suite</h4>
         <div className="resume-certifications-grid">
           <div className="resume-cert-item"><span className="resume-nvidia-highlight">NVIDIA DLI</span> Large Language Model (LLM) Applications</div>
           <div className="resume-cert-item"><span className="resume-nvidia-highlight">NVIDIA DLI</span> Large Language Model (LLM) Agents</div>

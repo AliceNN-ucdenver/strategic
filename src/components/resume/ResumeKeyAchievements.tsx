@@ -20,7 +20,7 @@ const ResumeKeyAchievements: React.FC = () => {
         <strong>Risk & Security Excellence:</strong> Achieved 5-year Risk KRI goals at 95% success rate with under 5% CAP slips while implementing comprehensive security scanning and risk prioritization frameworks
       </div>
       <div className="resume-key-achievement">
-        <strong>Academic Excellence:</strong> Outstanding academic record (4.0 MS GPA, 3.99 BS GPA) with ongoing PhD research in AI applications and published financial AI research
+        <strong>Academic Excellence:</strong> PhD Candidate in Computer Science and Information Systems, expected December 2026, with outstanding academic record (4.0 MS GPA, 3.99 BS GPA) and published financial AI research
       </div>
       <div className="resume-key-achievement">
         <strong>Federated Leadership Model:</strong> Successfully evolved fragmented practices into unified, outcome-driven capability spanning 72 professionals across three critical domains

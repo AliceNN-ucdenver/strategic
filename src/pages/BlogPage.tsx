@@ -1,20 +1,15 @@
-import React, { useEffect } from 'react'
-import Header from '../components/Header'
-import Footer from '../components/Footer'
+import React from 'react'
+import PageLayout from '../components/PageLayout'
 import BlogList from '../components/blog/BlogList'
+import { useScrollToTop } from '../hooks/usePageLifecycle'
 
 const BlogPage: React.FC = () => {
-  // Scroll to top when component mounts
-  useEffect(() => {
-    window.scrollTo({ top: 0, behavior: 'smooth' })
-  }, [])
+  useScrollToTop()
 
   return (
-    <div className="blog-page">
-      <Header />
+    <PageLayout className="blog-page">
       <BlogList />
-      <Footer />
-    </div>
+    </PageLayout>
   )
 }
 

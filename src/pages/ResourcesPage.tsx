@@ -1,36 +1,13 @@
-import React, { useEffect } from 'react';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
+import React from 'react';
+import PageLayout from '../components/PageLayout';
+import { createSitePath } from '../config/site';
+import { useScrollAnimations } from '../hooks/useScrollAnimations';
+import { useScrollToTop } from '../hooks/usePageLifecycle';
 import './ResourcesPage.css';
 
 const ResourcesPage: React.FC = () => {
-  const basename = import.meta.env.BASE_URL.replace(/\/$/, '');
-  
-  useEffect(() => {
-    // Scroll to top when component mounts
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-
-    // Scroll-triggered animations
-    const animateOnScroll = () => {
-      const elements = document.querySelectorAll('.fade-in');
-      elements.forEach((element, index) => {
-        const elementTop = element.getBoundingClientRect().top;
-        const elementVisible = 150;
-        
-        if (elementTop < window.innerHeight - elementVisible) {
-          setTimeout(() => {
-            (element as HTMLElement).style.opacity = '1';
-            (element as HTMLElement).style.transform = 'translateY(0)';
-          }, index * 100);
-        }
-      });
-    };
-
-    window.addEventListener('scroll', animateOnScroll);
-    animateOnScroll(); // Initial check
-
-    return () => window.removeEventListener('scroll', animateOnScroll);
-  }, []);
+  useScrollToTop();
+  useScrollAnimations();
 
   const articles = [
     {
@@ -131,51 +108,49 @@ const ResourcesPage: React.FC = () => {
   };
 
   return (
-    <div className="resources-page">
-      <Header />
-
+    <PageLayout className="site-page resources-page">
       {/* Hero Section */}
-      <section className="resources-hero">
-        <div className="resources-hero-content">
+      <section className="editorial-hero editorial-hero--band resources-hero">
+        <div className="editorial-hero__inner resources-hero-content">
           <div className="resources-hero-text fade-in">
-            <span className="resources-kicker">Published Thinking</span>
-            <h1>Strategic Architecture Resources</h1>
-            <p className="subtitle">
+            <span className="eyebrow resources-kicker">Published Thinking</span>
+            <h1 className="editorial-hero__title">Strategic Architecture Resources</h1>
+            <p className="editorial-hero__subtitle subtitle">
               Insights and expertise from the frontlines of enterprise transformation. 
               Discover practical approaches to modern architecture challenges through real-world experiences and strategic thinking.
             </p>
             <div className="hero-stats">
-              <div className="stat-item">
+              <div className="stat-tile stat-item">
                 <span className="stat-number">{articles.length}</span>
                 <span className="stat-label">Articles</span>
               </div>
-              <div className="stat-item">
+              <div className="stat-tile stat-item">
                 <span className="stat-number">4</span>
                 <span className="stat-label">Publication Families</span>
               </div>
-              <div className="stat-item">
+              <div className="stat-tile stat-item">
                 <span className="stat-number">∞</span>
                 <span className="stat-label">Strategic Insights</span>
               </div>
             </div>
           </div>
-          <div className="resources-index-panel fade-in" aria-label="Resource themes">
-            <span className="panel-label">Resource Map</span>
+          <div className="glass-panel resources-index-panel fade-in" aria-label="Resource themes">
+            <span className="eyebrow panel-label">Resource Map</span>
             <div className="resource-signal-list">
-              <div className="resource-signal">
-                <span>01</span>
+              <div className="signal-row resource-signal">
+                <span className="number-mark">01</span>
                 <strong>AI Transformation</strong>
               </div>
-              <div className="resource-signal">
-                <span>02</span>
+              <div className="signal-row resource-signal">
+                <span className="number-mark">02</span>
                 <strong>Product Architecture</strong>
               </div>
-              <div className="resource-signal">
-                <span>03</span>
+              <div className="signal-row resource-signal">
+                <span className="number-mark">03</span>
                 <strong>Autonomous Governance</strong>
               </div>
-              <div className="resource-signal">
-                <span>04</span>
+              <div className="signal-row resource-signal">
+                <span className="number-mark">04</span>
                 <strong>Risk & Research</strong>
               </div>
             </div>
@@ -187,23 +162,23 @@ const ResourcesPage: React.FC = () => {
       </section>
 
       {/* Articles Section */}
-      <section className="articles-section">
-        <div className="articles-container">
-          <div className="section-header fade-in">
+      <section className="content-section articles-section">
+        <div className="content-container articles-container">
+          <div className="section-heading-row section-header fade-in">
             <h2>Featured Publications</h2>
             <p>Thought leadership articles from leading technology publications</p>
           </div>
           
           <div className="articles-grid">
             {articles.map((article, index) => (
-              <article key={index} className="article-card fade-in">
+              <article key={index} className="surface-card interactive-surface article-card fade-in">
                 <div className="article-header">
                   <div className="article-icon">{publicationMark(article.publication)}</div>
                   <div className="article-meta">
                     <span className="publication">{article.publication}</span>
                     <div className="article-tags">
                       {article.tags.map((tag, tagIndex) => (
-                        <span key={tagIndex} className="tag">{tag}</span>
+                        <span key={tagIndex} className="tag-pill tag">{tag}</span>
                       ))}
                     </div>
                   </div>
@@ -215,7 +190,7 @@ const ResourcesPage: React.FC = () => {
                     href={article.url} 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="read-more-btn"
+                    className="button-primary read-more-btn"
                   >
                     Read Full Article
                     <span className="btn-icon">→</span>
@@ -228,18 +203,16 @@ const ResourcesPage: React.FC = () => {
       </section>
 
       {/* Call to Action */}
-      <section className="resources-cta">
-        <div className="cta-container fade-in">
+      <section className="cta-band resources-cta">
+        <div className="cta-band__inner cta-container fade-in">
           <h2>Ready to Transform Your Architecture?</h2>
           <p>Get personalized insights for your organization's strategic architecture journey</p>
-          <a href={`${basename}/framework`} className="btn-primary">
+          <a href={createSitePath('/framework')} className="button-primary button-primary--light btn-primary">
             Explore Strategic Framework
           </a>
         </div>
       </section>
-
-      <Footer />
-    </div>
+    </PageLayout>
   );
 };
 

@@ -1,13 +1,13 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import SubscriptionModal from './SubscriptionModal'
+import { primaryNavItems, siteBrand } from '../config/site'
 import './Header.css'
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [isSubscriptionModalOpen, setIsSubscriptionModalOpen] = useState(false)
-  const basename = import.meta.env.BASE_URL.replace(/\/$/, '')
 
   useEffect(() => {
     const handleScroll = () => {
@@ -18,11 +18,6 @@ const Header = () => {
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
-
-  const goToProduct = () => {
-    // Go to product page and scroll to top
-    window.location.href = basename + '/product';
-  };
 
   const openSubscriptionForm = () => {
     setIsSubscriptionModalOpen(true);
@@ -40,16 +35,18 @@ const Header = () => {
     <header className={`header ${isScrolled ? 'scrolled' : ''}`}>
       <nav className="nav">
         <Link to="/" className="logo">
-          ChiefArcheologist.com
+          {siteBrand.name}
         </Link>
         
         {/* Desktop Navigation */}
         <ul className="nav-links desktop-nav">
-          <li><Link to="/" className="nav-link-btn" onClick={closeMobileMenu}>Home</Link></li>
-          <li><Link to="/framework" className="nav-link-btn">Framework</Link></li>
-          <li><button onClick={goToProduct} className="nav-link-btn">Product</button></li>
-          <li><Link to="/blog" className="nav-link-btn">Blog</Link></li>
-          <li><Link to="/resources" className="nav-link-btn">Articles</Link></li>
+          {primaryNavItems.map((item) => (
+            <li key={item.path}>
+              <Link to={item.path} className="nav-link-btn">
+                {item.label}
+              </Link>
+            </li>
+          ))}
         </ul>
 
         {/* Desktop CTA Button */}
@@ -69,11 +66,13 @@ const Header = () => {
         {/* Mobile Navigation */}
         <div className={`mobile-nav ${isMobileMenuOpen ? 'active' : ''}`}>
           <ul className="mobile-nav-links">
-            <li><Link to="/" className="nav-link-btn" onClick={closeMobileMenu}>Home</Link></li>
-            <li><Link to="/framework" className="nav-link-btn" onClick={closeMobileMenu}>Framework</Link></li>
-            <li><button onClick={() => { goToProduct(); closeMobileMenu(); }} className="nav-link-btn">Product</button></li>
-            <li><Link to="/blog" className="nav-link-btn" onClick={closeMobileMenu}>Blog</Link></li>
-            <li><Link to="/resources" className="nav-link-btn" onClick={closeMobileMenu}>Articles</Link></li>
+            {primaryNavItems.map((item) => (
+              <li key={item.path}>
+                <Link to={item.path} className="nav-link-btn" onClick={closeMobileMenu}>
+                  {item.label}
+                </Link>
+              </li>
+            ))}
             <li><button onClick={() => { openSubscriptionForm(); closeMobileMenu(); }} className="cta-button mobile-cta">Subscribe</button></li>
           </ul>
         </div>

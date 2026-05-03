@@ -164,19 +164,19 @@ const BlogList: React.FC = () => {
   const displayedPosts = selectedTag || searchTerm || showFeaturedOnly ? filteredPosts : regularPosts
 
   return (
-    <div className="blog-list-page">
+    <div className="site-page blog-list-page">
       {/* Blog Header */}
       <div className="blog-header">
-        <div className="blog-hero">
-          <h1 className="blog-title">Digital Excavations</h1>
-          <p className="blog-subtitle">
+        <div className="editorial-hero editorial-hero--card blog-hero">
+          <h1 className="editorial-hero__title blog-title">Digital Excavations</h1>
+          <p className="editorial-hero__subtitle blog-subtitle">
             Archaeological insights from the Chief Archeologist's expeditions through 
             enterprise technology landscapes, legacy system discoveries, and AI transformation journeys.
           </p>
         </div>
 
         {/* Search and Filter Controls */}
-        <div className="blog-controls">
+        <div className="surface-card blog-controls">
           <div className="search-container">
             <input
               type="text"
@@ -213,7 +213,7 @@ const BlogList: React.FC = () => {
 
       {/* Featured Posts */}
       {featuredPosts.length > 0 && !selectedTag && !searchTerm && !showFeaturedOnly && (
-        <section className="featured-section">
+        <section className="content-container featured-section">
           <h2 className="section-title">Featured Discoveries</h2>
           <div className="featured-grid">
             {featuredPosts.map(post => (
@@ -224,8 +224,8 @@ const BlogList: React.FC = () => {
       )}
 
       {/* All Posts */}
-      <section className="posts-section">
-        <div className="section-header">
+      <section className="content-container posts-section">
+        <div className="section-heading-row section-header">
           <h2 className="section-title">
             {sectionTitle}
           </h2>

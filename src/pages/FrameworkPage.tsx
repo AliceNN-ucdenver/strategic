@@ -1,10 +1,10 @@
-import Header from '../components/Header'
+import PageLayout from '../components/PageLayout'
 import Constellation from '../components/Constellation'
 import AssessmentModal from '../components/AssessmentModal'
 import ArchitectureGuide from '../components/ArchitectureGuide'
 import AssessmentSection from '../components/AssessmentSection'
-import Footer from '../components/Footer'
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
+import { scrollToElementId, useHashScroll } from '../hooks/usePageLifecycle'
 import { useScrollAnimations } from '../hooks/useScrollAnimations'
 import './FrameworkPage.css'
 
@@ -18,13 +18,7 @@ const FrameworkPage = () => {
   }
 
   const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start'
-      })
-    }
+    scrollToElementId(sectionId)
   }
 
   const handleSeeStrategicChoice = (e: React.MouseEvent) => {
@@ -42,50 +36,34 @@ const FrameworkPage = () => {
     scrollToSection('constellation')
   }
 
-  // Handle URL hash navigation
-  useEffect(() => {
-    const hash = window.location.hash.substring(1);
-    if (hash) {
-      setTimeout(() => {
-        const element = document.getElementById(hash);
-        if (element) {
-          element.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-          })
-        }
-      }, 100);
-    }
-  }, []);
+  useHashScroll()
 
   return (
-    <div className="framework-page">
-      <Header />
-
+    <PageLayout className="site-page framework-page">
       {/* Hero: brand statement + the constellation as the cluster map */}
-      <section className="hero" id="home">
-        <div className="hero-content">
+      <section className="editorial-hero app-hero hero" id="home">
+        <div className="app-hero__grid hero-content">
           <div className="hero-text">
-            <div className="framework-eyebrow">Chief Archeologist Framework</div>
-            <h1>From Technical Compliance to Strategic Advantage</h1>
-            <p className="subtitle">
+            <div className="eyebrow eyebrow--pill framework-eyebrow">Chief Archeologist Framework</div>
+            <h1 className="editorial-hero__title">From Technical Compliance to Strategic Advantage</h1>
+            <p className="editorial-hero__subtitle subtitle">
               Use the twelve-star constellation to excavate what is really happening across architecture, product thinking, AI delivery, and security-left governance, then turn that evidence into a practical transformation path.
             </p>
-            <div className="framework-proof-points" aria-label="Framework proof points">
+            <div className="proof-points framework-proof-points" aria-label="Framework proof points">
               <span>12 strategic stars</span>
               <span>Four operating clusters</span>
               <span>Assessment-backed maturity</span>
             </div>
             <div className="hero-buttons">
-              <a href="#strategic-choice" className="btn-primary" onClick={handleSeeStrategicChoice}>See the Strategic Choice</a>
-              <a href="#constellation" className="btn-secondary" onClick={handleExploreConstellation}>Explore the Constellation</a>
+              <a href="#strategic-choice" className="button-primary button-primary--light btn-primary" onClick={handleSeeStrategicChoice}>See the Strategic Choice</a>
+              <a href="#constellation" className="button-secondary btn-secondary" onClick={handleExploreConstellation}>Explore the Constellation</a>
             </div>
             <p className="hero-hint">
               Ready to benchmark? <a href="#assessment" onClick={handleDiscoverMaturity}>Take the maturity assessment</a>.
             </p>
           </div>
           <div className="framework-hero-map">
-            <div className="framework-map-shell">
+            <div className="glass-panel glass-panel--light framework-map-shell">
               <div className="framework-map-header">
                 <span>Constellation Map</span>
                 <strong>Four clusters · twelve stars</strong>
@@ -143,15 +121,12 @@ const FrameworkPage = () => {
       {/* Assessment Section */}
       <AssessmentSection onOpenModal={openAssessmentModal} />
 
-      {/* Footer */}
-      <Footer />
-
       {/* Assessment Modal */}
       <AssessmentModal
         isOpen={isAssessmentModalOpen}
         onClose={() => setIsAssessmentModalOpen(false)}
       />
-    </div>
+    </PageLayout>
   )
 }
 

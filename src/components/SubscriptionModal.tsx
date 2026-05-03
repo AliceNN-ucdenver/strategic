@@ -7,6 +7,13 @@ interface SubscriptionModalProps {
   onClose: () => void;
 }
 
+type ConvertKitWindow = Window &
+  typeof globalThis & {
+    ConvertKitForm?: {
+      handleSubmit: (form: HTMLFormElement) => void;
+    };
+  };
+
 const SubscriptionModal: React.FC<SubscriptionModalProps> = ({ isOpen, onClose }) => {
   useEffect(() => {
     if (isOpen) {
@@ -33,10 +40,11 @@ const SubscriptionModal: React.FC<SubscriptionModalProps> = ({ isOpen, onClose }
     
     // Let Kit's JavaScript handle the submission
     const form = e.currentTarget;
+    const convertKitForm = (window as ConvertKitWindow).ConvertKitForm;
     
     // Check if Kit's script has loaded and initialized
-    if ((window as any).ConvertKitForm) {
-      (window as any).ConvertKitForm.handleSubmit(form);
+    if (convertKitForm) {
+      convertKitForm.handleSubmit(form);
     } else {
       // Fallback: trigger Kit's form submission manually
       const formData = new FormData(form);
@@ -96,7 +104,6 @@ const SubscriptionModal: React.FC<SubscriptionModalProps> = ({ isOpen, onClose }
               </div>
               <div className="formkit-content" data-element="content" style={{color: '#475569'}}>
                 <p>Each month, I'll guide you through a different Strategic Architecture Constellation with Wonderland characters as your mentors.</p>
-                <p>​</p>
                 <p>Learn how the Cheshire Cat's strategic vision, the Mad Hatter's innovation labs, and 10 other character guides can transform you from technical architect to strategic business enabler.</p>
               </div>
               <ul className="formkit-alert formkit-alert-error" data-element="errors" data-group="alert"></ul>

@@ -1,6 +1,7 @@
 import React, { useRef } from 'react';
 import { useReactToPrint } from 'react-to-print';
 import PrintableResume from '../components/PrintableResume';
+import { createSitePath } from '../config/site';
 import './ResumeOnlyPage.css';
 
 const ResumeOnlyPage: React.FC = () => {
@@ -22,11 +23,21 @@ const ResumeOnlyPage: React.FC = () => {
 
   return (
     <div className="resume-only-page">
-      <div className="print-controls">
-        <button onClick={handlePrint} className="print-button">
-          Print / Save as PDF
+      <nav className="print-controls" aria-label="Resume actions">
+        <a href={createSitePath('/resume')} className="print-button print-button-muted">
+          Full Web Resume
+        </a>
+        <a
+          href={createSitePath('/resume/Shawn_McCarthy_Resume_ATS.pdf')}
+          download
+          className="print-button print-button-primary"
+        >
+          Download ATS PDF
+        </a>
+        <button onClick={handlePrint} className="print-button" type="button">
+          Print Web Resume
         </button>
-      </div>
+      </nav>
       
       <div ref={printRef}>
         <PrintableResume />

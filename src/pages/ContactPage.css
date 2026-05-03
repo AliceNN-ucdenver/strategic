@@ -1,8 +1,6 @@
 /* Contact Page */
 .contact-page {
-  min-height: 100vh;
   background: #f6f8fb;
-  color: #172033;
 }
 
 .contact-main {
@@ -25,13 +23,6 @@
   align-items: center;
   min-height: 360px;
   padding: 3rem;
-  border: 1px solid rgba(15, 23, 42, 0.12);
-  border-radius: 18px;
-  background:
-    radial-gradient(circle at 16% 18%, rgba(20, 184, 166, 0.22), transparent 28%),
-    linear-gradient(135deg, #102033 0%, #17243a 54%, #0f332e 100%);
-  box-shadow: 0 24px 60px rgba(15, 23, 42, 0.18);
-  overflow: hidden;
 }
 
 .contact-avatar {
@@ -49,23 +40,12 @@
 
 .contact-kicker,
 .cta-kicker {
-  display: inline-flex;
-  width: fit-content;
   margin-bottom: 0.95rem;
-  padding: 0.38rem 0.7rem;
-  border: 1px solid rgba(94, 234, 212, 0.34);
-  border-radius: 999px;
   color: #99f6e4;
-  background: rgba(20, 184, 166, 0.12);
-  font-size: 0.78rem;
-  font-weight: 800;
   letter-spacing: 1.1px;
-  text-transform: uppercase;
 }
 
 .contact-title {
-  margin: 0 0 0.65rem;
-  color: #ffffff;
   font-size: clamp(2.3rem, 5vw, 4.65rem);
   font-weight: 850;
   line-height: 0.98;
@@ -106,17 +86,6 @@
   align-items: start;
   min-height: 210px;
   padding: 1.35rem;
-  border: 1px solid #dbe4ef;
-  border-radius: 14px;
-  background: #ffffff;
-  box-shadow: 0 14px 36px rgba(15, 23, 42, 0.07);
-  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
-}
-
-.contact-card:hover {
-  transform: translateY(-3px);
-  border-color: rgba(13, 148, 136, 0.42);
-  box-shadow: 0 18px 42px rgba(15, 23, 42, 0.11);
 }
 
 .contact-icon {
@@ -167,12 +136,6 @@
 
 .contact-cta {
   padding: 2.65rem;
-  border: 1px solid rgba(15, 23, 42, 0.13);
-  border-radius: 16px;
-  background:
-    linear-gradient(135deg, rgba(15, 23, 42, 0.96), rgba(19, 78, 74, 0.94)),
-    #111827;
-  box-shadow: 0 18px 50px rgba(15, 23, 42, 0.16);
 }
 
 .cta-content {
@@ -260,10 +223,6 @@
 .expertise-item {
   min-height: 178px;
   padding: 1.25rem;
-  border: 1px solid #dbe4ef;
-  border-radius: 14px;
-  background: #ffffff;
-  box-shadow: 0 14px 36px rgba(15, 23, 42, 0.06);
 }
 
 .expertise-mark {

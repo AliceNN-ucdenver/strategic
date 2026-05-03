@@ -1,37 +1,20 @@
 import React, { useState } from 'react';
+import { createSitePath } from '../config/site';
+import { scrollToElementId } from '../hooks/usePageLifecycle';
 import './ArchitectureChallenge.css';
 
 const ArchitectureChallenge: React.FC = () => {
   const [activeView, setActiveView] = useState<'traditional' | 'modern'>('traditional');
-  const basename = import.meta.env.BASE_URL.replace(/\/$/, '');
 
   const scrollToFramework = () => {
-    // Always go to product page, then scroll to transformation section
-    if (window.location.pathname !== '/product') {
-      window.location.href = `${basename}/product#transformation`;
-    } else {
-      const element = document.getElementById('transformation');
-      if (element) {
-        element.scrollIntoView({ 
-          behavior: 'smooth',
-          block: 'start'
-        });
-      }
+    if (!scrollToElementId('transformation')) {
+      window.location.assign(createSitePath('/product', 'transformation'));
     }
   };
 
   const handleStartAssessment = () => {
-    // Always go to framework page first, then scroll to assessment section
-    if (window.location.pathname !== '/framework') {
-      window.location.href = `${basename}/framework#assessment`;
-    } else {
-      const element = document.getElementById('assessment');
-      if (element) {
-        element.scrollIntoView({ 
-          behavior: 'smooth',
-          block: 'start'
-        });
-      }
+    if (!scrollToElementId('assessment')) {
+      window.location.assign(createSitePath('/framework', 'assessment'));
     }
   };
 

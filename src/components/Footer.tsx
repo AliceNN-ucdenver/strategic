@@ -1,14 +1,30 @@
 import React, { useState } from 'react';
 import SubscriptionModal from './SubscriptionModal';
+import {
+  createSitePath,
+  footerConnectLinks,
+  footerExploreLinks,
+  siteBrand,
+  type SiteNavItem,
+} from '../config/site';
 import './Footer.css';
 
 const Footer: React.FC = () => {
-  const basename = import.meta.env.BASE_URL.replace(/\/$/, '');
   const [isSubscriptionModalOpen, setIsSubscriptionModalOpen] = useState(false);
 
-  const createPageLink = (path: string, anchor?: string) => {
-    const fullPath = `${basename}${path}`;
-    return anchor ? `${fullPath}#${anchor}` : fullPath;
+  const renderFooterLink = (item: SiteNavItem) => {
+    const isExternal = item.path.startsWith('http');
+    const href = isExternal ? item.path : createSitePath(item.path);
+
+    return (
+      <a
+        href={href}
+        target={isExternal ? '_blank' : undefined}
+        rel={isExternal ? 'noopener noreferrer' : undefined}
+      >
+        {item.label}
+      </a>
+    );
   };
 
   const openSubscriptionForm = (e: React.MouseEvent) => {
@@ -21,12 +37,12 @@ const Footer: React.FC = () => {
       <div className="footer-container">
         <div className="footer-content">
           <div className="footer-brand">
-            <div className="footer-logo">ChiefArcheologist.com</div>
+            <div className="footer-logo">{siteBrand.name}</div>
             <p className="footer-tagline">
-              Evidence-led architecture for AI-era transformation.
+              {siteBrand.tagline}
             </p>
             <p className="footer-note">
-              Excavating what systems reveal, then turning that evidence into strategy, governance, and durable change.
+              {siteBrand.footerNote}
             </p>
           </div>
           
@@ -34,20 +50,19 @@ const Footer: React.FC = () => {
             <div className="footer-section">
               <h4>Explore</h4>
               <ul>
-                <li><a href={createPageLink('/framework')}>Framework</a></li>
-                <li><a href={createPageLink('/product')}>Product Thinking</a></li>
-                <li><a href={createPageLink('/blog')}>Blog</a></li>
-                <li><a href={createPageLink('/resources')}>Articles & Research</a></li>
+                {footerExploreLinks.map((item) => (
+                  <li key={item.path}>{renderFooterLink(item)}</li>
+                ))}
               </ul>
             </div>
             
             <div className="footer-section">
               <h4>Connect</h4>
               <ul>
-                <li><a href={createPageLink('/contact')}>Contact</a></li>
-                <li><a href={createPageLink('/resume-print')} target="_blank" rel="noopener noreferrer">Resume</a></li>
+                {footerConnectLinks.map((item) => (
+                  <li key={item.path}>{renderFooterLink(item)}</li>
+                ))}
                 <li><a href="#newsletter" onClick={openSubscriptionForm}>Newsletter</a></li>
-                <li><a href="https://www.linkedin.com/in/shawnemccarthy/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
               </ul>
             </div>
           </div>
@@ -55,7 +70,7 @@ const Footer: React.FC = () => {
         
         <div className="footer-bottom">
           <div className="footer-copyright">
-            <p>&copy; {new Date().getFullYear()} ChiefArcheologist.com. Architecture as map, evidence, and strategic advantage.</p>
+            <p>&copy; {new Date().getFullYear()} {siteBrand.name}. Architecture as map, evidence, and strategic advantage.</p>
           </div>
         </div>
       </div>
