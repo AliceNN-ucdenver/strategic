@@ -1,6 +1,6 @@
 import React from 'react';
 import PageLayout from '../components/PageLayout';
-import chiefArchitectImage from '../assets/chief_architect.png';
+import chiefArchitectImage from '../assets/chief_architect-700.jpg';
 import { createSitePath } from '../config/site';
 import { useScrollToTop } from '../hooks/usePageLifecycle';
 import './HomePage.css';
@@ -39,7 +39,15 @@ const HomePage: React.FC = () => {
       <section className="editorial-hero app-hero hero" id="home">
         <div className="app-hero__grid hero-content">
           <div className="hero-image">
-            <img src={chiefArchitectImage} alt="Chief Architect" className="architect-photo" />
+            <img
+              src={chiefArchitectImage}
+              alt="Chief Architect"
+              className="architect-photo"
+              width="310"
+              height="310"
+              loading="eager"
+              decoding="async"
+            />
             <div className="image-accent"></div>
             
             <div className="story-text">

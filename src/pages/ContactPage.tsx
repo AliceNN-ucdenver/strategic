@@ -1,6 +1,6 @@
 import React from 'react'
 import PageLayout from '../components/PageLayout'
-import chiefArchitectImage from '../assets/chief_architect.png'
+import chiefArchitectImage from '../assets/chief_architect-700.jpg'
 import { useScrollToTop } from '../hooks/usePageLifecycle'
 import './ContactPage.css'
 
@@ -17,6 +17,10 @@ const ContactPage: React.FC = () => {
                 src={chiefArchitectImage} 
                 alt="Chief Archeologist" 
                 className="contact-avatar"
+                width="180"
+                height="180"
+                loading="eager"
+                decoding="async"
               />
               <div className="contact-intro">
                 <span className="eyebrow eyebrow--pill contact-kicker">Strategic Architecture Advisory</span>

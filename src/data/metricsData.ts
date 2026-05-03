@@ -278,30 +278,3 @@ export const metricsData: MetricCard[] = [
     ]
   }
 ];
-
-export const portfolioOverview = {
-  stats: [
-    { number: '83%', label: 'Governance Health', status: 'good' },
-    { number: '74%', label: 'BAR Coverage', status: 'needs-improvement' },
-    { number: '92%', label: 'Threat Model Coverage', status: 'excellent' },
-    { number: '67d', label: 'Concept to Value', status: 'good' },
-    { number: '62%', label: 'Agent Autonomy Readiness', status: 'needs-improvement' }
-  ],
-  insights: {
-    strengths: [
-      'Strong release quality and threat-model discipline',
-      'Clear product-to-architecture measurement paths',
-      'Good foundation for policy-as-code expansion'
-    ],
-    focusAreas: [
-      'Increase BAR adoption across critical applications',
-      'Close architecture drift before agent autonomy expands',
-      'Turn routine review work into automated fitness functions'
-    ],
-    strategicImpact: [
-      'Portfolio health visible from business capability to code',
-      'Architecture governance becomes a launchpad instead of a queue',
-      'AI-assisted delivery can scale without surrendering control'
-    ]
-  }
-};

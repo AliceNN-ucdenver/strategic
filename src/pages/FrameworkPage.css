@@ -229,6 +229,47 @@
   white-space: nowrap;
 }
 
+.framework-product-bridge {
+  padding: 4.5rem 2rem;
+  background: #eef4f8;
+}
+
+.framework-product-bridge__inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 2rem;
+  align-items: center;
+  width: min(1180px, 100%);
+  margin: 0 auto;
+  padding: 2rem;
+  border: 1px solid #dbe4ef;
+  border-radius: 14px;
+  background: #ffffff;
+  box-shadow: 0 18px 44px rgba(15, 23, 42, 0.08);
+}
+
+.framework-product-bridge h2 {
+  max-width: 760px;
+  margin: 0 0 0.75rem;
+  color: #172033;
+  font-size: clamp(1.85rem, 3vw, 2.6rem);
+  font-weight: 820;
+  line-height: 1.1;
+  letter-spacing: 0;
+}
+
+.framework-product-bridge p {
+  max-width: 780px;
+  margin: 0;
+  color: #475569;
+  font-size: 1.02rem;
+  line-height: 1.68;
+}
+
+.framework-product-bridge .button-primary {
+  white-space: nowrap;
+}
+
 /* Section Header (shared by Strategic Choice + Four Clusters sections) */
 .framework-page .section-header {
   text-align: center;
@@ -253,43 +294,6 @@
   max-width: 720px;
   margin: 0 auto;
   line-height: 1.6;
-}
-
-/* Stats Section */
-.stats {
-  padding: 4rem 2rem;
-  background: white;
-}
-
-.stats-container {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.stats-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 3rem;
-  text-align: center;
-}
-
-.stat-item {
-  padding: 2rem;
-}
-
-.stat-number {
-  font-size: 3rem;
-  font-weight: 800;
-  background: linear-gradient(135deg, #0f766e 0%, #172033 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  margin-bottom: 0.5rem;
-}
-
-.stat-label {
-  color: #64748b;
-  font-weight: 600;
 }
 
 /* Fade in animation */
@@ -333,6 +337,10 @@
   .framework-thesis-container {
     grid-template-columns: 1fr;
     gap: 2rem;
+  }
+
+  .framework-product-bridge__inner {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -378,13 +386,17 @@
     font-size: 0.82rem;
   }
 
+  .framework-product-bridge {
+    padding: 3.25rem 1rem;
+  }
+
+  .framework-product-bridge__inner {
+    padding: 1.25rem;
+  }
+
   .question-scale {
     flex-direction: column;
     gap: 0.5rem;
-  }
-  
-  .stats-grid {
-    grid-template-columns: 1fr;
   }
 }
 

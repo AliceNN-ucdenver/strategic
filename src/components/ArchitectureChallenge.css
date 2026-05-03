@@ -1,10 +1,6 @@
 /* Architecture Challenge Component */
 .architecture-challenge {
-  background: #ffffff;
-  border-radius: 14px;
   padding: 2rem;
-  border: 1px solid #dbe4ef;
-  box-shadow: 0 18px 44px rgba(15, 23, 42, 0.07);
   transition: all 0.3s ease;
 }
 
@@ -20,17 +16,10 @@
 .challenge-header h3 {
   font-size: 1.65rem;
   font-weight: 800;
-  color: #172033;
   margin-bottom: 1rem;
-  background: none;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: currentColor;
-  background-clip: text;
 }
 
 .challenge-subtitle {
-  color: #64748b;
-  line-height: 1.6;
   font-size: 1rem;
   margin: 0;
 }
@@ -43,48 +32,16 @@
 }
 
 .toggle-btn {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
   padding: 0.75rem 1.5rem;
-  border: 1px solid #dbe4ef;
-  background: white;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  font-weight: 600;
-  color: #334155;
   font-size: 0.9rem;
 }
 
-.toggle-btn:hover {
-  border-color: rgba(15, 118, 110, 0.35);
-  transform: translateY(-2px);
-}
-
-.toggle-btn.active {
-  background: #172033;
-  color: white;
-  border-color: #172033;
-}
-
 .toggle-icon {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
   width: 1.6rem;
   height: 1.6rem;
   border-radius: 8px;
-  color: #0f766e;
-  background: #ecfdf5;
   font-size: 0.7rem;
-  font-weight: 900;
   letter-spacing: 0.5px;
-}
-
-.toggle-btn.active .toggle-icon {
-  color: #172033;
-  background: #bbf7d0;
 }
 
 .approach-visualization {
@@ -93,10 +50,8 @@
 }
 
 .approach-content {
-  background: white;
   border-radius: 12px;
   padding: 2rem;
-  border: 1px solid transparent;
   animation: fadeIn 0.5s ease-in-out;
 }
 
@@ -133,15 +88,9 @@
 .approach-icon {
   width: 52px;
   height: 52px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #0f766e;
   font-size: 0.82rem;
-  font-weight: 900;
   letter-spacing: 1px;
   border-radius: 12px;
-  background: #ecfdf5;
   border: 1px solid rgba(15, 118, 110, 0.2);
 }
 
@@ -153,7 +102,6 @@
 }
 
 .approach-info p {
-  color: #4a5568;
   line-height: 1.5;
   margin: 0;
   font-size: 0.95rem;
@@ -182,7 +130,6 @@
   padding: 1rem;
   background: #ffffff;
   border-radius: 10px;
-  border: 1px solid #e2e8f0;
   transition: all 0.3s ease;
 }
 

@@ -1,0 +1,99 @@
+/* Shared primitives for the product operating-model pages. */
+.product-page :is(.framework-container, .guide-container, .dashboard-container) {
+  max-width: 1400px;
+  margin-inline: auto;
+}
+
+.product-page :is(.transformation-framework-section .section-header, .implementation-steps .section-header) {
+  margin-bottom: 4rem;
+  text-align: center;
+}
+
+.product-page :is(.transformation-framework-section .section-header h2, .implementation-steps .section-header h2) {
+  margin: 0 0 1rem;
+  color: #172033;
+  font-size: 3rem;
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.product-page :is(.transformation-framework-section .section-header p, .implementation-steps .section-header p) {
+  max-width: 800px;
+  margin: 0 auto 0.5rem;
+  color: #64748b;
+  font-size: 1.25rem;
+  line-height: 1.7;
+}
+
+.product-page :is(.architecture-challenge, .framework-content, .portfolio-overview, .guiding-principles, .metric-card) {
+  border: 1px solid #dbe4ef;
+  border-radius: 14px;
+  background: #ffffff;
+  box-shadow: 0 18px 44px rgba(15, 23, 42, 0.07);
+}
+
+.product-page :is(.cockpit-panel, .phase-card) {
+  border: 1px solid #dbe4ef;
+  border-radius: 12px;
+  background: #ffffff;
+  box-shadow: 0 18px 44px rgba(15, 23, 42, 0.07);
+}
+
+.product-page :is(.map-row, .score-breakdown div, .flow-list li, .overview-stat, .insight-column, .comparison-card, .transformation-actions, .action-item, .stage-card, .metrics-intro, .participant, .principle-card) {
+  border: 1px solid #e2e8f0;
+  background: #f8fafc;
+}
+
+.product-page :is(.toggle-btn, .tab-button) {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: 1px solid #dbe4ef;
+  border-radius: 10px;
+  background: #ffffff;
+  color: #334155;
+  cursor: pointer;
+  font-weight: 600;
+  transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease, color 0.2s ease;
+}
+
+.product-page :is(.toggle-btn, .tab-button):hover {
+  transform: translateY(-2px);
+  border-color: rgba(15, 118, 110, 0.35);
+}
+
+.product-page :is(.toggle-btn, .tab-button).active {
+  border-color: #172033;
+  background: #172033;
+  color: #ffffff;
+}
+
+.product-page :is(.toggle-icon, .tab-icon, .approach-icon, .phase-number, .principle-icon) {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #0f766e;
+  background: #ecfdf5;
+  font-weight: 900;
+  letter-spacing: 0.6px;
+}
+
+.product-page :is(.toggle-btn, .tab-button).active :is(.toggle-icon, .tab-icon) {
+  color: #172033;
+  background: #bbf7d0;
+}
+
+.product-page :is(.challenge-header h3, .cockpit-panel h3, .portfolio-overview h3, .business-insights h4, .comparison-card h3, .transformation-actions h3, .stage-info h3, .phase-info h3, .guiding-principles h3, .principle-card h4) {
+  color: #172033;
+}
+
+.product-page :is(.challenge-subtitle, .approach-info p, .stage-goal, .metrics-intro p, .phase-subtitle, .principle-card p) {
+  color: #64748b;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .product-page :is(.transformation-framework-section .section-header h2, .implementation-steps .section-header h2) {
+    font-size: 2rem;
+  }
+}

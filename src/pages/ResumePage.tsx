@@ -14,18 +14,15 @@ const ResumePage: React.FC = () => {
         <div className="resume-web-hero__inner">
           <div>
             <span className="eyebrow">Full Web CV</span>
-            <h1>Enterprise architecture executive, AI leader, and PhD candidate.</h1>
+            <h1>Architecture, AI governance, and engineering leadership.</h1>
+            <p>
+              A fuller career narrative for the Chief Archeologist work: global architecture transformation,
+              platform modernization, research, teaching, and enterprise AI governance.
+            </p>
           </div>
           <div className="resume-web-actions" aria-label="Resume actions">
             <a href={createSitePath('/resume-print')} className="button-primary">
               Submission Version
-            </a>
-            <a
-              href={createSitePath('/resume/Shawn_McCarthy_Resume_ATS.pdf')}
-              download
-              className="button-secondary button-secondary--light"
-            >
-              Download ATS PDF
             </a>
           </div>
         </div>

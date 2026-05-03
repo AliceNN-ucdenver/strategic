@@ -1,82 +1,5 @@
-/* Modal Overlay */
-.modal-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(15, 23, 42, 0.78);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 10000;
-  backdrop-filter: blur(12px);
-  animation: modalFadeIn 0.3s ease;
-}
-
-@keyframes modalFadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-/* Modal Content
-   Each modal variant (.cluster-modal, .star-modal) sets its own width and
-   max-width, so the base intentionally leaves both unset. */
-.modal-content {
-  background: #ffffff;
-  padding: 2.5rem;
-  border: 1px solid rgba(15, 23, 42, 0.12);
-  border-radius: 16px;
-  max-height: 90vh;
-  margin: 2rem;
-  box-shadow: 0 28px 80px rgba(15, 23, 42, 0.36);
-  animation: modalSlideIn 0.3s ease;
-  position: relative;
-  overflow-y: auto;
-}
-
-@keyframes modalSlideIn {
-  from {
-    opacity: 0;
-    transform: translateY(-50px) scale(0.95);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
-}
-
 .star-modal {
-  max-width: 800px;
-}
-
-/* Modal Close Button */
-.modal-close {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  background: #f8fafc;
-  border: 1px solid #dbe4ef;
-  font-size: 1.5rem;
-  color: #334155;
-  cursor: pointer;
-  width: 30px;
-  height: 30px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 10px;
-  transition: all 0.3s ease;
-}
-
-.modal-close:hover {
-  background: #172033;
-  border-color: #172033;
-  color: #ffffff;
+  --modal-width: min(92vw, 800px);
 }
 
 /* Cluster Modal */
@@ -88,32 +11,6 @@
   line-height: 1.05;
 }
 
-.cluster-description {
-  color: #64748b;
-  margin-bottom: 2rem;
-  font-style: italic;
-  line-height: 1.6;
-}
-
-.cluster-stars {
-  margin-bottom: 2rem;
-}
-
-.star-item {
-  padding: 1rem;
-  background: #f8fafc;
-  border-radius: 10px;
-  margin-bottom: 1rem;
-  border-left: 4px solid #0f766e;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.star-item:hover {
-  background: #e2e8f0;
-  transform: translateX(5px);
-}
-
 /* Star Modal */
 .star-title {
   color: #172033;
@@ -121,31 +18,6 @@
   font-size: 1.8rem;
   font-weight: 850;
   line-height: 1.05;
-}
-
-/* Wonderland Guide byline — small character credit under the title */
-.star-byline {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  margin-bottom: 1.5rem;
-  padding: 0.35rem 0.85rem;
-  background: #e6fffb;
-  border: 1px solid rgba(13, 148, 136, 0.18);
-  border-radius: 999px;
-  font-size: 0.85rem;
-  color: #475569;
-}
-
-.star-byline-emoji {
-  font-size: 1.05rem;
-  line-height: 1;
-}
-
-.star-byline-text strong {
-  color: #1e293b;
-  font-weight: 700;
-  margin-left: 0.15rem;
 }
 
 .assessment-question {
@@ -167,186 +39,6 @@
   color: #334155;
   font-weight: 500;
   font-style: italic;
-}
-
-/* ─────────────────────────────────────────────────────────
-   The Two Paths — unified Tactical vs Strategic comparison
-   (shared design with StarGrid; lives here so the cluster
-   modal star view looks identical to the framework page
-   star detail).
-   ───────────────────────────────────────────────────────── */
-.two-paths {
-  margin: 1.5rem 0 2rem;
-}
-
-.two-paths-header {
-  text-align: center;
-  margin-bottom: 1.25rem;
-}
-
-.two-paths-label {
-  display: block;
-  font-size: 0.7rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  color: #94a3b8;
-  margin-bottom: 0.4rem;
-}
-
-.two-paths-title {
-  font-size: 1.05rem;
-  font-weight: 700;
-  color: #1a202c;
-  margin: 0;
-  line-height: 1.4;
-}
-
-.two-paths-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  /* 4 row tracks: header · approach · divider · leads-to. Each row sizes
-     to the max content across both columns, so the divider arrows and the
-     bottom edges stay aligned even when the prose lengths differ. */
-  grid-template-rows: auto auto auto auto;
-  gap: 1.25rem;
-}
-
-.path-card {
-  background: white;
-  border: 1px solid rgba(0, 0, 0, 0.06);
-  border-radius: 14px;
-  overflow: hidden;
-  display: grid;
-  grid-template-rows: subgrid;
-  grid-row: span 4;
-  position: relative;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.path-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 4px;
-}
-
-.path-tactical::before {
-  background: linear-gradient(135deg, #ef4444 0%, #f87171 100%);
-}
-
-.path-strategic::before {
-  background: linear-gradient(135deg, #10b981 0%, #34d399 100%);
-}
-
-.path-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
-}
-
-.path-header {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 1rem 1.25rem 0.5rem;
-  font-size: 0.95rem;
-  font-weight: 700;
-}
-
-.path-tactical .path-header {
-  color: #b91c1c;
-}
-
-.path-strategic .path-header {
-  color: #047857;
-}
-
-.path-icon {
-  font-size: 1rem;
-  font-weight: 700;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 22px;
-  height: 22px;
-  border-radius: 50%;
-  flex-shrink: 0;
-}
-
-.path-tactical .path-icon {
-  background: rgba(239, 68, 68, 0.12);
-}
-
-.path-strategic .path-icon {
-  background: rgba(16, 185, 129, 0.12);
-}
-
-.path-section {
-  padding: 0.6rem 1.25rem 1rem;
-  flex: 1;
-}
-
-.path-section-label {
-  font-size: 0.68rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 1.2px;
-  color: #94a3b8;
-  margin-bottom: 0.4rem;
-}
-
-.path-section p {
-  font-size: 0.9rem;
-  color: #475569;
-  line-height: 1.55;
-  margin: 0;
-}
-
-.path-divider {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0.4rem 0;
-  position: relative;
-}
-
-.path-divider::before {
-  content: '';
-  position: absolute;
-  left: 1.25rem;
-  right: 1.25rem;
-  top: 50%;
-  height: 1px;
-  background: rgba(0, 0, 0, 0.08);
-}
-
-.path-divider-arrow {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 26px;
-  height: 26px;
-  border-radius: 50%;
-  background: white;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  font-size: 0.9rem;
-  font-weight: 700;
-  position: relative;
-  z-index: 1;
-  line-height: 1;
-}
-
-.path-tactical .path-divider-arrow {
-  color: #ef4444;
-  border-color: rgba(239, 68, 68, 0.25);
-}
-
-.path-strategic .path-divider-arrow {
-  color: #10b981;
-  border-color: rgba(16, 185, 129, 0.25);
 }
 
 .implementation-guide {
@@ -374,47 +66,10 @@
   margin-bottom: 0.5rem;
 }
 
-/* Outcomes line surfaced inside the Strategic Path's "This Leads To" */
-.path-outcomes {
-  margin-top: 0.85rem !important;
-  padding-top: 0.7rem;
-  border-top: 1px dashed rgba(16, 185, 129, 0.25);
-  font-size: 0.9rem !important;
-  color: #047857 !important;
-  line-height: 1.55 !important;
-}
-
-.path-outcomes-label {
-  font-size: 0.7rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 1.2px;
-  color: #059669;
-  margin-right: 0.4rem;
-}
-
 /* Modal Actions */
 .modal-actions {
   text-align: center;
   margin-top: 2rem;
-}
-
-.assess-button {
-  background: #172033;
-  color: white;
-  padding: 1rem 2rem;
-  border: none;
-  border-radius: 10px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  font-size: 1rem;
-}
-
-.assess-button:hover {
-  transform: translateY(-2px);
-  background: #0f766e;
-  box-shadow: 0 8px 25px rgba(15, 118, 110, 0.22);
 }
 
 /* ── Cluster modal: quote + orientation ── */
@@ -436,11 +91,7 @@
 
 /* ── Cluster modal: star cards grid ── */
 /* The cluster modal hosts a 3-column star grid, so it needs to be
-   substantially wider than the default 600px modal. We override the
-   base .modal-content sizing wholesale: border-box so width counts
-   padding, fluid 94vw for medium screens, capped at 1280px on big
-   monitors, and a thinner 1rem margin so the modal can actually fill
-   the viewport instead of being squeezed by the base 2rem margin. */
+   substantially wider than the default shell. */
 .cluster-modal {
   box-sizing: border-box;
   width: min(94vw, 1280px);
@@ -602,14 +253,11 @@
 }
 
 @media (max-width: 768px) {
-  .modal-content {
+  .star-modal,
+  .cluster-modal {
     padding: 2rem;
     margin: 1rem;
     max-height: 95vh;
-  }
-
-  .two-paths-grid {
-    grid-template-columns: 1fr;
   }
 
   .star-title,

@@ -19,29 +19,6 @@
   padding: 1rem;
 }
 
-.constellation::before,
-.constellation::after {
-  content: '';
-  position: absolute;
-  pointer-events: none;
-  z-index: 1;
-}
-
-.constellation::before {
-  inset: 14% 15%;
-  background:
-    linear-gradient(35deg, transparent 49.6%, rgba(255, 255, 255, 0.16) 50%, transparent 50.4%),
-    linear-gradient(-35deg, transparent 49.6%, rgba(255, 255, 255, 0.14) 50%, transparent 50.4%);
-}
-
-.constellation::after {
-  left: 50%;
-  top: 16%;
-  bottom: 16%;
-  width: 1px;
-  background: linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.22), transparent);
-}
-
 /* ── Cluster Node (button wrapper for whole card + tagline) ── */
 .cluster-node {
   background: transparent;
@@ -292,9 +269,7 @@
     font-size: 0.75rem;
   }
 
-  .cluster-node-meta span:last-child,
-  .constellation::before,
-  .constellation::after {
+  .cluster-node-meta span:last-child {
     display: none;
   }
 }

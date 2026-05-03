@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { createPortal } from 'react-dom';
+import ModalShell from './ui/ModalShell';
 import './SubscriptionModal.css';
 
 interface SubscriptionModalProps {
@@ -17,8 +17,6 @@ type ConvertKitWindow = Window &
 const SubscriptionModal: React.FC<SubscriptionModalProps> = ({ isOpen, onClose }) => {
   useEffect(() => {
     if (isOpen) {
-      document.body.style.overflow = 'hidden';
-      
       // Load Kit script if not already loaded
       if (!document.querySelector('script[src*="ck.5.js"]')) {
         const script = document.createElement('script');
@@ -26,13 +24,7 @@ const SubscriptionModal: React.FC<SubscriptionModalProps> = ({ isOpen, onClose }
         script.async = true;
         document.head.appendChild(script);
       }
-    } else {
-      document.body.style.overflow = 'unset';
     }
-
-    return () => {
-      document.body.style.overflow = 'unset';
-    };
   }, [isOpen]);
 
   const handleFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {
@@ -78,12 +70,14 @@ const SubscriptionModal: React.FC<SubscriptionModalProps> = ({ isOpen, onClose }
 
   if (!isOpen) return null;
 
-  return createPortal(
-    <div className="subscription-modal-overlay" onClick={onClose}>
-      <div className="subscription-modal-content" onClick={(e) => e.stopPropagation()}>
-        <button className="subscription-modal-close" onClick={onClose}>
-          ×
-        </button>
+  return (
+    <ModalShell
+      isOpen={isOpen}
+      onClose={onClose}
+      ariaLabel="Subscribe to The Rabbit Hole"
+      panelClassName="subscription-modal-content"
+      closeButtonClassName="subscription-modal-close"
+    >
         <form 
           action="https://app.kit.com/forms/8362592/subscriptions" 
           className="seva-form formkit-form" 
@@ -156,9 +150,7 @@ const SubscriptionModal: React.FC<SubscriptionModalProps> = ({ isOpen, onClose }
             ></div>
           </div>
         </form>
-      </div>
-    </div>,
-    document.body
+    </ModalShell>
   );
 };
 

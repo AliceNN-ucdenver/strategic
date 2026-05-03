@@ -1,53 +1,28 @@
-/* Modal overlay */
-.subscription-modal-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(15, 23, 42, 0.74);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 1000;
-  padding: 20px;
-}
-
 /* Modal content container */
 .subscription-modal-content {
-  position: relative;
+  --modal-width: min(92vw, 740px);
+  --modal-padding: 0;
+  --modal-radius: 10px;
+  --modal-border: 1px solid rgba(148, 163, 184, 0.24);
+  --modal-shadow: 0 24px 70px rgba(15, 23, 42, 0.28);
   max-width: 740px;
-  width: 100%;
-  max-height: 90vh;
-  overflow-y: auto;
-  border-radius: 10px;
-  box-shadow: 0 24px 70px rgba(15, 23, 42, 0.28);
-  border: 1px solid rgba(148, 163, 184, 0.24);
 }
 
 /* Close button */
 .subscription-modal-close {
-  position: absolute;
-  top: 15px;
-  right: 20px;
+  --modal-close-top: 15px;
+  --modal-close-right: 20px;
+  --modal-close-size: 30px;
+  --modal-close-radius: 50%;
+  --modal-close-bg: transparent;
+  --modal-close-border: transparent;
+  --modal-close-color: #64748b;
+  --modal-close-hover-bg: rgba(15, 118, 110, 0.1);
+  --modal-close-hover-border: transparent;
+  --modal-close-hover-color: #0f4f49;
   background: none;
-  border: none;
   font-size: 30px;
-  color: #64748b;
-  cursor: pointer;
   z-index: 10;
-  width: 30px;
-  height: 30px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  transition: all 0.2s ease;
-}
-
-.subscription-modal-close:hover {
-  background-color: rgba(15, 118, 110, 0.1);
-  color: #0f4f49;
 }
 
 /* Kit form styles - copied from the original embed */

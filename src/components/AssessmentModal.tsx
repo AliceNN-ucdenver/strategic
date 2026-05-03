@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
+import ModalShell from './ui/ModalShell'
 import './AssessmentModal.css'
 
 interface AssessmentModalProps {
@@ -21,10 +22,12 @@ const AssessmentModal = ({ isOpen, onClose }: AssessmentModalProps) => {
   ]
 
   return (
-    <div className="assessment-modal-overlay" onClick={onClose}>
-      <div className="assessment-modal-panel" onClick={(e) => e.stopPropagation()}>
-        <button className="assessment-close-button" onClick={onClose}>×</button>
-
+    <ModalShell
+      isOpen={isOpen}
+      onClose={onClose}
+      ariaLabel="Strategic Architecture Assessment"
+      panelClassName="assessment-modal-panel"
+    >
         <h2>Strategic Architecture Assessment</h2>
         <p className="assessment-modal-subtitle">
           Discover your organization's maturity across the 12 Stars Constellation
@@ -64,8 +67,7 @@ const AssessmentModal = ({ isOpen, onClose }: AssessmentModalProps) => {
             Contact Us for a Guided Review
           </Link>
         </div>
-      </div>
-    </div>
+    </ModalShell>
   )
 }
 

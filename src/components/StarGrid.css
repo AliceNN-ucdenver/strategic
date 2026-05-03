@@ -175,37 +175,6 @@
   border: 1px solid rgba(245, 158, 11, 0.25);
 }
 
-.star-summary {
-  display: grid;
-  grid-template-columns: 1.1fr 1fr;
-  gap: 1rem;
-  margin-bottom: 1rem;
-}
-
-.star-summary div {
-  padding: 1rem;
-  background: #f8fafc;
-  border: 1px solid #e2e8f0;
-  border-radius: 12px;
-}
-
-.star-summary span {
-  display: block;
-  margin-bottom: 0.35rem;
-  color: #0f766e;
-  font-size: 0.7rem;
-  font-weight: 800;
-  letter-spacing: 1.3px;
-  text-transform: uppercase;
-}
-
-.star-summary p {
-  color: #334155;
-  font-size: 0.9rem;
-  line-height: 1.55;
-  margin: 0;
-}
-
 .close-button {
   background: #ef4444;
   color: white;
@@ -454,200 +423,16 @@
   border-radius: 12px;
 }
 
-/* ─────────────────────────────────────────────────────────
-   The Two Paths — unified Tactical vs Strategic comparison.
-   Each column = one path with its approach above and its
-   consequence below, separated by a labeled divider.
-   ───────────────────────────────────────────────────────── */
-.two-paths {
-  margin: 1.5rem 0;
-}
-
-.two-paths-header {
-  text-align: center;
-  margin-bottom: 1.25rem;
-}
-
-.two-paths-label {
-  display: block;
-  font-size: 0.7rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  color: #94a3b8;
-  margin-bottom: 0.4rem;
-}
-
-.two-paths-title {
-  font-size: 1.05rem;
-  font-weight: 700;
-  color: #1a202c;
-  margin: 0;
-  line-height: 1.4;
-}
-
-.two-paths-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  /* 4 row tracks: header · approach · divider · leads-to. Each row sizes
-     to the max content across both columns, so the divider arrows and the
-     bottom edges stay aligned even when the prose lengths differ. */
-  grid-template-rows: auto auto auto auto;
-  gap: 1.25rem;
-}
-
-.path-card {
-  background: white;
-  border: 1px solid rgba(0, 0, 0, 0.06);
-  border-radius: 14px;
-  overflow: hidden;
-  display: grid;
-  grid-template-rows: subgrid;
-  grid-row: span 4;
-  position: relative;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.path-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 4px;
-}
-
-.path-tactical::before {
-  background: linear-gradient(135deg, #ef4444 0%, #f87171 100%);
-}
-
-.path-strategic::before {
-  background: linear-gradient(135deg, #10b981 0%, #34d399 100%);
-}
-
-.path-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
-}
-
-.path-header {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 1rem 1.25rem 0.5rem;
-  font-size: 0.95rem;
-  font-weight: 700;
-}
-
-.path-tactical .path-header {
-  color: #b91c1c;
-}
-
-.path-strategic .path-header {
-  color: #047857;
-}
-
 .path-icon {
   font-size: 0.76rem;
-  font-weight: 700;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 22px;
-  height: 22px;
-  border-radius: 50%;
-  flex-shrink: 0;
-}
-
-.path-icon::before {
-  line-height: 1;
-}
-
-.path-tactical .path-icon {
-  background: rgba(239, 68, 68, 0.12);
 }
 
 .path-tactical .path-icon::before {
   content: '!';
 }
 
-.path-strategic .path-icon {
-  background: rgba(16, 185, 129, 0.12);
-}
-
 .path-strategic .path-icon::before {
   content: '\2713';
-}
-
-.path-section {
-  padding: 0.6rem 1.25rem 1rem;
-  flex: 1;
-}
-
-.path-section:first-of-type {
-  padding-top: 0.5rem;
-}
-
-.path-section-label {
-  font-size: 0.68rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 1.2px;
-  color: #94a3b8;
-  margin-bottom: 0.4rem;
-}
-
-.path-section p {
-  font-size: 0.9rem;
-  color: #475569;
-  line-height: 1.55;
-  margin: 0;
-}
-
-/* Divider with arrow showing approach → consequence */
-.path-divider {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0.4rem 0;
-  position: relative;
-}
-
-.path-divider::before {
-  content: '';
-  position: absolute;
-  left: 1.25rem;
-  right: 1.25rem;
-  top: 50%;
-  height: 1px;
-  background: rgba(0, 0, 0, 0.08);
-}
-
-.path-divider-arrow {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 26px;
-  height: 26px;
-  border-radius: 50%;
-  background: white;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  font-size: 0.9rem;
-  font-weight: 700;
-  position: relative;
-  z-index: 1;
-  line-height: 1;
-}
-
-.path-tactical .path-divider-arrow {
-  color: #ef4444;
-  border-color: rgba(239, 68, 68, 0.25);
-}
-
-.path-strategic .path-divider-arrow {
-  color: #10b981;
-  border-color: rgba(16, 185, 129, 0.25);
 }
 
 /* Implementation Guide - Tighter spacing */
@@ -697,25 +482,6 @@
   justify-content: center;
   font-size: 0.8rem;
   font-weight: 600;
-}
-
-/* Outcomes line surfaced inside the Strategic Path's "This Leads To" */
-.path-outcomes {
-  margin-top: 0.75rem !important;
-  padding-top: 0.6rem;
-  border-top: 1px dashed rgba(16, 185, 129, 0.25);
-  font-size: 0.85rem !important;
-  color: #047857 !important;
-  line-height: 1.5 !important;
-}
-
-.path-outcomes-label {
-  font-size: 0.65rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 1.2px;
-  color: #059669;
-  margin-right: 0.35rem;
 }
 
 /* Wonderland Guide chip embedded in the star tab — shows which character
@@ -780,7 +546,6 @@
 }
 
 @media (max-width: 768px) {
-  .star-summary,
   .overview-grid,
   .action-plan-grid {
     grid-template-columns: 1fr;

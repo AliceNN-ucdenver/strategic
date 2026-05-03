@@ -1,8 +1,8 @@
 import React from 'react'
-import { createPortal } from 'react-dom'
 import { Link, useNavigate } from 'react-router-dom'
 import type { Cluster, Star } from '../data/clusters'
 import { scrollToElementId } from '../hooks/usePageLifecycle'
+import ModalShell from './ui/ModalShell'
 import './ConstellationModal.css'
 
 interface ConstellationModalProps {
@@ -20,14 +20,6 @@ const ConstellationModal: React.FC<ConstellationModalProps> = ({
 }) => {
   const navigate = useNavigate()
 
-  const renderModal = (content: React.ReactNode) => createPortal(content, document.body)
-
-  const handleBackdropClick = (e: React.MouseEvent) => {
-    if (e.target === e.currentTarget) {
-      onClose()
-    }
-  }
-
   const handleExploreInDetail = (clusterId: string) => {
     onClose()
     window.setTimeout(() => {
@@ -40,11 +32,13 @@ const ConstellationModal: React.FC<ConstellationModalProps> = ({
 
   // Star detail view (when a star card is clicked)
   if (star) {
-    return renderModal(
-      <div className="modal-overlay" onClick={handleBackdropClick}>
-        <div className="modal-content star-modal">
-          <button className="modal-close" onClick={onClose}>×</button>
-
+    return (
+      <ModalShell
+        isOpen
+        onClose={onClose}
+        ariaLabel={`${star.title} details`}
+        panelClassName="star-modal"
+      >
           <h2 className="star-title">{star.title}</h2>
 
           <div className="assessment-question">
@@ -109,18 +103,19 @@ const ConstellationModal: React.FC<ConstellationModalProps> = ({
               ))}
             </ol>
           </div>
-        </div>
-      </div>
+      </ModalShell>
     )
   }
 
   // Cluster orientation/preview view
   if (cluster) {
-    return renderModal(
-      <div className="modal-overlay" onClick={handleBackdropClick}>
-        <div className="modal-content cluster-modal">
-          <button className="modal-close" onClick={onClose}>×</button>
-
+    return (
+      <ModalShell
+        isOpen
+        onClose={onClose}
+        ariaLabel={`${cluster.title} cluster`}
+        panelClassName="cluster-modal"
+      >
           <h2 className="cluster-title">{cluster.title}</h2>
           <p className="cluster-quote">"{cluster.quote}"</p>
 
@@ -179,8 +174,7 @@ const ConstellationModal: React.FC<ConstellationModalProps> = ({
               Read all Wonderland Guides
             </Link>
           </div>
-        </div>
-      </div>
+      </ModalShell>
     )
   }
 

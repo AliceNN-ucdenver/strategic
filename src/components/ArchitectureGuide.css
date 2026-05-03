@@ -163,12 +163,6 @@
   margin-bottom: 1.25rem;
 }
 
-.stage-icon {
-  font-size: 2.4rem;
-  line-height: 1;
-  flex-shrink: 0;
-}
-
 .stage-titles {
   display: flex;
   flex-direction: column;
@@ -345,12 +339,6 @@
 .pillar-card:hover {
   transform: translateY(-3px);
   box-shadow: 0 10px 22px rgba(15, 118, 110, 0.14);
-}
-
-.pillar-icon {
-  font-size: 1.6rem;
-  margin-bottom: 0.4rem;
-  line-height: 1;
 }
 
 .pillar-card h4 {

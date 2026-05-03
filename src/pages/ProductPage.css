@@ -231,32 +231,6 @@
   line-height: 1.45;
 }
 
-/* Section Header Reuse */
-.product-page .section-header {
-  text-align: center;
-  margin-bottom: 4rem;
-}
-
-.product-page .section-header h2 {
-  font-size: 3rem;
-  font-weight: 800;
-  margin-bottom: 1rem;
-  background: none;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: currentColor;
-  background-clip: text;
-  color: #172033;
-  line-height: 1.1;
-}
-
-.product-page .section-header p {
-  font-size: 1.25rem;
-  color: #64748b;
-  max-width: 800px;
-  margin: 0 auto;
-  line-height: 1.7;
-}
-
 /* Responsive Design */
 @media (max-width: 1024px) {
   .product-page .hero-content {
@@ -314,10 +288,6 @@
     text-align: left;
   }
   
-  .product-page .section-header h2 {
-    font-size: 2rem;
-  }
-
   .product-thesis {
     padding: 3rem 1rem;
   }

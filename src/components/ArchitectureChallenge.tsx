@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import { createSitePath } from '../config/site';
+import { architectureChallenge, type ArchitectureChallengeView } from '../data/productPageData';
 import { scrollToElementId } from '../hooks/usePageLifecycle';
 import './ArchitectureChallenge.css';
 
 const ArchitectureChallenge: React.FC = () => {
   const [activeView, setActiveView] = useState<'traditional' | 'modern'>('traditional');
+  const activeApproach = architectureChallenge.views.find((view) => view.id === activeView) ?? architectureChallenge.views[0];
 
   const scrollToFramework = () => {
     if (!scrollToElementId('transformation')) {
@@ -18,125 +20,70 @@ const ArchitectureChallenge: React.FC = () => {
     }
   };
 
-  const traditionalApproachData = {
-    title: "Traditional Approach Is Failing",
-    icon: "01",
-    description: "Organizations approach technology like overeager developers—focusing on individual projects without considering the broader ecosystem",
-    costs: [
-      { icon: "TD", label: "Mounting Technical Debt", impact: "High" },
-      { icon: "CX", label: "Increasing System Complexity", impact: "High" },
-      { icon: "OC", label: "Rising Operational Costs", impact: "Medium" },
-      { icon: "TM", label: "Difficulty Attracting Talent", impact: "High" },
-      { icon: "TM", label: "Slower Time to Market", impact: "Critical" },
-      { icon: "CA", label: "Reduced Competitive Advantage", impact: "Critical" }
-    ]
-  };
+  const renderApproach = (approach: ArchitectureChallengeView) => {
+    const isModern = approach.id === 'modern';
 
-  const modernApproachData = {
-    title: "Modern Urban Planning Approach",
-    icon: "02",
-    description: "Thoughtful city planners establish comprehensive plans considering infrastructure, sustainability, and community needs",
-    benefits: [
-      { icon: "AI", label: "Accelerated Innovation", impact: "High" },
-      { icon: "SA", label: "Sustainable Architecture", impact: "High" },
-      { icon: "RA", label: "Optimized Resource Allocation", impact: "Medium" },
-      { icon: "TA", label: "Enhanced Talent Attraction", impact: "High" },
-      { icon: "MR", label: "Rapid Market Response", impact: "Critical" },
-      { icon: "CE", label: "Sustained Competitive Edge", impact: "Critical" }
-    ]
+    return (
+      <div className={`approach-content ${approach.id}`}>
+        <div className="approach-header">
+          <div className="approach-icon">{approach.icon}</div>
+          <div className="approach-info">
+            <h4>{approach.title}</h4>
+            <p>{approach.description}</p>
+          </div>
+        </div>
+        <div className={isModern ? 'benefits-grid' : 'costs-grid'}>
+          <h5>{approach.impactHeading}</h5>
+          <div className="impact-items">
+            {approach.impactItems.map((item) => (
+              <div key={item.label} className={`impact-item ${isModern ? 'benefit' : ''} ${item.impact.toLowerCase()}`}>
+                <div className="impact-icon">{item.icon}</div>
+                <div className="impact-content">
+                  <span className="impact-label">{item.label}</span>
+                  <span className={`impact-severity ${isModern ? 'benefit' : ''} ${item.impact.toLowerCase()}`}>
+                    {item.impact} {isModern ? 'Benefit' : 'Impact'}
+                  </span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    );
   };
 
   return (
     <div className="architecture-challenge">
       <div className="challenge-header">
-        <h3>The Modern Enterprise Architecture Challenge</h3>
-        <p className="challenge-subtitle">
-          Today's enterprises face a critical inflection point. In a world where software defines competitive advantage, 
-          traditional approaches are failing to deliver the speed and resilience businesses require.
-        </p>
+        <h3>{architectureChallenge.title}</h3>
+        <p className="challenge-subtitle">{architectureChallenge.subtitle}</p>
       </div>
 
       <div className="approach-toggle">
-        <button 
-          className={`toggle-btn ${activeView === 'traditional' ? 'active' : ''}`}
-          onClick={() => setActiveView('traditional')}
-        >
-          <span className="toggle-icon">01</span>
-          Traditional Approach
-        </button>
-        <button 
-          className={`toggle-btn ${activeView === 'modern' ? 'active' : ''}`}
-          onClick={() => setActiveView('modern')}
-        >
-          <span className="toggle-icon">02</span>
-          Modern Approach
-        </button>
+        {architectureChallenge.views.map((view) => (
+          <button
+            key={view.id}
+            className={`toggle-btn ${activeView === view.id ? 'active' : ''}`}
+            onClick={() => setActiveView(view.id)}
+          >
+            <span className="toggle-icon">{view.icon}</span>
+            {view.label}
+          </button>
+        ))}
       </div>
 
       <div className="approach-visualization">
-        {activeView === 'traditional' ? (
-          <div className="approach-content traditional">
-            <div className="approach-header">
-              <div className="approach-icon">{traditionalApproachData.icon}</div>
-              <div className="approach-info">
-                <h4>{traditionalApproachData.title}</h4>
-                <p>{traditionalApproachData.description}</p>
-              </div>
-            </div>
-            <div className="costs-grid">
-              <h5>The Cost of Inaction</h5>
-              <div className="impact-items">
-                {traditionalApproachData.costs.map((cost, index) => (
-                  <div key={index} className={`impact-item ${cost.impact.toLowerCase()}`}>
-                    <div className="impact-icon">{cost.icon}</div>
-                    <div className="impact-content">
-                      <span className="impact-label">{cost.label}</span>
-                      <span className={`impact-severity ${cost.impact.toLowerCase()}`}>
-                        {cost.impact} Impact
-                      </span>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        ) : (
-          <div className="approach-content modern">
-            <div className="approach-header">
-              <div className="approach-icon">{modernApproachData.icon}</div>
-              <div className="approach-info">
-                <h4>{modernApproachData.title}</h4>
-                <p>{modernApproachData.description}</p>
-              </div>
-            </div>
-            <div className="benefits-grid">
-              <h5>The Urban Planning Advantage</h5>
-              <div className="impact-items">
-                {modernApproachData.benefits.map((benefit, index) => (
-                  <div key={index} className={`impact-item benefit ${benefit.impact.toLowerCase()}`}>
-                    <div className="impact-icon">{benefit.icon}</div>
-                    <div className="impact-content">
-                      <span className="impact-label">{benefit.label}</span>
-                      <span className={`impact-severity benefit ${benefit.impact.toLowerCase()}`}>
-                        {benefit.impact} Benefit
-                      </span>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        )}
+        {renderApproach(activeApproach)}
       </div>
 
       <div className="challenge-cta">
         <div className="cta-content">
-          <h4>Ready to Transform Your Architecture Approach?</h4>
-          <p>Move from reactive building inspector to proactive urban planner</p>
+          <h4>{architectureChallenge.cta.title}</h4>
+          <p>{architectureChallenge.cta.body}</p>
         </div>
         <div className="cta-actions">
-          <button className="cta-btn primary" onClick={handleStartAssessment}>Start Assessment</button>
-          <button className="cta-btn secondary" onClick={scrollToFramework}>View Framework</button>
+          <button className="cta-btn primary" onClick={handleStartAssessment}>{architectureChallenge.cta.primaryLabel}</button>
+          <button className="cta-btn secondary" onClick={scrollToFramework}>{architectureChallenge.cta.secondaryLabel}</button>
         </div>
       </div>
     </div>

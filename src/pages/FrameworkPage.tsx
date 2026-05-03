@@ -3,6 +3,7 @@ import Constellation from '../components/Constellation'
 import AssessmentModal from '../components/AssessmentModal'
 import ArchitectureGuide from '../components/ArchitectureGuide'
 import AssessmentSection from '../components/AssessmentSection'
+import { createSitePath } from '../config/site'
 import { useState } from 'react'
 import { scrollToElementId, useHashScroll } from '../hooks/usePageLifecycle'
 import { useScrollAnimations } from '../hooks/useScrollAnimations'
@@ -120,6 +121,22 @@ const FrameworkPage = () => {
 
       {/* Assessment Section */}
       <AssessmentSection onOpenModal={openAssessmentModal} />
+
+      <section className="framework-product-bridge" aria-labelledby="framework-product-bridge-title">
+        <div className="framework-product-bridge__inner">
+          <div>
+            <span className="framework-section-kicker">From Map to Operating System</span>
+            <h2 id="framework-product-bridge-title">The constellation becomes useful when it turns into signals.</h2>
+            <p>
+              The framework names what to look for. The product view shows how those stars become dashboards,
+              evidence loops, governance checks, and maintainability metrics leadership can actually operate.
+            </p>
+          </div>
+          <a className="button-primary" href={createSitePath('/product')}>
+            See the Product View
+          </a>
+        </div>
+      </section>
 
       {/* Assessment Modal */}
       <AssessmentModal

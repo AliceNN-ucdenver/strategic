@@ -29,6 +29,14 @@
   letter-spacing: 0;
 }
 
+.resume-web-hero p {
+  max-width: 720px;
+  margin: 0.9rem 0 0;
+  color: #52647a;
+  font-size: 1.05rem;
+  line-height: 1.65;
+}
+
 .resume-web-actions {
   display: flex;
   flex-wrap: wrap;
@@ -36,19 +44,12 @@
   justify-content: flex-end;
 }
 
-.resume-web-actions .button-primary,
-.resume-web-actions .button-secondary {
+.resume-web-actions .button-primary {
   min-height: 44px;
   padding: 0.75rem 1rem;
   border-radius: 10px;
   font-size: 0.9rem;
   font-weight: 850;
-}
-
-.button-secondary--light {
-  color: #172033;
-  border-color: rgba(15, 23, 42, 0.18);
-  background: rgba(255, 255, 255, 0.7);
 }
 
 .resume-web-body {

@@ -1,0 +1,340 @@
+{
+  "name": "Shawn McCarthy",
+  "kicker": "Chief Archeologist | Enterprise Architecture Executive",
+  "title": "Vice President, Chief Architect, Global Architecture, Risk and Governance | PhD Candidate, December 2026",
+  "location": "Denver, Colorado",
+  "email": "smccarthy@iasaoffice.org",
+  "linkedin": "linkedin.com/in/shawnemccarthy",
+  "website": "chiefarcheologist.com",
+  "photo": "/images/Engineering_Crop.jpg",
+  "summary": "Enterprise architecture and AI governance leader with 20+ years modernizing complex financial services technology portfolios. Known for turning architectural evidence into strategy, product operating models, security-left governance, and measurable executive decision systems.",
+  "atsSummary": "Enterprise architecture and AI governance executive with 20+ years modernizing complex financial services technology portfolios. Leads global architecture, application security, and information risk teams across multinational environments. Known for turning architectural evidence into strategy, product operating models, security-left governance, and platform modernization.",
+  "impactHighlights": [
+    "Lead a 72-person global architecture, application security, and information risk organization supporting approximately 655 applications across North America, Asia, and Europe.",
+    "Transformed fragmented architecture governance into a federated, outcome-driven capability embedded in business strategy, risk management, and delivery execution.",
+    "Recognized as a Forrester 2025 Enterprise Architecture Awards finalist for Project Atlas, an architect development and practice maturity program.",
+    "Evolved portfolio planning from disposition-based application roadmaps to strategic business blueprints across Global Retail, Global Retirement, and Institutional businesses.",
+    "Led a 200-person engineering organization at Vantiv across API products, developer portals, prepaid platforms, secure delivery, and PCI/SOX control environments."
+  ],
+  "keywords": [
+    "Enterprise Architecture",
+    "AI Governance",
+    "Application Security",
+    "Information Risk",
+    "Technology Strategy",
+    "Product Architecture",
+    "DevSecOps",
+    "Cloud Platforms",
+    "Architecture Governance",
+    "Platform Modernization",
+    "Talent Development",
+    "Financial Services",
+    "Application Portfolio Management",
+    "Risk Management",
+    "API Strategy",
+    "API Product Strategy",
+    "Developer Experience",
+    "Engineering Leadership",
+    "NVIDIA DLI",
+    "Agentic AI",
+    "Generative AI",
+    "Generative Deep Learning"
+  ],
+  "roles": [
+    {
+      "title": "Vice President, Chief Architect, Global Architecture, Risk and Governance",
+      "company": "Manulife Financial Corporation",
+      "date": "March 2020 - Present",
+      "bullets": [
+        "Lead enterprise architecture, application security, and information risk capabilities for a global financial services enterprise.",
+        "Manage architecture strategy for a multinational portfolio spanning insurance, wealth, retirement, and institutional business lines.",
+        "Built a federated architecture operating model connecting business capability, application portfolio, security risk, governance evidence, and delivery execution.",
+        "Guide modernization strategy across legacy systems, cloud platforms, APIs, AI delivery, and security-left governance."
+      ]
+    },
+    {
+      "title": "Managing Director, Platform and Application Architecture",
+      "company": "Charles Schwab",
+      "date": "September 2016 - March 2020",
+      "bullets": [
+        "Led centralized solution architecture for digital experience, trading, mobile, digital messaging, CI/CD, APIs, cloud, and wealth management platforms.",
+        "Developed technology strategy blueprints and multi-year roadmaps for a 1,200+ application portfolio.",
+        "Established architecture practices for platform strategy, 4+1 architecture views, modernization, and technical debt management.",
+        "Created the N.E.R.D. talent development program to accelerate cross-functional engineering and architecture capability."
+      ]
+    },
+    {
+      "title": "Head of Portals and APIs / Director, Application Development",
+      "company": "Vantiv",
+      "date": "November 2011 - September 2016",
+      "bullets": [
+        "Led a 200-person engineering organization across API solutions, developer portals, prepaid platform delivery, and secure application development.",
+        "Advanced API-as-a-product, developer experience, SOA, ESB, and modern .NET architecture patterns for transaction-processing platforms.",
+        "Directed platform improvements across automation, test automation, monitoring, logging, security frameworks, encryption, data warehousing, reporting, and responsive web strategy.",
+        "Served across application security, agile change, PCI/SOX audit, intern development, and organizational transformation initiatives."
+      ]
+    },
+    {
+      "title": "Graduate Instructor and Advisory Board Member",
+      "company": "University of Colorado Denver",
+      "date": "January 2015 - Present",
+      "bullets": [
+        "Teach graduate-level technology courses covering generative AI, LLM applications, cloud deployment, DevSecOps, APIs, and test automation.",
+        "State-approved continuing education provider for Generative AI Deep Learning Ethics for licensed insurance professionals."
+      ]
+    }
+  ],
+  "credentials": [
+    "PhD Candidate, Computer Science and Information Systems, expected December 2026",
+    "University of Colorado Denver, Graduate Instructor",
+    "Platinum NVIDIA Deep Learning Institute Instructor",
+    "NVIDIA Certified Professional: Agentic AI",
+    "Certified across the NVIDIA generative deep learning suite",
+    "Chief Architect Forum, Board Member"
+  ],
+  "publications": [
+    "From Gatekeepers to Launchpads: How Autonomous Governance Transforms Enterprise Architecture - Metis / IASA Global, 2026",
+    "The Engineering Imperative: Why AI Will Not Replace Your Best Developers - CIO.com, 2025",
+    "From Fixed Frameworks to Strategic Enablers: Architecting AI Transformation - CIO.com, 2025",
+    "Cross-Document Emotion Consistency Framework for Financial Disclosure Risk Screening - Journal of Risk and Financial Management, 2026",
+    "US Patent 10,970,112 B2"
+  ],
+  "web": {
+    "eyebrow": "Chief Archeologist",
+    "title": "Vice President, Chief Architect, Global Architecture, Risk and Governance",
+    "strengths": ["Strategic", "Achiever", "Learner", "Activator", "Relator", "Maximizer"],
+    "summary": {
+      "lead": "Distinguished enterprise architecture executive and PhD Candidate",
+      "text": "with 25+ years transforming complex global organizations through innovative technology strategies. Currently serving as Vice President at Manulife, managing a comprehensive architecture practice that has evolved from a fragmented, ad-hoc function into a federated, outcome-driven capability deeply embedded in business strategy and delivery. Recognized thought leader with major publications in InfoWorld and CIO.com, passionate about advancing AI technologies and enterprise transformation while completing a PhD in Computer Science and Information Systems, expected December 2026."
+    },
+    "competencies": [
+      {
+        "title": "Enterprise Architecture",
+        "description": "Solution Architecture, API Strategy, System Discovery & Cataloging, Portfolio Health Management, Technology Enablement Platforms"
+      },
+      {
+        "title": "Risk & Governance",
+        "description": "DevSecOps Integration, Application Security, Regulatory Compliance, End-to-End Testing, Risk Management Transformation"
+      },
+      {
+        "title": "AI & Innovation",
+        "description": "Large Language Models, Generative AI, Predictive AI, AI Ethics, Neural Networks, Financial AI Research"
+      },
+      {
+        "title": "Thought Leadership",
+        "description": "Industry Publications (InfoWorld, CIO.com), IASA Board Leadership, Enterprise Transformation Strategy, Research & Innovation"
+      },
+      {
+        "title": "Education & Mentorship",
+        "description": "Graduate Instruction, Curriculum Development, Professional Mentorship, Student Leadership, Inclusion Advocacy"
+      },
+      {
+        "title": "Global Operations",
+        "description": "International Team Leadership, Cross-Cultural Management, Regulatory Compliance, Digital Transformation"
+      }
+    ],
+    "education": [
+      {
+        "degree": "PhD Candidate, Computer Science and Information Systems",
+        "institution": "University of Colorado Denver",
+        "details": "Expected December 2026 | Thesis: \"Fin-ALICE Framework\" - Integrating causal inference, emotional sentiment analysis, and dynamic co-occurrence networks for enhanced financial forecasting"
+      },
+      {
+        "degree": "M.S., Computer Science and Engineering",
+        "institution": "University of Colorado Denver",
+        "details": "2004 - 2009 | GPA: 4.0 | AI Focus: Intelligent Agents, Neural Networks, Linguistic Geometry, Expert Systems"
+      },
+      {
+        "degree": "B.S., Computer Science and Engineering",
+        "institution": "University of Colorado Denver",
+        "details": "1999 - 2003 | GPA: 3.99 | Minor in Mathematics | Golden Key National Honor Society"
+      }
+    ],
+    "certifications": {
+      "intro": {
+        "label": "Platinum NVIDIA Deep Learning Institute Instructor",
+        "url": "https://www.nvidia.com/en-us/training/instructor-directory/bio/?instructorId=0038Z000036WJjcQAG",
+        "description": "NVIDIA Certified Professional in Agentic AI and certified across the generative deep learning suite, including LLM applications, LLM agents, multimodal generative AI, RAG pipelines, prompt engineering, model customization, diffusion models, and AI anomaly detection."
+      },
+      "categories": [
+        {
+          "title": "Professional Certifications",
+          "items": [
+            {"badge": "NVIDIA NCP", "label": "Agentic AI - Subject Matter Expert"},
+            {"badge": "NVIDIA NCP-AAI", "label": "NVIDIA Certified Professional: Agentic AI"},
+            {"badge": "NVIDIA DLI", "label": "Platinum Deep Learning Institute Instructor"}
+          ]
+        },
+        {
+          "title": "Generative Deep Learning Suite",
+          "items": [
+            {"badge": "NVIDIA DLI", "label": "Large Language Model (LLM) Applications"},
+            {"badge": "NVIDIA DLI", "label": "Large Language Model (LLM) Agents"},
+            {"badge": "NVIDIA DLI", "label": "Sovereign AI"},
+            {"badge": "NVIDIA DLI", "label": "Multimodal Generative AI"}
+          ]
+        },
+        {
+          "title": "Instructor-Certified Courses",
+          "items": [
+            {"badge": "NVIDIA DLI", "label": "Building Agentic AI Applications with LLMs"},
+            {"badge": "NVIDIA DLI", "label": "Building AI Agents with Multimodal Models"},
+            {"badge": "NVIDIA DLI", "label": "Building Transformer-Based NLP Applications"},
+            {"badge": "NVIDIA DLI", "label": "Building LLM Applications with Prompt Engineering"},
+            {"badge": "NVIDIA DLI", "label": "Rapid Application Development with LLMs"},
+            {"badge": "NVIDIA DLI", "label": "Efficient LLM Customization"},
+            {"badge": "NVIDIA DLI", "label": "Generative AI with Diffusion Models"},
+            {"badge": "NVIDIA DLI", "label": "Building RAG Agents with LLMs"},
+            {"badge": "NVIDIA DLI", "label": "Deploying RAG Pipelines for Production at Scale"},
+            {"badge": "NVIDIA DLI", "label": "Adding New Knowledge to LLMs"},
+            {"badge": "NVIDIA DLI", "label": "Applications of AI for Anomaly Detection"}
+          ]
+        }
+      ]
+    },
+    "roles": [
+      {
+        "logo": "MFC",
+        "title": "Vice President, Chief Architect, Global Architecture, Risk and Governance",
+        "company": "Manulife Financial Corporation",
+        "date": "March 2020 - Present",
+        "highlight": {"label": "Enterprise Leadership", "text": "Leading 72-person global architecture practice managing ~655 applications across North America, Asia, and Europe for Canada's largest insurance company (28th largest fund manager globally)."},
+        "bullets": [
+          "Transformed fragmented architecture function into federated, outcome-driven capability deeply embedded in business strategy",
+          "Forrester 2025 EA Awards Finalist (North America): Recognized for pioneering Project Atlas - an industry-leading program transforming architect development and practice maturity",
+          "Evolved from Disposition-based Application Roadmaps to Strategic Business Blueprints across Global Retail, Global Retirement, and Institutional lines of business",
+          "Lead team of 20 enterprise architects, 12 application security professionals, and 40 information risk specialists",
+          "Manage technology strategy for world's 28th largest fund manager with strong presence in Canada, Asia, and United States",
+          "Drive solution architecture and organizational development across multinational enterprise operations",
+          "Champion regulatory compliance and risk management across diverse international markets"
+        ]
+      },
+      {
+        "logo": "UCD",
+        "title": "Graduate Instructor & Advisory Board Member",
+        "company": "University of Colorado Denver",
+        "date": "January 2015 - Present",
+        "highlight": {"label": "AI Education Pioneer", "text": "State-approved continuing education provider specializing in AI ethics for professional development in the financial services industry."},
+        "bullets": [
+          "Designed and delivered Generative AI course covering LLMs, transformer architectures, and AI ethics",
+          "Colorado State-Approved CE Educator: \"Generative AI Deep Learning Ethics\" presentation approved for 1 CE credit for licensed insurance producers",
+          "Instructor for Web API Technologies with focus on cloud deployment, DevSecOps, and test automation",
+          "Faculty advisor for AI Student Association - fostering next-generation AI talent",
+          "Advisory board leadership: expand community presence, develop industry partnerships"
+        ]
+      },
+      {
+        "logo": "AI4F",
+        "title": "Artificial Intelligence Researcher",
+        "company": "AI4Finance-Foundation",
+        "date": "July 2023 - Present",
+        "bullets": [
+          "Contribute to open-source AI research focused on large-scale financial AI systems",
+          "Develop novel frameworks integrating emotional sentiment analysis with temporal convolutional networks"
+        ]
+      },
+      {
+        "logo": "CS",
+        "title": "Managing Director - Platform and Application Architecture",
+        "company": "Charles Schwab",
+        "date": "September 2016 - March 2020",
+        "highlight": {"label": "Architecture Practice & Talent Development", "text": "Established centralized application architecture practice for 1,200+ applications and pioneered N.E.R.D. program to accelerate next-generation engineering talent development."},
+        "bullets": [
+          "Led centralized solution architecture team focused on digital experience architecture (Schwab.com, Mobile, Trading, Digital Messaging, CI/CD, Wealth Management)",
+          "Developed comprehensive Technology Strategy Blueprints providing 3-5 year technical roadmaps with qualitative/quantitative assessments",
+          "Pioneered Platform Technology Strategy across mobile-first, Web APIs, and cloud (IaaS, PaaS, SaaS, CaaS) initiatives",
+          "Implemented 4+1 architectural view models and tech debt management across enterprise technology stack",
+          "Created N.E.R.D. (New Employee Recruitment and Development) program - accelerated professional development with cross-functional skills and future technologies",
+          "Managed application modernization strategy aligning technology capabilities with business objectives across client experience and wealth management"
+        ]
+      },
+      {
+        "logo": "V",
+        "title": "Head of Portals and APIs / Director, Application Development",
+        "company": "Vantiv",
+        "date": "November 2011 - September 2016",
+        "highlight": {"label": "Engineering Scale & API Product Leadership", "text": "Led a 200-person engineering organization across API solutions, developer portals, prepaid platforms, secure delivery, and PCI/SOX control environments."},
+        "bullets": [
+          "Owned engineering delivery and architecture for API-as-a-product, developer experience, SOA, ESB, and modern .NET platform patterns",
+          "Directed portal and prepaid platform modernization across transaction processing, secure code development, UX, performance, and maintainability improvements",
+          "Led platform foundations including deployment automation, test automation, monitoring, logging, encryption libraries, security frameworks, data warehousing, reporting, and responsive web strategy",
+          "Served on application security, agile change, intern development, and organizational transformation teams while supporting PCI and SOX audits"
+        ]
+      }
+    ],
+    "publications": [
+      {
+        "title": "Cross-Document Emotion Consistency (CDEC): A Feature Family Framework for Financial Disclosure Risk Screening",
+        "details": "Journal of Risk and Financial Management (JRFM) | 2026",
+        "url": "https://www.mdpi.com/1911-8074/19/4/251",
+        "description": "Framework measuring emotional alignment between SEC filings and earnings call Q&A using 28-dimensional emotion classification, achieving twice the risk separation of standard sentiment baselines for financial disclosure screening."
+      },
+      {
+        "title": "A Momentum-Based Normalization Framework for Generating Profitable Analyst Sentiment Signals",
+        "details": "International Journal of Financial Studies (IJFS) | 2026",
+        "url": "https://www.mdpi.com/2227-7072/14/1/4",
+        "description": "Momentum-based normalization framework for standardizing diverse analyst recommendations into profitable investment signals using firm-relative ECDF and expanding global quantile classification."
+      },
+      {
+        "title": "From Gatekeepers to Launchpads: How Autonomous Governance Transforms Enterprise Architecture",
+        "details": "Metis (IASA Global) | April 2026",
+        "url": "https://education.iasaglobal.org/whatsnew/articles/699d47860003304f932d",
+        "description": "Argues that the decision rate of AI-driven development has outrun any process that inspects decisions individually. Frames Architecture as Code, Risk as Code, Operations as Code, and Security as Code as the four-pillar convergence that turns architectural governance into a launchpad rather than a gate."
+      },
+      {
+        "title": "The Engineering Imperative: Why AI Won't Replace Your Best Developers",
+        "details": "CIO.com | October 2025",
+        "url": "https://www.cio.com/article/4080210/the-engineering-imperative-why-ai-wont-replace-your-best-developers.html",
+        "description": "Examines why AI will elevate rather than replace skilled engineers, introducing the 70/30 rule for AI-generated code and exploring the evolution from reactive maintenance to strategic architectural design."
+      },
+      {
+        "title": "From Fixed Frameworks to Strategic Enablers: Architecting AI Transformation",
+        "details": "CIO.com | July 2025",
+        "url": "https://www.cio.com/article/4020233/from-fixed-frameworks-to-strategic-enablers-architecting-ai-transformation.html",
+        "description": "Explores how traditional architectural approaches have become unsustainable for AI-driven enterprises. Argues for strategic enablement throughout the AI transformation lifecycle."
+      },
+      {
+        "title": "Security is dead: Long live risk management",
+        "details": "CIO.com | March 2025",
+        "url": "https://www.cio.com/article/3846774/security-is-dead-long-live-risk-management.html",
+        "description": "A CIO's guide to reimagining risk management in modern software development. Explores transformation from reactive security gatekeeping to proactive risk enablement."
+      },
+      {
+        "title": "How to leverage APIs for IT-enabled information capability",
+        "details": "InfoWorld | May 2025",
+        "url": "https://chiefarcheologist.com/resources#api-capability",
+        "description": "Explores how APIs can transform information architecture into strategic business capability through real-time data access and integration."
+      },
+      {
+        "title": "From project to product: Architecting the future of enterprise technology",
+        "details": "CIO.com | April 2025",
+        "url": "https://chiefarcheologist.com/resources#project-to-product",
+        "description": "Discusses transitioning from project-based thinking to product-centric architecture for continuous innovation and sustainable growth."
+      },
+      {
+        "title": "Fin-ALICE: Artificial Linguistic Intelligence Causal Econometrics",
+        "details": "Journal of Risk and Financial Management (JRFM) | 2024",
+        "url": "https://chiefarcheologist.com/resources#fin-alice",
+        "description": "Novel framework for financial forecasting integrating emotional sentiment analysis, supply chain dynamics, and advanced machine learning techniques."
+      },
+      {
+        "title": "The Emotion Magnitude Effect: Navigating Market Dynamics Amidst Supply Chain Events",
+        "details": "Journal of Risk and Financial Management (JRFM) | 2023",
+        "url": "https://chiefarcheologist.com/resources#emotion-magnitude",
+        "description": "Presents novel emotion magnitude metric capturing emotional undercurrents in financial markets during 2019-2021 using knowledge graphs and advanced NLP techniques."
+      },
+      {
+        "title": "Enhancing Financial Market Analysis with Emotion Corpora and News Co-Occurrence Networks",
+        "details": "Journal of Risk and Financial Management (JRFM) | 2022",
+        "url": "https://chiefarcheologist.com/resources#emotion-corpora",
+        "description": "Applied NLP to analyze 500,000+ financial news articles, identifying economic activity patterns and inter-company relationships using emotion corpora and advanced AI techniques."
+      },
+      {
+        "title": "Patent: System And Methods For Transaction-based Process Management",
+        "details": "US Patent #10,970,112 B2",
+        "url": "https://patents.google.com/patent/US10970112B2/en",
+        "description": "Innovative system design for automated transaction processing and workflow management in enterprise environments."
+      }
+    ]
+  }
+}
