@@ -67,6 +67,21 @@
   background: #14b8a6;
 }
 
+.post-status-badge {
+  display: inline-flex;
+  align-items: center;
+  min-height: 26px;
+  padding: 0.18rem 0.55rem;
+  border: 1px solid rgba(251, 191, 36, 0.42);
+  border-radius: 999px;
+  background: rgba(251, 191, 36, 0.14);
+  color: #fde68a;
+  font-size: 0.72rem;
+  font-weight: 850;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
 .post-title {
   margin: 0 0 1rem;
   --hero-title-max: 720px;
@@ -82,6 +97,32 @@
   --hero-subtitle-size: clamp(0.98rem, 1.15vw, 1.08rem);
   font-size: clamp(0.98rem, 1.15vw, 1.08rem);
   line-height: 1.58;
+}
+
+.draft-preview-notice {
+  display: grid;
+  gap: 0.22rem;
+  max-width: 680px;
+  margin: -0.35rem 0 1.25rem;
+  padding: 0.82rem 0.95rem;
+  border: 1px solid rgba(251, 191, 36, 0.28);
+  border-radius: 10px;
+  background: rgba(120, 53, 15, 0.28);
+  color: #fef3c7;
+  line-height: 1.45;
+}
+
+.draft-preview-notice strong {
+  color: #fde68a;
+  font-size: 0.78rem;
+  font-weight: 850;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.draft-preview-notice span {
+  color: rgba(254, 243, 199, 0.88);
+  font-size: 0.88rem;
 }
 
 .post-tags {
@@ -211,6 +252,10 @@
   font-size: 0.95rem;
   font-weight: 700;
   line-height: 1.35;
+}
+
+.rail-meta .rail-status dd {
+  color: #92400e;
 }
 
 .rail-tags {

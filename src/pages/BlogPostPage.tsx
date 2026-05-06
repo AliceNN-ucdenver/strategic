@@ -14,6 +14,18 @@ type MdxPostModule = {
 
 const postModules = import.meta.glob<MdxPostModule>('../content/posts/*.mdx')
 
+const getLocalPostDate = (dateString: string) => {
+  const [year, month, day] = dateString.split('-').map(Number)
+  return new Date(year, month - 1, day)
+}
+
+const isFutureDatedPost = (dateString: string) => {
+  const postDate = getLocalPostDate(dateString)
+  const today = new Date()
+  today.setHours(0, 0, 0, 0)
+  return postDate > today
+}
+
 // Custom components for MDX
 const mdxComponents = {
   h1: (props: React.ComponentPropsWithoutRef<'h1'>) => <h1 className="blog-h1" {...props} />,
@@ -109,6 +121,9 @@ const BlogPostPage: React.FC = () => {
     )
   }
 
+  const isDraftPreview = isFutureDatedPost(post.date)
+  const formattedPostDate = formatDate(post.date)
+
   return (
     <PageLayout className="site-page blog-post-page">
       <article className="blog-post-container">
@@ -127,13 +142,23 @@ const BlogPostPage: React.FC = () => {
 
               <div className="post-hero-copy">
                 <div className="post-meta">
-                  <time className="post-date">{formatDate(post.date)}</time>
+                  <time className="post-date">{formattedPostDate}</time>
                   <span className="post-read-time">{post.readTime}</span>
+                  {isDraftPreview && (
+                    <span className="post-status-badge">Scheduled Draft</span>
+                  )}
                 </div>
                 
                 <h1 className="editorial-hero__title post-title">{post.title}</h1>
                 
                 <p className="editorial-hero__subtitle post-excerpt">{post.excerpt}</p>
+
+                {isDraftPreview && (
+                  <div className="draft-preview-notice" role="status">
+                    <strong>Draft preview</strong>
+                    <span>This article is future-dated and will not appear in published listings until {formattedPostDate}.</span>
+                  </div>
+                )}
                 
                 <div className="post-tags">
                   {post.tags.slice(0, 6).map(tag => (
@@ -161,9 +186,15 @@ const BlogPostPage: React.FC = () => {
             <div className="rail-panel">
               <span className="rail-kicker">Field Notes</span>
               <dl className="rail-meta">
+                {isDraftPreview && (
+                  <div className="rail-status">
+                    <dt>Status</dt>
+                    <dd>Scheduled Draft</dd>
+                  </div>
+                )}
                 <div>
-                  <dt>Published</dt>
-                  <dd>{formatDate(post.date)}</dd>
+                  <dt>{isDraftPreview ? 'Publishes' : 'Published'}</dt>
+                  <dd>{formattedPostDate}</dd>
                 </div>
                 <div>
                   <dt>Reading Time</dt>
