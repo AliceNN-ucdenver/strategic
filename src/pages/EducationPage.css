@@ -316,6 +316,73 @@
   box-shadow: 0 24px 60px rgba(0, 0, 0, 0.22);
 }
 
+.atlas-flywheel {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-bottom: 1rem;
+}
+
+.atlas-flywheel text {
+  font-family: inherit;
+  text-anchor: middle;
+  dominant-baseline: middle;
+}
+
+.atlas-flywheel__ring {
+  fill: none;
+  stroke: rgba(94, 234, 212, 0.26);
+  stroke-width: 16;
+}
+
+.atlas-flywheel__arc {
+  fill: none;
+  stroke: #5eead4;
+  stroke-linecap: round;
+  stroke-width: 3;
+}
+
+.atlas-flywheel marker path {
+  fill: #5eead4;
+}
+
+.atlas-flywheel__core rect {
+  fill: rgba(15, 23, 42, 0.72);
+  stroke: rgba(94, 234, 212, 0.42);
+  stroke-width: 1.5;
+}
+
+.atlas-flywheel__core text {
+  fill: #ffffff;
+  font-size: 18px;
+  font-weight: 850;
+}
+
+.atlas-flywheel__node rect {
+  fill: rgba(255, 255, 255, 0.1);
+  stroke: rgba(148, 163, 184, 0.38);
+  stroke-width: 1.2;
+}
+
+.atlas-flywheel__node text {
+  fill: rgba(255, 255, 255, 0.88);
+  font-size: 13px;
+  font-weight: 760;
+}
+
+.atlas-flywheel__badge rect {
+  fill: rgba(94, 234, 212, 0.14);
+  stroke: rgba(94, 234, 212, 0.38);
+  stroke-width: 1.2;
+}
+
+.atlas-flywheel__badge text {
+  fill: #ccfbf1;
+  font-size: 12px;
+  font-weight: 850;
+  letter-spacing: 0.04em;
+}
+
 .atlas-signal-grid {
   display: grid;
   gap: 0.75rem;

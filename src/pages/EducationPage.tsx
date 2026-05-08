@@ -17,6 +17,87 @@ import { useScrollAnimations } from '../hooks/useScrollAnimations'
 import { useScrollToTop } from '../hooks/usePageLifecycle'
 import './EducationPage.css'
 
+const AtlasTeachingFirmGraphic = () => (
+  <svg
+    className="atlas-flywheel"
+    viewBox="0 0 520 280"
+    role="img"
+    aria-labelledby="atlas-flywheel-title atlas-flywheel-desc"
+  >
+    <title id="atlas-flywheel-title">ATLAS teaching firm flywheel</title>
+    <desc id="atlas-flywheel-desc">
+      A loop showing architecture foundations, mentored practice, portfolio evidence,
+      phase gates, certification readiness, and department capability.
+    </desc>
+    <defs>
+      <marker
+        id="atlas-arrow"
+        viewBox="0 0 10 10"
+        refX="8"
+        refY="5"
+        markerWidth="6"
+        markerHeight="6"
+        orient="auto-start-reverse"
+      >
+        <path d="M 0 0 L 10 5 L 0 10 z" />
+      </marker>
+    </defs>
+    <circle className="atlas-flywheel__ring" cx="260" cy="140" r="92" />
+    <path
+      className="atlas-flywheel__arc"
+      d="M 260 48 A 92 92 0 0 1 352 140"
+      markerEnd="url(#atlas-arrow)"
+    />
+    <path
+      className="atlas-flywheel__arc"
+      d="M 352 140 A 92 92 0 0 1 260 232"
+      markerEnd="url(#atlas-arrow)"
+    />
+    <path
+      className="atlas-flywheel__arc"
+      d="M 260 232 A 92 92 0 0 1 168 140"
+      markerEnd="url(#atlas-arrow)"
+    />
+    <path
+      className="atlas-flywheel__arc"
+      d="M 168 140 A 92 92 0 0 1 260 48"
+      markerEnd="url(#atlas-arrow)"
+    />
+
+    <g className="atlas-flywheel__core">
+      <rect x="196" y="108" width="128" height="64" rx="14" />
+      <text x="260" y="133">Teaching</text>
+      <text x="260" y="154">Firm</text>
+    </g>
+
+    <g className="atlas-flywheel__node" transform="translate(260 30)">
+      <rect x="-70" y="-20" width="140" height="40" rx="10" />
+      <text>Foundations</text>
+    </g>
+    <g className="atlas-flywheel__node" transform="translate(418 140)">
+      <rect x="-74" y="-20" width="148" height="40" rx="10" />
+      <text>Mentored Practice</text>
+    </g>
+    <g className="atlas-flywheel__node" transform="translate(260 250)">
+      <rect x="-76" y="-20" width="152" height="40" rx="10" />
+      <text>Portfolio Evidence</text>
+    </g>
+    <g className="atlas-flywheel__node" transform="translate(102 140)">
+      <rect x="-60" y="-20" width="120" height="40" rx="10" />
+      <text>Phase Gates</text>
+    </g>
+
+    <g className="atlas-flywheel__badge" transform="translate(100 52)">
+      <rect x="-46" y="-18" width="92" height="36" rx="18" />
+      <text>CITA-F</text>
+    </g>
+    <g className="atlas-flywheel__badge" transform="translate(420 52)">
+      <rect x="-64" y="-18" width="128" height="36" rx="18" />
+      <text>Capability</text>
+    </g>
+  </svg>
+)
+
 const EducationPage: React.FC = () => {
   useScrollToTop()
   useScrollAnimations()
@@ -188,6 +269,7 @@ const EducationPage: React.FC = () => {
           </div>
 
           <div className="atlas-proof-panel fade-in">
+            <AtlasTeachingFirmGraphic />
             <div className="atlas-signal-grid">
               {atlasSignals.map((signal) => (
                 <article className="atlas-signal-card" key={signal.label}>
