@@ -14,6 +14,7 @@ export const primaryNavItems: SiteNavItem[] = [
   { label: 'Home', path: '/' },
   { label: 'Framework', path: '/framework' },
   { label: 'Product', path: '/product' },
+  { label: 'Education', path: '/education' },
   { label: 'Blog', path: '/blog' },
   { label: 'Articles', path: '/resources' },
 ]
@@ -21,6 +22,7 @@ export const primaryNavItems: SiteNavItem[] = [
 export const footerExploreLinks: SiteNavItem[] = [
   { label: 'Framework', path: '/framework' },
   { label: 'Product Thinking', path: '/product' },
+  { label: 'Education', path: '/education' },
   { label: 'Blog', path: '/blog' },
   { label: 'Articles & Research', path: '/resources' },
 ]

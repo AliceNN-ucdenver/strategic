@@ -7,6 +7,7 @@ import './App.css'
 const FrameworkPage = lazy(() => import('./pages/FrameworkPage'))
 const ProductPage = lazy(() => import('./pages/ProductPage'))
 const ResourcesPage = lazy(() => import('./pages/ResourcesPage'))
+const EducationPage = lazy(() => import('./pages/EducationPage'))
 const BlogPage = lazy(() => import('./pages/BlogPage'))
 const BlogPostPage = lazy(() => import('./pages/BlogPostPage'))
 const ContactPage = lazy(() => import('./pages/ContactPage'))
@@ -24,6 +25,7 @@ function App() {
             <Route path="/" element={<HomePage />} />
             <Route path="/framework" element={<FrameworkPage />} />
             <Route path="/product" element={<ProductPage />} />
+            <Route path="/education" element={<EducationPage />} />
             <Route path="/blog" element={<BlogPage />} />
             <Route path="/blog/:slug" element={<BlogPostPage />} />
             <Route path="/contact" element={<ContactPage />} />
