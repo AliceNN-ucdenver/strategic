@@ -33,10 +33,49 @@
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
 }
 
-.cluster-guide-card:hover {
+.cluster-guide-card:not(.is-scheduled):hover {
   transform: translateY(-5px);
   box-shadow: 0 14px 32px rgba(15, 118, 110, 0.16);
   border-color: rgba(15, 118, 110, 0.3);
+}
+
+.cluster-guide-card.is-scheduled {
+  position: relative;
+  cursor: default;
+  overflow: hidden;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.72), rgba(241, 245, 249, 0.9)),
+    rgba(255, 255, 255, 0.82);
+  border-color: rgba(148, 163, 184, 0.32);
+  box-shadow: 0 8px 22px rgba(15, 23, 42, 0.06);
+}
+
+.cluster-guide-card.is-scheduled::after {
+  content: 'Scheduled';
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  z-index: 2;
+  padding: 0.3rem 0.6rem;
+  color: #475569;
+  background: rgba(255, 255, 255, 0.78);
+  border: 1px solid rgba(148, 163, 184, 0.36);
+  border-radius: 999px;
+  backdrop-filter: blur(10px);
+  font-size: 0.64rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.cluster-guide-card.is-scheduled .cluster-guide-image {
+  filter: grayscale(0.35) blur(1.5px) saturate(0.72);
+  transform: scale(1.02);
+}
+
+.cluster-guide-card.is-scheduled .cluster-guide-body {
+  background: rgba(255, 255, 255, 0.66);
+  backdrop-filter: blur(8px);
 }
 
 .cluster-guide-image-wrapper {
@@ -54,7 +93,7 @@
   transition: transform 0.4s ease;
 }
 
-.cluster-guide-card:hover .cluster-guide-image {
+.cluster-guide-card:not(.is-scheduled):hover .cluster-guide-image {
   transform: scale(1.05);
 }
 
@@ -115,7 +154,11 @@
   transition: transform 0.3s ease;
 }
 
-.cluster-guide-card:hover .cluster-guide-cta {
+.cluster-guide-cta.is-scheduled {
+  color: #64748b;
+}
+
+.cluster-guide-card:not(.is-scheduled):hover .cluster-guide-cta {
   transform: translateX(3px);
 }
 

@@ -29,15 +29,8 @@ export function getAllPosts(): BlogPost[] {
 }
 
 export function getPublishedPosts(): BlogPost[] {
-  const today = new Date()
-  today.setHours(23, 59, 59, 999) // Set to end of day to include today's posts
-  
   return getAllPosts().filter(post => {
-    const postDate = new Date(post.date)
-    postDate.setHours(0, 0, 0, 0) // Set to start of day for accurate comparison
-    
-    // Only include posts with dates <= today (exclude future-dated posts)
-    return postDate <= today
+    return isPostPublished(post.date)
   })
 }
 
@@ -75,4 +68,21 @@ export function formatDate(dateString: string): string {
     month: 'long',
     day: 'numeric'
   })
+}
+
+export function getLocalPostDate(dateString: string): Date {
+  const [year, month, day] = dateString.split('-').map(Number)
+  return new Date(year, month - 1, day)
+}
+
+export function isFutureDatedPost(dateString: string): boolean {
+  const postDate = getLocalPostDate(dateString)
+  const today = new Date()
+  today.setHours(0, 0, 0, 0)
+
+  return postDate > today
+}
+
+export function isPostPublished(dateString: string): boolean {
+  return !isFutureDatedPost(dateString)
 }

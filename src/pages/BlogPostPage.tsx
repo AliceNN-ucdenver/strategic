@@ -3,7 +3,7 @@ import type { ComponentType } from 'react'
 import { useParams, Link, Navigate } from 'react-router-dom'
 import { MDXProvider } from '@mdx-js/react'
 import PageLayout from '../components/PageLayout'
-import { getPostBySlug, formatDate } from '../utils/blog'
+import { getPostBySlug, formatDate, isFutureDatedPost } from '../utils/blog'
 import ImageZoom from '../components/ImageZoom'
 import { useScrollToTop } from '../hooks/usePageLifecycle'
 import './BlogPostPage.css'
@@ -13,18 +13,6 @@ type MdxPostModule = {
 }
 
 const postModules = import.meta.glob<MdxPostModule>('../content/posts/*.mdx')
-
-const getLocalPostDate = (dateString: string) => {
-  const [year, month, day] = dateString.split('-').map(Number)
-  return new Date(year, month - 1, day)
-}
-
-const isFutureDatedPost = (dateString: string) => {
-  const postDate = getLocalPostDate(dateString)
-  const today = new Date()
-  today.setHours(0, 0, 0, 0)
-  return postDate > today
-}
 
 // Custom components for MDX
 const mdxComponents = {

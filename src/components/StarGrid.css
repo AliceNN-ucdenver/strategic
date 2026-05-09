@@ -169,7 +169,8 @@
   border: 1px solid rgba(16, 185, 129, 0.22);
 }
 
-.guide-status-upcoming {
+.guide-status-upcoming,
+.guide-status-scheduled {
   color: #92400e;
   background: #fffbeb;
   border: 1px solid rgba(245, 158, 11, 0.25);

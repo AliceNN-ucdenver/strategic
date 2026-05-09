@@ -2,6 +2,7 @@ import React from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import type { Cluster, Star } from '../data/clusters'
 import { scrollToElementId } from '../hooks/usePageLifecycle'
+import { formatDate, getPostBySlug, isPostPublished } from '../utils/blog'
 import ModalShell from './ui/ModalShell'
 import './ConstellationModal.css'
 
@@ -123,40 +124,54 @@ const ConstellationModal: React.FC<ConstellationModalProps> = ({
 
           <h3 className="cluster-stars-heading">Three Stars in this Cluster</h3>
           <div className="cluster-stars-grid">
-            {cluster.stars.map((s, index) => (
-              <div
-                key={index}
-                className={`cluster-star-card ${s.articleStatus === 'upcoming' ? 'is-upcoming' : ''}`}
-                onClick={() => {
-                  if (s.articleStatus === 'published' && s.articleSlug) {
-                    onClose()
-                    navigate(`/blog/${s.articleSlug}`)
-                  } else if (onStarClick) {
-                    onStarClick(s)
-                  }
-                }}
-              >
-                {s.character && (
-                  <div className="cluster-star-character">
-                    <span className="cluster-star-emoji">{s.characterEmoji}</span>
-                    <span className="cluster-star-charname">{s.character}</span>
-                  </div>
-                )}
-                <h4 className="cluster-star-title">{s.title.replace('⭐ ', '')}</h4>
-                {s.articleHook && (
-                  <p className="cluster-star-hook">"{s.articleHook}"</p>
-                )}
-                {s.articleStatus === 'published' && s.articleSlug && (
-                  <span className="cluster-star-cta">Read the guide →</span>
-                )}
-                {s.articleStatus === 'upcoming' && (
-                  <span className="cluster-star-cta is-upcoming">Coming soon</span>
-                )}
-                {!s.articleSlug && s.articleStatus !== 'upcoming' && (
-                  <span className="cluster-star-cta">View details →</span>
-                )}
-              </div>
-            ))}
+            {cluster.stars.map((s, index) => {
+              const post = s.articleSlug ? getPostBySlug(s.articleSlug) : null
+              const isGuideAvailable = Boolean(
+                s.articleStatus === 'published' &&
+                post &&
+                isPostPublished(post.date)
+              )
+              const isScheduled = Boolean(post && !isGuideAvailable)
+
+              return (
+                <div
+                  key={index}
+                  className={`cluster-star-card ${isScheduled ? 'is-scheduled' : ''} ${s.articleStatus === 'upcoming' ? 'is-upcoming' : ''}`}
+                  aria-disabled={isScheduled ? 'true' : undefined}
+                  onClick={() => {
+                    if (isGuideAvailable && s.articleSlug) {
+                      onClose()
+                      navigate(`/blog/${s.articleSlug}`)
+                    } else if (!isScheduled && onStarClick) {
+                      onStarClick(s)
+                    }
+                  }}
+                >
+                  {s.character && (
+                    <div className="cluster-star-character">
+                      <span className="cluster-star-emoji">{s.characterEmoji}</span>
+                      <span className="cluster-star-charname">{s.character}</span>
+                    </div>
+                  )}
+                  <h4 className="cluster-star-title">{s.title.replace('⭐ ', '')}</h4>
+                  {s.articleHook && (
+                    <p className="cluster-star-hook">"{s.articleHook}"</p>
+                  )}
+                  {isGuideAvailable && s.articleSlug && (
+                    <span className="cluster-star-cta">Read the guide {'->'}</span>
+                  )}
+                  {isScheduled && post && (
+                    <span className="cluster-star-cta is-scheduled">Scheduled for {formatDate(post.date)}</span>
+                  )}
+                  {!s.articleSlug && s.articleStatus !== 'upcoming' && (
+                    <span className="cluster-star-cta">View details {'->'}</span>
+                  )}
+                  {s.articleStatus === 'upcoming' && !isScheduled && (
+                    <span className="cluster-star-cta is-upcoming">Coming soon</span>
+                  )}
+                </div>
+              )
+            })}
           </div>
 
           <div className="modal-actions">

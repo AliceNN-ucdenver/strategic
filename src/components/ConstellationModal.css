@@ -134,7 +134,7 @@
   box-shadow: 0 14px 36px rgba(15, 23, 42, 0.06);
 }
 
-.cluster-star-card:hover {
+.cluster-star-card:not(.is-scheduled):hover {
   background: #f8fafc;
   border-color: rgba(13, 148, 136, 0.36);
   transform: translateY(-3px);
@@ -143,6 +143,33 @@
 
 .cluster-star-card.is-upcoming {
   opacity: 0.7;
+}
+
+.cluster-star-card.is-scheduled {
+  position: relative;
+  cursor: default;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.76), rgba(241, 245, 249, 0.92)),
+    #ffffff;
+  border-color: rgba(148, 163, 184, 0.38);
+  box-shadow: 0 14px 34px rgba(15, 23, 42, 0.05);
+}
+
+.cluster-star-card.is-scheduled::after {
+  content: 'Scheduled';
+  position: absolute;
+  top: 0.8rem;
+  right: 0.8rem;
+  padding: 0.28rem 0.58rem;
+  color: #475569;
+  background: rgba(255, 255, 255, 0.78);
+  border: 1px solid rgba(148, 163, 184, 0.36);
+  border-radius: 999px;
+  backdrop-filter: blur(10px);
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.9px;
+  text-transform: uppercase;
 }
 
 .cluster-star-character {
@@ -193,6 +220,11 @@
 
 .cluster-star-cta.is-upcoming {
   color: #94a3b8;
+  font-style: italic;
+}
+
+.cluster-star-cta.is-scheduled {
+  color: #64748b;
   font-style: italic;
 }
 

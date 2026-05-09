@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import type { Star } from '../data/clusters';
 import { fieldGuides } from '../data/fieldGuides';
+import { formatDate, getPostBySlug, isPostPublished } from '../utils/blog';
 import './StarGrid.css';
 
 interface StarGridProps {
@@ -26,6 +27,12 @@ const StarGrid: React.FC<StarGridProps> = ({ stars }) => {
   const selectedStarName = selectedStar ? getStarName(selectedStar) : '';
   const selectedFieldGuide = selectedStar ? fieldGuides[selectedStarName] : undefined;
   const selectedGuidanceTitle = selectedStar ? stripDecorativePrefix(selectedStar.strategicGuidance.title) : '';
+  const selectedPost = selectedStar?.articleSlug ? getPostBySlug(selectedStar.articleSlug) : null;
+  const selectedGuideAvailable = Boolean(
+    selectedStar?.articleStatus === 'published' &&
+    selectedPost &&
+    isPostPublished(selectedPost.date)
+  );
   const valueMetricChips = selectedStar?.valueMetrics.split(',').map(metric => metric.trim()).filter(Boolean) ?? [];
 
   return (
@@ -60,8 +67,8 @@ const StarGrid: React.FC<StarGridProps> = ({ stars }) => {
         <div className="star-detail expanded" id={`star-detail-${expandedStar}`}>
           <div className="star-header">
             <div>
-              <span className={`guide-status guide-status-${selectedStar.articleStatus ?? 'upcoming'}`}>
-                {selectedStar.articleStatus === 'published' ? 'Published guide' : 'Guide in progress'}
+              <span className={`guide-status ${selectedGuideAvailable ? 'guide-status-published' : 'guide-status-scheduled'}`}>
+                {selectedGuideAvailable ? 'Published guide' : selectedPost ? `Scheduled ${formatDate(selectedPost.date)}` : 'Guide in progress'}
               </span>
               <h4>{selectedStarName}</h4>
             </div>
@@ -132,12 +139,14 @@ const StarGrid: React.FC<StarGridProps> = ({ stars }) => {
               </div>
 
               <div className="expanded-card-actions">
-                {selectedStar.articleStatus === 'published' && selectedStar.articleSlug ? (
+                {selectedGuideAvailable && selectedStar.articleSlug ? (
                   <Link to={`/blog/${selectedStar.articleSlug}`} className="guide-link">
                     Read the Full Guide
                   </Link>
                 ) : (
-                  <span className="guide-link disabled">Full Guide In Progress</span>
+                  <span className="guide-link disabled">
+                    {selectedPost ? `Full Guide Scheduled for ${formatDate(selectedPost.date)}` : 'Full Guide In Progress'}
+                  </span>
                 )}
               </div>
             </div>
