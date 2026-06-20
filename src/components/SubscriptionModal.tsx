@@ -16,41 +16,29 @@ type ConvertKitWindow = Window &
 
 const KIT_SCRIPT_SRC = 'https://f.convertkit.com/ckjs/ck.5.js';
 const FALLBACK_SUBSCRIBE_URL = 'https://rabbithole.pub/subscribe';
-const SCRIPT_LOAD_TIMEOUT_MS = 4000;
 const SUBMIT_TIMEOUT_MS = 5000;
 
 const SubscriptionModal: React.FC<SubscriptionModalProps> = ({ isOpen, onClose }) => {
-  // Set when Kit's script fails to load, when the watchdog timer expires before
-  // ConvertKitForm appears on window, or when the manual fetch fallback errors
-  // out. Triggered most commonly by Firefox's Enhanced Tracking Protection
-  // blocking the kit.com / convertkit.com domains.
+  // Flipped only by honest failure signals: the Kit script's onerror handler
+  // (ETP / network blocked the load) or a fetch error on submit. We do NOT
+  // poll for `window.ConvertKitForm` — Kit's rebranded script may never expose
+  // that legacy global, so a presence check produces false positives even
+  // when the script loaded fine and the POST works.
   const [kitBlocked, setKitBlocked] = useState(false);
+  const markBlocked = (reason: string) => {
+    console.warn(`[SubscriptionModal] Falling back to ${FALLBACK_SUBSCRIBE_URL}: ${reason}`);
+    setKitBlocked(true);
+  };
 
   useEffect(() => {
     if (!isOpen) return;
-
-    if ((window as ConvertKitWindow).ConvertKitForm) return;
-
-    if (document.querySelector(`script[src*="ck.5.js"]`)) {
-      // Script tag already in DOM from a prior open. If the global isn't
-      // present, give it the same watchdog window before declaring blocked.
-      const watchdog = window.setTimeout(() => {
-        if (!(window as ConvertKitWindow).ConvertKitForm) setKitBlocked(true);
-      }, SCRIPT_LOAD_TIMEOUT_MS);
-      return () => window.clearTimeout(watchdog);
-    }
+    if (document.querySelector(`script[src*="ck.5.js"]`)) return;
 
     const script = document.createElement('script');
     script.src = KIT_SCRIPT_SRC;
     script.async = true;
-    script.onerror = () => setKitBlocked(true);
+    script.onerror = () => markBlocked('Kit script failed to load (script.onerror)');
     document.head.appendChild(script);
-
-    const watchdog = window.setTimeout(() => {
-      if (!(window as ConvertKitWindow).ConvertKitForm) setKitBlocked(true);
-    }, SCRIPT_LOAD_TIMEOUT_MS);
-
-    return () => window.clearTimeout(watchdog);
   }, [isOpen]);
 
   const handleFormSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -93,8 +81,7 @@ const SubscriptionModal: React.FC<SubscriptionModalProps> = ({ isOpen, onClose }
       }
     } catch (error) {
       window.clearTimeout(timeoutId);
-      console.error('Subscription error:', error);
-      setKitBlocked(true);
+      markBlocked(`fetch error — ${error instanceof Error ? error.message : String(error)}`);
     }
   };
 
