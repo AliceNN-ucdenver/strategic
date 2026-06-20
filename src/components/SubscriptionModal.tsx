@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import ModalShell from './ui/ModalShell';
 import './SubscriptionModal.css';
 
@@ -14,57 +14,87 @@ type ConvertKitWindow = Window &
     };
   };
 
+const KIT_SCRIPT_SRC = 'https://f.convertkit.com/ckjs/ck.5.js';
+const FALLBACK_SUBSCRIBE_URL = 'https://rabbithole.pub/subscribe';
+const SCRIPT_LOAD_TIMEOUT_MS = 4000;
+const SUBMIT_TIMEOUT_MS = 5000;
+
 const SubscriptionModal: React.FC<SubscriptionModalProps> = ({ isOpen, onClose }) => {
+  // Set when Kit's script fails to load, when the watchdog timer expires before
+  // ConvertKitForm appears on window, or when the manual fetch fallback errors
+  // out. Triggered most commonly by Firefox's Enhanced Tracking Protection
+  // blocking the kit.com / convertkit.com domains.
+  const [kitBlocked, setKitBlocked] = useState(false);
+
   useEffect(() => {
-    if (isOpen) {
-      // Load Kit script if not already loaded
-      if (!document.querySelector('script[src*="ck.5.js"]')) {
-        const script = document.createElement('script');
-        script.src = 'https://f.convertkit.com/ckjs/ck.5.js';
-        script.async = true;
-        document.head.appendChild(script);
-      }
+    if (!isOpen) return;
+
+    if ((window as ConvertKitWindow).ConvertKitForm) return;
+
+    if (document.querySelector(`script[src*="ck.5.js"]`)) {
+      // Script tag already in DOM from a prior open. If the global isn't
+      // present, give it the same watchdog window before declaring blocked.
+      const watchdog = window.setTimeout(() => {
+        if (!(window as ConvertKitWindow).ConvertKitForm) setKitBlocked(true);
+      }, SCRIPT_LOAD_TIMEOUT_MS);
+      return () => window.clearTimeout(watchdog);
     }
+
+    const script = document.createElement('script');
+    script.src = KIT_SCRIPT_SRC;
+    script.async = true;
+    script.onerror = () => setKitBlocked(true);
+    document.head.appendChild(script);
+
+    const watchdog = window.setTimeout(() => {
+      if (!(window as ConvertKitWindow).ConvertKitForm) setKitBlocked(true);
+    }, SCRIPT_LOAD_TIMEOUT_MS);
+
+    return () => window.clearTimeout(watchdog);
   }, [isOpen]);
 
-  const handleFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleFormSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    
-    // Let Kit's JavaScript handle the submission
+
     const form = e.currentTarget;
     const convertKitForm = (window as ConvertKitWindow).ConvertKitForm;
-    
-    // Check if Kit's script has loaded and initialized
+
     if (convertKitForm) {
       convertKitForm.handleSubmit(form);
-    } else {
-      // Fallback: trigger Kit's form submission manually
-      const formData = new FormData(form);
-      const email = formData.get('email_address');
-      
-      if (email) {
-        fetch(form.action, {
-          method: 'POST',
-          body: formData,
-          headers: {
-            'Accept': 'application/json'
-          }
-        }).then(response => {
-          if (response.ok) {
-            // Show success message by replacing form content
-            const formContainer = form.querySelector('.formkit-column');
-            if (formContainer) {
-              formContainer.innerHTML = `
-                <div class="formkit-alert formkit-alert-success" style="display: block;">
-                  Welcome to the Rabbit Hole! 🐰 Check your email to confirm your subscription. Your journey through the Strategic Architecture Constellations begins soon - the Cheshire Cat has some strategic vision insights waiting for you.
-                </div>
-              `;
-            }
-          }
-        }).catch(error => {
-          console.error('Subscription error:', error);
-        });
+      return;
+    }
+
+    // Fallback: post directly to Kit. Bounded by a timeout so a hung request
+    // doesn't leave the user staring at a dead button.
+    const formData = new FormData(form);
+    if (!formData.get('email_address')) return;
+
+    const controller = new AbortController();
+    const timeoutId = window.setTimeout(() => controller.abort(), SUBMIT_TIMEOUT_MS);
+
+    try {
+      const response = await fetch(form.action, {
+        method: 'POST',
+        body: formData,
+        headers: { Accept: 'application/json' },
+        signal: controller.signal,
+      });
+      window.clearTimeout(timeoutId);
+
+      if (!response.ok) throw new Error(`Kit responded ${response.status}`);
+
+      const formContainer = form.querySelector('.formkit-column');
+      if (formContainer) {
+        formContainer.innerHTML = `
+          <div class="formkit-alert formkit-alert-success" style="display: block;">
+            Welcome to the Rabbit Hole! 🐰 Check your email to confirm your subscription. Your journey through the Strategic Architecture Constellations begins soon - the Cheshire Cat has some strategic vision insights waiting for you.
+          </div>
+        `;
       }
+    } catch (error) {
+      window.clearTimeout(timeoutId);
+      console.error('Subscription error:', error);
+      setKitBlocked(true);
     }
   };
 
@@ -101,32 +131,59 @@ const SubscriptionModal: React.FC<SubscriptionModalProps> = ({ isOpen, onClose }
                 <p>Learn how the Cheshire Cat's strategic vision, the Mad Hatter's innovation labs, and 10 other character guides can transform you from technical architect to strategic business enabler.</p>
               </div>
               <ul className="formkit-alert formkit-alert-error" data-element="errors" data-group="alert"></ul>
-              <div data-element="fields" data-stacked="false" className="seva-fields formkit-fields">
-                <div className="formkit-field">
-                  <input 
-                    className="formkit-input" 
-                    name="email_address" 
-                    aria-label="Email Address" 
-                    placeholder="Email Address" 
-                    required 
-                    type="email" 
-                    style={{color: '#334155', backgroundColor: '#f8fafc', borderRadius: '5px', fontWeight: 400}}
-                  />
+              {kitBlocked ? (
+                <div className="seva-fields formkit-fields">
+                  <p style={{color: '#475569', fontSize: '0.9rem', marginBottom: '0.75rem'}}>
+                    Looks like tracking protection blocked the subscribe form. You can subscribe directly on Kit — it opens in a new tab.
+                  </p>
+                  <a
+                    href={FALLBACK_SUBSCRIBE_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={onClose}
+                    className="formkit-submit"
+                    style={{
+                      color: '#ffffff',
+                      backgroundColor: '#0f766e',
+                      borderRadius: '5px',
+                      fontWeight: 700,
+                      textDecoration: 'none',
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      justifyContent: 'center'
+                    }}
+                  >
+                    <span>Subscribe on Kit ↗</span>
+                  </a>
                 </div>
-                <button 
-                  data-element="submit" 
-                  className="formkit-submit formkit-submit" 
-                  type="submit"
-                  style={{color: '#ffffff', backgroundColor: '#0f766e', borderRadius: '5px', fontWeight: 700}}
-                >
-                  <div className="formkit-spinner">
-                    <div></div>
-                    <div></div>
-                    <div></div>
+              ) : (
+                <div data-element="fields" data-stacked="false" className="seva-fields formkit-fields">
+                  <div className="formkit-field">
+                    <input
+                      className="formkit-input"
+                      name="email_address"
+                      aria-label="Email Address"
+                      placeholder="Email Address"
+                      required
+                      type="email"
+                      style={{color: '#334155', backgroundColor: '#f8fafc', borderRadius: '5px', fontWeight: 400}}
+                    />
                   </div>
-                  <span>Subscribe</span>
-                </button>
-              </div>
+                  <button
+                    data-element="submit"
+                    className="formkit-submit formkit-submit"
+                    type="submit"
+                    style={{color: '#ffffff', backgroundColor: '#0f766e', borderRadius: '5px', fontWeight: 700}}
+                  >
+                    <div className="formkit-spinner">
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                    </div>
+                    <span>Subscribe</span>
+                  </button>
+                </div>
+              )}
               <div className="formkit-disclaimer" data-element="disclaimer" style={{color: '#64748b'}}>
                 We respect your privacy. Unsubscribe at any time.
               </div>
