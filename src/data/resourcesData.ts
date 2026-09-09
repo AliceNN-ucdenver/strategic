@@ -103,6 +103,15 @@ export const resourceArticles: ResourceArticle[] = [
     track: 'career',
   },
   {
+    title: "Supply-Chain Disruption, Supplier-Country Health, and the Reallocation of US Import-Value Shares: Monthly Evidence Under Timing-Disciplined Measurement",
+    publication: "MDPI - Economies",
+    excerpt:
+      "Builds a Country Health Score for 62 supplier economies from 564,983 deduplicated news records (2018-2026) plus IMF, COMTRADE, and BIS data, showing that reference-dated deterioration precedes within-commodity US import share erosion over three to twelve months while the availability-lagged composite is null.",
+    url: "https://www.mdpi.com/2227-7099/14/9/395",
+    tags: ["Supply Chain Risk", "Trade Analytics", "Econometrics", "Research"],
+    track: 'research',
+  },
+  {
     title: "Cross-Document Emotion Consistency (CDEC): A Feature Family Framework for Financial Disclosure Risk Screening",
     publication: "MDPI - Journal of Risk and Financial Management",
     excerpt:

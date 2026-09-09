@@ -93,6 +93,7 @@
     "Chief Architect Forum, Board Member"
   ],
   "publications": [
+    "Supply-Chain Disruption, Supplier-Country Health, and the Reallocation of US Import-Value Shares - Economies (MDPI), 2026",
     "From Gatekeepers to Launchpads: How Autonomous Governance Transforms Enterprise Architecture - Metis / IASA Global, 2026",
     "The Engineering Imperative: Why AI Will Not Replace Your Best Developers - CIO.com, 2025",
     "From Fixed Frameworks to Strategic Enablers: Architecting AI Transformation - CIO.com, 2025",
@@ -263,6 +264,12 @@
       }
     ],
     "publications": [
+      {
+        "title": "Supply-Chain Disruption, Supplier-Country Health, and the Reallocation of US Import-Value Shares: Monthly Evidence Under Timing-Disciplined Measurement",
+        "details": "Economies (MDPI) | 2026",
+        "url": "https://www.mdpi.com/2227-7099/14/9/395",
+        "description": "Country Health Score built from 564,983 deduplicated news records and IMF, COMTRADE, and BIS data across 62 supplier economies, showing reference-dated deterioration precedes within-commodity US import share erosion over three to twelve months under timing-disciplined measurement."
+      },
       {
         "title": "Cross-Document Emotion Consistency (CDEC): A Feature Family Framework for Financial Disclosure Risk Screening",
         "details": "Journal of Risk and Financial Management (JRFM) | 2026",
