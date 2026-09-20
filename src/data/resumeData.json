@@ -1,16 +1,17 @@
 {
   "name": "Shawn McCarthy",
   "kicker": "Chief Archeologist | Enterprise Architecture Executive",
-  "title": "Vice President, Chief Architect, Global Architecture, Risk and Governance | PhD Candidate, December 2026",
+  "title": "Vice President, Architecture and Technology Strategy | PhD Candidate, December 2026",
   "location": "Denver, Colorado",
   "email": "smccarthy@iasaoffice.org",
   "linkedin": "linkedin.com/in/shawnemccarthy",
   "website": "chiefarcheologist.com",
   "photo": "/images/Engineering_Crop.jpg",
-  "summary": "Enterprise architecture and AI governance leader with 20+ years modernizing complex financial services technology portfolios. Known for turning architectural evidence into strategy, product operating models, security-left governance, and measurable executive decision systems.",
-  "atsSummary": "Enterprise architecture and AI governance executive with 20+ years modernizing complex financial services technology portfolios. Leads global architecture, application security, and information risk teams across multinational environments. Known for turning architectural evidence into strategy, product operating models, security-left governance, and platform modernization.",
+  "summary": "Technology strategy and enterprise architecture leader with 20+ years modernizing complex financial services technology portfolios. Known for turning architectural evidence into investment strategy, product operating models, AI-enabled engineering, and measurable executive decision systems.",
+  "atsSummary": "Technology strategy and enterprise architecture executive with 20+ years modernizing complex financial services technology portfolios. Leads business, financial, and technology strategy for a global wealth and asset management organization, following six years leading global architecture, application security, and information risk. Known for turning architectural evidence into investment strategy, product operating models, AI-enabled engineering, and platform modernization.",
   "impactHighlights": [
-    "Lead a 72-person global architecture, application security, and information risk organization supporting approximately 655 applications across North America, Asia, and Europe.",
+    "Lead business, financial, and technology strategy for Manulife's Global Wealth & Asset Management organization, spanning technology investment, platform modernization, AI-enabled engineering, innovation, and operating model transformation.",
+    "Led a 72-person global architecture, application security, and information risk organization supporting approximately 655 applications across North America, Asia, and Europe.",
     "Transformed fragmented architecture governance into a federated, outcome-driven capability embedded in business strategy, risk management, and delivery execution.",
     "Recognized as a Forrester 2025 Enterprise Architecture Awards finalist for Project Atlas, an architect development and practice maturity program.",
     "Evolved portfolio planning from disposition-based application roadmaps to strategic business blueprints across Global Retail, Global Retirement, and Institutional businesses.",
@@ -42,14 +43,25 @@
   ],
   "roles": [
     {
-      "title": "Vice President, Chief Architect, Global Architecture, Risk and Governance",
+      "title": "Vice President, Architecture and Technology Strategy",
       "company": "Manulife Financial Corporation",
-      "date": "March 2020 - Present",
+      "date": "August 2026 - Present",
       "bullets": [
-        "Lead enterprise architecture, application security, and information risk capabilities for a global financial services enterprise.",
-        "Manage architecture strategy for a multinational portfolio spanning insurance, wealth, retirement, and institutional business lines.",
+        "Lead business, financial, and technology strategy for Manulife's Global Wealth & Asset Management organization.",
+        "Accountable for architecture, technology investment strategy, platform modernization, AI-enabled engineering, innovation, and operating model transformation.",
+        "Align capital allocation, architecture, agentic engineering, autonomous software delivery, workforce transformation, and governance to turn technology into measurable business value.",
+        "Drive growth, delivery predictability, resiliency, cost optimization, and scalable enterprise performance through disciplined investment decisions and modern engineering practices."
+      ]
+    },
+    {
+      "title": "Vice President, Chief Architect, Security Officer",
+      "company": "Manulife Financial Corporation",
+      "date": "March 2020 - August 2026",
+      "bullets": [
+        "Led enterprise architecture, application security, and information risk capabilities for a global financial services enterprise.",
+        "Owned architecture, risk, and operational/engineering governance for Global Wealth and Asset Management across the US, Canada, Asia, and Europe.",
         "Built a federated architecture operating model connecting business capability, application portfolio, security risk, governance evidence, and delivery execution.",
-        "Guide modernization strategy across legacy systems, cloud platforms, APIs, AI delivery, and security-left governance."
+        "Guided modernization strategy across legacy systems, cloud platforms, APIs, AI delivery, and security-left governance."
       ]
     },
     {
@@ -102,11 +114,11 @@
   ],
   "web": {
     "eyebrow": "Chief Archeologist",
-    "title": "Vice President, Chief Architect, Global Architecture, Risk and Governance",
+    "title": "Vice President, Architecture and Technology Strategy",
     "strengths": ["Strategic", "Achiever", "Learner", "Activator", "Relator", "Maximizer"],
     "summary": {
-      "lead": "Distinguished enterprise architecture executive and PhD Candidate",
-      "text": "with 25+ years transforming complex global organizations through innovative technology strategies. Currently serving as Vice President at Manulife, managing a comprehensive architecture practice that has evolved from a fragmented, ad-hoc function into a federated, outcome-driven capability deeply embedded in business strategy and delivery. Recognized thought leader with major publications in InfoWorld and CIO.com, passionate about advancing AI technologies and enterprise transformation while completing a PhD in Computer Science and Information Systems, expected December 2026."
+      "lead": "Distinguished technology strategy and enterprise architecture executive and PhD Candidate",
+      "text": "with 25+ years transforming complex global organizations through innovative technology strategies. Currently serving as Vice President, Architecture and Technology Strategy at Manulife, leading business, financial, and technology strategy for Global Wealth & Asset Management after six years building the architecture practice from a fragmented, ad-hoc function into a federated, outcome-driven capability deeply embedded in business strategy and delivery. Recognized thought leader with major publications in InfoWorld and CIO.com, passionate about advancing AI technologies and enterprise transformation while completing a PhD in Computer Science and Information Systems, expected December 2026."
     },
     "competencies": [
       {
@@ -196,18 +208,32 @@
     "roles": [
       {
         "logo": "MFC",
-        "title": "Vice President, Chief Architect, Global Architecture, Risk and Governance",
+        "title": "Vice President, Architecture and Technology Strategy",
         "company": "Manulife Financial Corporation",
-        "date": "March 2020 - Present",
-        "highlight": {"label": "Enterprise Leadership", "text": "Leading 72-person global architecture practice managing ~655 applications across North America, Asia, and Europe for Canada's largest insurance company (28th largest fund manager globally)."},
+        "date": "August 2026 - Present",
+        "highlight": {"label": "Strategy & Investment Leadership", "text": "Leads business, financial, and technology strategy for Manulife's Global Wealth & Asset Management organization, turning technology investment into measurable business value."},
+        "bullets": [
+          "Accountable for architecture, technology investment strategy, platform modernization, AI-enabled engineering, innovation, and operating model transformation",
+          "Align capital allocation, architecture, agentic engineering, and autonomous software delivery to convert technology spend into measurable business outcomes",
+          "Lead workforce transformation and governance as engineering shifts toward agentic and autonomous delivery models",
+          "Apply disciplined investment decisions and modern engineering practices to accelerate growth and improve delivery predictability",
+          "Strengthen resiliency, optimize costs, and drive scalable enterprise performance across the Global Wealth & Asset Management portfolio"
+        ]
+      },
+      {
+        "logo": "MFC",
+        "title": "Vice President, Chief Architect, Security Officer",
+        "company": "Manulife Financial Corporation",
+        "date": "March 2020 - August 2026",
+        "highlight": {"label": "Enterprise Leadership", "text": "Led Global Wealth & Asset Management architecture, risk, and operational/engineering governance - a 72-person practice managing a portfolio of ~700 applications across the US, Canada, Asia, and Europe."},
         "bullets": [
           "Transformed fragmented architecture function into federated, outcome-driven capability deeply embedded in business strategy",
           "Forrester 2025 EA Awards Finalist (North America): Recognized for pioneering Project Atlas - an industry-leading program transforming architect development and practice maturity",
           "Evolved from Disposition-based Application Roadmaps to Strategic Business Blueprints across Global Retail, Global Retirement, and Institutional lines of business",
-          "Lead team of 20 enterprise architects, 12 application security professionals, and 40 information risk specialists",
-          "Manage technology strategy for world's 28th largest fund manager with strong presence in Canada, Asia, and United States",
-          "Drive solution architecture and organizational development across multinational enterprise operations",
-          "Champion regulatory compliance and risk management across diverse international markets"
+          "Led team of 20 enterprise architects, 12 application security professionals, and 40 information risk specialists",
+          "Managed technology strategy for world's 28th largest fund manager with strong presence in Canada, Asia, and United States",
+          "Drove solution architecture and organizational development across multinational enterprise operations",
+          "Championed regulatory compliance and risk management across diverse international markets"
         ]
       },
       {
