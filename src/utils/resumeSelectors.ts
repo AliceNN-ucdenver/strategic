@@ -20,6 +20,7 @@ export const getPrintResume = () => ({
   keywords: resumeData.keywords,
   roles: resumeData.roles,
   credentials: resumeData.credentials,
+  boards: resumeData.boards,
   publications: resumeData.publications,
 });
 
@@ -30,6 +31,7 @@ export const getAtsResume = () => ({
   keywords: resumeData.keywords,
   roles: resumeData.roles,
   credentials: resumeData.credentials,
+  boards: resumeData.boards,
   publications: resumeData.publications,
 });
 
@@ -45,6 +47,7 @@ export const getWebResume = () => ({
   education: resumeData.web.education,
   certifications: resumeData.web.certifications,
   roles: resumeData.web.roles,
+  boards: resumeData.boards,
   publications: resumeData.web.publications,
 });
 

@@ -245,6 +245,12 @@
   margin-bottom: 0.035in;
 }
 
+.resume-board-prior {
+  margin: 0.05in 0 0 0;
+  color: #5b6b82;
+  font-size: 8.8pt;
+}
+
 .resume-skills-grid,
 .resume-certifications-grid {
   display: grid;

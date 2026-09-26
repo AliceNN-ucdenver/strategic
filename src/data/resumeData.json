@@ -1,7 +1,7 @@
 {
   "name": "Shawn McCarthy",
   "kicker": "Chief Archeologist | Enterprise Architecture Executive",
-  "title": "Vice President, Architecture and Technology Strategy | PhD Candidate, December 2026",
+  "title": "Vice President, Architecture and Tech Strategy | Chair, Chief Architect Forum | PhD Candidate, December 2026",
   "location": "Denver, Colorado",
   "email": "smccarthy@iasaoffice.org",
   "linkedin": "linkedin.com/in/shawnemccarthy",
@@ -11,7 +11,8 @@
   "atsSummary": "Technology strategy and enterprise architecture executive with 20+ years modernizing complex financial services technology portfolios. Leads business, financial, and technology strategy for a global wealth and asset management organization, following six years leading global architecture, application security, and information risk. Known for turning architectural evidence into investment strategy, product operating models, AI-enabled engineering, and platform modernization.",
   "impactHighlights": [
     "Lead business, financial, and technology strategy for Manulife's Global Wealth & Asset Management organization, spanning technology investment, platform modernization, AI-enabled engineering, innovation, and operating model transformation.",
-    "Led a 72-person global architecture, application security, and information risk organization supporting approximately 655 applications across North America, Asia, and Europe.",
+    "Chair the Chief Architect Forum board (IASA); led ratification of a renewed mission and five-commitment operating model - cross-practice adoption reporting, structured experimentation, applicability findings including limitations, BTABoK stewardship, and the teaching hospital - establishing tested evidence rather than fashion as the basis for architecture practice.",
+    "Led a 72-person global architecture, application security, and information risk organization supporting approximately 700 applications across North America, Asia, and Europe.",
     "Transformed fragmented architecture governance into a federated, outcome-driven capability embedded in business strategy, risk management, and delivery execution.",
     "Recognized as a Forrester 2025 Enterprise Architecture Awards finalist for Project Atlas, an architect development and practice maturity program.",
     "Evolved portfolio planning from disposition-based application roadmaps to strategic business blueprints across Global Retail, Global Retirement, and Institutional businesses.",
@@ -23,6 +24,9 @@
     "Application Security",
     "Information Risk",
     "Technology Strategy",
+    "Evidence-Based Practice",
+    "BTABoK Stewardship",
+    "Professional Body Governance",
     "Product Architecture",
     "DevSecOps",
     "Cloud Platforms",
@@ -43,7 +47,7 @@
   ],
   "roles": [
     {
-      "title": "Vice President, Architecture and Technology Strategy",
+      "title": "Vice President, Architecture and Tech Strategy",
       "company": "Manulife Financial Corporation",
       "date": "August 2026 - Present",
       "bullets": [
@@ -102,7 +106,22 @@
     "Platinum NVIDIA Deep Learning Institute Instructor",
     "NVIDIA Certified Professional: Agentic AI",
     "Certified across the NVIDIA generative deep learning suite",
-    "Chief Architect Forum, Board Member"
+    "Chief Architect Forum (IASA), Board Chair"
+  ],
+  "boards": [
+    {
+      "role": "Board Chair",
+      "organization": "Chief Architect Forum (IASA)",
+      "date": "September 2026 - Present",
+      "priorRole": "Board Member, November 2024 - September 2026",
+      "description": "Led ratification of the Forum's renewed mission and its five-commitment operating model: cross-practice adoption reporting, structured experimentation, applicability findings including limitations, BTABoK stewardship, and the teaching hospital. Established the Forum alongside the Applied AI and Sustainability communities, served by a shared foundation capacity spanning evidence, experiment protocols, BTABoK stewardship, publication standards, and career pathways."
+    },
+    {
+      "role": "Advisory Board Member",
+      "organization": "University of Colorado Denver",
+      "date": "May 2014 - Present",
+      "description": "Strategic guidance on AI/ML curriculum development and industry partnerships."
+    }
   ],
   "publications": [
     "Supply-Chain Disruption, Supplier-Country Health, and the Reallocation of US Import-Value Shares - Economies (MDPI), 2026",
@@ -114,11 +133,11 @@
   ],
   "web": {
     "eyebrow": "Chief Archeologist",
-    "title": "Vice President, Architecture and Technology Strategy",
+    "title": "Vice President, Architecture and Tech Strategy",
     "strengths": ["Strategic", "Achiever", "Learner", "Activator", "Relator", "Maximizer"],
     "summary": {
       "lead": "Distinguished technology strategy and enterprise architecture executive and PhD Candidate",
-      "text": "with 25+ years transforming complex global organizations through innovative technology strategies. Currently serving as Vice President, Architecture and Technology Strategy at Manulife, leading business, financial, and technology strategy for Global Wealth & Asset Management after six years building the architecture practice from a fragmented, ad-hoc function into a federated, outcome-driven capability deeply embedded in business strategy and delivery. Recognized thought leader with major publications in InfoWorld and CIO.com, passionate about advancing AI technologies and enterprise transformation while completing a PhD in Computer Science and Information Systems, expected December 2026."
+      "text": "with 25+ years transforming complex global organizations through innovative technology strategies. Currently serving as Vice President, Architecture and Tech Strategy at Manulife, leading business, financial, and technology strategy for Global Wealth & Asset Management after six years building the architecture practice from a fragmented, ad-hoc function into a federated, outcome-driven capability deeply embedded in business strategy and delivery. Recognized thought leader with major publications in InfoWorld and CIO.com, passionate about advancing AI technologies and enterprise transformation while completing a PhD in Computer Science and Information Systems, expected December 2026."
     },
     "competencies": [
       {
@@ -135,7 +154,7 @@
       },
       {
         "title": "Thought Leadership",
-        "description": "Industry Publications (InfoWorld, CIO.com), IASA Board Leadership, Enterprise Transformation Strategy, Research & Innovation"
+        "description": "Industry Publications (InfoWorld, CIO.com), Chief Architect Forum (IASA) Board Chair, Evidence-Based Practice, Enterprise Transformation Strategy"
       },
       {
         "title": "Education & Mentorship",
@@ -208,7 +227,7 @@
     "roles": [
       {
         "logo": "MFC",
-        "title": "Vice President, Architecture and Technology Strategy",
+        "title": "Vice President, Architecture and Tech Strategy",
         "company": "Manulife Financial Corporation",
         "date": "August 2026 - Present",
         "highlight": {"label": "Strategy & Investment Leadership", "text": "Leads business, financial, and technology strategy for Manulife's Global Wealth & Asset Management organization, turning technology investment into measurable business value."},

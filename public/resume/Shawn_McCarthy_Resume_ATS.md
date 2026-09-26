@@ -16,7 +16,7 @@ header-includes:
 
 # Shawn McCarthy
 
-Vice President, Architecture and Technology Strategy | PhD Candidate, December 2026
+Vice President, Architecture and Tech Strategy | Chair, Chief Architect Forum | PhD Candidate, December 2026
 
 Denver, Colorado | smccarthy@iasaoffice.org | linkedin.com/in/shawnemccarthy | chiefarcheologist.com
 
@@ -26,12 +26,13 @@ Technology strategy and enterprise architecture executive with 20+ years moderni
 
 ## Core Competencies
 
-Enterprise Architecture; AI Governance; Application Security; Information Risk; Technology Strategy; Product Architecture; DevSecOps; Cloud Platforms; Architecture Governance; Platform Modernization; Talent Development; Financial Services; Application Portfolio Management; Risk Management; API Strategy; API Product Strategy; Developer Experience; Engineering Leadership; NVIDIA DLI; Agentic AI; Generative AI; Generative Deep Learning.
+Enterprise Architecture; AI Governance; Application Security; Information Risk; Technology Strategy; Evidence-Based Practice; BTABoK Stewardship; Professional Body Governance; Product Architecture; DevSecOps; Cloud Platforms; Architecture Governance; Platform Modernization; Talent Development; Financial Services; Application Portfolio Management; Risk Management; API Strategy; API Product Strategy; Developer Experience; Engineering Leadership; NVIDIA DLI; Agentic AI; Generative AI; Generative Deep Learning.
 
 ## Leadership Impact
 
 - Lead business, financial, and technology strategy for Manulife's Global Wealth & Asset Management organization, spanning technology investment, platform modernization, AI-enabled engineering, innovation, and operating model transformation.
-- Led a 72-person global architecture, application security, and information risk organization supporting approximately 655 applications across North America, Asia, and Europe.
+- Chair the Chief Architect Forum board (IASA); led ratification of a renewed mission and five-commitment operating model - cross-practice adoption reporting, structured experimentation, applicability findings including limitations, BTABoK stewardship, and the teaching hospital - establishing tested evidence rather than fashion as the basis for architecture practice.
+- Led a 72-person global architecture, application security, and information risk organization supporting approximately 700 applications across North America, Asia, and Europe.
 - Transformed fragmented architecture governance into a federated, outcome-driven capability embedded in business strategy, risk management, and delivery execution.
 - Recognized as a Forrester 2025 Enterprise Architecture Awards finalist for Project Atlas, an architect development and practice maturity program.
 - Evolved portfolio planning from disposition-based application roadmaps to strategic business blueprints across Global Retail, Global Retirement, and Institutional businesses.
@@ -39,7 +40,7 @@ Enterprise Architecture; AI Governance; Application Security; Information Risk; 
 
 ## Professional Experience
 
-### Vice President, Architecture and Technology Strategy
+### Vice President, Architecture and Tech Strategy
 
 Manulife Financial Corporation | August 2026 - Present
 
@@ -84,7 +85,21 @@ University of Colorado Denver | January 2015 - Present
 
 ## Education and Credentials
 
-PhD Candidate, Computer Science and Information Systems, expected December 2026. University of Colorado Denver, Graduate Instructor. Platinum NVIDIA Deep Learning Institute Instructor. NVIDIA Certified Professional: Agentic AI. Certified across the NVIDIA generative deep learning suite. Chief Architect Forum, Board Member.
+PhD Candidate, Computer Science and Information Systems, expected December 2026. University of Colorado Denver, Graduate Instructor. Platinum NVIDIA Deep Learning Institute Instructor. NVIDIA Certified Professional: Agentic AI. Certified across the NVIDIA generative deep learning suite. Chief Architect Forum (IASA), Board Chair.
+
+## Board and Professional Leadership
+
+### Board Chair
+
+Chief Architect Forum (IASA) | September 2026 - Present | Board Member, November 2024 - September 2026
+
+Led ratification of the Forum's renewed mission and its five-commitment operating model: cross-practice adoption reporting, structured experimentation, applicability findings including limitations, BTABoK stewardship, and the teaching hospital. Established the Forum alongside the Applied AI and Sustainability communities, served by a shared foundation capacity spanning evidence, experiment protocols, BTABoK stewardship, publication standards, and career pathways.
+
+### Advisory Board Member
+
+University of Colorado Denver | May 2014 - Present
+
+Strategic guidance on AI/ML curriculum development and industry partnerships.
 
 ## Selected Publications and Research
 

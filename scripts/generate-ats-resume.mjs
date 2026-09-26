@@ -21,6 +21,16 @@ const roleSection = (role) => [
   markdownList(role.bullets),
 ].join('\n');
 
+const boardSection = (board) => [
+  `### ${board.role}`,
+  '',
+  [`${board.organization} | ${board.date}`, board.priorRole]
+    .filter(Boolean)
+    .join(' | '),
+  '',
+  board.description,
+].join('\n');
+
 const markdown = `---
 title: ${resumeData.name} Resume
 author: ${resumeData.name}
@@ -62,6 +72,10 @@ ${resumeData.roles.map(roleSection).join('\n\n')}
 ## Education and Credentials
 
 ${resumeData.credentials.join('. ')}.
+
+## Board and Professional Leadership
+
+${resumeData.boards.map(boardSection).join('\n\n')}
 
 ## Selected Publications and Research
 

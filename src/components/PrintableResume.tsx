@@ -79,6 +79,17 @@ const PrintableResume: React.FC = () => {
           </section>
 
           <section className="resume-section">
+            <h2>Board &amp; Professional Leadership</h2>
+            <ul className="resume-compact-list">
+              {resume.boards.map((board) => (
+                <li key={`${board.organization}-${board.role}`}>
+                  {board.role}, {board.organization} ({board.date})
+                </li>
+              ))}
+            </ul>
+          </section>
+
+          <section className="resume-section">
             <h2>Selected Publications</h2>
             <ul className="resume-compact-list">
               {resume.publications.map((publication) => (

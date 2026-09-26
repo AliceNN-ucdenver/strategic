@@ -14,7 +14,7 @@ const ResumeKeyAchievements: React.FC = () => {
         <strong>Thought Leadership:</strong> Published enterprise architecture expert with major articles in InfoWorld and CIO.com, advancing industry best practices through innovative product-centric architecture approaches
       </div>
       <div className="resume-key-achievement">
-        <strong>Global Scale Impact:</strong> Delivered 40% cost savings and 30% performance gains while managing ~655 applications across 7 regions and achieving 75% cloud adoption rate
+        <strong>Global Scale Impact:</strong> Delivered 40% cost savings and 30% performance gains while managing ~700 applications across 7 regions and achieving 75% cloud adoption rate
       </div>
       <div className="resume-key-achievement">
         <strong>Risk & Security Excellence:</strong> Achieved 5-year Risk KRI goals at 95% success rate with under 5% CAP slips while implementing comprehensive security scanning and risk prioritization frameworks
