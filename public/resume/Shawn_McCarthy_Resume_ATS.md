@@ -16,7 +16,7 @@ header-includes:
 
 # Shawn McCarthy
 
-Vice President, Architecture and Tech Strategy | Chair, Chief Architect Forum | PhD Candidate, December 2026
+Vice President, Architecture and Tech Strategy | Chair, Chief Architect Forum | PhD, Computer Science and Information Systems
 
 Denver, Colorado | smccarthy@iasaoffice.org | linkedin.com/in/shawnemccarthy | chiefarcheologist.com
 
@@ -85,7 +85,7 @@ University of Colorado Denver | January 2015 - Present
 
 ## Education and Credentials
 
-PhD Candidate, Computer Science and Information Systems, expected December 2026. University of Colorado Denver, Graduate Instructor. Platinum NVIDIA Deep Learning Institute Instructor. NVIDIA Certified Professional: Agentic AI. Certified across the NVIDIA generative deep learning suite. Chief Architect Forum (IASA), Board Chair.
+PhD, Computer Science and Information Systems, University of Colorado Denver, December 2026. Dissertation: Fin-ALICE: Advancing Financial Forecasting Through Causal Econometrics, Emotional Analysis, and Dynamic Co-Occurrence Networks (ProQuest No. 33031617). University of Colorado Denver, Graduate Instructor. Platinum NVIDIA Deep Learning Institute Instructor. NVIDIA Certified Professional: Agentic AI. Certified across the NVIDIA generative deep learning suite. Chief Architect Forum (IASA), Board Chair.
 
 ## Board and Professional Leadership
 
@@ -103,4 +103,4 @@ Strategic guidance on AI/ML curriculum development and industry partnerships.
 
 ## Selected Publications and Research
 
-Supply-Chain Disruption, Supplier-Country Health, and the Reallocation of US Import-Value Shares - Economies (MDPI), 2026. From Gatekeepers to Launchpads: How Autonomous Governance Transforms Enterprise Architecture - Metis / IASA Global, 2026. The Engineering Imperative: Why AI Will Not Replace Your Best Developers - CIO.com, 2025. From Fixed Frameworks to Strategic Enablers: Architecting AI Transformation - CIO.com, 2025. Cross-Document Emotion Consistency Framework for Financial Disclosure Risk Screening - Journal of Risk and Financial Management, 2026. US Patent 10,970,112 B2.
+Fin-ALICE: Advancing Financial Forecasting Through Causal Econometrics, Emotional Analysis, and Dynamic Co-Occurrence Networks - Doctoral dissertation, University of Colorado Denver, ProQuest Dissertations & Theses Global, December 2026. Supply-Chain Disruption, Supplier-Country Health, and the Reallocation of US Import-Value Shares - Economies (MDPI), 2026. From Gatekeepers to Launchpads: How Autonomous Governance Transforms Enterprise Architecture - Metis / IASA Global, 2026. The Engineering Imperative: Why AI Will Not Replace Your Best Developers - CIO.com, 2025. From Fixed Frameworks to Strategic Enablers: Architecting AI Transformation - CIO.com, 2025. Cross-Document Emotion Consistency Framework for Financial Disclosure Risk Screening - Journal of Risk and Financial Management, 2026. US Patent 10,970,112 B2.
