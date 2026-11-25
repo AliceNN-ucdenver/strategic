@@ -1,7 +1,7 @@
 {
   "name": "Shawn McCarthy",
   "kicker": "Chief Archeologist | Enterprise Architecture Executive",
-  "title": "Vice President, Architecture and Tech Strategy | Chair, Chief Architect Forum | PhD Candidate, December 2026",
+  "title": "Vice President, Architecture and Tech Strategy | Chair, Chief Architect Forum | PhD, Computer Science and Information Systems",
   "location": "Denver, Colorado",
   "email": "smccarthy@iasaoffice.org",
   "linkedin": "linkedin.com/in/shawnemccarthy",
@@ -101,7 +101,7 @@
     }
   ],
   "credentials": [
-    "PhD Candidate, Computer Science and Information Systems, expected December 2026",
+    "PhD, Computer Science and Information Systems, University of Colorado Denver, December 2026. Dissertation: Fin-ALICE: Advancing Financial Forecasting Through Causal Econometrics, Emotional Analysis, and Dynamic Co-Occurrence Networks (ProQuest No. 33031617)",
     "University of Colorado Denver, Graduate Instructor",
     "Platinum NVIDIA Deep Learning Institute Instructor",
     "NVIDIA Certified Professional: Agentic AI",
@@ -124,6 +124,7 @@
     }
   ],
   "publications": [
+    "Fin-ALICE: Advancing Financial Forecasting Through Causal Econometrics, Emotional Analysis, and Dynamic Co-Occurrence Networks - Doctoral dissertation, University of Colorado Denver, ProQuest Dissertations & Theses Global, December 2026",
     "Supply-Chain Disruption, Supplier-Country Health, and the Reallocation of US Import-Value Shares - Economies (MDPI), 2026",
     "From Gatekeepers to Launchpads: How Autonomous Governance Transforms Enterprise Architecture - Metis / IASA Global, 2026",
     "The Engineering Imperative: Why AI Will Not Replace Your Best Developers - CIO.com, 2025",
@@ -136,8 +137,8 @@
     "title": "Vice President, Architecture and Tech Strategy",
     "strengths": ["Strategic", "Achiever", "Learner", "Activator", "Relator", "Maximizer"],
     "summary": {
-      "lead": "Distinguished technology strategy and enterprise architecture executive and PhD Candidate",
-      "text": "with 25+ years transforming complex global organizations through innovative technology strategies. Currently serving as Vice President, Architecture and Tech Strategy at Manulife, leading business, financial, and technology strategy for Global Wealth & Asset Management after six years building the architecture practice from a fragmented, ad-hoc function into a federated, outcome-driven capability deeply embedded in business strategy and delivery. Recognized thought leader with major publications in InfoWorld and CIO.com, passionate about advancing AI technologies and enterprise transformation while completing a PhD in Computer Science and Information Systems, expected December 2026."
+      "lead": "Distinguished technology strategy and enterprise architecture executive with a PhD in Computer Science and Information Systems",
+      "text": "with 25+ years transforming complex global organizations through innovative technology strategies. Currently serving as Vice President, Architecture and Tech Strategy at Manulife, leading business, financial, and technology strategy for Global Wealth & Asset Management after six years building the architecture practice from a fragmented, ad-hoc function into a federated, outcome-driven capability deeply embedded in business strategy and delivery. Recognized thought leader with major publications in InfoWorld and CIO.com, passionate about advancing AI technologies and enterprise transformation, with doctoral research in causal econometrics, emotion analysis, and dynamic co-occurrence networks for financial forecasting."
     },
     "competencies": [
       {
@@ -167,9 +168,9 @@
     ],
     "education": [
       {
-        "degree": "PhD Candidate, Computer Science and Information Systems",
+        "degree": "PhD, Computer Science and Information Systems",
         "institution": "University of Colorado Denver",
-        "details": "Expected December 2026 | Thesis: \"Fin-ALICE Framework\" - Integrating causal inference, emotional sentiment analysis, and dynamic co-occurrence networks for enhanced financial forecasting"
+        "details": "December 2026 | Dissertation: \"Fin-ALICE: Advancing Financial Forecasting Through Causal Econometrics, Emotional Analysis, and Dynamic Co-Occurrence Networks\" (ProQuest No. 33031617)"
       },
       {
         "degree": "M.S., Computer Science and Engineering",
@@ -309,6 +310,12 @@
       }
     ],
     "publications": [
+      {
+        "title": "Fin-ALICE: Advancing Financial Forecasting Through Causal Econometrics, Emotional Analysis, and Dynamic Co-Occurrence Networks",
+        "details": "Doctoral Dissertation, University of Colorado Denver | ProQuest Dissertations & Theses Global | December 2026",
+        "url": "https://www.proquest.com/dissertations-theses/fin-alice-advancing-financial-forecasting-through/docview/3417103586/se-2",
+        "description": "Doctoral dissertation developing the Fin-ALICE framework, integrating causal econometrics, sentiment and emotional signal extraction, and dynamic co-occurrence networks to model regime shifts and cross-asset market transmission. ProQuest Order No. 33031617."
+      },
       {
         "title": "Supply-Chain Disruption, Supplier-Country Health, and the Reallocation of US Import-Value Shares: Monthly Evidence Under Timing-Disciplined Measurement",
         "details": "Economies (MDPI) | 2026",

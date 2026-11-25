@@ -118,7 +118,7 @@ const EducationPage: React.FC = () => {
             <p className="editorial-hero__subtitle">
               Guided by the motto "Inspire Growth," Shawn is passionate about learning,
               adapting, and inspiring innovation in others. With a teaching and coaching
-              mindset, he is pursuing a PhD focused on the impact of global events on
+              mindset, he earned his PhD researching the impact of global events on
               market sentiment while teaching the next generation of computer scientists
               about Web API technologies and Generative AI.
             </p>
