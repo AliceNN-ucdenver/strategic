@@ -158,7 +158,7 @@ export const resourceArticles: ResourceArticle[] = [
   },
   {
     title: "Fin-ALICE: Advancing Financial Forecasting Through Causal Econometrics, Emotional Analysis, and Dynamic Co-Occurrence Networks",
-    publication: "Doctoral Dissertation, University of Colorado Denver - ProQuest Dissertations & Theses Global",
+    publication: "ProQuest - Doctoral Dissertation, CU Denver",
     excerpt:
       "Doctoral dissertation developing the Fin-ALICE framework, integrating causal econometrics, sentiment and emotional signal extraction, and dynamic co-occurrence networks to model regime shifts and cross-asset market transmission. ProQuest Order No. 33031617.",
     url: "https://www.proquest.com/dissertations-theses/fin-alice-advancing-financial-forecasting-through/docview/3417103586/se-2",
@@ -171,6 +171,7 @@ export const getPublicationMark = (publication: string) => {
   if (publication.includes('Metis')) return 'IASA'
   if (publication.includes('InfoWorld')) return 'IW'
   if (publication.includes('MDPI')) return 'MDPI'
+  if (publication.includes('ProQuest')) return 'PQ'
   return publication
 }
 
